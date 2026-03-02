@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7C9E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5A9BC4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Six Kingdoms - Stylized leaf/water drop icon -->
+  <circle cx="50" cy="50" r="48" fill="url(#gradient)"/>
+  
+  <!-- Leaf/drop shape -->
+  <path d="M50 25 C35 35, 30 45, 30 55 C30 65, 38 73, 50 73 C62 73, 70 65, 70 55 C70 45, 65 35, 50 25 Z" 
+        fill="#F7DC6F" opacity="0.9"/>
+  
+  <!-- Inner detail -->
+  <path d="M50 30 C42 38, 39 46, 39 53 C39 60, 44 66, 50 66 C56 66, 61 60, 61 53 C61 46, 58 38, 50 30 Z" 
+        fill="#FCEA2B" opacity="0.6"/>
+  
+  <!-- Center vein -->
+  <line x1="50" y1="30" x2="50" y2="66" stroke="#4A7C9E" stroke-width="1.5" opacity="0.5"/>
+</svg>
