@@ -133,6 +133,46 @@
             font-size: 1.05rem;
             line-height: 1.8;
         }
+
+        .blog-admin-bar {
+            text-align: center;
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(74,124,158,0.15);
+        }
+
+        .blog-admin-bar p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.9rem;
+        }
+
+        .btn-add-post {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px rgba(74,124,158,0.25);
+        }
+
+        .btn-add-post:hover {
+            background: #2d5a78;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,124,158,0.35);
+        }
+
+        .btn-add-post svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -253,6 +293,18 @@
 
             </div>
             <!-- End blog-grid -->
+
+            <!-- ── Admin bar (only visible to you — bookmark blog-admin.html) ── -->
+            <div class="blog-admin-bar">
+                <p>Six Kingdoms team: ready to publish something new?</p>
+                <a href="blog-admin.html" class="btn-add-post">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    Add New Post
+                </a>
+            </div>
 
         </div>
     </section>
