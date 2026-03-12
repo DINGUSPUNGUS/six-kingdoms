@@ -1,27 +1,169 @@
 <!DOCTYPE html>
+<!--
+================================================================
+SIX KINGDOMS — BLOG POST TEMPLATE
+================================================================
+
+HOW TO PUBLISH A NEW BLOG POST — 4 SIMPLE STEPS
+
+STEP 1: COPY THIS FILE
+   • Right-click this file → Copy
+   • Paste in the same folder
+   • Rename it using your post title, e.g:
+       natural-pools-south-africa.html
+     (use hyphens, no spaces, all lowercase)
+
+STEP 2: FILL IN YOUR CONTENT
+   Search for every piece of text in [SQUARE BRACKETS]
+   and replace it with yours. Key spots:
+     [POST TITLE]      — your article headline
+     [POST CATEGORY]   — EcoPools / Ecological Design / Land Management
+     [POST DATE]       — e.g. "15 March 2026"
+     [READ TIME]       — e.g. 4
+     [POST SUMMARY]    — 1-sentence summary for Google
+   Then write your article between the BEGIN / END markers below.
+
+STEP 3: ADD A CARD TO blog.html
+   • Open blog.html
+   • Find the line: ADD NEW POST CARDS ABOVE THIS LINE
+   • Copy the card template shown in that comment
+   • Fill in the title, date, category, and point its href to
+     your new filename (e.g. natural-pools-south-africa.html)
+   • Save blog.html
+
+STEP 4: UPLOAD BOTH FILES
+   Upload your new .html file + the updated blog.html
+   to your web server. Done!
+
+================================================================
+POST CATEGORY OPTIONS (copy exactly as written):
+   EcoPools
+   Ecological Design
+   Land Management
+================================================================
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Holistic land management services in South Africa's Garden Route. Ecological assessment, restoration planning, invasive species management, and soil regeneration for sustainable landscapes.">
-    <meta name="keywords" content="land management, ecological restoration, invasive species, biodiversity enhancement, water management, soil regeneration, Garden Route">
-    <title>Holistic Land Management Services | Six Kingdoms</title>
-    
-    <!-- Favicons -->
+    <meta name="description" content="[POST SUMMARY — one sentence about this post for Google]">
+    <title>[POST TITLE] | Six Kingdoms Blog</title>
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="theme-color" content="#4A7C9E">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        /* ── Blog post page styles ── */
+        .post-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 5rem 20px 4rem;
+            text-align: center;
+            color: white;
+        }
+
+        .post-tag {
+            display: inline-block;
+            background: var(--accent-yellow);
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header h1 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: white;
+            max-width: 800px;
+            margin: 0 auto 1.2rem;
+            line-height: 1.25;
+        }
+
+        .post-meta {
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        /* Hero image — OPTION A: use this if you have a photo */
+        .post-hero-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Hero gradient — OPTION B: use this if you don't have a photo */
+        .post-hero-gradient {
+            height: 380px;
+            /* Change colours below if desired */
+            background: linear-gradient(135deg, #1a4a6e 0%, #4A7C9E 100%);
+        }
+
+        .post-body {
+            max-width: 780px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+
+        .post-body p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.95;
+            margin-bottom: 1.8rem;
+        }
+
+        .post-body h2 {
+            color: var(--primary-blue);
+            font-size: 1.9rem;
+            margin: 3rem 0 1.2rem;
+        }
+
+        .post-body h3 {
+            color: var(--secondary-blue);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .post-body blockquote {
+            border-left: 4px solid var(--accent-yellow);
+            margin: 2.5rem 0;
+            padding: 1.2rem 1.8rem;
+            background: linear-gradient(135deg, #FFFBEA 0%, #ffffff 100%);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .post-body ul, .post-body ol {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin: 0 0 1.8rem 2rem;
+        }
+
+        .post-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-nav {
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-brand">
@@ -38,118 +180,84 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="ecopools.html">EcoPools</a></li>
                 <li><a href="projects.html">Ecological Design</a></li>
-                <li><a href="land-management.html" class="active" aria-current="page">Land Management</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="land-management.html">Land Management</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-header" id="main-content">
+    <!-- ═══ POST HEADER — fill in the [SQUARE BRACKETS] ═══ -->
+    <header class="post-header" id="main-content">
         <div class="container">
-            <h1>Holistic Land Management</h1>
-            <p>Sustainable stewardship for regenerative landscapes</p>
+            <span class="post-tag">[POST CATEGORY]</span>
+            <h1>[POST TITLE]</h1>
+            <p class="post-meta">[POST DATE] &mdash; [READ TIME] min read</p>
         </div>
-    </section>
+    </header>
 
-    <section class="content-section">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-main">
-                    <h2>Our Approach to Land Management</h2>
-                    <p>At Six Kingdoms, we believe in working with nature rather than against it. Our holistic land management approach focuses on restoring ecological balance, enhancing biodiversity, and creating sustainable systems that benefit both people and the environment.</p>
+    <!--
+    ═══ POST HERO IMAGE ═══════════════════════════════════════
+    OPTION A — You have a photo:
+        Delete the <div class="post-hero-gradient"> below.
+        Replace it with:
+        <img src="images/YOUR-IMAGE.jpg" alt="Brief description" class="post-hero-image">
 
-                    <h3>Services We Offer</h3>
-                    <ul class="service-list">
-                        <li><strong>Ecological Assessment:</strong> Comprehensive evaluation of your land's current state and potential</li>
-                        <li><strong>Restoration Planning:</strong> Strategic plans to restore degraded areas and enhance ecosystem health</li>
-                        <li><strong>Invasive Species Management:</strong> Ethical removal and management of alien invasive plants</li>
-                        <li><strong>Biodiversity Enhancement:</strong> Creating habitats that support native flora and fauna</li>
-                        <li><strong>Water Management:</strong> Sustainable water harvesting and conservation strategies</li>
-                        <li><strong>Soil Regeneration:</strong> Building healthy, living soils through regenerative practices</li>
-                    </ul>
+    OPTION B — No photo (keep the coloured block):
+        Leave the div below as-is.
+        Optional: change the gradient colours in the <style> above.
+    ═══════════════════════════════════════════════════════════
+    -->
+    <div class="post-hero-gradient"></div>
 
-                    <h3>Creating a Vision for Your Land</h3>
-                    <p>A core component in our work is a shared passion for embedding people into their designs, encouraging our clients to know their gardens and farms and the ecosystems that exist in their living spaces. We work collaboratively with landowners to develop a clear vision that aligns with both ecological principles and your personal goals.</p>
+    <!-- ═══ BEGIN POST CONTENT — write your article here ═══ -->
+    <article class="post-body">
 
-                    <h3>Long-term Stewardship</h3>
-                    <p>Land management is not a one-time intervention but an ongoing relationship with the land. We provide ongoing support and guidance to help you become an effective steward of your property, ensuring that your landscape continues to thrive and evolve over time.</p>
-                </div>
+        <p>[Opening paragraph — hook the reader in 2–3 sentences. What is this post about and why does it matter?]</p>
 
-                <div class="content-sidebar">
-                    <div class="sidebar-card">
-                        <h3>Why Choose Holistic Land Management?</h3>
-                        <ul>
-                            <li>Restore ecological balance</li>
-                            <li>Increase biodiversity</li>
-                            <li>Improve soil health</li>
-                            <li>Enhance water retention</li>
-                            <li>Create resilient landscapes</li>
-                            <li>Reduce maintenance needs</li>
-                        </ul>
-                    </div>
+        <h2>[First Section Heading]</h2>
 
-                    <div class="sidebar-card">
-                        <h3>Get Started</h3>
-                        <p>Ready to transform your land? Contact us to discuss your land management needs.</p>
-                        <a href="index.html#contact" class="btn-primary">Contact Us</a>
-                    </div>
-                </div>
-            </div>
+        <p>[Write your content here. Each paragraph should be one clear idea, in plain language. Aim for 2–4 sentences per paragraph.]</p>
+
+        <p>[Add as many paragraphs as you need. Delete the heading examples you don't use.]</p>
+
+        <h2>[Second Section Heading]</h2>
+
+        <p>[Continue writing...]</p>
+
+        <!-- Optional: blockquote for a key insight or client quote. Delete if not needed. -->
+        <blockquote>
+            [A key insight, or a quote from a client or collaborator. Delete this whole block if not needed.]
+        </blockquote>
+
+        <h3>[Optional Subheading]</h3>
+
+        <p>[More content...]</p>
+
+        <!-- Optional: bullet list. Delete if not needed. -->
+        <ul>
+            <li>[Point one]</li>
+            <li>[Point two]</li>
+            <li>[Point three]</li>
+        </ul>
+
+        <p>[Closing paragraph — wrap up with a clear takeaway or a call to action. E.g. "Interested in an EcoPool for your property? Get in touch."]</p>
+
+        <div class="post-nav">
+            <a href="blog.html" class="btn-secondary">&larr; Back to Blog</a>
         </div>
-    </section>
 
-    <!-- Land Management Projects -->
-    <section class="projects">
-        <div class="container">
-            <h2 class="section-title">Land Management Projects</h2>
-            <p class="section-subtitle">Invasive clearing, ecological restoration, and regenerative agriculture</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4a3520 0%, #7a5a38 100%);"></div>
-                    <div class="project-content">
-                        <span class="project-tag">Invasive Clearing</span>
-                        <h3>Salt River Invasive Plant Clearing</h3>
-                        <p>A month-long Invasive Alien Plant clearing operation in one of Cape Town's most ecologically significant rivers. Partnered with BioWise.</p>
-                        <a href="projects.html" class="project-link">See all projects &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #2d5016 0%, #4a7c28 100%);"></div>
-                    <div class="project-content">
-                        <span class="project-tag">Reforestation</span>
-                        <h3>Greenpop's Forests For Life</h3>
-                        <p>A collaborative reforestation and land stewardship project with Greenpop &mdash; enabling land restoration and alternative livelihoods across sub-Saharan Africa.</p>
-                        <a href="projects.html" class="project-link">See all projects &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4a6b3a 0%, #6b9150 100%);"></div>
-                    <div class="project-content">
-                        <span class="project-tag">Regenerative Agriculture</span>
-                        <h3>Dieplewe Regenerative Farm</h3>
-                        <p>Working with regenerative agriculture principles to restore degraded farmland and build productive, sustainable food systems that work with the land's natural ecology.</p>
-                        <a href="projects.html" class="project-link">See all projects &rarr;</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <a href="projects.html" class="btn-secondary">View All Projects</a>
-            </div>
-        </div>
-    </section>
+    </article>
+    <!-- ═══ END POST CONTENT ═══ -->
 
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
                     <img src="images/six kingdoms logo.png" alt="Six Kingdoms" class="footer-logo">
-                    <p>Natural pools, ecological design, and land stewardship — Garden Route, South Africa.</p>
+                    <p>Natural pools, ecological design, and land stewardship &mdash; Garden Route, South Africa.</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -161,7 +269,7 @@
                         <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h4>Get In Touch</h4>
                     <div class="footer-contact-item">
@@ -186,7 +294,7 @@
                         Garden Route, South Africa
                     </div>
                 </div>
-                
+
                 <div class="footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-links">
@@ -208,17 +316,16 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; <span id="current-year">2026</span> Six Kingdoms. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/27123456789?text=Hi%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20EcoPools%20and%20ecological%20design%20services" 
-       class="whatsapp-float" 
-       target="_blank" 
+
+    <a href="https://wa.me/27123456789?text=Hi%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20EcoPools%20and%20ecological%20design%20services"
+       class="whatsapp-float"
+       target="_blank"
        rel="noopener noreferrer"
        aria-label="Contact us on WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -226,7 +333,6 @@
         </svg>
     </a>
 
-    <!-- Scroll to top -->
     <button class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>

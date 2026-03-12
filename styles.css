@@ -741,6 +741,19 @@ section {
     color: var(--primary-blue);
 }
 
+.project-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--secondary-blue);
+    background: rgba(90, 155, 196, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-bottom: 0.5rem;
+}
+
 /* About Section */
 .about {
     background: linear-gradient(135deg, var(--white) 0%, #f8f6f1 100%);
@@ -834,6 +847,16 @@ section {
 .contact-item {
     font-size: 1.1rem;
     margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    opacity: 0.9;
 }
 
 .contact-form {
@@ -928,6 +951,22 @@ section {
     font-size: 0.95rem;
 }
 
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.6rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+}
+
+.footer-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -990,6 +1029,100 @@ section {
 .whatsapp-float svg {
     width: 32px;
     height: 32px;
+}
+
+/* Scroll-to-top button */
+.scroll-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 124, 158, 0.3);
+    z-index: 998;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: var(--secondary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(74, 124, 158, 0.4);
+}
+
+.scroll-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Blog Teaser Section */
+.blog-teaser {
+    background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+}
+
+.blog-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.blog-teaser-card {
+    text-decoration: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(74, 124, 158, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--white);
+    display: block;
+}
+
+.blog-teaser-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(74, 124, 158, 0.15);
+}
+
+.blog-teaser-image {
+    height: 155px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-teaser-body {
+    padding: 1.4rem 1.6rem 1.6rem;
+}
+
+.blog-teaser-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: var(--secondary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.blog-teaser-body h3 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.45;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    margin: 0;
 }
 
 /* FAQ Section */
@@ -1285,6 +1418,26 @@ section {
     color: var(--text-light);
     margin-bottom: 1.8rem;
     line-height: 1.9;
+}
+
+.ecopool-projects-section {
+    margin: 4.5rem 0;
+}
+
+.ecopool-projects-section h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
 
 /* Privacy Policy Page */

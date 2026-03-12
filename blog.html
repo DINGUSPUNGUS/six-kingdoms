@@ -179,48 +179,34 @@
             </p>
 
             <!--
-            ================================================================
-            HOW TO ADD A NEW BLOG POST — READ BEFORE EDITING
-            ================================================================
-
-            1. Copy the block between POST START and POST END below.
-            2. Paste your copy ABOVE the existing posts inside the .blog-grid div.
-            3. Fill in the following fields:
-                - style="background-image: url('images/YOUR-IMAGE.jpg');"
-                  Replace with the path to your post image.
-                  (Leave the whole style attribute if using a gradient instead.)
-                - <span class="blog-card-tag">YOUR CATEGORY</span>
-                  Use one of: EcoPools / Ecological Design / Land Management
-                - <p class="blog-card-meta">DD Month YYYY &mdash; X min read</p>
-                - <h2>Your Post Title</h2>
-                - <p>One or two sentence summary of the post.</p>
-                - <a href="YOUR-LINK">: link to the full post page or a section anchor.
-            4. Save the file and upload via FTP / your hosting panel. Done.
-
-            ----------------------------------------------------------------
-            POST TEMPLATE — copy from here:
-            ----------------------------------------------------------------
-
-            <!-- POST START
-            <div class="blog-card">
-                <div class="blog-card-image" style="background-image: url('images/YOUR-IMAGE.jpg');">
-                    <span class="blog-card-tag">YOUR CATEGORY</span>
-                </div>
-                <div class="blog-card-body">
-                    <p class="blog-card-meta">DD Month YYYY &mdash; X min read</p>
-                    <h2>Your Post Title Here</h2>
-                    <p>A one or two sentence summary. Keep it short and engaging.</p>
-                    <a href="#" class="blog-read-more">Read more &rarr;</a>
-                </div>
-            </div>
-            POST END -->
-
-            ================================================================
-            ADD NEW POSTS ABOVE THE COMMENT BELOW:
-            ================================================================
+            ╔══════════════════════════════════════════════════════════════╗
+            ║  HOW TO ADD A NEW BLOG POST                                  ║
+            ╠══════════════════════════════════════════════════════════════╣
+            ║                                                              ║
+            ║  STEP 1 — Create the post page                               ║
+            ║    • Copy "blog-post-template.html" (same folder)            ║
+            ║    • Rename it, e.g. "my-new-post.html"                      ║
+            ║    • Fill in every [SQUARE BRACKET] placeholder              ║
+            ║    • Write your article between BEGIN / END markers          ║
+            ║                                                              ║
+            ║  STEP 2 — Add a card below (newest posts go at the TOP)      ║
+            ║    • Copy one of the existing POST START / POST END blocks   ║
+            ║    • Paste it above the existing cards                       ║
+            ║    • Update: category tag, date, title, summary, href        ║
+            ║    • Set href="my-new-post.html" (your Step 1 filename)      ║
+            ║                                                              ║
+            ║  STEP 3 — Upload both files to your web server. Done!        ║
+            ║                                                              ║
+            ║  CATEGORY OPTIONS (use exactly as written):                  ║
+            ║    EcoPools  /  Ecological Design  /  Land Management        ║
+            ╚══════════════════════════════════════════════════════════════╝
             -->
 
-            <!-- Blog post grid — newest posts at the TOP -->
+            <!-- ▼▼▼ ADD NEW POST CARDS ABOVE THIS LINE ▼▼▼
+                 Copy a POST START / POST END block from below, paste it here, and update the content.
+                 Newest posts go at the TOP.
+            -->
+            <!-- Blog post grid -->
             <div class="blog-grid">
 
                 <!-- POST START -->
@@ -294,9 +280,27 @@
 
                 <div class="footer-contact">
                     <h4>Get In Touch</h4>
-                    <p>📧 info@sixkingdoms.org</p>
-                    <p>🌐 sixkingdoms.org</p>
-                    <p>📍 Garden Route, South Africa</p>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        info@sixkingdoms.org
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                        </svg>
+                        sixkingdoms.org
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Garden Route, South Africa
+                    </div>
                 </div>
 
                 <div class="footer-social">
@@ -326,6 +330,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>

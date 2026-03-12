@@ -132,8 +132,15 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const card = entry.target;
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+            observer.unobserve(card);
+            // Remove inline styles after transition so CSS :hover transforms work normally
+            setTimeout(() => {
+                card.style.opacity = '';
+                card.style.transform = '';
+            }, 700);
         }
     });
 }, observerOptions);
@@ -145,6 +152,17 @@ document.querySelectorAll('.service-card, .project-card, .benefit-card').forEach
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(card);
 });
+
+// Scroll-to-top button
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // Add active state to current page in navigation
 const currentPage = window.location.pathname.split('/').pop();
