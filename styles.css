@@ -40,16 +40,9 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* Global Raindrops covering entire site */
+/* Global Raindrops — disabled: animations restricted to hero banner only */
 .global-raindrops {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: hidden;
+    display: none;
 }
 
 .global-raindrops .water-drop {
@@ -795,7 +788,7 @@ section {
     background: 
         radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    animation: backgroundShift 60s linear infinite;
+    /* animation removed — animations restricted to hero banner only */
 }
 
 @keyframes backgroundShift {
