@@ -34,17 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add active class to new slide
         slides[currentSlide].classList.add('active');
-        
-        console.log(`✓ Switched to slide ${currentSlide + 1} of ${totalSlides}`);
     }
 
-    // Change slide every 4 seconds for better visibility
     if (slides.length > 0) {
-        console.log(`✓ Hero slideshow initialized with ${totalSlides} slides`);
-        console.log('✓ Images should cycle every 4 seconds');
         setInterval(showNextSlide, 4000);
-    } else {
-        console.log('ℹ No hero slides found on this page');
     }
     
     // Update current year in footer
@@ -92,34 +85,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form submission handler
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         const submitButton = this.querySelector('button[type="submit"]');
         const formStatus = this.querySelector('.form-status');
-        
-        // Show loading state
+
         submitButton.classList.add('loading');
         submitButton.disabled = true;
-        
-        // Simulate form submission (replace with actual backend call)
-        setTimeout(() => {
-            // Reset loading state
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+
+        try {
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                formStatus.textContent = 'Thank you for your message! We will get back to you soon.';
+                formStatus.className = 'form-status success';
+                this.reset();
+            } else {
+                const data = await response.json();
+                const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again or email us directly.';
+                formStatus.textContent = msg;
+                formStatus.className = 'form-status error';
+            }
+        } catch {
+            formStatus.textContent = 'Could not send your message. Please email immatthewkoehorst@gmail.com directly.';
+            formStatus.className = 'form-status error';
+        } finally {
             submitButton.classList.remove('loading');
             submitButton.disabled = false;
-            
-            // Show success message
-            formStatus.textContent = 'Thank you for your message! We will get back to you soon.';
-            formStatus.className = 'form-status success';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
-        }, 1500);
+        }
     });
 }
 
