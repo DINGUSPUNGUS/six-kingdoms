@@ -12,25 +12,25 @@
     <meta property="og:url" content="https://sixkingdoms.org/">
     <meta property="og:title" content="Six Kingdoms | EcoPools & Ecological Design">
     <meta property="og:description" content="EcoPools, ecological design, and land stewardship for the Garden Route. Natural swimming pools filtered by biology — no chemicals, just living water.">
-    <meta property="og:image" content="https://sixkingdoms.org/images/six kingdoms logo.png">
+    <meta property="og:image" content="https://sixkingdoms.org/images/six%20kingdoms%20logo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sixkingdoms.org/">
     <meta property="twitter:title" content="Six Kingdoms | EcoPools & Ecological Design">
     <meta property="twitter:description" content="EcoPools, ecological design, and land stewardship — Garden Route, South Africa.">
-    <meta property="twitter:image" content="https://sixkingdoms.org/images/six kingdoms logo.png">
+    <meta property="twitter:image" content="https://sixkingdoms.org/images/six%20kingdoms%20logo.png">
     
     <title>Six Kingdoms | EcoPools & Ecological Design | Garden Route</title>
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sixkingdoms.org/">
 
+    <!-- Preload critical hero image for LCP (Core Web Vitals) -->
+    <link rel="preload" as="image" href="images/eco-pool-hero1.jpg" fetchpriority="high">
+
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="theme-color" content="#4A7C9E">
     
     <link rel="stylesheet" href="styles.css">
@@ -43,19 +43,56 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "name": "Six Kingdoms",
-        "description": "EcoPools, Ecological Design & Land Management",
+        "description": "Natural swimming pools (EcoPools), ecological design, and holistic land management — serving the Garden Route including Knysna, Plettenberg Bay, George, and Wilderness, South Africa.",
         "url": "https://sixkingdoms.org",
-        "logo": "https://sixkingdoms.org/images/six kingdoms logo.png",
+        "logo": "https://sixkingdoms.org/images/six%20kingdoms%20logo.png",
+        "image": "https://sixkingdoms.org/images/eco-pool-hero1.jpg",
         "email": "immatthewkoehorst@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "addressRegion": "Garden Route",
+            "addressLocality": "Garden Route",
+            "addressRegion": "Western Cape",
             "addressCountry": "ZA"
         },
-        "areaServed": "Garden Route, South Africa",
-        "serviceType": ["EcoPools", "Natural Swimming Pools", "Ecological Design", "Land Management"]
+        "areaServed": [
+            {"@type": "City", "name": "Knysna"},
+            {"@type": "City", "name": "Plettenberg Bay"},
+            {"@type": "City", "name": "George"},
+            {"@type": "City", "name": "Wilderness"},
+            {"@type": "AdministrativeArea", "name": "Garden Route"},
+            {"@type": "Country", "name": "South Africa"}
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Six Kingdoms Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Natural Swimming Pools (EcoPools)", "url": "https://sixkingdoms.org/ecopools.html"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ecological Design", "url": "https://sixkingdoms.org/projects.html"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Holistic Land Management", "url": "https://sixkingdoms.org/land-management.html"}}
+            ]
+        },
+        "sameAs": [
+            "https://www.facebook.com/sixkingdomsecologicaldesign/",
+            "https://www.instagram.com/six_kingdoms/",
+            "https://za.linkedin.com/in/matthew-koehorst-a0a76848"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is an EcoPool?", "acceptedAnswer": {"@type": "Answer", "text": "An EcoPool is a natural swimming pool filtered by plants and beneficial micro-organisms instead of chemicals. The result is living, clean water that supports biodiversity, looks beautiful, and is gentler on your body than a conventional chlorinated pool."}},
+        {"@type": "Question", "name": "How are natural swimming pools different from conventional pools?", "acceptedAnswer": {"@type": "Answer", "text": "Natural swimming pools (EcoPools) use plants and beneficial micro-organisms to filter the water instead of chemicals like chlorine. This creates a healthier swimming environment, supports biodiversity, and requires less maintenance over time."}},
+        {"@type": "Question", "name": "What areas does Six Kingdoms service?", "acceptedAnswer": {"@type": "Answer", "text": "Six Kingdoms is based on South Africa's Garden Route and primarily services Plettenberg Bay, Knysna, George, Wilderness, and surrounding communities."}},
+        {"@type": "Question", "name": "What does ecological design involve?", "acceptedAnswer": {"@type": "Answer", "text": "Ecological design means working with the natural patterns of a site \u2014 its soils, water flows, sun angles, and existing biodiversity \u2014 to create spaces that thrive without constant intervention. We use native plants, restore degraded areas, and build landscapes that become more resilient over time."}},
+        {"@type": "Question", "name": "Do you offer ongoing maintenance services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Six Kingdoms provides ongoing land management and stewardship services across the Garden Route, with regular consultations, on-site support, and training to help you care for your landscape."}},
+        {"@type": "Question", "name": "How do I get started with Six Kingdoms?", "acceptedAnswer": {"@type": "Answer", "text": "Get in touch via the contact form or email immatthewkoehorst@gmail.com. We'll arrange an initial conversation to understand your site and goals, then outline the best path forward \u2014 whether that's an EcoPool, an ecological design brief, or a land management plan."}}
+      ]
     }
     </script>
 </head>
@@ -123,7 +160,7 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">What We Do</h2>
-            <p class="section-subtitle">Three disciplines. One ecological vision.</p>
+            <p class="section-subtitle">Here's what keeps us busy.</p>
             
             <div class="services-grid">
                 <div class="service-card">
@@ -134,7 +171,7 @@
                         </svg>
                     </div>
                     <h3>EcoPools</h3>
-                    <p>Natural, chemical-free swimming pools powered by biology. Living water &mdash; right in your own landscape.</p>
+                    <p>The water is alive. No chlorine, no chemicals &mdash; plants and biology keep it clear. Honestly one of the best things we get to build.</p>
                     <a href="ecopools.html" class="service-link">Explore EcoPools &rarr;</a>
                 </div>
                 
@@ -145,7 +182,7 @@
                         </svg>
                     </div>
                     <h3>Ecological Design</h3>
-                    <p>Designs that build biodiversity, restore ecosystems, and create spaces that flourish for decades.</p>
+                    <p>We work with what's already on a site and help it become more of itself. Less imposition, more observation.</p>
                     <a href="projects.html" class="service-link">View Projects &rarr;</a>
                 </div>
                 
@@ -157,7 +194,7 @@
                         </svg>
                     </div>
                     <h3>Land Management</h3>
-                    <p>Holistic stewardship &mdash; invasive clearing, soil regeneration, water harvesting, and long-term ecological care.</p>
+                    <p>Wattles, rooikrans, pampas grass &mdash; we know what's taking over and how to bring back what should be there. Then we help you keep it that way.</p>
                     <a href="land-management.html" class="service-link">Learn More &rarr;</a>
                 </div>
             </div>
@@ -168,11 +205,11 @@
     <section class="projects">
         <div class="container">
             <h2 class="section-title">Featured Work</h2>
-            <p class="section-subtitle">A snapshot of our ecological design projects</p>
+            <p class="section-subtitle">A few things we've worked on</p>
             
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url(&quot;images/Fynbos restoration and rain garden design.jpg&quot;);"></div>
+                    <div class="project-image"><img src="images/Fynbos restoration and rain garden design.jpg" alt="Fynbos restoration and rain garden design near Plettenberg Bay, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <h3>Fynbos Restoration & Rain Garden Design</h3>
                         <p>The Six Kingdoms Ecological Design team recently did some work on a unique site near Plettenberg bay.</p>
@@ -181,7 +218,7 @@
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url(&quot;images/Creating a vision for holistic land management.jpg&quot;);"></div>
+                    <div class="project-image"><img src="images/Creating a vision for holistic land management.jpg" alt="Creating a holistic land management vision for a Garden Route property — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <h3>Creating a Vision for Holistic Land Management</h3>
                         <p>A core component in our work is a shared passion for embedding people into their designs.</p>
@@ -190,7 +227,7 @@
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image" style="background-image: url(&quot;images/A practical sustainability workshop with Ecosunergy.jpg&quot;);"></div>
+                    <div class="project-image"><img src="images/A practical sustainability workshop with Ecosunergy.jpg" alt="Practical sustainability workshop with Ecosunergy on the Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <h3>Practical Sustainability with Ecosunergy</h3>
                         <p>In April 2021 we facilitated a day on a practical sustainability course at a phenomenally beautiful flower farm.</p>
@@ -210,8 +247,8 @@
         <div class="container">
             <h2 class="section-title">About Six Kingdoms</h2>
             <div class="about-content">
-                <p>Six Kingdoms is an ecological design practice rooted in South Africa's Garden Route. We build natural swimming pools, design for biodiversity, and steward land back to ecological health.</p>
-                <p>We read the land, respond to its patterns, and create spaces that sustain themselves — and inspire the people who inhabit them.</p>
+                <p>Six Kingdoms is a small ecological design practice on South Africa's Garden Route. We build natural swimming pools, fix up degraded land, and design gardens that earn their keep.</p>
+                <p>It's just us, working carefully on a handful of projects at a time. That's deliberate.</p>
             </div>
         </div>
     </section>
@@ -257,8 +294,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-subtitle">Hear from those who've experienced our ecological approach</p>
+            <h2 class="section-title">From People We've Worked With</h2>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -266,7 +302,7 @@
                         <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
-                        <p>"Working with Six Kingdoms transformed our property into a thriving ecosystem. Their knowledge of native plants and sustainable design practices is outstanding."</p>
+                        <p>"Matthew knows his plants. Genuinely. What he's created here would have taken us years to figure out on our own &mdash; and honestly, we wouldn't have known where to start."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>Sarah Mitchell</strong>
@@ -279,7 +315,7 @@
                         <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
-                        <p>"Our natural swimming pool is absolutely stunning. It's become the centerpiece of our garden and the biodiversity it supports is incredible."</p>
+                        <p>"We'd been putting the pool off for two years because we didn't want the chemicals. The EcoPool sorted that. The frogs moved in by April."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>David & Lisa Thompson</strong>
@@ -292,7 +328,7 @@
                         <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
-                        <p>"Their holistic approach to land management helped us restore degraded areas of our farm. The results have exceeded our expectations."</p>
+                        <p>"The farm was in a bad way when Matthew first came out. Wattle everywhere, tired soil, not much happening. Two seasons later it looks completely different."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>Johan van der Merwe</strong>
@@ -306,8 +342,7 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Common questions about EcoPools, ecological design, and land management</p>
+            <h2 class="section-title">Questions People Usually Ask</h2>
             
             <div class="faq-grid">
                 <div class="faq-item">
@@ -318,7 +353,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>An EcoPool is a natural swimming pool filtered by plants and beneficial micro-organisms instead of chemicals. The result is living, clean water that supports biodiversity, looks beautiful, and is gentler on your body than a conventional chlorinated pool.</p>
+                        <p>A swimming pool without chemicals. Instead of chlorine, an EcoPool has a planted regeneration zone &mdash; aquatic plants and beneficial micro-organisms do the filtering work. The water is clean, soft on skin, and stays remarkably clear. Things also actually live in it, which is half the appeal.</p>
                     </div>
                 </div>
                 
@@ -330,7 +365,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Natural swimming pools (EcoPools) use plants and beneficial micro-organisms to filter the water instead of chemicals like chlorine. This creates a healthier swimming environment, supports biodiversity, and requires less maintenance over time. They're also more environmentally friendly and blend beautifully into the landscape.</p>
+                        <p>The short version: no chemicals, ever. No chlorine burning your eyes, no algaecide top-ups, no chemical management schedule. Once the biology is established it's largely self-regulating. They also just look better &mdash; a natural pool sits in the garden rather than sitting on top of it.</p>
                     </div>
                 </div>
                 
@@ -342,7 +377,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>We're based in South Africa's Garden Route and primarily service this region, including areas around Plettenberg Bay, Knysna, George, and surrounding communities. For larger projects, we may consider traveling further afield.</p>
+                        <p>Mostly the Garden Route &mdash; Plettenberg Bay, Knysna, George, Wilderness, and the surrounding areas. For the right project we'll travel further, but the Garden Route is home base.</p>
                     </div>
                 </div>
                 
@@ -354,7 +389,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Ecological design means working with the natural patterns of a site — its soils, water flows, sun angles, and existing biodiversity — to create spaces that thrive without constant intervention. We use native plants, restore degraded areas, and build landscapes that become more resilient over time.</p>
+                        <p>Mostly, it means slowing down and reading a site before you do anything to it. Where does the water go when it rains? What's already growing? What should be growing? Then you design with those patterns rather than against them. The result is a space that needs less from you over time, because it's working with the place instead of fighting it.</p>
                     </div>
                 </div>
                 
@@ -366,7 +401,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, we provide ongoing land management and stewardship services. Part of our philosophy is helping clients develop a deep connection with their landscapes, so we offer training and support to help you maintain your garden, as well as periodic consultations and hands-on maintenance if needed.</p>
+                        <p>Yes &mdash; and it's honestly some of our favourite work. We'd rather help you understand your land than just maintain it for you indefinitely. So the ongoing support is usually a mix of hands-on visits and helping you learn what to look for yourself.</p>
                     </div>
                 </div>
                 
@@ -378,7 +413,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Get in touch via the contact form or email us at immatthewkoehorst@gmail.com. We'll arrange an initial conversation to understand your site and goals, then outline the best path forward — whether that's an EcoPool, an ecological design brief, or a land management plan.</p>
+                        <p>Just drop us a message. We'll arrange a time to talk through what you're dealing with &mdash; your site, what you're hoping for, your timeline. From there we'll tell you what makes sense. No obligation.</p>
                     </div>
                 </div>
             </div>
@@ -389,7 +424,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Start with a conversation &mdash; no pressure, no jargon</p>
+            <p class="section-subtitle">Drop us a line. We get back to everyone.</p>
             
             <div class="contact-content">
                 <div class="contact-info">
@@ -400,7 +435,7 @@
                         <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
-                        immatthewkoehorst@gmail.com
+                        <a href="mailto:immatthewkoehorst@gmail.com">immatthewkoehorst@gmail.com</a>
                     </p>
                     <p class="contact-item">
                         <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -408,7 +443,7 @@
                             <line x1="2" y1="12" x2="22" y2="12"/>
                             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
                         </svg>
-                        sixkingdoms.org
+                        <a href="https://sixkingdoms.org">sixkingdoms.org</a>
                     </p>
                 </div>
                 
@@ -468,7 +503,7 @@
                         <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
-                        immatthewkoehorst@gmail.com
+                        <a href="mailto:immatthewkoehorst@gmail.com">immatthewkoehorst@gmail.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -476,7 +511,7 @@
                             <line x1="2" y1="12" x2="22" y2="12"/>
                             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
                         </svg>
-                        sixkingdoms.org
+                        <a href="https://sixkingdoms.org">sixkingdoms.org</a>
                     </div>
                     <div class="footer-contact-item">
                         <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -490,17 +525,17 @@
                 <div class="footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="https://facebook.com/sixkingdoms" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <a href="https://www.facebook.com/sixkingdomsecologicaldesign/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="https://instagram.com/sixkingdoms" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <a href="https://www.instagram.com/six_kingdoms/?__d=11" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
-                        <a href="https://linkedin.com/company/sixkingdoms" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a href="https://za.linkedin.com/in/matthew-koehorst-a0a76848" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
@@ -516,7 +551,7 @@
     </footer>
     
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/27123456789?text=Hi%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20EcoPools%20and%20ecological%20design%20services" 
+    <a href="https://wa.me/27766189722?text=Hi%2C%20I'm%20interested%20in%20finding%20out%20more%20about%20your%20EcoPools%20and%20ecological%20design%20services" 
        class="whatsapp-float" 
        target="_blank" 
        rel="noopener noreferrer"

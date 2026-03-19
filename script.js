@@ -90,6 +90,7 @@ if (contactForm) {
 
         const submitButton = this.querySelector('button[type="submit"]');
         const formStatus = this.querySelector('.form-status');
+        if (!formStatus) return;
 
         submitButton.classList.add('loading');
         submitButton.disabled = true;
@@ -165,7 +166,7 @@ if (scrollTopBtn) {
 }
 
 // Add active state to current page in navigation
-const currentPage = window.location.pathname.split('/').pop();
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-menu a').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');

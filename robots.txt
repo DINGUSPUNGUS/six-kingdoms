@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /blog-admin.html
+Disallow: /blog-post-template.html
 
 Sitemap: https://sixkingdoms.org/sitemap.xml
