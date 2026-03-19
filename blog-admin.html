@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
             min-height: 100vh;
         }
 
-        /* ── Top bar ── */
+        /* â”€â”€ Top bar â”€â”€ */
         .topbar {
             background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
             padding: 1rem 2rem;
@@ -87,7 +87,7 @@
             color: white;
         }
 
-        /* ── Layout ── */
+        /* â”€â”€ Layout â”€â”€ */
         .page {
             max-width: 1100px;
             margin: 2.5rem auto;
@@ -98,7 +98,7 @@
             align-items: start;
         }
 
-        /* ── Panel ── */
+        /* â”€â”€ Panel â”€â”€ */
         .panel {
             background: var(--white);
             border-radius: var(--radius);
@@ -128,7 +128,7 @@
             padding: 2rem;
         }
 
-        /* ── Form ── */
+        /* â”€â”€ Form â”€â”€ */
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -191,7 +191,7 @@
             line-height: 1.5;
         }
 
-        /* ── Formatting toolbar ── */
+        /* â”€â”€ Formatting toolbar â”€â”€ */
         .toolbar {
             display: flex;
             gap: 0.4rem;
@@ -218,7 +218,7 @@
             color: white;
         }
 
-        /* ── Image upload ── */
+        /* â”€â”€ Image upload â”€â”€ */
         .image-drop {
             border: 2px dashed var(--border);
             border-radius: 8px;
@@ -269,7 +269,7 @@
             margin-top: 0.8rem;
         }
 
-        /* ── Buttons ── */
+        /* â”€â”€ Buttons â”€â”€ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -326,14 +326,14 @@
             flex-shrink: 0;
         }
 
-        /* ── Divider ── */
+        /* â”€â”€ Divider â”€â”€ */
         .divider {
             border: none;
             border-top: 1px solid var(--border);
             margin: 1.5rem 0;
         }
 
-        /* ── Right panel: output ── */
+        /* â”€â”€ Right panel: output â”€â”€ */
         .output-panel .panel-body {
             padding: 1.5rem;
         }
@@ -383,7 +383,7 @@
 
         .copy-btn:hover { background: rgba(255,255,255,0.25); }
 
-        /* ── Status / success ── */
+        /* â”€â”€ Status / success â”€â”€ */
         .status-card {
             display: none;
             background: linear-gradient(135deg, #e8f8ef 0%, #f0faf4 100%);
@@ -411,7 +411,7 @@
 
         .status-card li strong { color: var(--text); }
 
-        /* ── Placeholder state ── */
+        /* â”€â”€ Placeholder state â”€â”€ */
         .output-placeholder {
             text-align: center;
             padding: 3rem 1rem;
@@ -434,7 +434,7 @@
         .output-content.show { display: block; }
         .output-placeholder.hide { display: none; }
 
-        /* ── Card preview ── */
+        /* â”€â”€ Card preview â”€â”€ */
         .card-preview {
             border: 1.5px solid var(--border);
             border-radius: 12px;
@@ -498,18 +498,18 @@
 
     <div class="topbar">
         <div class="topbar-brand">
-            <img src="images/six kingdoms logo.png" alt="Six Kingdoms">
+            <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms">
             <span class="topbar-title">Blog Post Builder</span>
         </div>
         <nav class="topbar-nav">
-            <a href="blog.html" class="topbar-link">← Back to Blog</a>
+            <a href="blog.html" class="topbar-link">â† Back to Blog</a>
             <a href="index.html" class="topbar-link">View Site</a>
         </nav>
     </div>
 
     <div class="page">
 
-        <!-- ── LEFT: Form ── -->
+        <!-- â”€â”€ LEFT: Form â”€â”€ -->
         <div>
             <div class="panel">
                 <div class="panel-header">
@@ -527,7 +527,7 @@
                         <div class="form-group">
                             <label for="post-category">Category <span class="required">*</span></label>
                             <select id="post-category">
-                                <option value="">Select a category…</option>
+                                <option value="">Select a categoryâ€¦</option>
                                 <option value="EcoPools">EcoPools</option>
                                 <option value="Ecological Design">Ecological Design</option>
                                 <option value="Land Management">Land Management</option>
@@ -564,11 +564,11 @@
                         <div class="toolbar" id="toolbar">
                             <button class="toolbar-btn" data-wrap="<h2>|</h2>" title="Heading 2">H2</button>
                             <button class="toolbar-btn" data-wrap="<h3>|</h3>" title="Heading 3">H3</button>
-                            <button class="toolbar-btn" data-wrap="<p>|</p>" title="Paragraph">¶ Para</button>
+                            <button class="toolbar-btn" data-wrap="<p>|</p>" title="Paragraph">Â¶ Para</button>
                             <button class="toolbar-btn" data-wrap="<strong>|</strong>" title="Bold"><strong>B</strong></button>
                             <button class="toolbar-btn" data-wrap="<em>|</em>" title="Italic"><em>I</em></button>
                             <button class="toolbar-btn" data-wrap="<blockquote>|</blockquote>" title="Blockquote">" Quote</button>
-                            <button class="toolbar-btn" data-list="ul" title="Bullet list">• List</button>
+                            <button class="toolbar-btn" data-list="ul" title="Bullet list">â€¢ List</button>
                             <button class="toolbar-btn" data-list="ol" title="Numbered list">1. List</button>
                         </div>
                         <textarea id="post-body" placeholder="Write your article here using HTML tags, or use the toolbar buttons above.&#10;&#10;Example:&#10;&lt;p&gt;Your opening paragraph goes here.&lt;/p&gt;&#10;&#10;&lt;h2&gt;A Section Heading&lt;/h2&gt;&#10;&#10;&lt;p&gt;More content here...&lt;/p&gt;"></textarea>
@@ -587,7 +587,7 @@
                                 <polyline points="21 15 16 10 5 21"/>
                             </svg>
                             <p><strong>Click to upload</strong> or drag &amp; drop</p>
-                            <p>JPG, PNG, WebP — recommended 1200×600px</p>
+                            <p>JPG, PNG, WebP â€” recommended 1200Ã—600px</p>
                         </div>
                         <img id="image-preview" class="image-preview" alt="Preview">
                     </div>
@@ -603,7 +603,7 @@
             </div>
         </div>
 
-        <!-- ── RIGHT: Output ── -->
+        <!-- â”€â”€ RIGHT: Output â”€â”€ -->
         <div>
             <div class="panel output-panel">
                 <div class="panel-header">
@@ -613,7 +613,7 @@
                 <div class="panel-body">
 
                     <div class="status-card" id="status-card">
-                        <h3>✓ Files ready — 3 steps to publish</h3>
+                        <h3>âœ“ Files ready â€” 3 steps to publish</h3>
                         <ol>
                             <li><strong>Download</strong> the post page file below</li>
                             <li><strong>Open blog.html</strong> and paste the card snippet at the top of the post grid</li>
@@ -650,7 +650,7 @@
 
                         <!-- Download post page -->
                         <div class="output-block">
-                            <div class="output-label">Step 1 — Download your post page</div>
+                            <div class="output-label">Step 1 â€” Download your post page</div>
                             <button class="btn btn-success btn-full" id="download-post-btn">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
@@ -664,7 +664,7 @@
 
                         <!-- Card snippet -->
                         <div class="output-block">
-                            <div class="output-label">Step 2 — Copy this card into blog.html</div>
+                            <div class="output-label">Step 2 â€” Copy this card into blog.html</div>
                             <div style="position:relative">
                                 <div class="output-code" id="card-snippet-code"></div>
                                 <button class="copy-btn" id="copy-card-btn">Copy</button>
@@ -673,7 +673,7 @@
                         </div>
 
                         <button class="btn btn-outline btn-full" id="reset-btn">
-                            ← Create Another Post
+                            â† Create Another Post
                         </button>
 
                     </div>
@@ -686,7 +686,7 @@
     <script>
     (function () {
 
-        /* ── Helpers ── */
+        /* â”€â”€ Helpers â”€â”€ */
         const $ = id => document.getElementById(id);
 
         // Format date as "12 March 2026"
@@ -705,14 +705,14 @@
                 .replace(/-+/g, '-');
         }
 
-        // Category → gradient background
+        // Category â†’ gradient background
         const GRADIENTS = {
             'EcoPools':          'background: linear-gradient(135deg, #1a4a6e 0%, #4A7C9E 100%)',
             'Ecological Design': 'background: linear-gradient(135deg, #2d5016 0%, #4a7c28 100%)',
             'Land Management':   'background: linear-gradient(135deg, #3a2d16 0%, #7c5a28 100%)',
         };
 
-        /* ── Toolbar buttons ── */
+        /* â”€â”€ Toolbar buttons â”€â”€ */
         document.getElementById('toolbar').addEventListener('click', function (e) {
             const btn = e.target.closest('.toolbar-btn');
             if (!btn) return;
@@ -736,7 +736,7 @@
             ta.focus();
         });
 
-        /* ── Image preview ── */
+        /* â”€â”€ Image preview â”€â”€ */
         let imageDataUrl = null;
         let imageFilename = null;
 
@@ -760,7 +760,7 @@
         drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
         drop.addEventListener('drop', () => drop.classList.remove('drag-over'));
 
-        /* ── Auto-slug from title ── */
+        /* â”€â”€ Auto-slug from title â”€â”€ */
         $('post-title').addEventListener('input', function () {
             const slugField = $('post-slug');
             // Only auto-fill if the user hasn't manually edited it
@@ -774,14 +774,14 @@
             this.value = toSlug(this.value);
         });
 
-        /* ── Set today's date as default ── */
+        /* â”€â”€ Set today's date as default â”€â”€ */
         const today = new Date();
         const yyyy = today.getFullYear();
         const mm = String(today.getMonth() + 1).padStart(2, '0');
         const dd = String(today.getDate()).padStart(2, '0');
         $('post-date').value = `${yyyy}-${mm}-${dd}`;
 
-        /* ── Generate ── */
+        /* â”€â”€ Generate â”€â”€ */
         $('generate-btn').addEventListener('click', generate);
 
         function generate() {
@@ -803,7 +803,7 @@
             if (!body)     errors.push('Article Content');
 
             if (errors.length) {
-                alert('Please fill in the following required fields:\n• ' + errors.join('\n• '));
+                alert('Please fill in the following required fields:\nâ€¢ ' + errors.join('\nâ€¢ '));
                 return;
             }
 
@@ -813,17 +813,17 @@
             const gradient      = GRADIENTS[category] || GRADIENTS['EcoPools'];
             const imageSrc      = imageDataUrl ? `images/${imageFilename}` : null;
 
-            // ── Build post page ──────────────────────────────────
+            // â”€â”€ Build post page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             const heroHtml = imageSrc
                 ? `<img src="${imageSrc}" alt="${escHtml(title)}" class="post-hero-image">`
                 : `<div class="post-hero-gradient" style="${gradient};"></div>`;
 
             const postHtml = buildPostPage({ title, category, dateFormatted, readtime, summary, body, slug, heroHtml, gradient });
 
-            // ── Build card snippet ───────────────────────────────
+            // â”€â”€ Build card snippet â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             const cardHtml = buildCardSnippet({ title, category, dateFormatted, readtime, summary, slug, gradient, imageSrc });
 
-            // ── Show output ──────────────────────────────────────
+            // â”€â”€ Show output â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
             $('output-placeholder').classList.add('hide');
             $('output-content').classList.add('show');
             $('status-card').classList.add('show');
@@ -831,8 +831,8 @@
             // Live preview
             $('preview-tag').textContent = category;
             $('preview-title').textContent = title;
-            $('preview-date').textContent = `${dateFormatted} — ${readtime} min read`;
-            $('preview-summary').textContent = summary.substring(0, 120) + (summary.length > 120 ? '…' : '');
+            $('preview-date').textContent = `${dateFormatted} â€” ${readtime} min read`;
+            $('preview-summary').textContent = summary.substring(0, 120) + (summary.length > 120 ? 'â€¦' : '');
 
             const previewBg = $('preview-image-bg');
             if (imageDataUrl) {
@@ -860,16 +860,16 @@
             $('output-content').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        /* ── Copy card snippet ── */
+        /* â”€â”€ Copy card snippet â”€â”€ */
         $('copy-card-btn').addEventListener('click', function () {
             const text = $('card-snippet-code').textContent;
             navigator.clipboard.writeText(text).then(() => {
-                this.textContent = '✓ Copied!';
+                this.textContent = 'âœ“ Copied!';
                 setTimeout(() => this.textContent = 'Copy', 1800);
             });
         });
 
-        /* ── Reset ── */
+        /* â”€â”€ Reset â”€â”€ */
         $('reset-btn').addEventListener('click', function () {
             $('output-content').classList.remove('show');
             $('output-placeholder').classList.remove('hide');
@@ -877,12 +877,12 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        /* ── Escape HTML for attribute values ── */
+        /* â”€â”€ Escape HTML for attribute values â”€â”€ */
         function escHtml(s) {
             return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
         }
 
-        /* ── Build card HTML snippet ── */
+        /* â”€â”€ Build card HTML snippet â”€â”€ */
         function buildCardSnippet({ title, category, dateFormatted, readtime, summary, slug, gradient, imageSrc }) {
             const bgStyle = imageSrc
                 ? `style="background-image: url('${imageSrc}');"`
@@ -902,7 +902,7 @@
 <!-- POST END -->`;
         }
 
-        /* ── Build full post page HTML ── */
+        /* â”€â”€ Build full post page HTML â”€â”€ */
         function buildPostPage({ title, category, dateFormatted, readtime, summary, body, slug, heroHtml, gradient }) {
             return `<!DOCTYPE html>
 <html lang="en">
@@ -977,7 +977,7 @@
         <div class="container">
             <div class="nav-brand">
                 <a href="index.html" aria-label="Six Kingdoms Home">
-                    <img src="images/six kingdoms logo.png" alt="Six Kingdoms Logo">
+                    <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms Logo">
                 </a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -1020,7 +1020,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <img src="images/six kingdoms logo.png" alt="Six Kingdoms" class="footer-logo">
+                    <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms" class="footer-logo">
                     <p>Natural pools, ecological design, and land stewardship &mdash; Garden Route, South Africa.</p>
                 </div>
                 <div class="footer-links">
@@ -1038,7 +1038,7 @@
                     <h4>Get In Touch</h4>
                     <div class="footer-contact-item">
                         <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        <a href="mailto:immatthewkoehorst@gmail.com">immatthewkoehorst@gmail.com</a>
+                        <a href="mailto:matthew@sixkingdoms.org">matthew@sixkingdoms.org</a>
                     </div>
                     <div class="footer-contact-item">
                         <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
@@ -1055,7 +1055,7 @@
                         <a href="https://www.facebook.com/sixkingdomsecologicaldesign/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
-                        <a href="https://www.instagram.com/six_kingdoms/?__d=11" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <a href="https://www.instagram.com/six_kingdoms/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
                         <a href="https://za.linkedin.com/in/matthew-koehorst-a0a76848" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

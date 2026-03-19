@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -135,7 +135,7 @@ h1, h2, h3, h4 {
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 500px;
+    min-height: 85vh;
 }
 
 /* Hero Background Slideshow */
@@ -168,7 +168,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(74, 124, 158, 0.4), rgba(90, 155, 196, 0.35));
+    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 
@@ -178,7 +178,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-bg-1 {
-    background-image: url('images/eco-pool-hero1.jpg');
+    background-image: url("images/sines-back-yard-dipping-pool.jpg");
 }
 
 .hero-bg-2 {
@@ -1167,6 +1167,58 @@ section {
     background: var(--white);
 }
 
+/* Projects intro synopsis block */
+.projects-intro-block {
+    background: linear-gradient(135deg, #f0f6fb 0%, #ffffff 100%);
+    padding: 3.5rem 0 2.5rem;
+    border-bottom: 1px solid rgba(74,124,158,0.1);
+}
+
+.projects-synopsis {
+    max-width: 800px;
+}
+
+.projects-synopsis p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+    margin-bottom: 1.1rem;
+}
+
+.projects-synopsis p:last-child {
+    margin-bottom: 0;
+}
+
+/* Projects page bottom CTA */
+.projects-cta {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.projects-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+
+.projects-cta p {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.projects-cta .btn-primary {
+    background: var(--white);
+    color: var(--primary-blue);
+}
+
+.projects-cta .btn-primary:hover {
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+}
+
 /* Content Section */
 .content-section {
     background: var(--white);
@@ -1176,6 +1228,18 @@ section {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 3.5rem;
+}
+
+/* Land management scope note */
+.scope-note {
+    margin-top: 2rem;
+    padding: 1.2rem 1.8rem;
+    background: #f7f9fb;
+    border-left: 4px solid var(--secondary-blue);
+    border-radius: 0 12px 12px 0;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--text-dark);
 }
 
 .content-main h2 {
@@ -1741,10 +1805,37 @@ textarea:focus-visible {
     line-height: 1.2;
 }
 
+.partnership-cert-name a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.partnership-cert-name a:hover {
+    color: var(--secondary-blue);
+}
+
 .partnership-cert-desc {
     font-size: 0.85rem;
     color: var(--text-light);
     line-height: 1.5;
+}
+
+/* ===== Pricing signal ===== */
+.pricing-signal {
+    background: #f7f9fb;
+    border-left: 4px solid var(--secondary-blue);
+    border-radius: 0 12px 12px 0;
+    padding: 1.2rem 1.8rem;
+    margin: 2.5rem 0;
+    max-width: 780px;
+}
+
+.pricing-signal p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 0.97rem;
+    line-height: 1.75;
 }
 
 /* ===== EcoPools Page — Testimonial ===== */
