@@ -102,7 +102,19 @@ function Sync-Copy {
     }
 
     if ($script:changed -gt 0) {
-        Write-Host "[$time] $($script:changed) section(s) updated.`n"
+        Write-Host "[$time] $($script:changed) section(s) updated — pushing to GitHub..." -ForegroundColor Yellow
+
+        Push-Location $Root
+        git add -A 2>&1 | Out-Null
+        git commit -m "Copy update from website-copy.md" 2>&1 | Out-Null
+        $pushResult = git push origin master 2>&1
+        Pop-Location
+
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "[$time] Live on website.`n" -ForegroundColor Green
+        } else {
+            Write-Host "[$time] Push failed: $pushResult`n" -ForegroundColor Red
+        }
     } else {
         Write-Host "[$time] No changes detected.`n"
     }
