@@ -5,31 +5,31 @@
 }
 
 :root {
-    --primary-blue: #2D7A5C;
-    --secondary-blue: #3A9B78;
-    --light-blue: #74C69D;
-    --accent-yellow: #C9A227;
-    --bright-yellow: #E0B84B;
-    --earth-blue: #1B4332;
-    --background: #F7FAF8;
+    --primary-blue: #33509d;
+    --secondary-blue: #47a3a2;
+    --light-blue: #7ab8d4;
+    --accent-yellow: #f2d922;
+    --bright-yellow: #f2d922;
+    --earth-blue: #1e3577;
+    --background: #faf9f5;
     --white: #ffffff;
-    --text-dark: #2C3E50;
-    --text-light: #5D6D7E;
-    --border-light: #D5DBDB;
+    --text-dark: #1b1b1b;
+    --text-light: #b0aea5;
+    --border-light: #e8e6dc;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
     color: var(--text-dark);
     line-height: 1.7;
     background-color: var(--background);
     background-image: 
-        radial-gradient(circle at 20% 50%, rgba(45, 122, 92, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(58, 155, 120, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(51, 80, 157, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(71, 163, 162, 0.03) 0%, transparent 50%);
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
     letter-spacing: 0.3px;
 }
@@ -45,12 +45,12 @@ h1, h2, h3, h4 {
     background: rgba(255, 255, 255, 0.95);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(45, 122, 92, 0.12);
+    box-shadow: 0 2px 20px rgba(51, 80, 157, 0.12);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(45, 122, 92, 0.15);
+    border-bottom: 1px solid rgba(51, 80, 157, 0.15);
 }
 
 .navbar .container {
@@ -112,7 +112,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-cta {
-    background: var(--secondary-blue);
+    background: var(--primary-blue);
     color: var(--white) !important;
     padding: 0.6rem 1.8rem;
     border-radius: 50px;
@@ -123,9 +123,9 @@ h1, h2, h3, h4 {
 }
 
 .nav-cta:hover {
-    background: var(--primary-blue);
+    background: var(--earth-blue);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(45, 122, 92, 0.4);
+    box-shadow: 0 5px 15px rgba(51, 80, 157, 0.4);
 }
 
 /* Hero Section with Waterfall Animation */
@@ -416,16 +416,18 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-    background: var(--accent-yellow);
-    color: var(--text-dark);
-    box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+    background: var(--primary-blue);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(51, 80, 157, 0.35);
     font-weight: 700;
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .btn-primary:hover {
-    background: var(--bright-yellow);
+    background: var(--earth-blue);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.6);
+    box-shadow: 0 8px 25px rgba(51, 80, 157, 0.5);
 }
 
 .btn-secondary {
@@ -506,7 +508,7 @@ section {
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 2px solid transparent;
-    box-shadow: 0 5px 20px rgba(45, 122, 92, 0.08);
+    box-shadow: 0 5px 20px rgba(51, 80, 157, 0.08);
     position: relative;
     overflow: hidden;
 }
@@ -530,7 +532,7 @@ section {
 .service-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: var(--light-blue);
-    box-shadow: 0 15px 40px rgba(45, 122, 92, 0.15);
+    box-shadow: 0 15px 40px rgba(51, 80, 157, 0.15);
 }
 
 .service-icon {
@@ -609,8 +611,8 @@ section {
     right: 0;
     height: 100%;
     background: 
-        radial-gradient(circle at 15% 20%, rgba(58, 155, 120, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(116, 198, 157, 0.03) 0%, transparent 40%);
+        radial-gradient(circle at 15% 20%, rgba(71, 163, 162, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(71, 163, 162, 0.03) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -627,14 +629,14 @@ section {
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(45, 122, 92, 0.1);
+    box-shadow: 0 8px 25px rgba(51, 80, 157, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(58, 155, 120, 0.1);
+    border: 1px solid rgba(71, 163, 162, 0.1);
 }
 
 .project-card:hover {
     transform: translateY(-12px) rotate(1deg);
-    box-shadow: 0 20px 50px rgba(45, 122, 92, 0.18);
+    box-shadow: 0 20px 50px rgba(51, 80, 157, 0.18);
 }
 
 .project-image {
@@ -694,7 +696,7 @@ section {
     letter-spacing: 0.6px;
     text-transform: uppercase;
     color: var(--secondary-blue);
-    background: rgba(58, 155, 120, 0.1);
+    background: rgba(71, 163, 162, 0.1);
     padding: 0.25rem 0.75rem;
     border-radius: 50px;
     margin-bottom: 0.5rem;
@@ -807,7 +809,7 @@ section {
     padding: 1.2rem;
     border: none;
     border-radius: 12px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
     font-size: 1rem;
     transition: all 0.3s ease;
     background: rgba(255,255,255,0.95);
@@ -827,10 +829,10 @@ section {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--earth-blue) 100%);
-    color: var(--white);
+    background: var(--accent-yellow);
+    color: var(--text-dark);
     padding: 3.5rem 20px 1.5rem;
-    border-top: 3px solid var(--accent-yellow);
+    border-top: 4px solid var(--primary-blue);
 }
 
 .footer-content {
@@ -839,18 +841,18 @@ section {
     gap: 2.5rem;
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .footer-logo {
     height: 60px;
     width: auto;
     margin-bottom: 1rem;
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .footer-about p {
-    opacity: 0.9;
+    opacity: 0.75;
     line-height: 1.7;
     margin-top: 0.5rem;
 }
@@ -859,7 +861,7 @@ section {
     margin-bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--accent-yellow);
+    color: var(--primary-blue);
 }
 
 .footer-links ul {
@@ -872,14 +874,14 @@ section {
 
 .footer-links a,
 .footer-contact p {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .footer-links a:hover {
-    color: var(--accent-yellow);
+    color: var(--primary-blue);
     transform: translateX(5px);
 }
 
@@ -893,15 +895,25 @@ section {
     align-items: center;
     gap: 0.65rem;
     margin-bottom: 0.6rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(0, 0, 0, 0.7);
     font-size: 0.95rem;
+}
+
+.footer-contact-item a {
+    color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-item a:hover {
+    color: var(--primary-blue);
 }
 
 .footer-icon {
     width: 15px;
     height: 15px;
     flex-shrink: 0;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .social-links {
@@ -912,18 +924,18 @@ section {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--text-dark);
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    background: var(--accent-yellow);
-    color: var(--primary-blue);
+    background: var(--primary-blue);
+    color: var(--white);
     transform: translateY(-3px) scale(1.1);
 }
 
@@ -935,7 +947,7 @@ section {
 .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
-    opacity: 0.8;
+    opacity: 0.65;
     font-size: 0.9rem;
 }
 
@@ -986,7 +998,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(45, 122, 92, 0.3);
+    box-shadow: 0 4px 15px rgba(51, 80, 157, 0.3);
     z-index: 998;
 }
 
@@ -998,7 +1010,7 @@ section {
 .scroll-top:hover {
     background: var(--secondary-blue);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(45, 122, 92, 0.4);
+    box-shadow: 0 6px 20px rgba(51, 80, 157, 0.4);
 }
 
 .scroll-top svg {
@@ -1022,7 +1034,7 @@ section {
     text-decoration: none;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(45, 122, 92, 0.08);
+    box-shadow: 0 5px 20px rgba(51, 80, 157, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: var(--white);
     display: block;
@@ -1030,7 +1042,7 @@ section {
 
 .blog-teaser-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(45, 122, 92, 0.15);
+    box-shadow: 0 15px 40px rgba(51, 80, 157, 0.15);
 }
 
 .blog-teaser-image {
@@ -1057,7 +1069,7 @@ section {
     font-size: 1rem;
     color: var(--text-dark);
     line-height: 1.45;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
     margin: 0;
 }
@@ -1096,7 +1108,7 @@ section {
 
 .faq-item:hover {
     border-color: var(--light-blue);
-    box-shadow: 0 5px 20px rgba(45, 122, 92, 0.1);
+    box-shadow: 0 5px 20px rgba(51, 80, 157, 0.1);
 }
 
 .faq-question {
@@ -1286,7 +1298,7 @@ section {
     padding: 2.5rem;
     border-radius: 20px;
     border-left: 5px solid var(--accent-yellow);
-    box-shadow: 0 5px 20px rgba(45, 122, 92, 0.08);
+    box-shadow: 0 5px 20px rgba(51, 80, 157, 0.08);
 }
 
 .sidebar-card h3 {
@@ -1476,7 +1488,7 @@ section {
 }
 
 .consent-notice {
-    background: linear-gradient(135deg, rgba(45, 122, 92, 0.05) 0%, rgba(58, 155, 120, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(51, 80, 157, 0.05) 0%, rgba(71, 163, 162, 0.05) 100%);
     padding: 2rem;
     border-radius: 15px;
     border: 2px solid var(--light-blue);
@@ -1677,14 +1689,14 @@ section {
     background: var(--white);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(45, 122, 92, 0.08);
+    box-shadow: 0 5px 20px rgba(51, 80, 157, 0.08);
     transition: all 0.3s ease;
     border-left: 4px solid var(--accent-yellow);
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(45, 122, 92, 0.15);
+    box-shadow: 0 15px 40px rgba(51, 80, 157, 0.15);
 }
 
 .testimonial-quote {
@@ -1798,7 +1810,7 @@ textarea:focus-visible {
 }
 
 .partnership-cert-name {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-blue);
@@ -2058,7 +2070,7 @@ textarea:focus-visible {
     border-radius: 16px;
     padding: 1.8rem 1.4rem;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(45, 122, 92, 0.08);
+    box-shadow: 0 4px 20px rgba(51, 80, 157, 0.08);
     border: 1px solid rgba(58, 155, 120, 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2070,7 +2082,7 @@ textarea:focus-visible {
 
 .stat-number {
     display: block;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 2.4rem;
     font-weight: 700;
     color: var(--primary-blue);
@@ -2113,7 +2125,7 @@ textarea:focus-visible {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.25s ease;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
 }
 
 .filter-btn:hover {
@@ -2167,7 +2179,7 @@ textarea:focus-visible {
     border-radius: 50px;
     font-size: 1rem;
     outline: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
 }
 
 .email-capture-form button {
@@ -2181,7 +2193,7 @@ textarea:focus-visible {
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.25s ease;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
 }
 
 .email-capture-form button:hover {
@@ -2221,7 +2233,7 @@ textarea:focus-visible {
     padding: 3rem;
     max-width: 400px;
     width: 100%;
-    box-shadow: 0 8px 40px rgba(45, 122, 92, 0.12);
+    box-shadow: 0 8px 40px rgba(51, 80, 157, 0.12);
     text-align: center;
 }
 
@@ -2243,7 +2255,7 @@ textarea:focus-visible {
     border-radius: 8px;
     font-size: 1rem;
     margin-bottom: 1rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lora', Georgia, serif;
     transition: border-color 0.2s;
 }
 
