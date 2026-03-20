@@ -103,10 +103,9 @@ I eat beans and then I make toots
 
 
 ## HOME > ABOUT PARAGRAPH 2
-It's a deliberately small practice. We work on a handful of projects at a time, carefully, with full attention. That's not a limitation — it's the point.
-
+I am a cheese man
 ## HOME > ABOUT PARAGRAPH 3
-Matthew is a certified partner of EcoPools Africa — the only internationally accredited natural pool technology provider in Sub-Saharan Africa — bringing over 30 years of water engineering expertise to every pool we build.
+the world is a broken and cold place
 
 ## HOME > STAT 1 — NUMBER
 10+

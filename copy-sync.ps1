@@ -1,6 +1,6 @@
-# copy-sync.ps1 — Six Kingdoms website copy watcher
+# copy-sync.ps1 -- Six Kingdoms website copy watcher
 #
-# Usage: Right-click → "Run with PowerShell"
+# Usage: Right-click -> "Run with PowerShell"
 #        Or from VS Code terminal: .\copy-sync.ps1
 #
 # Watches website-copy.md for changes and updates HTML files automatically.
@@ -19,16 +19,16 @@ $HtmlFiles = @(
     "knowing-your-land-stewardship.html"
 )
 
-# ── HTML entity decoder (so plain markdown text matches HTML anchor content) ──
+# HTML entity decoder (so plain markdown text matches HTML anchor content)
 function Decode-Html($str) {
-    $str = $str -replace '&mdash;',  '—'
-    $str = $str -replace '&ndash;',  '–'
-    $str = $str -replace '&middot;', '·'
-    $str = $str -replace '&rarr;',   '→'
-    $str = $str -replace '&larr;',   '←'
-    $str = $str -replace '&amp;',    '&'
-    $str = $str -replace '&lt;',     '<'
-    $str = $str -replace '&gt;',     '>'
+    $str = $str -replace '&mdash;',  '--'
+    $str = $str -replace '&ndash;',  '-'
+    $str = $str -replace '&middot;', [char]0x00B7
+    $str = $str -replace '&rarr;',   [char]0x2192
+    $str = $str -replace '&larr;',   [char]0x2190
+    $str = $str -replace '&amp;',    "&"
+    $str = $str -replace '&lt;',     "<"
+    $str = $str -replace '&gt;',     ">"
     $str = $str -replace '&quot;',   '"'
     $str = $str -replace '&rsquo;',  [char]0x2019
     $str = $str -replace '&lsquo;',  [char]0x2018
@@ -38,7 +38,7 @@ function Decode-Html($str) {
     return $str.Trim()
 }
 
-# ── Parse website-copy.md → hashtable {label → value} ──────────────────────
+# Parse website-copy.md -> hashtable {label -> value}
 function Parse-Copy($content) {
     $map    = @{}
     $blocks = [regex]::Split($content, '(?m)^(?=## )')
@@ -51,8 +51,8 @@ function Parse-Copy($content) {
         $rest  = @($lines[1..($lines.Length - 1)] |
                    Where-Object { $_ -notmatch '^#{1,2} ' -and $_.Trim() -ne '---' })
 
-        while ($rest.Count -gt 0 -and -not $rest[0].Trim())     { $rest = @($rest[1..($rest.Length - 1)]) }
-        while ($rest.Count -gt 0 -and -not $rest[-1].Trim())    { $rest = @($rest[0..($rest.Length - 2)]) }
+        while ($rest.Count -gt 0 -and -not $rest[0].Trim())  { $rest = @($rest[1..($rest.Length - 1)]) }
+        while ($rest.Count -gt 0 -and -not $rest[-1].Trim()) { $rest = @($rest[0..($rest.Length - 2)]) }
 
         if ($label -and $rest.Count -gt 0) {
             $map[$label] = ($rest -join "`n")
@@ -62,7 +62,7 @@ function Parse-Copy($content) {
     return $map
 }
 
-# ── Apply copy values to all HTML files ─────────────────────────────────────
+# Apply copy values to all HTML files
 function Sync-Copy {
     if (-not (Test-Path $CopyFile)) { Write-Host "website-copy.md not found."; return }
 
@@ -86,8 +86,8 @@ function Sync-Copy {
 
             if (-not $copy.ContainsKey($label)) { return $m.Value }
 
-            $next            = $copy[$label]
-            $currentDecoded  = Decode-Html $current
+            $next           = $copy[$label]
+            $currentDecoded = Decode-Html $current
 
             if ($next -eq $currentDecoded) { return $m.Value }
 
@@ -102,7 +102,7 @@ function Sync-Copy {
     }
 
     if ($script:changed -gt 0) {
-        Write-Host "[$time] $($script:changed) section(s) updated — pushing to GitHub..." -ForegroundColor Yellow
+        Write-Host "[$time] $($script:changed) section(s) updated -- pushing to GitHub..." -ForegroundColor Yellow
 
         Push-Location $Root
         git add -A 2>&1 | Out-Null
@@ -120,9 +120,9 @@ function Sync-Copy {
     }
 }
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# Main
 Write-Host ""
-Write-Host "  Six Kingdoms — Copy Sync" -ForegroundColor Cyan
+Write-Host "  Six Kingdoms -- Copy Sync" -ForegroundColor Cyan
 Write-Host "  Watching website-copy.md  (Ctrl+C to stop)" -ForegroundColor Cyan
 Write-Host ""
 
@@ -135,8 +135,8 @@ while ($true) {
     Start-Sleep -Milliseconds 400
     $currentWrite = (Get-Item $CopyFile).LastWriteTime
     if ($currentWrite -ne $lastWrite) {
-        $lastWrite       = $currentWrite
-        $script:changed  = 0
+        $lastWrite      = $currentWrite
+        $script:changed = 0
         Sync-Copy
     }
 }
