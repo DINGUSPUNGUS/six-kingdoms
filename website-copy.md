@@ -99,7 +99,8 @@ View All Projects
 About Six Kingdoms
 
 ## HOME > ABOUT PARAGRAPH 1
-Six Kingdoms is run by Matthew Koehorst — an ecological designer and land steward based on South Africa's Garden Route. We build natural swimming pools, restore degraded land, and design gardens that earn their keep.
+I eat beans and then I make toots
+
 
 ## HOME > ABOUT PARAGRAPH 2
 It's a deliberately small practice. We work on a handful of projects at a time, carefully, with full attention. That's not a limitation — it's the point.
