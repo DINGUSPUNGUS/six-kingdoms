@@ -1169,6 +1169,177 @@ section {
     text-align: center;
 }
 
+/* ─── EcoPools Photo Hero ─── */
+.ecopool-photo-hero {
+    position: relative;
+    min-height: 75vh;
+    background-image: url('images/eco-pool-hero1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.ecopool-photo-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.18) 0%,
+        rgba(0, 0, 0, 0.52) 100%);
+}
+
+.ecopool-photo-hero .hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    padding: 0 20px;
+}
+
+.ecopool-photo-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+}
+
+.ecopool-photo-hero p {
+    font-size: 1.25rem;
+    opacity: 0.92;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+    margin-bottom: 2rem;
+}
+
+.ecopool-photo-hero .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.ecopool-photo-hero .hero-scroll svg {
+    width: 28px;
+    height: 28px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── EcoPools Photo Gallery ─── */
+.pool-gallery-section {
+    padding: 0 0 1rem;
+}
+
+.pool-gallery {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 340px 260px;
+    gap: 8px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 2.5rem;
+}
+
+.pool-gallery-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.pool-gallery-item.gallery-main {
+    grid-row: 1 / 3;
+}
+
+.pool-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.pool-gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.pool-gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ─── Blog card image backgrounds ─── */
+.blog-card-image.ecopools-img {
+    background-image: url('images/eco-pool-hero1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card-image.fynbos-img {
+    background-image: url('images/fynbos-restoration-and-rain-garden-design.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card-image.land-img {
+    background-image: url('images/creating-a-vision-for-holistic-land-management.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card-image.img-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.blog-card-image {
+    position: relative;
+}
+
+/* ─── Blog card read link ─── */
+.blog-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    transition: gap 0.2s ease;
+}
+
+.blog-card-link:hover {
+    gap: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .pool-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px;
+    }
+    .pool-gallery-item.gallery-main {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    .ecopool-photo-hero {
+        min-height: 60vh;
+    }
+}
+
 .page-header h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
