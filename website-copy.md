@@ -35,7 +35,7 @@ Discover EcoPools
 What We Do
 
 ## HOME > SERVICES SECTION SUBTITLE
-Here's what keeps us busy.
+Heres how we add value
 
 ## HOME > SERVICE 1 — TITLE
 EcoPools
@@ -99,13 +99,13 @@ View All Projects
 About Six Kingdoms
 
 ## HOME > ABOUT PARAGRAPH 1
-I eat beans and then I make toots
+Holistic design  
 
 
 ## HOME > ABOUT PARAGRAPH 2
-I am a cheese man
+performed by robots
 ## HOME > ABOUT PARAGRAPH 3
-the world is a broken and cold place
+trying to control your brain.
 
 ## HOME > STAT 1 — NUMBER
 10+

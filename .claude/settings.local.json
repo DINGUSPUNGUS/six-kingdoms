@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node copy-sync.js)",
+      "Bash(where.exe node:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\PC\\\\Six Kingdoms Website repository\\\\six-kingdoms\\\\copy-sync.ps1\")"
+    ]
+  }
+}
