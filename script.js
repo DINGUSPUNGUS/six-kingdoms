@@ -20,24 +20,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Hero Background Slideshow
+    // Hero Slideshow — syncs background images, text content, and dot indicators
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-bg');
+    const textSlides = document.querySelectorAll('.hero-slide-content');
+    const indicators = document.querySelectorAll('.hero-indicator');
     const totalSlides = slides.length;
 
-    function showNextSlide() {
-        // Remove active class from current slide
+    function showSlide(index) {
         slides[currentSlide].classList.remove('active');
-        
-        // Move to next slide
-        currentSlide = (currentSlide + 1) % totalSlides;
-        
-        // Add active class to new slide
+        if (textSlides[currentSlide]) textSlides[currentSlide].classList.remove('active');
+        if (indicators[currentSlide]) indicators[currentSlide].classList.remove('active');
+
+        currentSlide = index;
+
         slides[currentSlide].classList.add('active');
+        if (textSlides[currentSlide]) textSlides[currentSlide].classList.add('active');
+        if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
     }
 
     if (slides.length > 0) {
-        setInterval(showNextSlide, 4000);
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(heroInterval);
+                showSlide(i);
+                heroInterval = setInterval(() => showSlide((currentSlide + 1) % totalSlides), 5000);
+            });
+        });
+        var heroInterval = setInterval(() => showSlide((currentSlide + 1) % totalSlides), 5000);
     }
     
     // Update current year in footer

@@ -131,11 +131,14 @@ h1, h2, h3, h4 {
 /* Hero Section with Waterfall Animation */
 .hero {
     color: var(--white);
-    padding: 140px 20px;
+    padding: 140px 20px 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 85vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Hero Background Slideshow */
@@ -178,15 +181,15 @@ h1, h2, h3, h4 {
 }
 
 .hero-bg-1 {
-    background-image: url("images/sines-back-yard-dipping-pool.jpg");
+    background-image: url('images/eco-pool-hero1.jpg');
 }
 
 .hero-bg-2 {
-    background-image: url('images/eco-pool-hero2.jpg');
+    background-image: url('images/fynbos-restoration-and-rain-garden-design.jpg');
 }
 
 .hero-bg-3 {
-    background-image: url('images/eco-pool-hero3.jpg');
+    background-image: url('images/creating-a-vision-for-holistic-land-management.jpg');
 }
 
 /* Waterfall Animation Effect */
@@ -368,6 +371,85 @@ h1, h2, h3, h4 {
     z-index: 10;
     max-width: 850px;
     margin: 0 auto;
+}
+
+/* Hero Text Slides */
+.hero-text-slides {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 360px;
+}
+
+.hero-slide-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    pointer-events: none;
+}
+
+.hero-slide-content.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hero-slide-content .hero-logo {
+    margin-bottom: 1.5rem;
+}
+
+.hero-slide-content .hero-logo img {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+}
+
+.hero-service-label {
+    display: inline-block;
+    background: var(--accent-yellow);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    padding: 0.4rem 1.4rem;
+    border-radius: 50px;
+    margin-bottom: 1.4rem;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Hero Indicators (dots) */
+.hero-indicators {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.75rem;
+    z-index: 20;
+}
+
+.hero-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-indicator.active {
+    background: white;
+    border-color: white;
 }
 
 .hero-logo {
