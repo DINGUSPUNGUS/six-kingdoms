@@ -7,7 +7,24 @@
     <meta name="robots" content="noindex, nofollow">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="theme-color" content="#4A7C9E">
+    <meta name="theme-color" content="#2D7A5C">
+
+    <script>
+        // Simple client-side password gate
+        // Change "sixkingdoms2024" below to your own password
+        (function() {
+            var stored = sessionStorage.getItem('sk_admin_auth');
+            if (stored !== 'granted') {
+                var pw = prompt('Six Kingdoms Admin — enter password:');
+                if (pw !== 'sixkingdoms2024') {
+                    document.write('<style>body{display:none}</style>');
+                    document.location.replace('index.html');
+                } else {
+                    sessionStorage.setItem('sk_admin_auth', 'granted');
+                }
+            }
+        })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

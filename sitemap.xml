@@ -31,6 +31,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://sixkingdoms.org/contact.html</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://sixkingdoms.org/privacy.html</loc>
         <lastmod>2026-03-12</lastmod>
         <changefreq>yearly</changefreq>

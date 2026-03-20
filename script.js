@@ -172,3 +172,22 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
         link.classList.add('active');
     }
 });
+
+// Project filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+if (filterButtons.length > 0) {
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            document.querySelectorAll('.projects-grid .project-card').forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+}
