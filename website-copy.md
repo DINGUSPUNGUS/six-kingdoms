@@ -41,7 +41,7 @@ Here's what keeps us busy.
 EcoPools
 
 ## HOME > SERVICE 1 — BODY
-The water is alive. No chlorine, no chemicals — plants and biology keep it clear. Honestly one of the best things we get to build.
+BACON AND CHEESE
 
 ## HOME > SERVICE 1 — LINK
 Explore EcoPools →
