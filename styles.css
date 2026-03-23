@@ -251,15 +251,6 @@ h1, h2, h3, h4 {
     }
 }
 
-@keyframes waterfallFlow {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 20px;
-    }
-}
-
 /* Floating Particles */
 .floating-particles {
     position: absolute;
@@ -895,6 +886,16 @@ section {
     margin-bottom: 0.6rem;
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.95rem;
+}
+
+.footer-contact-item a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-item a:hover {
+    color: var(--accent-yellow);
 }
 
 .footer-icon {

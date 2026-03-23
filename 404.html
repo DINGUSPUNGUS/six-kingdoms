@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Not Found | Six Kingdoms</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#4A7C9E">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        .error-page {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 20px;
+        }
+        .error-page-inner {
+            max-width: 520px;
+        }
+        .error-code {
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(5rem, 15vw, 9rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .error-page h1 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: var(--primary-blue);
+            margin: 0 0 1.2rem;
+        }
+        .error-page p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" aria-label="Six Kingdoms Home">
+                    <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms Logo">
+                </a>
+            </div>
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ecopools.html">EcoPools</a></li>
+                <li><a href="projects.html">Ecological Design</a></li>
+                <li><a href="land-management.html">Land Management</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="error-page" id="main-content">
+        <div class="error-page-inner">
+            <p class="error-code">404</p>
+            <h1>Page Not Found</h1>
+            <p>This page has wandered off into the fynbos. Try one of the links below, or head back to the homepage.</p>
+            <div class="error-links">
+                <a href="index.html" class="btn-primary">Back to Home</a>
+                <a href="index.html#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms" class="footer-logo" loading="lazy">
+                    <p>Natural pools, ecological design, and land stewardship &mdash; Garden Route, South Africa.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ecopools.html">EcoPools</a></li>
+                        <li><a href="projects.html">Ecological Design</a></li>
+                        <li><a href="land-management.html">Land Management</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <a href="mailto:matthew@sixkingdoms.org">matthew@sixkingdoms.org</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Garden Route, South Africa
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Six Kingdoms. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

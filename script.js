@@ -115,7 +115,7 @@ if (contactForm) {
                 formStatus.className = 'form-status error';
             }
         } catch {
-            formStatus.textContent = 'Could not send your message. Please email immatthewkoehorst@gmail.com directly.';
+            formStatus.textContent = 'Could not send your message. Please email matthew@sixkingdoms.org directly.';
             formStatus.className = 'form-status error';
         } finally {
             submitButton.classList.remove('loading');

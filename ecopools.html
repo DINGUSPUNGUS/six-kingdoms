@@ -28,7 +28,9 @@
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="theme-color" content="#4A7C9E">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
 
     <!-- Structured Data -->
@@ -129,8 +131,6 @@
       ]
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 </head>
@@ -144,7 +144,7 @@
                     <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms Logo">
                 </a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -322,11 +322,11 @@
                     <input type="hidden" name="page" value="EcoPools Page">
                     <div class="form-group">
                         <label for="enquiry-name">Your Name</label>
-                        <input type="text" id="enquiry-name" name="name" placeholder="Your name" required autocomplete="name">
+                        <input type="text" id="enquiry-name" name="name" placeholder="Your name" required aria-required="true" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="enquiry-email">Email Address</label>
-                        <input type="email" id="enquiry-email" name="email" placeholder="your@email.com" required autocomplete="email">
+                        <input type="email" id="enquiry-email" name="email" placeholder="your@email.com" required aria-required="true" autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="enquiry-phone">Phone <span class="label-optional">(optional)</span></label>
@@ -334,7 +334,7 @@
                     </div>
                     <div class="form-group">
                         <label for="enquiry-message">Tell us about your project</label>
-                        <textarea id="enquiry-message" name="message" placeholder="Your location (Knysna, Plettenberg Bay, George?), rough size, new build or conversion..." rows="5" required></textarea>
+                        <textarea id="enquiry-message" name="message" placeholder="Your location (Knysna, Plettenberg Bay, George?), rough size, new build or conversion..." rows="5" required aria-required="true"></textarea>
                     </div>
                     <button type="submit" class="btn-primary">
                         <span class="btn-text">Send Enquiry</span>
@@ -435,7 +435,7 @@
     </a>
 
     <!-- Scroll to top -->
-    <button class="scroll-top" aria-label="Back to top">
+    <button type="button" class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
