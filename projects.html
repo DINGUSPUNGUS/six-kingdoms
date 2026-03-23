@@ -26,13 +26,13 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="theme-color" content="#4A7C9E">
+    <meta name="theme-color" content="#36669e">
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -62,7 +62,7 @@
                     <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms Logo">
                 </a>
             </div>
-            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -73,8 +73,7 @@
                 <li><a href="projects.html" class="active" aria-current="page">Ecological Design</a></li>
                 <li><a href="land-management.html">Land Management</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="plan.html">Plan Your Project</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -100,18 +99,25 @@
         <div class="container">
             <p class="section-intro">A mix of what we do &mdash; pools, land, food gardens, and a couple of workshops that turned into something bigger.</p>
 
+            <div class="project-filters" role="group" aria-label="Filter projects by category">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="EcoPools">EcoPools</button>
+                <button class="filter-btn" data-filter="Ecological Design">Ecological Design</button>
+                <button class="filter-btn" data-filter="Land Management">Land Management</button>
+            </div>
+
             <div class="projects-grid">
-                <div class="project-card" id="fynbos">
+                <div class="project-card" id="fynbos" data-category="Ecological Design">
                     <div class="project-image"><img src="images/fynbos-restoration-and-rain-garden-design.jpg" alt="Fynbos restoration and rain garden design, Plettenberg Bay, Garden Route — Six Kingdoms" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Ecological Design</span>
                         <h3>Fynbos Restoration &amp; Rain Garden Design</h3>
                         <p>A unique site near Plettenberg Bay &mdash; restoring fynbos and integrating rain garden design into a living, working landscape.</p>
-                        <a href="fynbos-restoration-reading-a-landscape.html" class="project-link">Read more &rarr;</a>
+                        <a href="blog.html" class="project-link">Read more &rarr;</a>
                     </div>
                 </div>
 
-                <div class="project-card" id="vision">
+                <div class="project-card" id="vision" data-category="Land Management">
                     <div class="project-image"><img src="images/creating-a-vision-for-holistic-land-management.jpg" alt="Creating a holistic land management vision, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Land Management</span>
@@ -121,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" id="ecosunergy">
+                <div class="project-card" id="ecosunergy" data-category="Ecological Design">
                     <div class="project-image"><img src="images/a-practical-sustainability-workshop-with-ecosunergy.jpg" alt="Practical sustainability workshop with Ecosunergy, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Ecological Design</span>
@@ -131,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="EcoPools">
                     <div class="project-image"><img src="images/sines-back-yard-dipping-pool.jpg" alt="Sine's back yard natural dipping pool, Knysna Garden Route — EcoPool design by Six Kingdoms" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">EcoPools</span>
@@ -141,7 +147,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Land Management">
                     <div class="project-image"><img src="images/greenpops-forests-for-life-program.jpg" alt="Greenpop Forests For Life reforestation and land stewardship program — Six Kingdoms, Garden Route" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Land Management</span>
@@ -151,17 +157,17 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Ecological Design">
                     <div class="project-image"><img src="images/clayton-and-lisas-permaculture-orchard.jpg" alt="Clayton and Lisa's food forest and permaculture orchard, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Ecological Design</span>
                         <h3>Clayton &amp; Lisa's Food Forest Orchard</h3>
                         <p>A small food forest orchard on a Garden Route property &mdash; fruiting trees, supporting plants, medicinal herbs, and edible berries, installed in 2019.</p>
-                        <a href="index.html#contact" class="project-link">Enquire about a design &rarr;</a>
+                        <a href="contact.html" class="project-link">Enquire about a design &rarr;</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Land Management">
                     <div class="project-image"><img src="images/salt-river-invasive-plant-clearing.jpg" alt="Salt River invasive alien plant clearing, Cape Town — Six Kingdoms land management" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Land Management</span>
@@ -171,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Land Management">
                     <div class="project-image"><img src="images/diepklowe-regenerative-farm.jpg" alt="Diepklowe regenerative farm — Six Kingdoms regenerative agriculture and land management" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Land Management</span>
@@ -181,23 +187,23 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Ecological Design">
                     <div class="project-image"><img src="images/wilderness-biodiversity-corridor.jpg" alt="Wilderness biodiversity corridor habitat restoration, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Ecological Design</span>
                         <h3>Wilderness Biodiversity Corridor</h3>
                         <p>A landscape-scale ecological design project connecting fragmented habitat patches along the Garden Route &mdash; enabling wildlife movement and native plant regeneration.</p>
-                        <a href="index.html#contact" class="project-link">Enquire about a design &rarr;</a>
+                        <a href="contact.html" class="project-link">Enquire about a design &rarr;</a>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="Ecological Design">
                     <div class="project-image"><img src="images/edible-food-forest-workshop.jpg" alt="Edible food forest design workshop, Garden Route — Six Kingdoms ecological design" loading="lazy" width="600" height="260"></div>
                     <div class="project-content">
                         <span class="project-tag">Ecological Design</span>
                         <h3>Edible Food Forest Workshop</h3>
                         <p>A hands-on workshop introducing participants to food forest design &mdash; layering edible trees, shrubs, herbs, and ground covers into a productive, low-maintenance system.</p>
-                        <a href="index.html#contact" class="project-link">Enquire about a workshop &rarr;</a>
+                        <a href="contact.html" class="project-link">Enquire about a workshop &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -208,7 +214,7 @@
         <div class="container">
             <h2>Interested in something similar?</h2>
             <p>Tell us about your site and what you&rsquo;re hoping for.</p>
-            <a href="index.html#contact" class="btn-primary">Get in Touch</a>
+            <a href="contact.html" class="btn-primary">Get in Touch</a>
         </div>
     </section>
 
@@ -297,12 +303,21 @@
     </a>
 
     <!-- Scroll to top -->
-    <button type="button" class="scroll-top" aria-label="Back to top">
+    <button class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
     <script src="script.js"></script>
+
+    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html>

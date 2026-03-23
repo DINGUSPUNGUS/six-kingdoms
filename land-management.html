@@ -26,13 +26,13 @@
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="theme-color" content="#4A7C9E">
+    <meta name="theme-color" content="#36669e">
     
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -76,7 +76,7 @@
                     <img src="images/six-kingdoms-logo.png" alt="Six Kingdoms Logo">
                 </a>
             </div>
-            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
@@ -87,8 +87,7 @@
                 <li><a href="projects.html">Ecological Design</a></li>
                 <li><a href="land-management.html" class="active" aria-current="page">Land Management</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="plan.html">Plan Your Project</a></li>
-                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -105,7 +104,7 @@
             <div class="content-grid">
                 <div class="content-main">
                     <h2>Our Approach to Land Management</h2>
-                    <p>Most land management problems on the Garden Route follow the same pattern: invasive species moving in, soils getting compacted, water running off instead of soaking in, biodiversity quietly disappearing. We work with landowners across Knysna, Plettenberg Bay, George, Wilderness, and the surrounding Western Cape to turn that around &mdash; practically, not theoretically.</p>
+                    <p><!-- [[LAND MANAGEMENT > APPROACH PARAGRAPH]] -->Most land management problems on the Garden Route follow the same pattern: invasive species moving in, soils getting compacted, water running off instead of soaking in, biodiversity quietly disappearing. We work with landowners across Knysna, Plettenberg Bay, George, Wilderness, and the surrounding Western Cape to turn that around — practically, not theoretically.<!-- [[/]] --></p>
 
                     <h3>Services We Offer</h3>
                     <ul class="service-list">
@@ -118,10 +117,10 @@
                     </ul>
 
                     <h3>Getting to Know Your Land</h3>
-                    <p>The people who get the best results from land restoration are usually the ones who become genuinely interested in their own land &mdash; who start noticing things, asking questions, and wanting to understand what's happening. Part of what we do is help that happen. Whether you have a fynbos smallholding near Knysna, a coastal property outside Plettenberg Bay, or a larger farm on the Garden Route, we work out a realistic plan together rather than handing you a document.</p>
+                    <p><!-- [[LAND MANAGEMENT > GETTING TO KNOW PARAGRAPH]] -->The people who get the best results from land restoration are usually the ones who become genuinely interested in their own land — who start noticing things, asking questions, and wanting to understand what's happening. Part of what we do is help that happen. Whether you have a fynbos smallholding near Knysna, a coastal property outside Plettenberg Bay, or a larger farm on the Garden Route, we work out a realistic plan together rather than handing you a document.<!-- [[/]] --></p>
 
                     <h3>Long-term Stewardship</h3>
-                    <p>Your land will keep changing, and what made sense in year one won't necessarily be the right approach in year three. We stay involved at whatever level works for you &mdash; some clients want quarterly check-ins, others want to take the wheel early. Either way, we're not trying to make ourselves indispensable.</p>
+                    <p><!-- [[LAND MANAGEMENT > STEWARDSHIP PARAGRAPH]] -->Your land will keep changing, and what made sense in year one won't necessarily be the right approach in year three. We stay involved at whatever level works for you — some clients want quarterly check-ins, others want to take the wheel early. Either way, we're not trying to make ourselves indispensable.<!-- [[/]] --></p>
                 </div>
 
                 <div class="content-sidebar">
@@ -139,8 +138,8 @@
 
                     <div class="sidebar-card">
                         <h3>Start a Conversation</h3>
-                        <p>Have a look around your place and then give us a call. Sometimes a conversation is all it takes to work out what needs doing.</p>
-                        <a href="index.html#contact" class="btn-primary">Contact Us</a>
+                        <p><!-- [[LAND MANAGEMENT > SIDEBAR CTA BODY]] -->Have a look around your place and then give us a call. Sometimes a conversation is all it takes to work out what needs doing.<!-- [[/]] --></p>
+                        <a href="contact.html" class="btn-primary">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -276,12 +275,21 @@
     </a>
 
     <!-- Scroll to top -->
-    <button type="button" class="scroll-top" aria-label="Back to top">
+    <button class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
 
     <script src="script.js"></script>
+
+    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html>
