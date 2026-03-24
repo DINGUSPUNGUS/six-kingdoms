@@ -6,281 +6,1000 @@
     <meta name="description" content="Plan your EcoPool or ecological garden on the Garden Route. Use our free interactive tools — project planner, cost calculator, land checklist, and indigenous plant finder.">
     <meta name="keywords" content="EcoPool planner, garden planner, indigenous plants Garden Route, natural pool cost calculator, land management checklist, Six Kingdoms">
     <meta name="author" content="Six Kingdoms">
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sixkingdoms.org/plan.html">
     <meta property="og:title" content="Plan Your Project | Six Kingdoms">
     <meta property="og:description" content="Interactive tools to help you plan an EcoPool, ecological garden, or land restoration project on the Garden Route.">
     <meta property="og:image" content="https://sixkingdoms.org/images/six-kingdoms-logo.png">
-
     <title>Plan Your Project | Six Kingdoms | Garden Route</title>
     <link rel="canonical" href="https://sixkingdoms.org/plan.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="theme-color" content="#4A7C9E">
-
+    <meta name="theme-color" content="#36669e">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        /* ── Plan page base ── */
+        /* Plan page specific styles */
         .plan-hero {
-            background: linear-gradient(135deg, #2d5a78 0%, #4A7C9E 50%, #5A9BC4 100%);
+            background: linear-gradient(135deg, #2d5a78 0%, #36669e 50%, #47a3a2 100%);
             color: white;
             padding: 4rem 0 3rem;
             text-align: center;
         }
-        .plan-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: white; margin-bottom: 0.8rem; }
-        .plan-hero p { font-size: 1.1rem; opacity: 0.88; max-width: 560px; margin: 0 auto 2rem; }
+        .plan-hero h1 { 
+            font-size: clamp(1.8rem, 4vw, 2.8rem); 
+            color: white; 
+            margin-bottom: 0.8rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .plan-hero p { 
+            font-size: 1.1rem; 
+            opacity: 0.92; 
+            max-width: 620px; 
+            margin: 0 auto 2rem;
+            font-family: 'Lora', serif;
+        }
 
         .tool-nav {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         .tool-nav-btn {
             background: rgba(255,255,255,0.18);
             border: 1.5px solid rgba(255,255,255,0.35);
             color: white;
-            padding: 0.55rem 1.3rem;
+            padding: 0.6rem 1.4rem;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.2s;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
-        .tool-nav-btn:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        .tool-nav-btn:hover { 
+            background: rgba(255,255,255,0.3); 
+            transform: translateY(-2px); 
+        }
 
-        /* ── Shared tool section ── */
+        /* Tool sections */
         .tool-section {
-            padding: 4rem 0;
-            border-bottom: 1px solid rgba(74,124,158,0.1);
+            padding: 4.5rem 0;
+            border-bottom: 1px solid rgba(54,102,158,0.1);
         }
-        .tool-section:last-of-type { border-bottom: none; }
-        .tool-section:nth-child(even) { background: rgba(74,124,158,0.03); }
+        .tool-section:nth-child(even) { 
+            background: rgba(54,102,158,0.025); 
+        }
+        .tool-section:last-of-type { 
+            border-bottom: none; 
+        }
 
         .tool-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
-        .tool-emoji {
-            font-size: 2.8rem;
-            display: block;
-            margin-bottom: 0.6rem;
-            line-height: 1;
+        .tool-icon-circle {
+            width: 52px;
+            height: 52px;
+            background: rgba(54,102,158,0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .tool-icon-circle svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-blue);
         }
         .tool-header h2 {
-            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             color: var(--primary-blue);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.7rem;
+            font-family: 'Poppins', sans-serif;
         }
         .tool-header p {
             color: var(--text-light);
-            max-width: 540px;
+            max-width: 580px;
             margin: 0 auto;
-            font-size: 0.98rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
-        /* ── Pill choice buttons ── */
-        .pill-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
-            margin: 1rem 0 1.5rem;
-        }
-        .pill {
-            padding: 0.55rem 1.2rem;
+        /* Card buttons */
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white !important;
+            border: none;
+            padding: 0.75rem 2rem;
             border-radius: 50px;
-            border: 2px solid rgba(74,124,158,0.3);
-            background: white;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.95rem;
             cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            display: inline-block;
             transition: all 0.2s;
-            font-family: 'Open Sans', sans-serif;
-            user-select: none;
+            box-shadow: 0 4px 14px rgba(54,102,158,0.3);
         }
-        .pill:hover { border-color: var(--secondary-blue); color: var(--secondary-blue); }
-        .pill.selected {
+        .btn-primary:hover {
+            background: #2d5a78;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 0.65rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;  
+        }
+
+        /* ═══════════════════════════════════════
+           TOOL 1 — Garden Bed Planner
+        ═══════════════════════════════════════ */
+        .planner-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(54,102,158,0.1);
+            border: 1px solid rgba(54,102,158,0.12);
+            max-width: 1140px;
+            margin: 0 auto;
+            height: 700px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .planner-sidebar {
+            width: 300px;
+            flex-shrink: 0;
+            background: #fafbfc;
+            border-right: 1px solid rgba(54,102,158,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .planner-main {
+            flex: 1;
+            overflow-y: auto;
+            background: white;
+        }
+
+        /* Sidebar sections */
+        .sb-header {
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(54,102,158,0.15);
+        }
+        .sb-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        .sb-sub {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .sb-section {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid rgba(54,102,158,0.1);
+        }
+        .sb-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Month pills */
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+        }
+        .mp {
+            background: white;
+            border: 1px solid rgba(54,102,158,0.2);
+            color: var(--text-light);
+            font-size: 0.64rem;
+            padding: 0.3rem 0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Lora', serif;
+            text-align: center;
+            transition: all 0.15s;
+        }
+        .mp:hover {
+            border-color: var(--secondary-blue);
+            color: var(--primary-blue);
+        }
+        .mp.active {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .sb-search {
+            width: 100%;
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.2);
+            color: var(--text-dark);
+            padding: 0.45rem 0.7rem;
+            font-family: 'Lora', serif;
+            font-size: 0.88rem;
+            border-radius: 6px;
+            outline: none;
+            margin-bottom: 0.6rem;
+        }
+        .sb-search:focus {
+            border-color: var(--secondary-blue);
+        }
+        .sb-search::placeholder {
+            color: var(--text-light);
+        }
+
+        .frow {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 0.7rem;
+            flex-wrap: wrap;
+        }
+        .fb {
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.2);
+            color: var(--text-light);
+            font-size: 0.64rem;
+            padding: 0.22rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.03em;
+            transition: all 0.15s;
+            font-weight: 600;
+        }
+        .fb:hover, .fb.on {
             background: var(--primary-blue);
             border-color: var(--primary-blue);
             color: white;
-            transform: scale(1.04);
         }
 
-        /* ── Wizard (Tool 1) ── */
+        /* Veg list */
+        .veg-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 1.2rem 1.2rem;
+        }
+        .veg-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 0.6rem;
+        }
+        .vc {
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.15);
+            border-radius: 6px;
+            padding: 0.55rem 0.7rem;
+            cursor: grab;
+            transition: all 0.15s;
+            user-select: none;
+            position: relative;
+        }
+        .vc:hover {
+            background: rgba(54,102,158,0.03);
+            border-color: var(--secondary-blue);
+        }
+        .vc.sel {
+            border-color: var(--primary-blue);
+            background: rgba(54,102,158,0.08);
+        }
+        .vc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .vc-name {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            line-height: 1.3;
+            font-family: 'Lora', serif;
+        }
+        .vc.in-season .vc-name {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .vc-cat-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-right: 6px;
+        }
+        .vc-chips {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 0.35rem;
+        }
+        .chip {
+            font-size: 0.6rem;
+            color: var(--text-light);
+            background: rgba(54,102,158,0.05);
+            border: 1px solid rgba(54,102,158,0.1);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main planner area */
+        .main-inner {
+            padding: 1.5rem;
+        }
+        .main-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        .top-btns {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-add {
+            background: rgba(54,102,158,0.1);
+            border: 1.5px solid rgba(54,102,158,0.3);
+            color: var(--primary-blue);
+            font-size: 0.75rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.15s;
+            font-weight: 600;
+        }
+        .btn-add:hover {
+            background: rgba(54,102,158,0.2);
+        }
+        .btn-danger {
+            background: none;
+            border: 1.5px solid rgba(220,38,38,0.3);
+            color: #dc2626;
+            font-size: 0.75rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.15s;
+            font-weight: 600;
+        }
+        .btn-danger:hover {
+            background: rgba(220,38,38,0.1);
+        }
+
+        /* Beds */
+        .beds-area {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .bed-wrap {
+            background: #fafbfc;
+            border: 1.5px solid rgba(54,102,158,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .bed-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1.1rem;
+            background: rgba(54,102,158,0.05);
+            border-bottom: 1.5px solid rgba(54,102,158,0.1);
+            flex-wrap: wrap;
+        }
+        .bed-name-input {
+            background: transparent;
+            border: none;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            outline: none;
+            flex: 1;
+            min-width: 120px;
+        }
+        .bed-dims {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .dim-label {
+            font-size: 0.64rem;
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+            font-family: 'Poppins', sans-serif;
+        }
+        .dim-input {
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.2);
+            color: var(--text-dark);
+            font-family: 'Lora', serif;
+            font-size: 0.8rem;
+            width: 54px;
+            padding: 0.25rem 0.45rem;
+            border-radius: 4px;
+            outline: none;
+            text-align: center;
+        }
+        .dim-input:focus {
+            border-color: var(--secondary-blue);
+        }
+        .bed-stats {
+            font-size: 0.64rem;
+            color: var(--text-light);
+            margin-left: auto;
+            white-space: nowrap;
+            font-family: 'Lora', serif;
+        }
+        .bed-btns {
+            display: flex;
+            gap: 0.4rem;
+        }
+        .bed-action {
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.2);
+            color: var(--text-light);
+            font-size: 0.64rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.15s;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+        .bed-action:hover {
+            border-color: var(--secondary-blue);
+            color: var(--primary-blue);
+        }
+        .bed-action.danger {
+            border-color: rgba(220,38,38,0.25);
+            color: #dc2626;
+        }
+        .bed-action.danger:hover {
+            background: rgba(220,38,38,0.08);
+        }
+
+        .bed-grid-area {
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .bed-grid {
+            display: grid;
+            gap: 2px;
+        }
+        .bcell {
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.12s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .bcell.empty {
+            background: rgba(54,102,158,0.05);
+            border: 1.5px solid rgba(54,102,158,0.12);
+        }
+        .bcell.empty:hover {
+            background: rgba(54,102,158,0.12);
+            border-color: var(--secondary-blue);
+        }
+        .bcell.drop-ok {
+            background: rgba(71,163,162,0.2) !important;
+            border: 1.5px solid var(--secondary-blue) !important;
+        }
+        .bcell.filled {
+            border: 1.5px solid rgba(0,0,0,0.15);
+        }
+
+        .bed-planted {
+            padding: 0 1rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .ptag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border: 1.5px solid rgba(54,102,158,0.15);
+            border-radius: 20px;
+            padding: 0.25rem 0.7rem 0.25rem 0.5rem;
+            font-size: 0.72rem;
+        }
+        .ptag-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .ptag-name {
+            color: var(--text-dark);
+            font-family: 'Lora', serif;
+        }
+        .ptag-count {
+            color: var(--text-light);
+            font-size: 0.64rem;
+        }
+        .ptag-x {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0 0 0 3px;
+            line-height: 1;
+            transition: color 0.15s;
+        }
+        .ptag-x:hover {
+            color: #dc2626;
+        }
+
+        .no-beds {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+        }
+        .no-beds h3 {
+            font-family: 'Poppins', serif;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        /* Modal */
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-bg.open {
+            display: flex;
+        }
+        .modal {
+            background: white;
+            border: 1px solid rgba(54,102,158,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            width: 360px;
+            max-width: 95vw;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .modal h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .mfield {
+            margin-bottom: 1rem;
+        }
+        .mfield label {
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+        .mfield input {
+            width: 100%;
+            background: #fafbfc;
+            border: 1.5px solid rgba(54,102,158,0.2);
+            color: var(--text-dark);
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            outline: none;
+        }
+        .mfield input:focus {
+            border-color: var(--secondary-blue);
+        }
+        .mbtns {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+        .mbtn {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            border: 1.5px solid var(--primary-blue);
+            background: var(--primary-blue);
+            color: white;
+            transition: all 0.15s;
+            font-weight: 600;
+        }
+        .mbtn:hover {
+            background: #2d5a78;
+            border-color: #2d5a78;
+        }
+        .mbtn.cancel {
+            background: white;
+            border-color: rgba(54,102,158,0.3);
+            color: var(--text-light);
+        }
+        .mbtn.cancel:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* ═══════════════════════════════════════
+           TOOL 2 — Project Wizard with Cards
+        ═══════════════════════════════════════ */
         .wizard-card {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 8px 40px rgba(74,124,158,0.1);
-            border: 1px solid rgba(74,124,158,0.12);
-            max-width: 680px;
+            box-shadow: 0 8px 40px rgba(54,102,158,0.1);
+            border: 1px solid rgba(54,102,158,0.12);
+            max-width: 820px;
             margin: 0 auto;
             overflow: hidden;
         }
         .wizard-progress-bar {
-            height: 5px;
-            background: rgba(74,124,158,0.12);
+            height: 6px;
+            background: rgba(54,102,158,0.12);
         }
         .wizard-progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
             transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
-            border-radius: 0 4px 4px 0;
         }
-        .wizard-body { padding: 2.2rem 2.5rem; }
-        .wizard-step { display: none; }
-        .wizard-step.active { display: block; animation: fadeSlideIn 0.3s ease; }
+        .wizard-body {
+            padding: 2.5rem 2.8rem;
+        }
+        .wizard-step {
+            display: none;
+        }
+        .wizard-step.active {
+            display: block;
+            animation: fadeSlideIn 0.3s ease;
+        }
         @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateX(18px); }
-            to   { opacity: 1; transform: translateX(0); }
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         .wizard-step-label {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: var(--secondary-blue);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
         }
         .wizard-step h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--text-dark);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
         }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .option-card {
+            background: white;
+            border: 2px solid rgba(54,102,158,0.2);
+            border-radius: 12px;
+            padding: 1.2rem 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            position: relative;
+        }
+        .option-card:hover {
+            border-color: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+        .option-card.selected {
+            border-color: var(--primary-blue);
+            background: rgba(54,102,158,0.05);
+        }
+        .option-card .check-indicator {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .option-card.selected .check-indicator {
+            display: flex;
+        }
+        .option-card .check-indicator::after {
+            content: '';
+            width: 5px;
+            height: 8px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg) translate(-1px, -1px);
+        }
+        .option-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 0.6rem;
+        }
+        .option-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--text-light);
+            transition: stroke 0.2s;
+        }
+        .option-card.selected .option-icon svg {
+            stroke: var(--primary-blue);
+        }
+        .option-card label {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-dark);
+            line-height: 1.35;
+            cursor: pointer;
+            font-family: 'Lora', serif;
+        }
+
         .wizard-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.4rem 2.5rem;
-            border-top: 1px solid rgba(74,124,158,0.1);
-            background: rgba(74,124,158,0.025);
+            padding: 1.6rem 2.8rem;
+            border-top: 1px solid rgba(54,102,158,0.1);
+            background: rgba(54,102,158,0.025);
         }
         .wizard-btn {
-            padding: 0.65rem 1.8rem;
+            padding: 0.7rem 2rem;
             border-radius: 50px;
             border: none;
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             transition: all 0.2s;
         }
         .wizard-btn-next {
             background: var(--primary-blue);
             color: white;
-            box-shadow: 0 4px 14px rgba(74,124,158,0.3);
+            box-shadow: 0 4px 14px rgba(54,102,158,0.3);
         }
-        .wizard-btn-next:hover { background: #2d5a78; transform: translateY(-2px); }
-        .wizard-btn-back { background: transparent; color: var(--text-light); }
-        .wizard-btn-back:hover { color: var(--primary-blue); }
-        .wizard-step-count { font-size: 0.85rem; color: var(--text-light); }
+        .wizard-btn-next:hover {
+            background: #2d5a78;
+            transform: translateY(-2px);
+        }
+        .wizard-btn-back {
+            background: transparent;
+            color: var(--text-light);
+        }
+        .wizard-btn-back:hover {
+            color: var(--primary-blue);
+        }
+        .wizard-step-count {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
         /* Result card */
         .result-card {
             display: none;
             background: white;
             border-radius: 24px;
-            box-shadow: 0 8px 40px rgba(74,124,158,0.12);
+            box-shadow: 0 8px 40px rgba(54,102,158,0.12);
             border: 2px solid var(--secondary-blue);
-            max-width: 680px;
+            max-width: 820px;
             margin: 0 auto;
             overflow: hidden;
             animation: fadeSlideIn 0.4s ease;
         }
-        .result-card.visible { display: block; }
+        .result-card.visible {
+            display: block;
+        }
         .result-card-header {
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             color: white;
-            padding: 1.8rem 2.5rem;
+            padding: 2rem 2.8rem;
         }
-        .result-card-header h3 { color: white; font-size: 1.4rem; margin-bottom: 0.3rem; }
-        .result-card-header p { opacity: 0.85; font-size: 0.92rem; }
-        .result-card-body { padding: 2rem 2.5rem; }
+        .result-card-header h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.4rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .result-card-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        .result-card-body {
+            padding: 2.5rem 2.8rem;
+        }
         .result-item {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             align-items: flex-start;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(74,124,158,0.1);
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid rgba(54,102,158,0.1);
         }
-        .result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .result-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
-        .result-item-text strong { display: block; color: var(--primary-blue); margin-bottom: 0.2rem; font-size: 0.95rem; }
-        .result-item-text p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin: 0; }
-        .result-cta {
-            margin-top: 1.8rem;
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(74,124,158,0.1);
+        .result-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-        .result-cta p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; }
-        .btn-restart {
-            background: transparent;
-            border: 2px solid var(--primary-blue);
+        .result-icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        .result-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary-blue);
+        }
+        .result-item-text strong {
+            display: block;
             color: var(--primary-blue);
-            padding: 0.55rem 1.4rem;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: 'Raleway', sans-serif;
-            font-size: 0.9rem;
-            margin-right: 0.8rem;
-            transition: all 0.2s;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
         }
-        .btn-restart:hover { background: var(--primary-blue); color: white; }
+        .result-item-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .result-cta {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 1.8rem;
+            border-top: 1px solid rgba(54,102,158,0.1);
+        }
+        .result-cta p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
 
-        /* ── Checklist (Tool 2) ── */
+        /* ═══════════════════════════════════════
+           TOOL 3 — Checklist
+        ═══════════════════════════════════════ */
         .checklist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto 2rem;
         }
         .checklist-group {
             background: white;
             border-radius: 20px;
-            border: 1px solid rgba(74,124,158,0.12);
-            box-shadow: 0 4px 20px rgba(74,124,158,0.07);
+            border: 1px solid rgba(54,102,158,0.12);
+            box-shadow: 0 4px 20px rgba(54,102,158,0.07);
             overflow: hidden;
         }
         .checklist-group-header {
-            padding: 1rem 1.4rem;
+            padding: 1rem 1.5rem;
             font-weight: 700;
-            font-size: 0.9rem;
-            font-family: 'Raleway', sans-serif;
+            font-size: 0.92rem;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
-        .checklist-group-header.invasive { background: rgba(231,76,60,0.08); color: #c0392b; }
-        .checklist-group-header.water { background: rgba(74,124,158,0.1); color: var(--primary-blue); }
-        .checklist-group-header.soil { background: rgba(139,90,43,0.1); color: #7d5a3c; }
-        .checklist-group-header.wildlife { background: rgba(39,174,96,0.1); color: #1e8449; }
-        .checklist-items { padding: 0.8rem 1.4rem 1.2rem; }
+        .checklist-group-header svg {
+            width: 20px;
+            height: 20px;
+        }
+        .checklist-group-header.invasive {
+            background: rgba(220,38,38,0.08);
+            color: #991b1b;
+        }
+        .checklist-group-header.invasive svg {
+            stroke: #991b1b;
+        }
+        .checklist-group-header.water {
+            background: rgba(54,102,158,0.1);
+            color: var(--primary-blue);
+        }
+        .checklist-group-header.water svg {
+            stroke: var(--primary-blue);
+        }
+        .checklist-group-header.soil {
+            background: rgba(120,82,42,0.1);
+            color: #78522a;
+        }
+        .checklist-group-header.soil svg {
+            stroke: #78522a;
+        }
+        .checklist-group-header.wildlife {
+            background: rgba(34,139,34,0.1);
+            color: #1e6a1e;
+        }
+        .checklist-group-header.wildlife svg {
+            stroke: #1e6a1e;
+        }
+        .checklist-items {
+            padding: 0.9rem 1.5rem 1.3rem;
+        }
         .checklist-item {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            padding: 0.4rem 0;
+            gap: 0.8rem;
+            padding: 0.5rem 0;
             cursor: pointer;
         }
-        .checklist-item input[type="checkbox"] { display: none; }
+        .checklist-item input[type="checkbox"] {
+            display: none;
+        }
         .check-box {
             width: 20px;
             height: 20px;
-            border: 2px solid rgba(74,124,158,0.35);
+            border: 2px solid rgba(54,102,158,0.35);
             border-radius: 5px;
             flex-shrink: 0;
             display: flex;
@@ -288,7 +1007,9 @@
             justify-content: center;
             transition: all 0.15s;
         }
-        .checklist-item:hover .check-box { border-color: var(--secondary-blue); }
+        .checklist-item:hover .check-box {
+            border-color: var(--secondary-blue);
+        }
         .checklist-item input:checked ~ .check-box {
             background: var(--primary-blue);
             border-color: var(--primary-blue);
@@ -299,129 +1020,187 @@
             height: 9px;
             border-right: 2px solid white;
             border-bottom: 2px solid white;
-            transform: rotate(45deg) translate(-1px,-1px);
+            transform: rotate(45deg) translate(-1px, -1px);
             display: block;
         }
-        .checklist-item-label { font-size: 0.88rem; color: var(--text-dark); line-height: 1.4; }
-        .checklist-item-label em { font-style: normal; font-size: 0.78rem; color: var(--text-light); display: block; }
+        .checklist-item-label {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            line-height: 1.45;
+            font-family: 'Lora', serif;
+        }
+        .checklist-item-label em {
+            font-style: normal;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.1rem;
+        }
 
         .checklist-summary {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
             border: 2px solid var(--secondary-blue);
-            padding: 1.8rem 2rem;
+            padding: 2rem 2.2rem;
             display: none;
             animation: fadeSlideIn 0.3s ease;
         }
-        .checklist-summary.visible { display: block; }
-        .checklist-summary h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.1rem; }
+        .checklist-summary.visible {
+            display: block;
+        }
+        .checklist-summary h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
         .summary-findings {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 0.9rem;
         }
         .finding-item {
-            padding: 0.9rem 1.2rem;
+            padding: 1rem 1.3rem;
             border-radius: 12px;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            font-family: 'Lora', serif;
         }
-        .finding-item.warning { background: rgba(231,76,60,0.07); border-left: 3px solid #e74c3c; color: #922b21; }
-        .finding-item.info { background: rgba(74,124,158,0.07); border-left: 3px solid var(--secondary-blue); color: var(--earth-blue); }
-        .finding-item.good { background: rgba(39,174,96,0.07); border-left: 3px solid #27ae60; color: #1e6a37; }
-        .finding-item.neutral { background: rgba(74,74,74,0.05); border-left: 3px solid #aaa; color: var(--text-light); }
+        .finding-item.warning {
+            background: rgba(220,38,38,0.07);
+            border-left: 4px solid #dc2626;
+            color: #7f1d1d;
+        }
+        .finding-item.info {
+            background: rgba(54,102,158,0.07);
+            border-left: 4px solid var(--secondary-blue);
+            color: #1e3d6b;
+        }
+        .finding-item.good {
+            background: rgba(34,139,34,0.07);
+            border-left: 4px solid #22c55e;
+            color: #14532d;
+        }
+        .finding-item.neutral {
+            background: rgba(100,100,100,0.05);
+            border-left: 4px solid #9ca3af;
+            color: var(--text-light);
+        }
 
         .checklist-actions {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 1.5rem auto 0;
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        .btn-analyse {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            font-family: 'Raleway', sans-serif;
-            box-shadow: 0 4px 14px rgba(74,124,158,0.3);
-            transition: all 0.2s;
-        }
-        .btn-analyse:hover { background: #2d5a78; transform: translateY(-2px); }
 
-        /* ── Cost Calculator (Tool 3) ── */
+        /* ═══════════════════════════════════════
+           TOOL 4 — Cost Calculator
+        ═══════════════════════════════════════ */
         .calc-card {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 8px 40px rgba(74,124,158,0.1);
-            border: 1px solid rgba(74,124,158,0.12);
-            max-width: 760px;
+            box-shadow: 0 8px 40px rgba(54,102,158,0.1);
+            border: 1px solid rgba(54,102,158,0.12);
+            max-width: 860px;
             margin: 0 auto;
-            padding: 2.5rem;
+            padding: 2.8rem;
         }
-        .calc-sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-        @media (max-width: 560px) { .calc-sliders { grid-template-columns: 1fr; } }
+        .calc-sliders {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 600px) {
+            .calc-sliders {
+                grid-template-columns: 1fr;
+            }
+        }
+        .calc-slider-group {
+            position: relative;
+        }
         .calc-slider-group label {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
-            font-family: 'Raleway', sans-serif;
+            margin-bottom: 0.6rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .calc-slider-group label svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary-blue);
         }
         .slider-value-display {
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary-blue);
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.5rem;
         }
-        .slider-value-display span { font-size: 0.9rem; color: var(--text-light); font-weight: 400; }
+        .slider-value-display span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
         input[type="range"] {
             width: 100%;
             accent-color: var(--primary-blue);
-            height: 4px;
-            margin-top: 0.7rem;
+            height: 6px;
+            margin-top: 0.5rem;
             cursor: pointer;
         }
         .calc-results {
-            border-top: 1px solid rgba(74,124,158,0.12);
-            padding-top: 2rem;
+            border-top: 2px solid rgba(54,102,158,0.12);
+            padding-top: 2.5rem;
         }
         .calc-results h3 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
         .cost-bars {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
-        @media (max-width: 500px) { .cost-bars { grid-template-columns: 1fr; } }
-        .cost-bar-group { text-align: center; }
+        @media (max-width: 520px) {
+            .cost-bars {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cost-bar-group {
+            text-align: center;
+        }
         .cost-bar-label {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.7rem;
-            font-family: 'Raleway', sans-serif;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.8rem;
+            font-family: 'Poppins', sans-serif;
         }
-        .cost-bar-label.chlorine { color: #c0392b; }
-        .cost-bar-label.ecopool { color: #1e8449; }
+        .cost-bar-label.chlorine {
+            color: #dc2626;
+        }
+        .cost-bar-label.ecopool {
+            color: #16a34a;
+        }
         .cost-bar-track {
-            background: rgba(74,124,158,0.1);
-            border-radius: 8px;
-            height: 180px;
+            background: rgba(54,102,158,0.08);
+            border-radius: 10px;
+            height: 200px;
             display: flex;
             align-items: flex-end;
             overflow: hidden;
@@ -429,125 +1208,214 @@
         }
         .cost-bar-fill {
             width: 100%;
-            border-radius: 8px 8px 0 0;
+            border-radius: 10px 10px 0 0;
             transition: height 0.6s cubic-bezier(0.4,0,0.2,1);
-            min-height: 4px;
+            min-height: 6px;
         }
-        .cost-bar-fill.chlorine { background: linear-gradient(180deg, #e74c3c, #c0392b); }
-        .cost-bar-fill.ecopool  { background: linear-gradient(180deg, #2ecc71, #1e8449); }
+        .cost-bar-fill.chlorine {
+            background: linear-gradient(180deg, #f87171, #dc2626);
+        }
+        .cost-bar-fill.ecopool {
+            background: linear-gradient(180deg, #4ade80, #16a34a);
+        }
         .cost-total {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-top: 0.7rem;
-            font-family: 'Raleway', sans-serif;
+            margin-top: 0.8rem;
+            font-family: 'Poppins', sans-serif;
         }
         .cost-saving {
             text-align: center;
-            background: rgba(39,174,96,0.08);
-            border: 1.5px solid rgba(39,174,96,0.25);
+            background: rgba(34,139,34,0.08);
+            border: 2px solid rgba(34,139,34,0.25);
             border-radius: 14px;
-            padding: 1.2rem;
-            color: #1e6a37;
+            padding: 1.4rem;
+            color: #14532d;
         }
-        .cost-saving strong { font-size: 1.3rem; font-family: 'Raleway', sans-serif; }
-        .cost-saving p { font-size: 0.83rem; opacity: 0.8; margin-top: 0.3rem; margin-bottom: 0; }
-        .calc-note { font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 1rem; font-style: italic; }
+        .cost-saving strong {
+            font-size: 1.4rem;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .cost-saving p {
+            font-size: 0.86rem;
+            opacity: 0.85;
+            margin: 0;
+        }
+        .calc-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 1.2rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
 
-        /* ── Plant Finder (Tool 4) ── */
+        /* ═══════════════════════════════════════
+           TOOL 5 — Plant Finder
+        ═══════════════════════════════════════ */
         .plant-finder-form {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 8px 40px rgba(74,124,158,0.1);
-            border: 1px solid rgba(74,124,158,0.12);
-            max-width: 760px;
-            margin: 0 auto 2rem;
-            padding: 2rem 2.5rem;
+            box-shadow: 0 8px 40px rgba(54,102,158,0.1);
+            border: 1px solid rgba(54,102,158,0.12);
+            max-width: 860px;
+            margin: 0 auto 2.5rem;
+            padding: 2.5rem 2.8rem;
         }
         .plant-finder-selects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.2rem;
-            margin-bottom: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         .select-group label {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-weight: 700;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-family: 'Raleway', sans-serif;
+            margin-bottom: 0.6rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .select-group label svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--primary-blue);
         }
         .select-group select {
             width: 100%;
-            padding: 0.7rem 1rem;
-            border: 2px solid rgba(74,124,158,0.2);
+            padding: 0.75rem 1.1rem;
+            border: 2px solid rgba(54,102,158,0.2);
             border-radius: 10px;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: var(--text-dark);
             background: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lora', serif;
             cursor: pointer;
             transition: border-color 0.2s;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A7C9E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%2336669e' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
+            background-position: right 1.1rem center;
+            padding-right: 3rem;
         }
-        .select-group select:focus { outline: none; border-color: var(--secondary-blue); }
+        .select-group select:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+        }
 
         .plant-results {
-            max-width: 760px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .plant-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
         }
         .plant-card {
             background: white;
             border-radius: 18px;
-            border: 1px solid rgba(74,124,158,0.15);
-            box-shadow: 0 4px 20px rgba(74,124,158,0.07);
-            padding: 1.4rem;
+            border: 1px solid rgba(54,102,158,0.15);
+            box-shadow: 0 4px 20px rgba(54,102,158,0.07);
+            padding: 1.6rem;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             animation: fadeSlideIn 0.3s ease;
+            position: relative;
         }
-        .plant-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(74,124,158,0.12); }
-        .plant-card-icon { font-size: 2rem; margin-bottom: 0.6rem; }
-        .plant-card h4 { font-size: 1rem; color: var(--primary-blue); margin-bottom: 0.2rem; }
-        .plant-card-latin { font-style: italic; font-size: 0.78rem; color: var(--text-light); margin-bottom: 0.7rem; }
-        .plant-card p { font-size: 0.84rem; color: var(--text-dark); line-height: 1.55; margin-bottom: 0.8rem; }
+        .plant-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(54,102,158,0.14);
+        }
+        .plant-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+        .plant-cat-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .plant-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .plant-card h4 {
+            font-size: 1.05rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.25rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .plant-card-latin {
+            font-style: italic;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            font-family: 'Lora', serif;
+        }
+        .plant-card p {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
         .plant-tag {
             display: inline-block;
-            background: rgba(74,124,158,0.1);
+            background: rgba(54,102,158,0.1);
             color: var(--primary-blue);
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            padding: 0.2rem 0.65rem;
+            padding: 0.25rem 0.7rem;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
-            margin-right: 0.35rem;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
         }
         .plant-no-results {
             text-align: center;
-            padding: 2.5rem;
+            padding: 3rem;
             color: var(--text-light);
             font-style: italic;
             background: white;
             border-radius: 18px;
-            border: 1px dashed rgba(74,124,158,0.25);
+            border: 2px dashed rgba(54,102,158,0.25);
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .planner-container {
+                flex-direction: column;
+                height: auto;
+                max-height: 700px;
+            }
+            .planner-sidebar {
+                width: 100%;
+                max-height: 300px;
+                border-right: none;
+                border-bottom: 1px solid rgba(54,102,158,0.15);
+            }
+            .planner-main {
+                max-height: 400px;
+            }
         }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-brand">
@@ -566,6 +1434,7 @@
                 <li><a href="projects.html">Ecological Design</a></li>
                 <li><a href="land-management.html">Land Management</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="plan.html" class="active" aria-current="page">Plan Your Project</a></li>
                 <li><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
         </div>
@@ -574,84 +1443,328 @@
     <!-- Hero -->
     <section class="plan-hero" id="main-content">
         <div class="container">
+            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.6rem;opacity:0.85;">Free interactive tools</p>
             <h1>Plan Your Project</h1>
-            <p>Four free tools to help you think through your space before we talk — pools, gardens, land, or all three.</p>
+            <p>Five tools to help you think through your space — pools, gardens, land, plants — before we talk.</p>
             <nav class="tool-nav" aria-label="Jump to a tool">
-                <a href="#planner" class="tool-nav-btn">🌿 Project Planner</a>
-                <a href="#checklist" class="tool-nav-btn">📋 Land Checklist</a>
-                <a href="#calculator" class="tool-nav-btn">💧 Cost Calculator</a>
-                <a href="#plantfinder" class="tool-nav-btn">🌺 Plant Finder</a>
+                <a href="#garden-planner" class="tool-nav-btn">Garden Bed Planner</a>
+                <a href="#project-planner" class="tool-nav-btn">Project Planner</a>
+                <a href="#land-checklist" class="tool-nav-btn">Land Checklist</a>
+                <a href="#cost-calculator" class="tool-nav-btn">Cost Calculator</a>
+                <a href="#plant-finder" class="tool-nav-btn">Plant Finder</a>
             </nav>
         </div>
     </section>
 
     <!-- ════════════════════════════════════════
-         TOOL 1 — Project Planner
+         TOOL 1 — Garden Bed Planner
     ════════════════════════════════════════ -->
-    <section class="tool-section" id="planner">
+    <section class="tool-section" id="garden-planner">
         <div class="container">
             <div class="tool-header">
-                <span class="tool-emoji" aria-hidden="true">🌿</span>
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h2>Garden Bed Planner</h2>
+                <p>Design your raised bed layouts and plan companion planting for the Southern Hemisphere. Drag vegetables onto beds and see spacing requirements.</p>
+            </div>
+
+            <div class="planner-container">
+                <div class="planner-sidebar">
+                    <div class="sb-header">
+                        <div class="sb-logo">Garden Bed Planner</div>
+                        <div class="sb-sub">Southern Hemisphere · drag to bed</div>
+                    </div>
+
+                    <div class="sb-section">
+                        <div class="sb-label">Planning month</div>
+                        <div class="month-grid" id="monthGrid"></div>
+                    </div>
+
+                    <div class="sb-section">
+                        <input class="sb-search" id="searchBox" placeholder="Search vegetables…" oninput="renderSidebar()"/>
+                        <div class="frow">
+                            <button class="fb on" id="f-all" onclick="setFilt('all')">All</button>
+                            <button class="fb" id="f-season" onclick="setFilt('season')">In season</button>
+                            <button class="fb" id="f-avail" onclick="setFilt('avail')">Not placed</button>
+                        </div>
+                    </div>
+
+                    <div class="veg-scroll">
+                        <div class="sb-label" style="padding-top:0.3rem;">Vegetables <span id="vegCount" style="color:var(--text-light)"></span></div>
+                        <div class="veg-list" id="vegList"></div>
+                    </div>
+                </div>
+
+                <div class="planner-main">
+                    <div class="main-inner">
+                        <div class="main-top">
+                            <div>
+                                <div class="page-title">My Garden <span style="font-size:0.85rem;color:var(--text-light);font-weight:400;">— bed layout planner</span></div>
+                                <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.3rem;">Select a vegetable → click or drag onto a bed cell. Click a filled cell to remove.</p>
+                            </div>
+                            <div class="top-btns">
+                                <button class="btn-add" onclick="openModal()">+ Add bed</button>
+                                <button class="btn-add" onclick="autoFillAll()">Auto-fill all</button>
+                                <button class="btn-danger" onclick="clearAll()">Clear all</button>
+                            </div>
+                        </div>
+
+                        <div class="beds-area" id="bedsArea"></div>
+
+                        <div class="no-beds" id="noBeds" style="display:none">
+                            <h3>No beds yet</h3>
+                            <p style="font-size:0.88rem;margin-top:0.5rem;">Click <strong style="color:var(--primary-blue)">+ Add bed</strong> to create your first raised bed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal-bg" id="modalBg">
+                <div class="modal">
+                    <h3>Add a new bed</h3>
+                    <div class="mfield"><label>Bed name</label><input id="mName" placeholder="e.g. Bed 1 — Vegetables" value=""/></div>
+                    <div class="mfield"><label>Length (metres)</label><input id="mLen" type="number" min="0.5" max="30" step="0.5" value="12"/></div>
+                    <div class="mfield"><label>Width (metres)</label><input id="mWid" type="number" min="0.5" max="10" step="0.5" value="6"/></div>
+                    <div class="mfield"><label>Depth (metres)</label><input id="mDep" type="number" min="0.1" max="2" step="0.1" value="0.5"/></div>
+                    <div class="mbtns">
+                        <button class="mbtn cancel" onclick="closeModal()">Cancel</button>
+                        <button class="mbtn" onclick="addBed()">Create bed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         TOOL 2 — Project Planner (Wizard with option cards)
+    ════════════════════════════════════════ -->
+    <section class="tool-section" id="project-planner">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 5H2v7h7V5zM22 5h-7v7h7V5zM9 17H2v7h7v-7zM22 17h-7v7h7v-7z"/>
+                    </svg>
+                </div>
                 <h2>Project Planner</h2>
                 <p>Answer four quick questions about your space and we'll give you a starting point — what kind of project fits, what to think about, and how to move forward.</p>
             </div>
 
-            <!-- Wizard -->
             <div class="wizard-card" id="wizard-card">
                 <div class="wizard-progress-bar"><div class="wizard-progress-fill" id="wizard-progress" style="width:25%"></div></div>
                 <div class="wizard-body">
-
                     <!-- Step 1 -->
                     <div class="wizard-step active" id="step-1">
                         <p class="wizard-step-label">Step 1 of 4</p>
-                        <h3>What are you hoping to create?</h3>
-                        <div class="pill-group" id="goals-group">
-                            <button type="button" class="pill" data-value="pool">A swimming pool</button>
-                            <button type="button" class="pill" data-value="garden">An ecological garden</button>
-                            <button type="button" class="pill" data-value="food">A food garden or orchard</button>
-                            <button type="button" class="pill" data-value="restoration">Land restoration</button>
-                            <button type="button" class="pill" data-value="all">Not sure yet — all of the above</button>
+                        <h3>What do you want to create?</h3>
+                        <div class="options-grid" id="goals-group">
+                            <div class="option-card" data-value="pool">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2 8h20M2 14h20M2 20h20"/>
+                                    </svg>
+                                </div>
+                                <label>Swimming pool</label>
+                            </div>
+                            <div class="option-card" data-value="garden">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                        <path d="M7 12l5 5 5-5"/>
+                                    </svg>
+                                </div>
+                                <label>Ecological garden</label>
+                            </div>
+                            <div class="option-card" data-value="food">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v10M12 12l-4 8h8l-4-8z"/>
+                                    </svg>
+                                </div>
+                                <label>Food garden</label>
+                            </div>
+                            <div class="option-card" data-value="restoration">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 1l4 4-4 4M3 11v7c0 1.1.9 2 2 2h7M7 23l-4-4 4-4M21 13v-7c0-1.1-.9-2-2-2h-7"/>
+                                    </svg>
+                                </div>
+                                <label>Land restoration</label>
+                            </div>
+                            <div class="option-card" data-value="all">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+                                    </svg>
+                                </div>
+                                <label>Not sure yet</label>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Step 2 -->
                     <div class="wizard-step" id="step-2">
                         <p class="wizard-step-label">Step 2 of 4</p>
-                        <h3>How big is the space you're working with?</h3>
-                        <div class="pill-group" id="size-group">
-                            <button type="button" class="pill" data-value="small">Small — under 500m²</button>
-                            <button type="button" class="pill" data-value="medium">Medium — 500m² to 2000m²</button>
-                            <button type="button" class="pill" data-value="large">Large — over 2000m²</button>
-                            <button type="button" class="pill" data-value="farm">Farm or smallholding</button>
+                        <h3>How big is your space?</h3>
+                        <div class="options-grid" id="size-group">
+                            <div class="option-card" data-value="small">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                    </svg>
+                                </div>
+                                <label>Small <br/>&lt;500m²</label>
+                            </div>
+                            <div class="option-card" data-value="medium">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="12" height="12" rx="1"/>
+                                    </svg>
+                                </div>
+                                <label>Medium <br/>500–2000m²</label>
+                            </div>
+                            <div class="option-card" data-value="large">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="1"/>
+                                    </svg>
+                                </div>
+                                <label>Large <br/>&gt;2000m²</label>
+                            </div>
+                            <div class="option-card" data-value="farm">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="10" rx="1"/>
+                                    </svg>
+                                </div>
+                                <label>Farm / smallholding</label>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Step 3 -->
                     <div class="wizard-step" id="step-3">
                         <p class="wizard-step-label">Step 3 of 4</p>
-                        <h3>How much sun does this spot get?</h3>
-                        <div class="pill-group" id="sun-group">
-                            <button type="button" class="pill" data-value="fullsun">Full sun — 6+ hours a day</button>
-                            <button type="button" class="pill" data-value="partial">Mixed — some shade during the day</button>
-                            <button type="button" class="pill" data-value="shade">Mostly shaded</button>
+                        <h3>Sun exposure?</h3>
+                        <div class="options-grid" id="sun-group">
+                            <div class="option-card" data-value="fullsun">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                                    </svg>
+                                </div>
+                                <label>Full sun</label>
+                            </div>
+                            <div class="option-card" data-value="partial">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                </div>
+                                <label>Mixed</label>
+                            </div>
+                            <div class="option-card" data-value="shade">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 12a7 7 0 1 1-14 0c0-3.87 3.13-7 7-7 1.8 0 3.43.68 4.67 1.8"/>
+                                        <path d="M12 2v2M4.93 4.93l1.41 1.41"/>
+                                    </svg>
+                                </div>
+                                <label>Mostly shaded</label>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Step 4 -->
                     <div class="wizard-step" id="step-4">
                         <p class="wizard-step-label">Step 4 of 4</p>
-                        <h3>What's already on the land? (pick all that apply)</h3>
-                        <div class="pill-group" id="existing-group" style="margin-bottom:0">
-                            <button type="button" class="pill multi" data-value="trees">Mature trees</button>
-                            <button type="button" class="pill multi" data-value="slope">A slope or hillside</button>
-                            <button type="button" class="pill multi" data-value="water">A stream or wetland</button>
-                            <button type="button" class="pill multi" data-value="lawn">Lawn or kikuyu</button>
-                            <button type="button" class="pill multi" data-value="invasives">Invasive plants</button>
-                            <button type="button" class="pill multi" data-value="rocky">Rocky soil</button>
-                            <button type="button" class="pill multi" data-value="none">Mostly bare or cleared</button>
+                        <h3>What's already there? (multi-select)</h3>
+                        <div class="options-grid" id="existing-group">
+                            <div class="option-card multi" data-value="trees">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2L8 8h8l-4-6zM12 8l-4 6h8l-4-6zM12 14v8M8 22h8"/>
+                                    </svg>
+                                </div>
+                                <label>Mature trees</label>
+                            </div>
+                            <div class="option-card multi" data-value="slope">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 20L21 4"/>
+                                    </svg>
+                                </div>
+                                <label>Slope</label>
+                            </div>
+                            <div class="option-card multi" data-value="water">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                    </svg>
+                                </div>
+                                <label>Stream/wetland</label>
+                            </div>
+                            <div class="option-card multi" data-value="lawn">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+                                    </svg>
+                                </div>
+                                <label>Lawn</label>
+                            </div>
+                            <div class="option-card multi" data-value="invasives">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                        <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                                    </svg>
+                                </div>
+                                <label>Invasive plants</label>
+                            </div>
+                            <div class="option-card multi" data-value="rocky">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 3l4 8 5-5 5 15H2L8 3z"/>
+                                    </svg>
+                                </div>
+                                <label>Rocky soil</label>
+                            </div>
+                            <div class="option-card multi" data-value="none">
+                                <div class="check-indicator"></div>
+                                <div class="option-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    </svg>
+                                </div>
+                                <label>Mostly bare</label>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="wizard-footer">
                     <button type="button" class="wizard-btn wizard-btn-back" id="wizard-back" style="visibility:hidden">← Back</button>
@@ -670,7 +1783,7 @@
                     <div id="result-items"></div>
                     <div class="result-cta">
                         <p>Ready to take the next step? We'd love to come and see your land.</p>
-                        <button type="button" class="btn-restart" id="wizard-restart">Start again</button>
+                        <button type="button" class="btn-secondary" id="wizard-restart">Start again</button>
                         <a href="contact.html" class="btn-primary">Get in touch →</a>
                     </div>
                 </div>
@@ -679,28 +1792,35 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         TOOL 2 — Land Checklist
+         TOOL 3 — Land Checklist
     ════════════════════════════════════════ -->
-    <section class="tool-section" id="checklist">
+    <section class="tool-section" id="land-checklist">
         <div class="container">
             <div class="tool-header">
-                <span class="tool-emoji" aria-hidden="true">📋</span>
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                    </svg>
+                </div>
                 <h2>What's on Your Land?</h2>
                 <p>Walk around your property and tick off what you see. We'll give you a quick read of what it means and what to do about it.</p>
             </div>
 
             <div class="checklist-grid">
-
                 <!-- Invasive plants -->
                 <div class="checklist-group">
                     <div class="checklist-group-header invasive">
-                        <span aria-hidden="true">🔴</span> Invasive Plants
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        Invasive Plants
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="rooikrans">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Rooikrans / Port Jackson (Acacia)<em>Yellow fluffy flowers, flat seed pods</em></span>
+                            <span class="checklist-item-label">Rooikrans / Port Jackson<em>Yellow fluffy flowers, flat seed pods</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="hakea">
@@ -733,7 +1853,10 @@
                 <!-- Water indicators -->
                 <div class="checklist-group">
                     <div class="checklist-group-header water">
-                        <span aria-hidden="true">💧</span> Water Signs
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                        Water Signs
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
@@ -767,7 +1890,10 @@
                 <!-- Soil health -->
                 <div class="checklist-group">
                     <div class="checklist-group-header soil">
-                        <span aria-hidden="true">🟤</span> Soil Signs
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="2" y1="16" x2="22" y2="16"/>
+                        </svg>
+                        Soil Signs
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
@@ -783,7 +1909,7 @@
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="sandy">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Very sandy or free-draining<em>Water disappears almost immediately</em></span>
+                            <span class="checklist-item-label">Very sandy or free-draining<em class>Water disappears almost immediately</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="worms">
@@ -801,7 +1927,10 @@
                 <!-- Wildlife -->
                 <div class="checklist-group">
                     <div class="checklist-group-header wildlife">
-                        <span aria-hidden="true">🦎</span> Wildlife &amp; Plants
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 7h.01M3.5 18a9 9 0 0 1 17 0M8 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM16 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                        </svg>
+                        Wildlife &amp; Plants
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
@@ -831,46 +1960,58 @@
                         </label>
                     </div>
                 </div>
-
             </div>
 
             <div class="checklist-actions">
-                <button type="button" class="btn-analyse" id="analyse-btn">Read my land →</button>
-                <button type="button" class="btn-restart" id="checklist-reset">Clear all</button>
+                <button type="button" class="btn-primary" id="analyse-btn">Read my land →</button>
+                <button type="button" class="btn-secondary" id="checklist-reset">Clear all</button>
             </div>
 
             <div class="checklist-summary" id="checklist-summary">
                 <h3>What we're seeing</h3>
                 <div class="summary-findings" id="summary-findings"></div>
-                <div class="result-cta" style="margin-top:1.5rem; padding-top:1.2rem; border-top:1px solid rgba(74,124,158,0.1); text-align:center">
-                    <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:0.8rem">Bring this to your first conversation with us — it gives us a real head start.</p>
+                <div class="result-cta" style="margin-top:1.8rem; padding-top:1.5rem; border-top:1px solid rgba(54,102,158,0.1); text-align:center">
+                    <p style="font-size:0.92rem; color:var(--text-light); margin-bottom:1rem">Bring this to your first conversation with us — it gives us a real head start.</p>
                     <a href="contact.html" class="btn-primary">Talk to us about your land →</a>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- ════════════════════════════════════════
-         TOOL 3 — Cost Calculator
+         TO 4 — Cost Calculator
     ════════════════════════════════════════ -->
-    <section class="tool-section" id="calculator">
+    <section class="tool-section" id="cost-calculator">
         <div class="container">
             <div class="tool-header">
-                <span class="tool-emoji" aria-hidden="true">💧</span>
-                <h2>EcoPool vs Chlorine: Running Cost Calculator</h2>
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <h2>EcoPool vs Chlorine Cost Calculator</h2>
                 <p>See how running costs stack up over time. EcoPools cost more to build — but the gap closes fast once you stop buying chemicals.</p>
             </div>
 
             <div class="calc-card">
                 <div class="calc-sliders">
                     <div class="calc-slider-group">
-                        <label for="pool-size-slider">Pool surface area</label>
+                        <label for="pool-size-slider">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            </svg>
+                            Pool surface area
+                        </label>
                         <div class="slider-value-display"><span id="pool-size-val">30</span> <span>m²</span></div>
                         <input type="range" id="pool-size-slider" min="10" max="100" value="30" step="5" aria-label="Pool size in square metres">
                     </div>
                     <div class="calc-slider-group">
-                        <label for="years-slider">Years of ownership</label>
+                        <label for="years-slider">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            Years of ownership
+                        </label>
                         <div class="slider-value-display"><span id="years-val">10</span> <span>years</span></div>
                         <input type="range" id="years-slider" min="1" max="25" value="10" step="1" aria-label="Years of ownership">
                     </div>
@@ -898,19 +2039,24 @@
                         <strong id="saving-amount">R0</strong> saved with an EcoPool
                         <p id="saving-note">over 10 years</p>
                     </div>
-                    <p class="calc-note">Estimates based on typical Garden Route figures: chlorine R600/month + R900/month electricity + R3,000/year maintenance. EcoPool R500/month electricity + R800/year maintenance. Build costs excluded — ask us for a quote.</p>
+                    <p class="calc-note">Estimates based on typical Garden Route figures: chlorine R600/month + R900/month electricity + R3,000/year maintenance. EcoPool R500/month electricity + R800/year maintenance. Build costs excluded.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ════════════════════════════════════════
-         TOOL 4 — Plant Finder
+         TOOL 5 — Plant Finder
     ════════════════════════════════════════ -->
-    <section class="tool-section" id="plantfinder">
+    <section class="tool-section" id="plant-finder">
         <div class="container">
             <div class="tool-header">
-                <span class="tool-emoji" aria-hidden="true">🌺</span>
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                </div>
                 <h2>Indigenous Plant Finder</h2>
                 <p>Tell us your conditions and we'll suggest some Garden Route indigenous plants that will thrive in your space.</p>
             </div>
@@ -918,7 +2064,12 @@
             <div class="plant-finder-form">
                 <div class="plant-finder-selects">
                     <div class="select-group">
-                        <label for="pf-sun">Light</label>
+                        <label for="pf-sun">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                            Light
+                        </label>
                         <select id="pf-sun" aria-label="Select sun exposure">
                             <option value="">Any light</option>
                             <option value="fullsun">Full sun</option>
@@ -927,7 +2078,12 @@
                         </select>
                     </div>
                     <div class="select-group">
-                        <label for="pf-water">Water</label>
+                        <label for="pf-water">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                            Water
+                        </label>
                         <select id="pf-water" aria-label="Select water availability">
                             <option value="">Any water</option>
                             <option value="dry">Dry / drought-tolerant</option>
@@ -936,7 +2092,12 @@
                         </select>
                     </div>
                     <div class="select-group">
-                        <label for="pf-type">Plant type</label>
+                        <label for="pf-type">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L8 8h8l-4-6zM12 8l-4 6h8l-4-6zM12 14v8M8 22h8"/>
+                            </svg>
+                            Plant type
+                        </label>
                         <select id="pf-type" aria-label="Select plant type">
                             <option value="">Any type</option>
                             <option value="groundcover">Ground cover</option>
@@ -948,12 +2109,11 @@
                     </div>
                 </div>
                 <div style="text-align:center">
-                    <button type="button" class="btn-analyse" id="plant-search-btn">Find plants →</button>
+                    <button type="button" class="btn-primary" id="plant-search-btn">Find plants →</button>
                 </div>
             </div>
 
             <div class="plant-results" id="plant-results"></div>
-
         </div>
     </section>
 
@@ -1000,7 +2160,6 @@
         </div>
     </footer>
 
-    <a href="#main-content" class="back-to-top-link" aria-label="Back to top" style="display:none"></a>
     <button type="button" class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>
@@ -1009,33 +2168,335 @@
 
     <script src="script.js"></script>
     <script>
-    // ════════════════════════════════════════
-    // TOOL 1 — Wizard
-    // ════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════════════════════
+    // TOOL 1 — Garden Bed Planner (Complete JavaScript from garden-planner.html)
+    // ════════════════════════════════════════════════════════════════════════════
+    const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const CELL = 0.5; // metres per grid cell
+
+    const CAT_COL = {
+      root:"#B5742A", legume:"#3A7D5A", brassica:"#3A6EA8",
+      leaf:"#4A7C9E", allium:"#7A5A9E", fruit:"#A84A4A",
+      vine:"#A87A3A", perennial:"#3A8A8A", grain:"#A89A3A", herb:"#3A8A7A"
+    };
+
+    const VEG = [
+      {id:"carrots", n:"Carrots", s:0.08, m:[1,7,8,9,10], cat:"root", good:["Lettuce","Onions"], bad:["Parsnips"]},
+      {id:"tomatoes", n:"Tomatoes", s:0.6, m:[8,9,10,11], cat:"fruit", good:["Basil","Parsley"], bad:["Potatoes"]},
+      {id:"lettuce", n:"Lettuce", s:0.25, m:[0,1,2,3,7,8,9,10], cat:"leaf", good:["Carrots","Radishes"], bad:[]},
+      {id:"beans-dwarf", n:"Beans, Dwarf", s:0.2, m:[1,7,8,9,10], cat:"legume", good:["Carrots","Cucumbers"], bad:["Onions"]},
+      {id:"onions", n:"Onions", s:0.1, m:[1,2,3,7,8,9,10,11], cat:"allium", good:["Carrots","Lettuce"], bad:["Beans","Peas"]},
+      {id:"cabbage", n:"Cabbages", s:0.5, m:[1,2,3,7,8,9,10], cat:"brassica", good:["Beetroot","Celery"], bad:["Tomatoes"]},
+      {id:"beetroot", n:"Beetroot", s:0.1, m:[1,2,3,7,8,9,10,11], cat:"root", good:["Cabbages","Lettuce"], bad:[]},
+      {id:"peas", n:"Peas", s:0.08, m:[0,1,2,3,4,5,7,8], cat:"legume", good:["Carrots","Radishes"], bad:["Onions"]},
+      {id:"spinach", n:"Spinach", s:0.15, m:[7,8,9,10,11], cat:"leaf", good:["Peas","Celery"], bad:[]},
+      {id:"broccoli", n:"Broccoli", s:0.45, m:[1,2,10,11], cat:"brassica", good:["Beetroot","Celery"], bad:["Tomatoes"]},
+      {id:"cucumber", n:"Cucumbers", s:0.5, m:[7,8,9,10], cat:"vine", good:["Beans","Lettuce"], bad:["Potatoes"]},
+      {id:"peppers", n:"Peppers", s:0.5, m:[8,9,10,11], cat:"fruit", good:["Basil","Tomatoes"], bad:[]},
+      {id:"radishes", n:"Radishes", s:0.08, m:[1,2,3,7,8,9,10], cat:"root", good:["Lettuce","Peas"], bad:[]},
+      {id:"kale", n:"Kale", s:0.45, m:[2,3,7,8,9], cat:"brassica", good:["Beetroot","Onions"], bad:["Tomatoes"]},
+      {id:"swiss-chard", n:"Swiss Chard", s:0.3, m:[1,2,3,8,9,10,11], cat:"leaf", good:["Lettuce","Onions"], bad:[]},
+      {id:"parsley", n:"Parsley", s:0.2, m:[0,1,2,7,8,9], cat:"herb", good:["Tomatoes","Asparagus"], bad:[]},
+      {id:"squashes", n:"Squashes", s:1.2, m:[0,8,9,10], cat:"vine", good:["Sweetcorn","Beans"], bad:["Potatoes"]},
+      {id:"sweetcorn", n:"Sweetcorn", s:0.35, m:[8,9,10], cat:"grain", good:["Beans","Squashes"], bad:["Tomatoes"]},
+      {id:"potatoes", n:"Potatoes", s:0.35, m:[0], cat:"root", good:["Beans","Cabbage"], bad:["Tomatoes","Pumpkins"]},
+      {id:"pumpkins", n:"Pumpkins", s:1.5, m:[8,9,10], cat:"vine", good:["Sweetcorn","Beans"], bad:["Potatoes"]}
+    ];
+
+    let curMonth = new Date().getMonth();
+    let selVeg = null;
+    let dragVeg = null;
+    let filt = 'all';
+    let beds = [];
+    let bedCounter = 0;
+
+    const gv = id => VEG.find(v=>v.id===id);
+    const inSeason = v => v.m.includes(curMonth);
+    const cellsForSpacing = s => Math.max(1, Math.round(s/CELL));
+    const colHex = id => { const v=gv(id); return v ? (CAT_COL[v.cat]||"#4A7C9E") : "#4A7C9E"; };
+    function hexRgba(hex,a){
+      const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+      return `rgba(${r},${g},${b},${a})`;
+    }
+    function usedCells(bed){ return Object.keys(bed.cells).length; }
+    function vegInBed(bed){ 
+      const ids=new Set(Object.values(bed.cells));
+      return [...ids].map(id=>({id,count:Object.values(bed.cells).filter(x=>x===id).length}));
+    }
+
+    function renderMonths(){
+      document.getElementById('monthGrid').innerHTML = MONTHS.map((m,i)=>{
+        const active=i===curMonth?'active':'';
+        return `<button class="mp ${active}" onclick="setMonth(${i})">${m}</button>`;
+      }).join('');
+    }
+    function setMonth(i){ curMonth=i; renderMonths(); renderSidebar(); }
+
+    function setFilt(f){
+      filt=f;
+      document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+      document.getElementById('f-'+f).classList.add('on');
+      renderSidebar();
+    }
+
+    function allPlantedIds(){
+      const ids=new Set();
+      beds.forEach(b=>Object.values(b.cells).forEach(id=>ids.add(id)));
+      return ids;
+    }
+
+    function renderSidebar(){
+      const q=document.getElementById('searchBox').value.toLowerCase();
+      const planted=allPlantedIds();
+      let list=VEG.filter(v=>{
+        if(q&&!v.n.toLowerCase().includes(q)) return false;
+        if(filt==='season'&&!inSeason(v)) return false;
+        if(filt==='avail'&&planted.has(v.id)) return false;
+        return true;
+      });
+      document.getElementById('vegCount').textContent=`(${list.length})`;
+      const el=document.getElementById('vegList');
+      if(!list.length){el.innerHTML='<div style="color:var(--text-light);font-size:0.8rem;padding:0.9rem 0;font-style:italic;">No matches</div>';return;}
+      el.innerHTML=list.map(v=>{
+        const isSel=selVeg===v.id;
+        const col=colHex(v.id);
+        return `<div class="vc ${inSeason(v)?'in-season':''} ${isSel?'sel':''}"
+          draggable="true"
+          ondragstart="onDS(event,'${v.id}')"
+          onclick="setSel('${v.id}')">
+          <div class="vc-row">
+            <div style="display:flex;align-items:center;">
+              <div class="vc-cat-dot" style="background:${col}"></div>
+              <div class="vc-name">${v.n}</div>
+            </div>
+          </div>
+          <div class="vc-chips">
+            <span class="chip">${v.cat}</span>
+            <span class="chip">${v.s*100}cm</span>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function setSel(id){ selVeg=selVeg===id?null:id; renderSidebar(); }
+    function onDS(e,id){ dragVeg=id; selVeg=id; e.dataTransfer.effectAllowed='copy'; renderSidebar(); }
+
+    function openModal(){ document.getElementById('modalBg').classList.add('open'); document.getElementById('mName').focus(); }
+    function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
+    document.getElementById('modalBg').addEventListener('click',e=>{ if(e.target===document.getElementById('modalBg')) closeModal(); });
+
+    function addBed(){
+      const name=document.getElementById('mName').value.trim()||`Bed ${bedCounter+1}`;
+      const len=parseFloat(document.getElementById('mLen').value)||12;
+      const wid=parseFloat(document.getElementById('mWid').value)||6;
+      const dep=parseFloat(document.getElementById('mDep').value)||0.5;
+      const cols=Math.round(len/CELL);
+      const rows=Math.round(wid/CELL);
+      beds.push({id:'bed-'+(++bedCounter), name, len, wid, dep, cols, rows, cells:{}});
+      closeModal();
+      renderBeds();
+      renderSidebar();
+    }
+
+    function deleteBed(bedId){
+      if(!confirm('Remove this bed?')) return;
+      beds=beds.filter(b=>b.id!==bedId);
+      renderBeds(); renderSidebar();
+    }
+
+    function clearBed(bedId){
+      const b=beds.find(b=>b.id===bedId);
+      if(b){ b.cells={}; renderBeds(); renderSidebar(); }
+    }
+
+    function autoFillBed(bedId){
+      const b=beds.find(b=>b.id===bedId);
+      if(!b) return;
+      b.cells={};
+      const seasonal=VEG.filter(v=>inSeason(v)).sort((a,c)=>c.s-a.s);
+      for(const v of seasonal){
+        const sz=cellsForSpacing(v.s);
+        let placed=false;
+        for(let r=0;r<=b.rows-sz&&!placed;r++){
+          for(let c=0;c<=b.cols-sz&&!placed;c++){
+            let free=true;
+            for(let dr=0;dr<sz&&free;dr++) for(let dc=0;dc<sz&&free;dc++) if(b.cells[`${r+dr}_${c+dc}`]) free=false;
+            if(free){
+              for(let dr=0;dr<sz;dr++) for(let dc=0;dc<sz;dc++) b.cells[`${r+dr}_${c+dc}`]=v.id;
+              placed=true;
+            }
+          }
+        }
+      }
+      renderBeds(); renderSidebar();
+    }
+
+    function autoFillAll(){ beds.forEach(b=>autoFillBed(b.id)); }
+    function clearAll(){ beds.forEach(b=>b.cells={}); renderBeds(); renderSidebar(); }
+
+    function renderBeds(){
+      const area=document.getElementById('bedsArea');
+      const noBeds=document.getElementById('noBeds');
+      if(!beds.length){ area.innerHTML=''; noBeds.style.display='block'; return; }
+      noBeds.style.display='none';
+
+      area.innerHTML=beds.map(b=>renderBedHTML(b)).join('');
+
+      beds.forEach(b=>{
+        ['len','wid','dep'].forEach(dim=>{
+          const el=document.getElementById(`dim-${b.id}-${dim}`);
+          if(el) el.addEventListener('change',()=>resizeBed(b.id));
+        });
+        const nameEl=document.getElementById(`bname-${b.id}`);
+        if(nameEl) nameEl.addEventListener('input',e=>{ b.name=e.target.value; });
+        for(let r=0;r<b.rows;r++){
+          for(let c=0;c<b.cols;c++){
+            const cell=document.getElementById(`cell-${b.id}-${r}-${c}`);
+            if(!cell) continue;
+            cell.addEventListener('dragover',e=>{e.preventDefault();cell.classList.add('drop-ok');});
+            cell.addEventListener('dragleave',()=>cell.classList.remove('drop-ok'));
+            cell.addEventListener('drop',e=>{e.preventDefault();cell.classList.remove('drop-ok');plantAt(b.id,r,c,dragVeg||selVeg);});
+            cell.addEventListener('click',()=>{
+              if(b.cells[`${r}_${c}`]) removeAt(b.id,r,c);
+              else if(selVeg) plantAt(b.id,r,c,selVeg);
+            });
+          }
+        }
+      });
+    }
+
+    function renderBedHTML(b){
+      const used=usedCells(b);
+      const total=b.cols*b.rows;
+      const pct=Math.round(used/total*100);
+      const cellPx=Math.max(14,Math.min(28,Math.floor(800/b.cols)));
+
+      let gridHTML='';
+      for(let r=0;r<b.rows;r++){
+        for(let c=0;c<b.cols;c++){
+          const vid=b.cells[`${r}_${c}`];
+          if(vid){
+            const col=colHex(vid);
+            gridHTML+=`<div id="cell-${b.id}-${r}-${c}" class="bcell filled"
+              style="width:${cellPx}px;height:${cellPx}px;background:${hexRgba(col,0.72)};border:1.5px solid ${col};"></div>`;
+          } else {
+            gridHTML+=`<div id="cell-${b.id}-${r}-${c}" class="bcell empty" style="width:${cellPx}px;height:${cellPx}px;"></div>`;
+          }
+        }
+      }
+
+      const planted=vegInBed(b);
+      const tagsHTML=planted.map(({id,count})=>{
+        const v=gv(id); if(!v) return '';
+        const col=colHex(id);
+        const sz=cellsForSpacing(v.s);
+        const plants=Math.round(count/(sz*sz));
+        return `<div class="ptag">
+          <div class="ptag-dot" style="background:${col}"></div>
+          <span class="ptag-name">${v.n}</span>
+          <span class="ptag-count">~${plants}p</span>
+          <button class="ptag-x" onclick="removeVegFromBed('${b.id}','${id}')" title="Remove">×</button>
+        </div>`;
+      }).join('');
+
+      return `<div class="bed-wrap" id="bedwrap-${b.id}">
+        <div class="bed-titlebar">
+          <input class="bed-name-input" id="bname-${b.id}" value="${b.name}" placeholder="Bed name"/>
+          <div class="bed-dims">
+            <span class="dim-label">L</span>
+            <input class="dim-input" id="dim-${b.id}-len" type="number" min="0.5" max="30" step="0.5" value="${b.len}"/>
+            <span class="dim-label">m × W</span>
+            <input class="dim-input" id="dim-${b.id}-wid" type="number" min="0.5" max="10" step="0.5" value="${b.wid}"/>
+            <span class="dim-label">m</span>
+          </div>
+          <div class="bed-stats">${used}/${total} cells · ${pct}% · ${(b.len*b.wid).toFixed(1)}m²</div>
+          <div class="bed-btns">
+            <button class="bed-action" onclick="autoFillBed('${b.id}')">Auto-fill</button>
+            <button class="bed-action" onclick="clearBed('${b.id}')">Clear</button>
+            <button class="bed-action danger" onclick="deleteBed('${b.id}')">Remove</button>
+          </div>
+        </div>
+        <div class="bed-grid-area">
+          <div class="bed-grid" style="grid-template-columns:repeat(${b.cols},${cellPx}px);grid-template-rows:repeat(${b.rows},${cellPx}px);">
+            ${gridHTML}
+          </div>
+        </div>
+        ${planted.length?`<div class="bed-planted">${tagsHTML}</div>`:''}
+      </div>`;
+    }
+
+    function resizeBed(bedId){
+      const b=beds.find(b=>b.id===bedId); if(!b) return;
+      b.len=parseFloat(document.getElementById(`dim-${bedId}-len`).value)||b.len;
+      b.wid=parseFloat(document.getElementById(`dim-${bedId}-wid`).value)||b.wid;
+      b.dep=parseFloat(document.getElementById(`dim-${bedId}-dep`).value)||b.dep;
+      const newCols=Math.round(b.len/CELL);
+      const newRows=Math.round(b.wid/CELL);
+      const newCells={};
+      Object.entries(b.cells).forEach(([k,v])=>{
+        const [r,c]=k.split('_').map(Number);
+        if(r<newRows&&c<newCols) newCells[k]=v;
+      });
+      b.cols=newCols; b.rows=newRows; b.cells=newCells;
+      renderBeds(); renderSidebar();
+    }
+
+    function plantAt(bedId,r,c,vegId){
+      if(!vegId) return;
+      const b=beds.find(b=>b.id===bedId); if(!b) return;
+      const v=gv(vegId); if(!v) return;
+      const sz=cellsForSpacing(v.s);
+      for(let dr=0;dr<sz;dr++) for(let dc=0;dc<sz;dc++){
+        const rr=r+dr, cc=c+dc;
+        if(rr<b.rows&&cc<b.cols) b.cells[`${rr}_${cc}`]=vegId;
+      }
+      renderBeds(); renderSidebar();
+    }
+
+    function removeAt(bedId,r,c){
+      const b=beds.find(b=>b.id===bedId); if(!b) return;
+      const vid=b.cells[`${r}_${c}`]; if(!vid) return;
+      const v=gv(vid); if(!v) return;
+      const sz=cellsForSpacing(v.s);
+      const tl_r=Math.floor(r/sz)*sz, tl_c=Math.floor(c/sz)*sz;
+      for(let dr=0;dr<sz;dr++) for(let dc=0;dc<sz;dc++) delete b.cells[`${tl_r+dr}_${tl_c+dc}`];
+      renderBeds(); renderSidebar();
+    }
+
+    function removeVegFromBed(bedId,vegId){
+      const b=beds.find(b=>b.id===bedId); if(!b) return;
+      Object.keys(b.cells).forEach(k=>{ if(b.cells[k]===vegId) delete b.cells[k]; });
+      renderBeds(); renderSidebar();
+    }
+
+    renderMonths();
+    renderSidebar();
+    document.getElementById('mName').value='Bed 1 — Vegetables';
+    addBed();
+
+    // ════════════════════════════════════════════════════════════════════════════
+    // TOOL 2 — Project Planner Wizard with Option Cards
+    // ════════════════════════════════════════════════════════════════════════════
     const STEPS = 4;
     let currentStep = 1;
-    const answers = { goals: null, size: null, sun: null, existing: [] };
 
-    // Single-select pills
-    document.querySelectorAll('.pill:not(.multi)').forEach(pill => {
-        pill.addEventListener('click', () => {
-            pill.closest('.pill-group').querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
-            pill.classList.add('selected');
+    document.querySelectorAll('.option-card:not(.multi)').forEach(card => {
+        card.addEventListener('click', () => {
+            card.closest('.options-grid').querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
         });
     });
 
-    // Multi-select pills
-    document.querySelectorAll('.pill.multi').forEach(pill => {
-        pill.addEventListener('click', () => pill.classList.toggle('selected'));
+    document.querySelectorAll('.option-card.multi').forEach(card => {
+        card.addEventListener('click', () => card.classList.toggle('selected'));
     });
 
     function getStepAnswer(step) {
         const groups = ['goals-group','size-group','sun-group','existing-group'];
         const group = document.getElementById(groups[step-1]);
         if (!group) return null;
-        const selected = group.querySelectorAll('.pill.selected');
-        if (selected.length === 0) return null;
-        return Array.from(selected).map(p => p.dataset.value);
+        const selected = group.querySelectorAll('.option-card.selected');
+        return selected.length === 0 ? null : Array.from(selected).map(c => c.dataset.value);
     }
 
     function showStep(n) {
@@ -1048,13 +2509,8 @@
     }
 
     document.getElementById('wizard-next').addEventListener('click', () => {
-        const ans = getStepAnswer(currentStep);
-        if (!ans && currentStep < STEPS) {
-            // Allow proceeding even without selection for last step
-            if (currentStep !== 4) return;
-        }
         if (currentStep < STEPS) { currentStep++; showStep(currentStep); }
-        else { showResults(); }
+        else { showWizardResults(); }
     });
 
     document.getElementById('wizard-back').addEventListener('click', () => {
@@ -1063,70 +2519,62 @@
 
     document.getElementById('wizard-restart').addEventListener('click', () => {
         currentStep = 1;
-        document.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+        document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
         document.getElementById('wizard-card').style.display = '';
         document.getElementById('wizard-result').classList.remove('visible');
         showStep(1);
     });
 
-    function formatList(arr) { return arr ? arr.join(', ') : 'not specified'; }
-
-    function showResults() {
+    function showWizardResults() {
         const goals = getStepAnswer(1) || [];
         const size  = (getStepAnswer(2) || ['medium'])[0];
         const sun   = (getStepAnswer(3) || ['partial'])[0];
         const exist = getStepAnswer(4) || [];
 
         const items = [];
+        const iconSVG = (path) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
 
-        // Primary recommendation
         if (goals.includes('pool') || goals.includes('all')) {
-            items.push({ icon: '🏊', title: 'An EcoPool could work beautifully here',
-                text: size === 'small'
-                    ? 'Even a smaller plot can accommodate a natural dipping pool — compact, well-planted, and very low-maintenance.'
-                    : 'Your site has good room for a full natural swimming pool with a planted regeneration zone.' });
+            items.push({ icon: iconSVG('<path d="M2 8h20M2 14h20M2 20h20"/>'), 
+                title: 'An EcoPool could work beautifully here',
+                text: size === 'small' ? 'Even a smaller plot can accommodate a natural dipping pool — compact, well-planted, and very low-maintenance.' : 'Your site has good room for a full natural swimming pool with a planted regeneration zone.' });
         }
         if (goals.includes('garden') || goals.includes('all')) {
-            items.push({ icon: '🌿', title: 'Ecological garden design',
-                text: sun === 'shade'
-                    ? 'Shaded gardens on the Garden Route are great for tree ferns, clivia, and wild iris — we can work with that beautifully.'
-                    : 'Full-sun fynbos gardens are some of the most rewarding we design — low water, high biodiversity, and spectacular in flower.' });
+            items.push({ icon: iconSVG('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/>'), 
+                title: 'Ecological garden design',
+                text: sun === 'shade' ? 'Shaded gardens on the Garden Route are great for tree ferns, clivia, and wild iris — we can work with that beautifully.' : 'Full-sun fynbos gardens are some of the most rewarding we design — low water, high biodiversity, spectacular in flower.' });
         }
         if (goals.includes('food') || goals.includes('all')) {
-            items.push({ icon: '🍋', title: 'Food forest or productive garden',
-                text: size === 'farm' || size === 'large'
-                    ? 'A larger plot is ideal for a multi-layer food forest — fruit trees, shrubs, ground layer, all working together.'
-                    : 'Even small spaces can support a productive edible garden when designed well — we integrate food plants into ecological designs regularly.' });
+            items.push({ icon: iconSVG('<path d="M12 2v10M12 12l-4 8h8l-4-8z"/>'), 
+                title: 'Food forest or productive garden',
+                text: size === 'farm' || size === 'large' ? 'A larger plot is ideal for a multi-layer food forest — fruit trees, shrubs, ground layer, all working together.' : 'Even small spaces can support a productive edible garden when designed well.' });
         }
         if (goals.includes('restoration') || goals.includes('all')) {
-            items.push({ icon: '🦋', title: 'Land restoration is possible',
-                text: exist.includes('invasives')
-                    ? 'Invasive plants are the first thing to address. Once the pressure is off, the fynbos can come back on its own — with some help from us.'
-                    : 'Your land sounds like a good candidate for gentle restoration — removing what doesn\'t belong and encouraging what does.' });
+            items.push({ icon: iconSVG('<path d="M17 1l4 4-4 4M3 11v7c0 1.1.9 2 2 2h7M7 23l-4-4 4-4M21 13v-7c0-1.1-.9-2-2-2h-7"/>'), 
+                title: 'Land restoration is possible',
+                text: exist.includes('invasives') ? 'Invasive plants are the first thing to address. Once the pressure is off, the fynbos can come back on its own — with some help from us.' : 'Your land sounds like a good candidate for gentle restoration — removing what doesn\'t belong and encouraging what does.' });
         }
 
-        // Site-specific notes
         if (exist.includes('slope')) {
-            items.push({ icon: '⛰️', title: 'Sloped land — water is key',
+            items.push({ icon: iconSVG('<path d="M3 20L21 4"/>'), 
+                title: 'Sloped land — water is key',
                 text: 'Slopes mean water moves fast. We can slow it down, spread it out, and use that energy to build soil. Great for swales, terracing, or a hillside food forest.' });
         }
-        if (exist.includes('invasives')) {
-            items.push({ icon: '⚠️', title: 'Invasives need addressing first',
-                text: 'We\'d want to do an invasive plant survey before designing anything. Getting them under control is the foundation of everything else.' });
-        }
         if (exist.includes('water')) {
-            items.push({ icon: '💧', title: 'You have a water feature to work with',
+            items.push({ icon: iconSVG('<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>'), 
+                title: 'You have a water feature to work with',
                 text: 'Streams and wetlands are rare and valuable — any design should protect and enhance them, and they open up options for natural swimming areas or wetland planting.' });
         }
 
         if (items.length === 0) {
-            items.push({ icon: '🌱', title: 'Every piece of land has potential',
+            items.push({ icon: iconSVG('<circle cx="12" cy="12" r="10"/>'), 
+                title: 'Every piece of land has potential',
                 text: 'We\'d love to come and see your site — sometimes a walk around together is the best way to understand what\'s possible.' });
         }
 
         document.getElementById('result-items').innerHTML = items.map(item => `
             <div class="result-item">
-                <span class="result-icon" aria-hidden="true">${item.icon}</span>
+                <div class="result-icon">${item.icon}</div>
                 <div class="result-item-text">
                     <strong>${item.title}</strong>
                     <p>${item.text}</p>
@@ -1137,9 +2585,9 @@
         document.getElementById('wizard-result').classList.add('visible');
     }
 
-    // ════════════════════════════════════════
-    // TOOL 2 — Land Checklist
-    // ════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════════════════════
+    // TOOL 3 — Land Checklist
+    // ════════════════════════════════════════════════════════════════════════════
     document.getElementById('analyse-btn').addEventListener('click', analyseChecklist);
     document.getElementById('checklist-reset').addEventListener('click', () => {
         document.querySelectorAll('.check-input').forEach(cb => cb.checked = false);
@@ -1203,12 +2651,12 @@
             `<div class="finding-item ${f.type}">${f.text}</div>`).join('');
         const summary = document.getElementById('checklist-summary');
         summary.classList.add('visible');
-        summary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+       summary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    // ════════════════════════════════════════
-    // TOOL 3 — Cost Calculator
-    // ════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════════════════════
+    // TOOL 4 — Cost Calculator
+    // ════════════════════════════════════════════════════════════════════════════
     function formatZAR(n) {
         return 'R' + Math.round(n).toLocaleString('en-ZA');
     }
@@ -1221,13 +2669,9 @@
         document.getElementById('years-val').textContent = years;
         document.getElementById('years-label').textContent = years;
 
-        // Running costs per month:
-        // Chlorine: R600 chemicals + R900 electricity + R250/month maintenance provision
-        // EcoPool:  R500 electricity + R67/month maintenance provision (R800/year)
-        // Scale slightly with pool size (base = 30m²)
         const scale = size / 30;
-        const chlorineMonthly = (600 + 900 + 250) * scale;  // ~R1750/month base
-        const ecopoolMonthly  = (500 + 67)        * scale;  // ~R567/month base
+        const chlorineMonthly = (600 + 900 + 250) * scale;
+        const ecopoolMonthly  = (500 + 67)        * scale;
 
         const chlorineTotal = chlorineMonthly * 12 * years;
         const ecopoolTotal  = ecopoolMonthly  * 12 * years;
@@ -1246,55 +2690,57 @@
     document.getElementById('years-slider').addEventListener('input', updateCalc);
     updateCalc();
 
-    // ════════════════════════════════════════
-    // TOOL 4 — Plant Finder
-    // ════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════════════════════
+    // TOOL 5 — Plant Finder
+    // ════════════════════════════════════════════════════════════════════════════
     const PLANTS = [
-        { name:'Leucadendron', latin:'Leucadendron salignum', icon:'🌼', sun:'fullsun', water:'dry', type:'shrub',
+        { name:'Leucadendron', latin:'Leucadendron salignum', cat:'fynbos', sun:'fullsun', water:'dry', type:'shrub',
           desc:'One of the most striking fynbos shrubs — vibrant yellow and red new growth, knee-height to 1.5m. Loves dry, well-drained slopes.', tags:['Fynbos','Dry tolerant'] },
-        { name:'Protea', latin:'Protea neriifolia', icon:'🌸', sun:'fullsun', water:'dry', type:'shrub',
+        { name:'Protea', latin:'Protea neriifolia', cat:'fynbos', sun:'fullsun', water:'dry', type:'shrub',
           desc:'Iconic fynbos. Large, dramatic flower heads, 1–3m. Superb for birds and bees. Needs good drainage and no fertiliser.', tags:['Fynbos','Wildlife magnet'] },
-        { name:'Restio', latin:'Restio tetraphyllus', icon:'🌾', sun:'fullsun', water:'dry', type:'groundcover',
+        { name:'Restio', latin:'Restio tetraphyllus', cat:'fynbos', sun:'fullsun', water:'dry', type:'groundcover',
           desc:'Elegant reed-like groundcover with fine, feathery texture. Extremely drought-tolerant once established and beautifully low-maintenance.', tags:['Fynbos','Low water'] },
-        { name:'Sour fig', latin:'Carpobrotus edulis', icon:'🌿', sun:'fullsun', water:'dry', type:'groundcover',
+        { name:'Sour fig', latin:'Carpobrotus edulis', cat:'coastal', sun:'fullsun', water:'dry', type:'groundcover',
           desc:'Hardy coastal ground cover with bright flowers. Edible fruit makes excellent jam. Exceptional for erosion control on sandy slopes.', tags:['Edible','Coastal'] },
-        { name:'Sour fig', latin:'Carpobrotus edulis', icon:'🌿', sun:'fullsun', water:'dry', type:'edible',
-          desc:'Hardy coastal ground cover with bright flowers. The fruit is edible and makes excellent jam — a Garden Route staple.', tags:['Edible','Coastal'] },
-        { name:'Agapanthus', latin:'Agapanthus praecox', icon:'💙', sun:'fullsun', water:'moderate', type:'groundcover',
+        { name:'Agapanthus', latin:'Agapanthus praecox', cat:'versatile', sun:'fullsun', water:'moderate', type:'groundcover',
           desc:'The Garden Route\'s most recognisable plant. Sweeps of blue or white in summer, almost no maintenance once established.', tags:['Summer flowering','Versatile'] },
-        { name:'Red Hot Poker', latin:'Kniphofia uvaria', icon:'🔥', sun:'fullsun', water:'moderate', type:'groundcover',
+        { name:'Red Hot Poker', latin:'Kniphofia uvaria', cat:'striking', sun:'fullsun', water:'moderate', type:'groundcover',
           desc:'Spectacular orange and yellow torch-like flowers in late summer. Attracts sunbirds and is incredibly tough and drought-tolerant.', tags:['Wildlife','Striking'] },
-        { name:'Bugle lily', latin:'Watsonia borbonica', icon:'🌷', sun:'fullsun', water:'moderate', type:'groundcover',
+        { name:'Bugle lily', latin:'Watsonia borbonica', cat:'fynbos', sun:'fullsun', water:'moderate', type:'groundcover',
           desc:'Lovely pink-red spires in spring. Naturalises easily in grassland and fynbos margins, spreading reliably over time.', tags:['Fynbos','Spring'] },
-        { name:'Wild iris', latin:'Dietes grandiflora', icon:'🤍', sun:'partial', water:'moderate', type:'groundcover',
+        { name:'Wild iris', latin:'Dietes grandiflora', cat:'shade', sun:'partial', water:'moderate', type:'groundcover',
           desc:'Large white iris-like flowers through summer. Thrives in partial shade — ideal under trees or along shaded paths.', tags:['Shade tolerant','Long-flowering'] },
-        { name:'Arum lily', latin:'Zantedeschia aethiopica', icon:'🌸', sun:'partial', water:'moist', type:'groundcover',
+        { name:'Arum lily', latin:'Zantedeschia aethiopica', cat:'moist', sun:'partial', water:'moist', type:'groundcover',
           desc:'Classic white blooms in late winter and spring. Loves the edge of a stream, dam, or damp shaded corner — stunning en masse.', tags:['Moist sites','Winter/spring'] },
-        { name:'Bush lily', latin:'Clivia miniata', icon:'🟠', sun:'shade', water:'moderate', type:'groundcover',
+        { name:'Bush lily', latin:'Clivia miniata', cat:'shade', sun:'shade', water:'moderate', type:'groundcover',
           desc:'One of the best plants for deep shade — orange flowers in late winter, glossy strap leaves year-round. A gem under dense trees.', tags:['Shade','Low maintenance'] },
-        { name:'Tree fern', latin:'Cyathea capensis', icon:'🌿', sun:'shade', water:'moist', type:'tree',
+        { name:'Tree fern', latin:'Cyathea capensis', cat:'shade', sun:'shade', water:'moist', type:'tree',
           desc:'Ancient and dramatic — the Cape tree fern creates an instant forest atmosphere. Needs constant moisture and shade. Slow but spectacular.', tags:['Shade','Moisture-loving'] },
-        { name:'Wild olive', latin:'Olea europaea africana', icon:'🫒', sun:'fullsun', water:'dry', type:'tree',
+        { name:'Wild olive', latin:'Olea europaea africana', cat:'tree', sun:'fullsun', water:'dry', type:'tree',
           desc:'One of the most useful indigenous trees — small edible fruit, dense canopy, and incredibly tough. Good structural tree for dry sites.', tags:['Edible','Drought-hardy'] },
-        { name:'Wild olive', latin:'Olea europaea africana', icon:'🫒', sun:'fullsun', water:'dry', type:'edible',
-          desc:'The indigenous wild olive produces small edible fruit. Hardy, long-lived, and an excellent structural tree for the Garden Route.', tags:['Edible','Tree'] },
-        { name:'Crossberry', latin:'Grewia occidentalis', icon:'🫐', sun:'partial', water:'moderate', type:'edible',
+        { name:'Crossberry', latin:'Grewia occidentalis', cat:'edible', sun:'partial', water:'moderate', type:'edible',
           desc:'Small purple-pink star flowers and sweet little berries loved by birds and people alike. Good hedging shrub or informal garden tree.', tags:['Edible','Bird-friendly'] },
-        { name:'Waterberry', latin:'Syzygium cordatum', icon:'🌳', sun:'partial', water:'moist', type:'tree',
+        { name:'Waterberry', latin:'Syzygium cordatum', cat:'waterside', sun:'partial', water:'moist', type:'tree',
           desc:'A beautiful water-loving tree with dark edible berries. Excellent near streams or dams — provides shade, stabilises banks, and feeds wildlife.', tags:['Waterside','Edible'] },
-        { name:'Water hawthorn', latin:'Aponogeton distachyos', icon:'🤍', sun:'fullsun', water:'moist', type:'waterplant',
+        { name:'Water hawthorn', latin:'Aponogeton distachyos', cat:'ecopool', sun:'fullsun', water:'moist', type:'waterplant',
           desc:'Scented white flowers floating just above the surface — one of the most beautiful and useful EcoPool plants. Flowers twice a year.', tags:['EcoPool','Fragrant'] },
-        { name:'Blue water lily', latin:'Nymphaea nouchali', icon:'💜', sun:'fullsun', water:'moist', type:'waterplant',
+        { name:'Blue water lily', latin:'Nymphaea nouchali', cat:'ecopool', sun:'fullsun', water:'moist', type:'waterplant',
           desc:'The indigenous water lily — blue to lavender flowers. An EcoPool essential that provides surface cover, reduces algae, and looks stunning.', tags:['EcoPool','Iconic'] },
-        { name:'Palmiet', latin:'Prionium serratum', icon:'🌾', sun:'fullsun', water:'moist', type:'waterplant',
+        { name:'Palmiet', latin:'Prionium serratum', cat:'ecopool', sun:'fullsun', water:'moist', type:'waterplant',
           desc:'The king of South African stream plants — tough, reedlike, and one of the best natural filters available. Foundation plant for EcoPool margins.', tags:['EcoPool','Filter plant'] },
-        { name:'Bulrush', latin:'Typha capensis', icon:'🌾', sun:'fullsun', water:'moist', type:'waterplant',
+        { name:'Bulrush', latin:'Typha capensis', cat:'ecopool', sun:'fullsun', water:'moist', type:'waterplant',
           desc:'The classic marginal reed. Tall, structural, and an excellent biological filter for EcoPools. Creates habitat and gives ponds a natural feel.', tags:['EcoPool','Marginal'] },
-        { name:'Kolkol', latin:'Berzelia lanuginosa', icon:'🤍', sun:'fullsun', water:'moist', type:'shrub',
+        { name:'Kolkol', latin:'Berzelia lanuginosa', cat:'fynbos', sun:'fullsun', water:'moist', type:'shrub',
           desc:'Round white button-like flowers on arching stems. A beautiful fynbos shrub for moist, peaty soils near streams or drainage lines.', tags:['Fynbos','Moist sites'] },
-        { name:'Strelitzia', latin:'Strelitzia reginae', icon:'🌺', sun:'partial', water:'moderate', type:'shrub',
-          desc:'The bird of paradise — dramatic orange and blue flowers. Long-lived, architectural, and tough. A structural focal point in any garden.', tags:['Architectural','Long-flowering'] },
+        { name:'Strelitzia', latin:'Strelitzia reginae', cat:'architectural', sun:'partial', water:'moderate', type:'shrub',
+          desc:'The bird of paradise — dramatic orange and blue flowers. Long-lived, architectural, and tough. A structural focal point in any garden.', tags:['Architectural','Long-flowering'] }
     ];
+
+    const CAT_COLORS = {
+        fynbos:'#4A7C9E', coastal:'#47a3a2', versatile:'#7ab8d4', striking:'#f2d922',
+        shade:'#3A6EA8', moist:'#3A8A8A', tree:'#16a34a', edible:'#A84A4A',
+        waterside:'#3A7D5A', ecopool:'#5A9BC4', architectural:'#7A5A9E'
+    };
 
     document.getElementById('plant-search-btn').addEventListener('click', searchPlants);
 
@@ -1310,9 +2756,13 @@
             return true;
         });
 
-        // Deduplicate by name
         const seen = new Set();
-        results = results.filter(p => { if (seen.has(p.name + p.type)) return false; seen.add(p.name + p.type); return true; });
+        results = results.filter(p => { 
+            const key = p.name + p.type;
+            if (seen.has(key)) return false; 
+            seen.add(key); 
+            return true; 
+        });
 
         const container = document.getElementById('plant-results');
         if (results.length === 0) {
@@ -1322,11 +2772,15 @@
         container.innerHTML = '<div class="plant-grid">' +
             results.map(p => `
             <div class="plant-card">
-                <div class="plant-card-icon" aria-hidden="true">${p.icon}</div>
+                <div class="plant-card-header">
+                    <div class="plant-cat-dot" style="background:${CAT_COLORS[p.cat] || '#4A7C9E'}"></div>
+                    <div class="plant-tags">
+                        ${p.tags.map(t => `<span class="plant-tag">${t}</span>`).join('')}
+                    </div>
+                </div>
                 <h4>${p.name}</h4>
                 <p class="plant-card-latin">${p.latin}</p>
                 <p>${p.desc}</p>
-                ${p.tags.map(t => `<span class="plant-tag">${t}</span>`).join('')}
             </div>`).join('') + '</div>';
     }
     </script>
