@@ -3,7 +3,12 @@
     "allow": [
       "Bash(node copy-sync.js)",
       "Bash(where.exe node:*)",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\PC\\\\Six Kingdoms Website repository\\\\six-kingdoms\\\\copy-sync.ps1\")"
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\PC\\\\Six Kingdoms Website repository\\\\six-kingdoms\\\\copy-sync.ps1\")",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Read(//c/Users/juden/.vscode/six-kingdoms/**)",
+      "Bash(sed -i 's|<li><a href=\"\"contact.html\"\" class=\"\"nav-cta\"\">|<li><a href=\"\"plan.html\"\">Plan Your Project</a></li>\\\\n                <li><a href=\"\"contact.html\"\" class=\"\"nav-cta\"\">|g' \"$f\")",
+      "Bash(done)"
     ]
   }
 }

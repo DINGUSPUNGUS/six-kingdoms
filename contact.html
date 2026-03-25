@@ -196,6 +196,25 @@
     </button>
 
     <script src="script.js"></script>
+    <script>
+        // Pre-fill subject from ?type= URL param (set by plan.html wizard CTA)
+        (function() {
+            const typeParam = new URLSearchParams(window.location.search).get('type');
+            if (!typeParam) return;
+            const labels = {
+                'ecopool-garden':  'EcoPool & Ecological Garden enquiry',
+                'ecopool-food':    'EcoPool & Food Forest enquiry',
+                'ecopool':         'Natural Swimming Pool enquiry',
+                'food-restoration':'Food Forest & Restoration enquiry',
+                'food':            'Food Garden enquiry',
+                'land':            'Holistic Land Management enquiry',
+                'restoration':     'Fynbos Restoration enquiry',
+                'whole-property':  'Whole-property ecological design enquiry'
+            };
+            const subjectEl = document.getElementById('subject');
+            if (subjectEl) subjectEl.value = labels[typeParam] || typeParam;
+        })();
+    </script>
 
     <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

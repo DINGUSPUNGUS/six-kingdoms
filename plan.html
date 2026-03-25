@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
 
     <style>
         /* ── Plan page base ── */
@@ -54,7 +54,7 @@
             cursor: pointer;
             text-decoration: none;
             transition: all 0.2s;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .tool-nav-btn:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
 
@@ -106,7 +106,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             user-select: none;
         }
         .pill:hover { border-color: var(--secondary-blue); color: var(--secondary-blue); }
@@ -172,7 +172,7 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             transition: all 0.2s;
         }
         .wizard-btn-next {
@@ -181,9 +181,20 @@
             box-shadow: 0 4px 14px rgba(74,124,158,0.3);
         }
         .wizard-btn-next:hover { background: #2d5a78; transform: translateY(-2px); }
-        .wizard-btn-back { background: transparent; color: var(--text-light); }
+        .wizard-btn-back { background: transparent; color: var(--text-light); border: none; }
         .wizard-btn-back:hover { color: var(--primary-blue); }
         .wizard-step-count { font-size: 0.85rem; color: var(--text-light); }
+        .wizard-hint {
+            font-size: 0.8rem;
+            color: #c0392b;
+            margin-top: 0.4rem;
+            min-height: 1.1em;
+            font-style: italic;
+        }
+        @keyframes shake {
+            0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)}
+        }
+        .wizard-btn-next.shake { animation: shake 0.4s ease; }
 
         /* Result card */
         .result-card {
@@ -205,7 +216,45 @@
         }
         .result-card-header h3 { color: white; font-size: 1.4rem; margin-bottom: 0.3rem; }
         .result-card-header p { opacity: 0.85; font-size: 0.92rem; }
+        .result-answers-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .result-answer-chip {
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+        }
         .result-card-body { padding: 2rem 2.5rem; }
+        .result-priority-box {
+            background: linear-gradient(135deg, rgba(74,124,158,0.08), rgba(71,163,162,0.08));
+            border: 2px solid var(--secondary-blue);
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .result-priority-badge {
+            background: var(--secondary-blue);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+        .result-priority-box p { margin: 0; font-size: 0.92rem; color: var(--text-dark); line-height: 1.6; }
         .result-item {
             display: flex;
             gap: 1rem;
@@ -216,7 +265,15 @@
         }
         .result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .result-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
-        .result-item-text strong { display: block; color: var(--primary-blue); margin-bottom: 0.2rem; font-size: 0.95rem; }
+        .result-item-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--secondary-blue);
+            margin-bottom: 0.15rem;
+        }
+        .result-item-text strong { display: block; color: var(--text-dark); margin-bottom: 0.2rem; font-size: 0.95rem; }
         .result-item-text p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin: 0; }
         .result-cta {
             margin-top: 1.8rem;
@@ -227,18 +284,18 @@
         .result-cta p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem; }
         .btn-restart {
             background: transparent;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid rgba(74,124,158,0.35);
             color: var(--primary-blue);
             padding: 0.55rem 1.4rem;
             border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
             margin-right: 0.8rem;
             transition: all 0.2s;
         }
-        .btn-restart:hover { background: var(--primary-blue); color: white; }
+        .btn-restart:hover { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
 
         /* ── Checklist (Tool 2) ── */
         .checklist-grid {
@@ -259,7 +316,7 @@
             padding: 1rem 1.4rem;
             font-weight: 700;
             font-size: 0.9rem;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -268,6 +325,14 @@
         .checklist-group-header.water { background: rgba(74,124,158,0.1); color: var(--primary-blue); }
         .checklist-group-header.soil { background: rgba(139,90,43,0.1); color: #7d5a3c; }
         .checklist-group-header.wildlife { background: rgba(39,174,96,0.1); color: #1e8449; }
+        .checklist-group-header.features { background: rgba(100,100,100,0.07); color: #4a4a4a; }
+        .check-counter {
+            margin-left: auto;
+            font-size: 0.72rem;
+            font-weight: 600;
+            opacity: 0.65;
+            font-family: 'Poppins', sans-serif;
+        }
         .checklist-items { padding: 0.8rem 1.4rem 1.2rem; }
         .checklist-item {
             display: flex;
@@ -332,6 +397,21 @@
         .finding-item.info { background: rgba(74,124,158,0.07); border-left: 3px solid var(--secondary-blue); color: var(--earth-blue); }
         .finding-item.good { background: rgba(39,174,96,0.07); border-left: 3px solid #27ae60; color: #1e6a37; }
         .finding-item.neutral { background: rgba(74,74,74,0.05); border-left: 3px solid #aaa; color: var(--text-light); }
+        .finding-urgency {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .finding-urgency.urgent { background: rgba(231,76,60,0.15); color: #c0392b; }
+        .finding-urgency.noting { background: rgba(74,124,158,0.12); color: var(--primary-blue); }
+        .finding-urgency.opportunity { background: rgba(39,174,96,0.12); color: #1e8449; }
+        .finding-link { font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
         .checklist-actions {
             max-width: 900px;
@@ -350,11 +430,25 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
             box-shadow: 0 4px 14px rgba(74,124,158,0.3);
             transition: all 0.2s;
         }
         .btn-analyse:hover { background: #2d5a78; transform: translateY(-2px); }
+        .btn-copy-brief {
+            background: transparent;
+            border: 2px solid rgba(74,124,158,0.35);
+            color: var(--primary-blue);
+            padding: 0.65rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.2s;
+        }
+        .btn-copy-brief:hover { background: rgba(74,124,158,0.07); }
+        .btn-copy-brief.copied { border-color: #27ae60; color: #1e8449; }
 
         /* ── Cost Calculator (Tool 3) ── */
         .calc-card {
@@ -362,25 +456,31 @@
             border-radius: 24px;
             box-shadow: 0 8px 40px rgba(74,124,158,0.1);
             border: 1px solid rgba(74,124,158,0.12);
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto;
             padding: 2.5rem;
         }
-        .calc-sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-        @media (max-width: 560px) { .calc-sliders { grid-template-columns: 1fr; } }
+        .calc-sliders { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+        @media (max-width: 700px) { .calc-sliders { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 480px) { .calc-sliders { grid-template-columns: 1fr; } }
         .calc-slider-group label {
             display: block;
             font-weight: 700;
             font-size: 0.88rem;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+        .calc-slider-group .slider-hint {
+            font-size: 0.76rem;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
         }
         .slider-value-display {
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary-blue);
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .slider-value-display span { font-size: 0.9rem; color: var(--text-light); font-weight: 400; }
         input[type="range"] {
@@ -397,51 +497,83 @@
         .calc-results h3 {
             font-size: 1.05rem;
             color: var(--text-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
-        .cost-bars {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+        /* Breakeven callout */
+        .breakeven-callout {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(54,102,158,0.06);
+            border: 1.5px solid rgba(54,102,158,0.18);
+            border-radius: 14px;
+            padding: 1rem 1.4rem;
             margin-bottom: 1.5rem;
         }
-        @media (max-width: 500px) { .cost-bars { grid-template-columns: 1fr; } }
-        .cost-bar-group { text-align: center; }
-        .cost-bar-label {
-            font-size: 0.82rem;
+        .breakeven-callout .be-number {
+            font-size: 2.2rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.7rem;
-            font-family: 'Raleway', sans-serif;
+            color: var(--primary-blue);
+            font-family: 'Poppins', sans-serif;
+            white-space: nowrap;
         }
-        .cost-bar-label.chlorine { color: #c0392b; }
-        .cost-bar-label.ecopool { color: #1e8449; }
-        .cost-bar-track {
-            background: rgba(74,124,158,0.1);
-            border-radius: 8px;
-            height: 180px;
-            display: flex;
-            align-items: flex-end;
-            overflow: hidden;
+        .breakeven-callout .be-text { font-size: 0.88rem; color: var(--text-dark); line-height: 1.4; }
+        .breakeven-callout .be-text strong { display: block; font-size: 0.96rem; }
+        .breakeven-callout .be-text.never { color: var(--text-light); font-style: italic; }
+        /* SVG chart */
+        .cost-chart-wrap {
             position: relative;
+            margin-bottom: 1.5rem;
         }
-        .cost-bar-fill {
+        .cost-chart-wrap svg {
+            display: block;
             width: 100%;
-            border-radius: 8px 8px 0 0;
-            transition: height 0.6s cubic-bezier(0.4,0,0.2,1);
-            min-height: 4px;
+            height: auto;
+            overflow: visible;
         }
-        .cost-bar-fill.chlorine { background: linear-gradient(180deg, #e74c3c, #c0392b); }
-        .cost-bar-fill.ecopool  { background: linear-gradient(180deg, #2ecc71, #1e8449); }
-        .cost-total {
-            font-size: 1.1rem;
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+        .chart-legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; font-weight: 600; }
+        .chart-legend-swatch { width: 28px; height: 4px; border-radius: 2px; }
+        .chart-legend-swatch.chlorine { background: #c0392b; }
+        .chart-legend-swatch.ecopool  { background: #1e8449; }
+        /* Breakdown table */
+        .cost-breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.84rem;
+            margin-bottom: 1.5rem;
+        }
+        .cost-breakdown-table th {
+            text-align: left;
+            padding: 0.5rem 0.75rem;
+            background: rgba(74,124,158,0.06);
             font-weight: 700;
-            color: var(--text-dark);
-            margin-top: 0.7rem;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            border-bottom: 2px solid rgba(74,124,158,0.15);
         }
+        .cost-breakdown-table th.col-chlorine { color: #c0392b; }
+        .cost-breakdown-table th.col-ecopool  { color: #1e8449; }
+        .cost-breakdown-table td {
+            padding: 0.45rem 0.75rem;
+            border-bottom: 1px solid rgba(74,124,158,0.08);
+            color: var(--text-dark);
+        }
+        .cost-breakdown-table tr.total-row td {
+            font-weight: 700;
+            border-top: 2px solid rgba(74,124,158,0.18);
+            padding-top: 0.65rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .cost-breakdown-table tr.total-row td.col-chlorine { color: #c0392b; }
+        .cost-breakdown-table tr.total-row td.col-ecopool  { color: #1e8449; }
+        /* Saving callout */
         .cost-saving {
             text-align: center;
             background: rgba(39,174,96,0.08);
@@ -450,25 +582,70 @@
             padding: 1.2rem;
             color: #1e6a37;
         }
-        .cost-saving strong { font-size: 1.3rem; font-family: 'Raleway', sans-serif; }
+        .cost-saving.negative {
+            background: rgba(120,120,120,0.06);
+            border-color: rgba(120,120,120,0.2);
+            color: var(--text-dark);
+        }
+        .cost-saving strong { font-size: 1.3rem; font-family: 'Poppins', sans-serif; }
         .cost-saving p { font-size: 0.83rem; opacity: 0.8; margin-top: 0.3rem; margin-bottom: 0; }
+        /* Water comparison row */
+        .water-comparison {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            font-size: 0.82rem;
+            background: rgba(71,163,162,0.07);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            align-items: center;
+        }
+        .water-comparison .water-icon { font-size: 1.3rem; flex-shrink: 0; }
+        .water-comparison .water-text { color: var(--text-dark); line-height: 1.5; }
         .calc-note { font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 1rem; font-style: italic; }
 
         /* ── Plant Finder (Tool 4) ── */
-        .plant-finder-form {
+        .plant-finder-controls {
             background: white;
             border-radius: 24px;
             box-shadow: 0 8px 40px rgba(74,124,158,0.1);
             border: 1px solid rgba(74,124,158,0.12);
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto 2rem;
             padding: 2rem 2.5rem;
+        }
+        .plant-search-input-wrap {
+            position: relative;
+            margin-bottom: 1.4rem;
+        }
+        .plant-search-input-wrap input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.8rem;
+            border: 2px solid rgba(74,124,158,0.2);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: #faf9f5;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .plant-search-input-wrap input:focus { outline: none; border-color: var(--secondary-blue); }
+        .plant-search-input-wrap .search-icon {
+            position: absolute;
+            left: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 1rem;
+            pointer-events: none;
         }
         .plant-finder-selects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1.2rem;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.4rem;
         }
         .select-group label {
             display: block;
@@ -478,7 +655,7 @@
             letter-spacing: 0.5px;
             color: var(--primary-blue);
             margin-bottom: 0.5rem;
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .select-group select {
             width: 100%;
@@ -488,7 +665,7 @@
             font-size: 0.92rem;
             color: var(--text-dark);
             background: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             cursor: pointer;
             transition: border-color 0.2s;
             appearance: none;
@@ -498,14 +675,49 @@
             padding-right: 2.5rem;
         }
         .select-group select:focus { outline: none; border-color: var(--secondary-blue); }
+        /* Quick-filter pills */
+        .plant-quick-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .quick-pill {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid rgba(74,124,158,0.22);
+            background: white;
+            color: var(--primary-blue);
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s, border-color 0.18s;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .quick-pill:hover { border-color: var(--primary-blue); background: rgba(54,102,158,0.06); }
+        .quick-pill.active { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
 
         .plant-results {
-            max-width: 760px;
+            max-width: 820px;
             margin: 0 auto;
         }
+        .plant-results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .plant-count-label {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+        }
+        .plant-count-label strong { color: var(--primary-blue); }
         .plant-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             gap: 1.2rem;
         }
         .plant-card {
@@ -519,9 +731,26 @@
         }
         .plant-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(74,124,158,0.12); }
         .plant-card-icon { font-size: 2rem; margin-bottom: 0.6rem; }
-        .plant-card h4 { font-size: 1rem; color: var(--primary-blue); margin-bottom: 0.2rem; }
-        .plant-card-latin { font-style: italic; font-size: 0.78rem; color: var(--text-light); margin-bottom: 0.7rem; }
-        .plant-card p { font-size: 0.84rem; color: var(--text-dark); line-height: 1.55; margin-bottom: 0.8rem; }
+        .plant-card h4 { font-size: 1rem; color: var(--primary-blue); margin-bottom: 0.15rem; font-family: 'Poppins', sans-serif; }
+        .plant-card-latin { font-style: italic; font-size: 0.78rem; color: var(--text-light); margin-bottom: 0.6rem; }
+        .plant-card p { font-size: 0.84rem; color: var(--text-dark); line-height: 1.55; margin-bottom: 0.75rem; }
+        .plant-card-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+        .plant-chip {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.18rem 0.55rem;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .plant-chip.height { background: rgba(54,102,158,0.1); color: #264d78; }
+        .plant-chip.care   { background: rgba(39,174,96,0.1);   color: #1a6638; }
+        .plant-chip.season { background: rgba(255,165,0,0.12);  color: #b35f00; }
+        .plant-chip.water  { background: rgba(71,163,162,0.12); color: #1a6665; }
         .plant-tag {
             display: inline-block;
             background: rgba(74,124,158,0.1);
@@ -532,7 +761,15 @@
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            margin-right: 0.35rem;
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+        }
+        .plant-card-notes {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
         }
         .plant-no-results {
             text-align: center;
@@ -598,25 +835,27 @@
 
             <!-- Wizard -->
             <div class="wizard-card" id="wizard-card">
-                <div class="wizard-progress-bar"><div class="wizard-progress-fill" id="wizard-progress" style="width:25%"></div></div>
+                <div class="wizard-progress-bar"><div class="wizard-progress-fill" id="wizard-progress" style="width:16.7%"></div></div>
                 <div class="wizard-body">
 
                     <!-- Step 1 -->
                     <div class="wizard-step active" id="step-1">
-                        <p class="wizard-step-label">Step 1 of 4</p>
+                        <p class="wizard-step-label">Step 1 of 6</p>
                         <h3>What are you hoping to create?</h3>
                         <div class="pill-group" id="goals-group">
-                            <button type="button" class="pill" data-value="pool">A swimming pool</button>
+                            <button type="button" class="pill" data-value="pool">A natural swimming pool</button>
                             <button type="button" class="pill" data-value="garden">An ecological garden</button>
                             <button type="button" class="pill" data-value="food">A food garden or orchard</button>
                             <button type="button" class="pill" data-value="restoration">Land restoration</button>
+                            <button type="button" class="pill" data-value="landmanagement">Holistic land management</button>
                             <button type="button" class="pill" data-value="all">Not sure yet — all of the above</button>
                         </div>
+                        <p class="wizard-hint" id="hint-1"></p>
                     </div>
 
                     <!-- Step 2 -->
                     <div class="wizard-step" id="step-2">
-                        <p class="wizard-step-label">Step 2 of 4</p>
+                        <p class="wizard-step-label">Step 2 of 6</p>
                         <h3>How big is the space you're working with?</h3>
                         <div class="pill-group" id="size-group">
                             <button type="button" class="pill" data-value="small">Small — under 500m²</button>
@@ -624,38 +863,71 @@
                             <button type="button" class="pill" data-value="large">Large — over 2000m²</button>
                             <button type="button" class="pill" data-value="farm">Farm or smallholding</button>
                         </div>
+                        <p class="wizard-hint" id="hint-2"></p>
                     </div>
 
                     <!-- Step 3 -->
                     <div class="wizard-step" id="step-3">
-                        <p class="wizard-step-label">Step 3 of 4</p>
-                        <h3>How much sun does this spot get?</h3>
+                        <p class="wizard-step-label">Step 3 of 6</p>
+                        <h3>How much sun does the main area get?</h3>
                         <div class="pill-group" id="sun-group">
                             <button type="button" class="pill" data-value="fullsun">Full sun — 6+ hours a day</button>
-                            <button type="button" class="pill" data-value="partial">Mixed — some shade during the day</button>
-                            <button type="button" class="pill" data-value="shade">Mostly shaded</button>
+                            <button type="button" class="pill" data-value="partial">Mixed — sun and shade through the day</button>
+                            <button type="button" class="pill" data-value="shade">Mostly shaded — under trees or buildings</button>
                         </div>
+                        <p class="wizard-hint" id="hint-3"></p>
                     </div>
 
                     <!-- Step 4 -->
                     <div class="wizard-step" id="step-4">
-                        <p class="wizard-step-label">Step 4 of 4</p>
-                        <h3>What's already on the land? (pick all that apply)</h3>
-                        <div class="pill-group" id="existing-group" style="margin-bottom:0">
+                        <p class="wizard-step-label">Step 4 of 6</p>
+                        <h3>What's already there? <span style="font-size:0.85rem;font-weight:400;color:var(--text-light)">(pick all that apply)</span></h3>
+                        <div class="pill-group" id="existing-group" style="margin-bottom:0.3rem">
                             <button type="button" class="pill multi" data-value="trees">Mature trees</button>
                             <button type="button" class="pill multi" data-value="slope">A slope or hillside</button>
-                            <button type="button" class="pill multi" data-value="water">A stream or wetland</button>
+                            <button type="button" class="pill multi" data-value="water">A stream, pond, or wetland</button>
                             <button type="button" class="pill multi" data-value="lawn">Lawn or kikuyu</button>
                             <button type="button" class="pill multi" data-value="invasives">Invasive plants</button>
-                            <button type="button" class="pill multi" data-value="rocky">Rocky soil</button>
-                            <button type="button" class="pill multi" data-value="none">Mostly bare or cleared</button>
+                            <button type="button" class="pill multi" data-value="rocky">Rocky or sandy soil</button>
+                            <button type="button" class="pill multi" data-value="pool">An existing conventional pool</button>
+                            <button type="button" class="pill multi" data-value="structures">Buildings, walls, or hard paving</button>
+                            <button type="button" class="pill multi" data-value="none">Mostly open or cleared land</button>
                         </div>
+                        <p class="wizard-hint" id="hint-4"></p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="wizard-step" id="step-5">
+                        <p class="wizard-step-label">Step 5 of 6</p>
+                        <h3>What matters most to you in this project?</h3>
+                        <div class="pill-group" id="priority-group">
+                            <button type="button" class="pill" data-value="lowmaint">Low maintenance — I want it to look after itself</button>
+                            <button type="button" class="pill" data-value="biodiversity">Biodiversity — wildlife, birds, and a living garden</button>
+                            <button type="button" class="pill" data-value="food">Growing food — productivity and self-sufficiency</button>
+                            <button type="button" class="pill" data-value="beauty">Beauty — a garden I actually love spending time in</button>
+                            <button type="button" class="pill" data-value="swimming">Swimming — a safe, natural place to swim</button>
+                            <button type="button" class="pill" data-value="land">Restoring the land — long-term ecological health</button>
+                        </div>
+                        <p class="wizard-hint" id="hint-5"></p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="wizard-step" id="step-6">
+                        <p class="wizard-step-label">Step 6 of 6</p>
+                        <h3>How soon are you thinking of starting?</h3>
+                        <div class="pill-group" id="timeline-group">
+                            <button type="button" class="pill" data-value="exploring">Just exploring — no firm plans yet</button>
+                            <button type="button" class="pill" data-value="sixmonths">Within 6 months</button>
+                            <button type="button" class="pill" data-value="oneyear">Within the next year</button>
+                            <button type="button" class="pill" data-value="ready">Ready now — I want to get moving</button>
+                        </div>
+                        <p class="wizard-hint" id="hint-6"></p>
                     </div>
 
                 </div>
                 <div class="wizard-footer">
                     <button type="button" class="wizard-btn wizard-btn-back" id="wizard-back" style="visibility:hidden">← Back</button>
-                    <span class="wizard-step-count" id="wizard-step-count">Step 1 of 4</span>
+                    <span class="wizard-step-count" id="wizard-step-count">Step 1 of 6</span>
                     <button type="button" class="wizard-btn wizard-btn-next" id="wizard-next">Next →</button>
                 </div>
             </div>
@@ -665,13 +937,18 @@
                 <div class="result-card-header">
                     <h3 id="result-title">Your Project Profile</h3>
                     <p id="result-subtitle">Based on what you've told us</p>
+                    <div class="result-answers-summary" id="result-answers-summary"></div>
                 </div>
                 <div class="result-card-body">
+                    <div id="result-priority-box" class="result-priority-box" style="display:none">
+                        <span class="result-priority-badge">Start here</span>
+                        <p id="result-priority-text"></p>
+                    </div>
                     <div id="result-items"></div>
                     <div class="result-cta">
-                        <p>Ready to take the next step? We'd love to come and see your land.</p>
+                        <p id="result-cta-text">Ready to take the next step? We'd love to come and see your land.</p>
                         <button type="button" class="btn-restart" id="wizard-restart">Start again</button>
-                        <a href="contact.html" class="btn-primary">Get in touch →</a>
+                        <a href="contact.html" class="btn-primary" id="result-cta-link">Get in touch →</a>
                     </div>
                 </div>
             </div>
@@ -695,6 +972,7 @@
                 <div class="checklist-group">
                     <div class="checklist-group-header invasive">
                         <span aria-hidden="true">🔴</span> Invasive Plants
+                        <span class="check-counter" id="counter-invasive">0 / 6</span>
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
@@ -705,27 +983,27 @@
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="hakea">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Hakea<em>Needle-like leaves, woody seed pods</em></span>
+                            <span class="checklist-item-label">Hakea<em>Needle-like leaves, woody horned seed pods</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="lantana">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Lantana<em>Small colourful flowers, prickly stems</em></span>
+                            <span class="checklist-item-label">Lantana<em>Small colourful flowers, prickly stems, black berries</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="bramble">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Bramble / Wild blackberry<em>Thorny canes, white flowers</em></span>
+                            <span class="checklist-item-label">Bramble / Wild blackberry<em>Thorny arching canes, white flowers</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="kikuyu">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Kikuyu grass<em>Aggressive spreading lawn grass</em></span>
+                            <span class="checklist-item-label">Kikuyu grass<em>Dense, rapidly spreading bright-green lawn grass</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="invasive" data-id="gum">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Gum trees (Eucalyptus)<em>Peeling bark, oily leaves</em></span>
+                            <span class="checklist-item-label">Gum trees (Eucalyptus)<em>Peeling bark, oily leaves, dense shade</em></span>
                         </label>
                     </div>
                 </div>
@@ -734,12 +1012,13 @@
                 <div class="checklist-group">
                     <div class="checklist-group-header water">
                         <span aria-hidden="true">💧</span> Water Signs
+                        <span class="check-counter" id="counter-water">0 / 5</span>
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="water" data-id="erosion">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Erosion channels or gullies<em>Where water runs too fast</em></span>
+                            <span class="checklist-item-label">Erosion channels or gullies<em>Where water runs too fast and cuts into soil</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="water" data-id="waterlog">
@@ -749,17 +1028,17 @@
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="water" data-id="stream">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">A seasonal stream or vlei<em>May be dry in summer</em></span>
+                            <span class="checklist-item-label">A seasonal stream or vlei<em>May be dry in summer — the channel is still valuable</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="water" data-id="dryslope">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Very dry slopes in summer<em>Runoff with little absorption</em></span>
+                            <span class="checklist-item-label">Very dry slopes in summer<em>Rainfall runs off with little absorption</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="water" data-id="spring">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">A seep or spring<em>Constant damp patch even in dry season</em></span>
+                            <span class="checklist-item-label">A seep or spring<em>Constant damp patch even in the dry season</em></span>
                         </label>
                     </div>
                 </div>
@@ -768,17 +1047,18 @@
                 <div class="checklist-group">
                     <div class="checklist-group-header soil">
                         <span aria-hidden="true">🟤</span> Soil Signs
+                        <span class="check-counter" id="counter-soil">0 / 6</span>
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="compacted">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Hard, compacted soil<em>Shovel bounces off the surface</em></span>
+                            <span class="checklist-item-label">Hard, compacted soil<em>A spade bounces off it; no give underfoot</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="exposed">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Bare exposed soil<em>No ground cover, prone to erosion</em></span>
+                            <span class="checklist-item-label">Bare exposed soil<em>No ground cover — prone to crusting and erosion</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="sandy">
@@ -786,14 +1066,19 @@
                             <span class="checklist-item-label">Very sandy or free-draining<em>Water disappears almost immediately</em></span>
                         </label>
                         <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="soil" data-id="rocky">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">Rocky or stony soil<em>Thin soil over rock, or boulders at the surface</em></span>
+                        </label>
+                        <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="worms">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Earthworms visible when digging<em>A good sign — healthy soil biology</em></span>
+                            <span class="checklist-item-label">Earthworms visible when digging<em>A good sign — healthy, living soil</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="soil" data-id="fungus">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Mushrooms or fungal networks<em>Visible after rain — excellent sign</em></span>
+                            <span class="checklist-item-label">Mushrooms or fungal threads visible<em>After rain — an excellent biological sign</em></span>
                         </label>
                     </div>
                 </div>
@@ -802,17 +1087,18 @@
                 <div class="checklist-group">
                     <div class="checklist-group-header wildlife">
                         <span aria-hidden="true">🦎</span> Wildlife &amp; Plants
+                        <span class="check-counter" id="counter-wildlife">0 / 5</span>
                     </div>
                     <div class="checklist-items">
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="wildlife" data-id="birds">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Good bird variety<em>More than just pigeons and starlings</em></span>
+                            <span class="checklist-item-label">Good bird variety<em>More than just pigeons — honeybirds, weavers, bulbuls</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="wildlife" data-id="frogs">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Frogs calling at night<em>Strong indicator of healthy water</em></span>
+                            <span class="checklist-item-label">Frogs calling at night<em>Strong indicator of healthy water on or near the site</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="wildlife" data-id="lizards">
@@ -822,7 +1108,7 @@
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="wildlife" data-id="indigenous">
                             <span class="check-box"></span>
-                            <span class="checklist-item-label">Some indigenous plants surviving<em>Even a few fynbos remnants matter</em></span>
+                            <span class="checklist-item-label">Some indigenous plants surviving<em>Even a few fynbos remnants tell us a lot</em></span>
                         </label>
                         <label class="checklist-item">
                             <input type="checkbox" class="check-input" data-category="wildlife" data-id="nolife">
@@ -832,11 +1118,52 @@
                     </div>
                 </div>
 
+                <!-- Existing features -->
+                <div class="checklist-group">
+                    <div class="checklist-group-header features">
+                        <span aria-hidden="true">🏗️</span> Existing Features
+                        <span class="check-counter" id="counter-features">0 / 6</span>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="chlorinepool">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">An existing conventional pool<em>Could be converted to a natural swimming pool</em></span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="dam">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">A dam or reservoir<em>Water storage on the property</em></span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="retaining">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">Retaining walls<em>Built structures managing a slope</em></span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="paving">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">Large areas of concrete or hard paving<em>Impermeable surfaces contributing to runoff</em></span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="garden">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">Established garden beds or fruit trees<em>Productive plants already in place</em></span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" class="check-input" data-category="features" data-id="structures">
+                            <span class="check-box"></span>
+                            <span class="checklist-item-label">Outbuildings or significant structures<em>Sheds, walls, garages that shape the space</em></span>
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
             <div class="checklist-actions">
                 <button type="button" class="btn-analyse" id="analyse-btn">Read my land →</button>
                 <button type="button" class="btn-restart" id="checklist-reset">Clear all</button>
+                <button type="button" class="btn-copy-brief" id="copy-brief-btn" style="display:none">📋 Copy land brief</button>
             </div>
 
             <div class="checklist-summary" id="checklist-summary">
@@ -858,8 +1185,8 @@
         <div class="container">
             <div class="tool-header">
                 <span class="tool-emoji" aria-hidden="true">💧</span>
-                <h2>EcoPool vs Chlorine: Running Cost Calculator</h2>
-                <p>See how running costs stack up over time. EcoPools cost more to build — but the gap closes fast once you stop buying chemicals.</p>
+                <h2>EcoPool vs Chlorine: Cost Calculator</h2>
+                <p>Running costs, build premium, and the real breakeven point — not just the headline saving.</p>
             </div>
 
             <div class="calc-card">
@@ -868,37 +1195,64 @@
                         <label for="pool-size-slider">Pool surface area</label>
                         <div class="slider-value-display"><span id="pool-size-val">30</span> <span>m²</span></div>
                         <input type="range" id="pool-size-slider" min="10" max="100" value="30" step="5" aria-label="Pool size in square metres">
+                        <p class="slider-hint">30m² is a typical family pool</p>
                     </div>
                     <div class="calc-slider-group">
                         <label for="years-slider">Years of ownership</label>
-                        <div class="slider-value-display"><span id="years-val">10</span> <span>years</span></div>
+                        <div class="slider-value-display"><span id="years-val">10</span> <span>yrs</span></div>
                         <input type="range" id="years-slider" min="1" max="25" value="10" step="1" aria-label="Years of ownership">
+                        <p class="slider-hint">Average SA home ownership: 8–12 years</p>
+                    </div>
+                    <div class="calc-slider-group">
+                        <label for="premium-slider">Build cost premium</label>
+                        <div class="slider-value-display">R<span id="premium-val">100</span> <span>k</span></div>
+                        <input type="range" id="premium-slider" min="0" max="250" value="100" step="10" aria-label="Build cost premium in thousands of rands">
+                        <p class="slider-hint">Extra cost of EcoPool vs chlorine build</p>
                     </div>
                 </div>
 
                 <div class="calc-results">
-                    <h3>Total running cost over <span id="years-label">10</span> years</h3>
-                    <div class="cost-bars">
-                        <div class="cost-bar-group">
-                            <p class="cost-bar-label chlorine">Chlorine pool</p>
-                            <div class="cost-bar-track">
-                                <div class="cost-bar-fill chlorine" id="bar-chlorine" style="height:100%"></div>
-                            </div>
-                            <p class="cost-total" id="total-chlorine">R0</p>
-                        </div>
-                        <div class="cost-bar-group">
-                            <p class="cost-bar-label ecopool">EcoPool</p>
-                            <div class="cost-bar-track">
-                                <div class="cost-bar-fill ecopool" id="bar-ecopool" style="height:60%"></div>
-                            </div>
-                            <p class="cost-total" id="total-ecopool">R0</p>
+                    <h3>Cost comparison over <span id="years-label">10</span> years</h3>
+
+                    <div class="breakeven-callout" id="breakeven-callout">
+                        <div class="be-number" id="be-number">—</div>
+                        <div class="be-text" id="be-text">
+                            <strong id="be-headline">Calculating…</strong>
+                            <span id="be-detail"></span>
                         </div>
                     </div>
-                    <div class="cost-saving">
-                        <strong id="saving-amount">R0</strong> saved with an EcoPool
+
+                    <div class="cost-chart-wrap">
+                        <svg id="cost-chart" viewBox="0 0 540 220" aria-label="Cumulative cost comparison chart"></svg>
+                        <div class="chart-legend">
+                            <div class="chart-legend-item"><div class="chart-legend-swatch chlorine"></div>Chlorine pool</div>
+                            <div class="chart-legend-item"><div class="chart-legend-swatch ecopool"></div>EcoPool (incl. build premium)</div>
+                        </div>
+                    </div>
+
+                    <table class="cost-breakdown-table" aria-label="Monthly cost breakdown">
+                        <thead>
+                            <tr>
+                                <th>Monthly cost item</th>
+                                <th class="col-chlorine">Chlorine pool</th>
+                                <th class="col-ecopool">EcoPool</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cost-table-body">
+                        </tbody>
+                    </table>
+
+                    <div class="cost-saving" id="cost-saving-summary">
+                        <strong id="saving-amount">R0</strong>
                         <p id="saving-note">over 10 years</p>
                     </div>
-                    <p class="calc-note">Estimates based on typical Garden Route figures: chlorine R600/month + R900/month electricity + R3,000/year maintenance. EcoPool R500/month electricity + R800/year maintenance. Build costs excluded — ask us for a quote.</p>
+
+                    <div class="water-comparison" id="water-comparison">
+                        <span class="water-icon">🚿</span>
+                        <span class="water-text" id="water-text">Loading water estimate…</span>
+                    </div>
+
+                    <p class="calc-note">Running cost estimates: chlorine pool — R600/month chemicals, R900/month electricity, R250/month maintenance. EcoPool — R500/month electricity, R67/month maintenance. Build premium is the additional upfront cost of EcoPool construction vs a conventional pool. All figures in 2024 rands, unescalated.</p>
                 </div>
             </div>
         </div>
@@ -912,10 +1266,14 @@
             <div class="tool-header">
                 <span class="tool-emoji" aria-hidden="true">🌺</span>
                 <h2>Indigenous Plant Finder</h2>
-                <p>Tell us your conditions and we'll suggest some Garden Route indigenous plants that will thrive in your space.</p>
+                <p>Over 40 Garden Route indigenous plants. Filter by conditions, or search by name. All plants shown by default.</p>
             </div>
 
-            <div class="plant-finder-form">
+            <div class="plant-finder-controls">
+                <div class="plant-search-input-wrap">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="text" id="pf-search" placeholder="Search by name or latin name…" aria-label="Search plants by name">
+                </div>
                 <div class="plant-finder-selects">
                     <div class="select-group">
                         <label for="pf-sun">Light</label>
@@ -943,16 +1301,27 @@
                             <option value="shrub">Shrub</option>
                             <option value="tree">Tree</option>
                             <option value="waterplant">Water plant</option>
-                            <option value="edible">Edible</option>
+                            <option value="edible">Edible / fruiting</option>
                         </select>
                     </div>
                 </div>
-                <div style="text-align:center">
-                    <button type="button" class="btn-analyse" id="plant-search-btn">Find plants →</button>
+                <div class="plant-quick-filters" role="group" aria-label="Quick filter shortcuts">
+                    <button type="button" class="quick-pill active" data-quick="all">All plants</button>
+                    <button type="button" class="quick-pill" data-quick="ecopool">EcoPool plants</button>
+                    <button type="button" class="quick-pill" data-quick="edible">Edible</button>
+                    <button type="button" class="quick-pill" data-quick="dry">Drought-tolerant</button>
+                    <button type="button" class="quick-pill" data-quick="shade">Shade-tolerant</button>
+                    <button type="button" class="quick-pill" data-quick="spring">Spring flowering</button>
+                    <button type="button" class="quick-pill" data-quick="birds">Bird-friendly</button>
                 </div>
             </div>
 
-            <div class="plant-results" id="plant-results"></div>
+            <div class="plant-results" id="plant-results">
+                <div class="plant-results-header" id="plant-results-header" style="display:none">
+                    <p class="plant-count-label" id="plant-count-label"></p>
+                </div>
+                <div class="plant-grid" id="plant-grid"></div>
+            </div>
 
         </div>
     </section>
@@ -1010,11 +1379,10 @@
     <script src="script.js"></script>
     <script>
     // ════════════════════════════════════════
-    // TOOL 1 — Wizard
+    // TOOL 1 — Wizard (6-step personalised)
     // ════════════════════════════════════════
-    const STEPS = 4;
+    const STEPS = 6;
     let currentStep = 1;
-    const answers = { goals: null, size: null, sun: null, existing: [] };
 
     // Single-select pills
     document.querySelectorAll('.pill:not(.multi)').forEach(pill => {
@@ -1030,8 +1398,8 @@
     });
 
     function getStepAnswer(step) {
-        const groups = ['goals-group','size-group','sun-group','existing-group'];
-        const group = document.getElementById(groups[step-1]);
+        const groups = ['goals-group','size-group','sun-group','existing-group','priority-group','timeline-group'];
+        const group = document.getElementById(groups[step - 1]);
         if (!group) return null;
         const selected = group.querySelectorAll('.pill.selected');
         if (selected.length === 0) return null;
@@ -1045,13 +1413,23 @@
         document.getElementById('wizard-step-count').textContent = 'Step ' + n + ' of ' + STEPS;
         document.getElementById('wizard-back').style.visibility = n > 1 ? 'visible' : 'hidden';
         document.getElementById('wizard-next').textContent = n === STEPS ? 'See my results →' : 'Next →';
+        // clear hint
+        const hint = document.getElementById('hint-' + n);
+        if (hint) hint.textContent = '';
     }
 
     document.getElementById('wizard-next').addEventListener('click', () => {
+        const isMultiStep = currentStep === 4; // step 4 allows 0 selections
         const ans = getStepAnswer(currentStep);
-        if (!ans && currentStep < STEPS) {
-            // Allow proceeding even without selection for last step
-            if (currentStep !== 4) return;
+        if (!ans && !isMultiStep) {
+            const hint = document.getElementById('hint-' + currentStep);
+            if (hint) hint.textContent = 'Please choose an option to continue.';
+            const btn = document.getElementById('wizard-next');
+            btn.classList.remove('shake');
+            void btn.offsetWidth; // reflow
+            btn.classList.add('shake');
+            setTimeout(() => btn.classList.remove('shake'), 450);
+            return;
         }
         if (currentStep < STEPS) { currentStep++; showStep(currentStep); }
         else { showResults(); }
@@ -1069,69 +1447,179 @@
         showStep(1);
     });
 
-    function formatList(arr) { return arr ? arr.join(', ') : 'not specified'; }
-
     function showResults() {
-        const goals = getStepAnswer(1) || [];
-        const size  = (getStepAnswer(2) || ['medium'])[0];
-        const sun   = (getStepAnswer(3) || ['partial'])[0];
-        const exist = getStepAnswer(4) || [];
+        const goals    = getStepAnswer(1) || [];
+        const size     = (getStepAnswer(2) || ['medium'])[0];
+        const sun      = (getStepAnswer(3) || ['partial'])[0];
+        const exist    = getStepAnswer(4) || [];
+        const priority = (getStepAnswer(5) || ['beauty'])[0];
+        const timeline = (getStepAnswer(6) || ['exploring'])[0];
 
+        const wantsPool        = goals.includes('pool') || goals.includes('all');
+        const wantsGarden      = goals.includes('garden') || goals.includes('all');
+        const wantsFood        = goals.includes('food') || goals.includes('all');
+        const wantsRestoration = goals.includes('restoration') || goals.includes('landmanagement') || goals.includes('all');
+
+        const hasSlope     = exist.includes('slope');
+        const hasWater     = exist.includes('water');
+        const hasInvasives = exist.includes('invasives');
+        const hasPool      = exist.includes('pool');
+        const hasLawn      = exist.includes('lawn');
+        const hasRocky     = exist.includes('rocky');
+        const hasTrees     = exist.includes('trees');
+        const hasNone      = exist.includes('none');
+
+        // ── Build project type label ──
+        let projectType = 'Ecological Garden';
+        let projectSlug = 'garden';
+        if (wantsPool && wantsGarden) { projectType = 'EcoPool & Ecological Garden'; projectSlug = 'ecopool-garden'; }
+        else if (wantsPool && wantsFood) { projectType = 'EcoPool & Food Garden'; projectSlug = 'ecopool-food'; }
+        else if (wantsPool) { projectType = 'Natural Swimming Pool'; projectSlug = 'ecopool'; }
+        else if (wantsFood && wantsRestoration) { projectType = 'Food Forest & Restoration'; projectSlug = 'food-restoration'; }
+        else if (wantsFood) { projectType = size === 'farm' ? 'Farm-Scale Food System' : 'Food Garden & Orchard'; projectSlug = 'food'; }
+        else if (wantsRestoration && size === 'farm') { projectType = 'Holistic Farm Land Management'; projectSlug = 'land'; }
+        else if (wantsRestoration) { projectType = 'Ecological Restoration'; projectSlug = 'restoration'; }
+        else if (goals.includes('all')) { projectType = 'Whole-Property Ecological Design'; projectSlug = 'whole-property'; }
+
+        // ── Build "what you told us" chips ──
+        const chipLabels = {
+            pool: 'Natural pool', garden: 'Ecological garden', food: 'Food garden',
+            restoration: 'Restoration', landmanagement: 'Land management', all: 'Everything',
+        };
+        const sizeLabels = { small: 'Small plot', medium: 'Medium plot', large: 'Large plot', farm: 'Farm/smallholding' };
+        const sunLabels  = { fullsun: 'Full sun', partial: 'Mixed sun', shade: 'Mostly shaded' };
+        const priorityLabels = {
+            lowmaint: 'Low-maintenance', biodiversity: 'Biodiversity-first', food: 'Food production',
+            beauty: 'Beautiful garden', swimming: 'Swimming', land: 'Land health'
+        };
+        const timelineLabels = { exploring: 'Just exploring', sixmonths: 'Within 6 months', oneyear: 'Within a year', ready: 'Ready now' };
+
+        const chips = [
+            ...goals.filter(g => g !== 'all').map(g => chipLabels[g] || g),
+            sizeLabels[size], sunLabels[sun], priorityLabels[priority], timelineLabels[timeline]
+        ].filter(Boolean);
+
+        document.getElementById('result-answers-summary').innerHTML =
+            chips.map(c => `<span class="result-answer-chip">${c}</span>`).join('');
+
+        // ── Priority #1 box ──
+        let priority1 = null;
+        if (hasInvasives) {
+            priority1 = 'Before anything else: get on top of the invasive plants. They compete with whatever you plant and shape how every other part of the design works. We\u2019d want to do a survey walk to map what\u2019s there and agree a clearing sequence.';
+        } else if (hasPool && wantsPool) {
+            priority1 = 'You already have a pool \u2014 which means you\u2019re a strong candidate for an EcoPool conversion. That\u2019s often faster and more cost-effective than a new build. We\u2019d assess the existing structure on site.';
+        } else if (hasLawn && wantsGarden) {
+            priority1 = 'Kikuyu and lawn grasses are the main thing to work around in your design. The good news is they can be sheet-mulched and smothered over one season \u2014 no chemicals needed. We plan around this from the start.';
+        } else if (hasSlope) {
+            priority1 = 'A sloped site means water management comes first. We design earthworks (swales, contour banks, infiltration beds) early in the process \u2014 they set up everything else, from planting to pool siting.';
+        } else if (wantsPool && sun === 'shade') {
+            priority1 = 'A natural pool needs at least 5\u20136 hours of direct sun for the aquatic biology to work. The shade on your site means we\u2019d need to choose the location carefully \u2014 or consider whether an ecological pond or wetland garden is a better fit.';
+        }
+
+        const prioBox = document.getElementById('result-priority-box');
+        const prioText = document.getElementById('result-priority-text');
+        if (priority1) {
+            prioText.textContent = priority1;
+            prioBox.style.display = 'flex';
+        } else {
+            prioBox.style.display = 'none';
+        }
+
+        // ── Ordered result items ──
         const items = [];
 
-        // Primary recommendation
-        if (goals.includes('pool') || goals.includes('all')) {
-            items.push({ icon: '🏊', title: 'An EcoPool could work beautifully here',
-                text: size === 'small'
-                    ? 'Even a smaller plot can accommodate a natural dipping pool — compact, well-planted, and very low-maintenance.'
-                    : 'Your site has good room for a full natural swimming pool with a planted regeneration zone.' });
+        // Primary recommendation per goal
+        if (wantsPool) {
+            const poolText = size === 'small'
+                ? 'Even a compact site can accommodate a dipping pool or plunge EcoPool — around 20–25m² is enough for a swimming zone with a planted filter bed alongside it.'
+                : hasWater
+                    ? 'You already have water moving through your site. We can work with the existing hydrology to feed and situate a natural pool — this is often the most ecologically interesting approach.'
+                    : 'Your site sounds well-suited for a full natural swimming pool with an integrated regeneration zone. Sun and space are the main requirements \u2014 we\u2019d assess both on site.';
+            items.push({ icon: '🏊', label: 'Core project', title: 'Natural EcoPool', text: poolText });
         }
-        if (goals.includes('garden') || goals.includes('all')) {
-            items.push({ icon: '🌿', title: 'Ecological garden design',
-                text: sun === 'shade'
-                    ? 'Shaded gardens on the Garden Route are great for tree ferns, clivia, and wild iris — we can work with that beautifully.'
-                    : 'Full-sun fynbos gardens are some of the most rewarding we design — low water, high biodiversity, and spectacular in flower.' });
+        if (wantsGarden) {
+            const gardenText = sun === 'shade'
+                ? 'Shaded sites on the Garden Route support beautiful moist forest gardens. We\u2019d work with species like tree ferns, clivia, wild iris, and arum lilies.'
+                : hasRocky
+                    ? 'Rocky, well-drained soil is exactly what fynbos loves. We\u2019d design around what\u2019s already there \u2014 low-water, high-biodiversity, spectacular in flower.'
+                    : priority === 'lowmaint'
+                        ? 'A well-planted indigenous garden with the right species in the right place needs very little intervention once established. We design for minimum input, maximum ecological output.'
+                        : priority === 'biodiversity'
+                            ? 'Garden Route indigenous gardens can support extraordinary biodiversity — sunbirds, sugarbirds, lizards, frogs, bees. Plant communities rather than individual plants, and choose for multi-season interest.'
+                            : 'A designed ecological garden brings together structure, colour, and habitats — and does it with plants that belong here and look after themselves.';
+            items.push({ icon: '🌿', label: 'Then', title: 'Ecological Garden Design', text: gardenText });
         }
-        if (goals.includes('food') || goals.includes('all')) {
-            items.push({ icon: '🍋', title: 'Food forest or productive garden',
-                text: size === 'farm' || size === 'large'
-                    ? 'A larger plot is ideal for a multi-layer food forest — fruit trees, shrubs, ground layer, all working together.'
-                    : 'Even small spaces can support a productive edible garden when designed well — we integrate food plants into ecological designs regularly.' });
+        if (wantsFood) {
+            const foodText = size === 'farm'
+                ? 'A farm-scale food system involves zoning: intensive annual beds closest to the house, expanding into a mixed orchard, then perennial food forest layers. We integrate this with any existing land features.'
+                : size === 'small'
+                    ? 'Small spaces can still be highly productive. We integrate edible plants into the ecological design — they support biodiversity as well as your kitchen.'
+                    : hasTrees
+                        ? 'Your existing trees give you a canopy layer to build from. A food forest works in layers — you may already have the hardest layer in place.'
+                        : 'A multi-layer food garden on the Garden Route can produce fruit, vegetables, herbs, and forage year-round. We design with the climate, not against it.';
+            items.push({ icon: '🍋', label: 'Also', title: wantsFood && size === 'farm' ? 'Farm-Scale Food Production' : 'Food Garden & Orchard', text: foodText });
         }
-        if (goals.includes('restoration') || goals.includes('all')) {
-            items.push({ icon: '🦋', title: 'Land restoration is possible',
-                text: exist.includes('invasives')
-                    ? 'Invasive plants are the first thing to address. Once the pressure is off, the fynbos can come back on its own — with some help from us.'
-                    : 'Your land sounds like a good candidate for gentle restoration — removing what doesn\'t belong and encouraging what does.' });
+        if (wantsRestoration) {
+            const restText = size === 'farm' || size === 'large'
+                ? 'Large-scale land restoration starts with a whole-property assessment — vegetation, water, soil, and land use history. We build a phased plan that\'s achievable over years, not just months.'
+                : hasNone
+                    ? 'Bare or cleared land is actually an opportunity. Without competition from established plants, restoration can move fast — especially on sandy fynbos soils where the seed bank is often still alive.'
+                    : 'Ecological restoration at this scale is about removing what doesn\'t belong and creating space for what does. We\'d map the remnant vegetation first — it\'s the guide for everything else.';
+            items.push({ icon: '🦋', label: 'Also', title: 'Ecological Restoration', text: restText });
         }
 
-        // Site-specific notes
-        if (exist.includes('slope')) {
-            items.push({ icon: '⛰️', title: 'Sloped land — water is key',
-                text: 'Slopes mean water moves fast. We can slow it down, spread it out, and use that energy to build soil. Great for swales, terracing, or a hillside food forest.' });
+        // Context-specific notes based on site conditions
+        if (hasWater && !wantsPool) {
+            items.push({ icon: '💧', label: 'Opportunity', title: 'You have a water feature to work with', text: 'Streams, seeps, and seasonal vleis are rare and valuable. We design to protect and enhance them — and they often become the heart of an ecological garden or wetland planting area.' });
         }
-        if (exist.includes('invasives')) {
-            items.push({ icon: '⚠️', title: 'Invasives need addressing first',
-                text: 'We\'d want to do an invasive plant survey before designing anything. Getting them under control is the foundation of everything else.' });
+        if (hasSlope && !priority1) {
+            items.push({ icon: '⛰️', label: 'Worth noting', title: 'Slopes create design opportunities', text: 'Sloped land is where water-harvesting earthworks shine. Swales, terracing, and contour planting slow water, build soil moisture, and can be used to feed a natural pool or garden zone on the lower slopes.' });
         }
-        if (exist.includes('water')) {
-            items.push({ icon: '💧', title: 'You have a water feature to work with',
-                text: 'Streams and wetlands are rare and valuable — any design should protect and enhance them, and they open up options for natural swimming areas or wetland planting.' });
+        if (hasRocky && !wantsGarden) {
+            items.push({ icon: '🪨', label: 'Opportunity', title: 'Rocky soil suits fynbos perfectly', text: 'Many Garden Route indigenous plants — proteas, leucadendrons, ericas — evolved on poor, rocky soils. What looks like a difficult site is actually ideal habitat for some of the most spectacular plants.' });
+        }
+        if (hasTrees && wantsPool) {
+            items.push({ icon: '🌳', label: 'Consider', title: 'Shade from trees needs managing', text: 'Natural pools need direct sun to stay clear. Mature trees are a wonderful asset for the rest of the garden, but we\'ll need to site the pool away from their canopy and root zones.' });
         }
 
+        // Timeline-aware note
+        if (timeline === 'ready') {
+            items.push({ icon: '📞', label: 'Next step', title: 'Get a site visit on the calendar', text: 'If you\'re ready to move, the fastest next step is a site visit where we can walk the land together and turn this into a real brief. Most initial consultations take 2–3 hours.' });
+        } else if (timeline === 'sixmonths') {
+            items.push({ icon: '📋', label: 'Next step', title: 'Good time to start the design process', text: 'Six months is enough time to get a proper design done, source plants, and plan earthworks. Starting the conversation now means we can be ready to build when the conditions are right.' });
+        }
+
+        // Fallback
         if (items.length === 0) {
-            items.push({ icon: '🌱', title: 'Every piece of land has potential',
-                text: 'We\'d love to come and see your site — sometimes a walk around together is the best way to understand what\'s possible.' });
+            items.push({ icon: '🌱', label: 'Starting point', title: 'Every piece of land has potential', text: 'We\'d love to come and see your site — sometimes a walk together is the best way to understand what\'s possible.' });
         }
+
+        const labelColour = { 'Core project':'#1e8449','Then':'var(--primary-blue)','Also':'var(--primary-blue)','Opportunity':'#d4870d','Worth noting':'#7d5a3c','Consider':'#c0392b','Next step':'var(--secondary-blue)','Starting point':'var(--primary-blue)' };
 
         document.getElementById('result-items').innerHTML = items.map(item => `
             <div class="result-item">
                 <span class="result-icon" aria-hidden="true">${item.icon}</span>
                 <div class="result-item-text">
+                    <span class="result-item-label" style="color:${labelColour[item.label]||'var(--primary-blue)'}">${item.label}</span>
                     <strong>${item.title}</strong>
                     <p>${item.text}</p>
                 </div>
             </div>`).join('');
+
+        // Result header
+        document.getElementById('result-title').textContent = projectType;
+        document.getElementById('result-subtitle').textContent = 'Here is what we\'d suggest based on your site';
+
+        // Personalised CTA
+        const ctaMessages = {
+            ready: 'You\'re ready — let\'s get a site visit in the diary.',
+            sixmonths: 'A conversation now means we can be ready to build at the right time.',
+            oneyear: 'There\'s time to do this properly. Let\'s start talking.',
+            exploring: 'No pressure. Come and have a conversation — it costs nothing.'
+        };
+        document.getElementById('result-cta-text').textContent = ctaMessages[timeline] || 'Ready to take the next step?';
+        document.getElementById('result-cta-link').textContent = `Tell us about your ${projectType} →`;
+        document.getElementById('result-cta-link').href = `contact.html?type=${projectSlug}`;
 
         document.getElementById('wizard-card').style.display = 'none';
         document.getElementById('wizard-result').classList.add('visible');
@@ -1140,10 +1628,60 @@
     // ════════════════════════════════════════
     // TOOL 2 — Land Checklist
     // ════════════════════════════════════════
+
+    // Live counter: update each category badge as checkboxes change
+    document.querySelectorAll('.check-input').forEach(cb => {
+        cb.addEventListener('change', () => {
+            const cat = cb.dataset.category;
+            const total   = document.querySelectorAll(`.check-input[data-category="${cat}"]`).length;
+            const ticked  = document.querySelectorAll(`.check-input[data-category="${cat}"]:checked`).length;
+            const counter = document.getElementById('counter-' + cat);
+            if (counter) counter.textContent = ticked + ' / ' + total;
+        });
+    });
+
     document.getElementById('analyse-btn').addEventListener('click', analyseChecklist);
     document.getElementById('checklist-reset').addEventListener('click', () => {
         document.querySelectorAll('.check-input').forEach(cb => cb.checked = false);
+        // Reset all counters
+        ['invasive','water','soil','wildlife','features'].forEach(cat => {
+            const total = document.querySelectorAll(`.check-input[data-category="${cat}"]`).length;
+            const counter = document.getElementById('counter-' + cat);
+            if (counter) counter.textContent = '0 / ' + total;
+        });
         document.getElementById('checklist-summary').classList.remove('visible');
+        document.getElementById('copy-brief-btn').style.display = 'none';
+    });
+
+    // Copy land brief to clipboard
+    document.getElementById('copy-brief-btn').addEventListener('click', () => {
+        const checkedLabels = Array.from(document.querySelectorAll('.check-input:checked')).map(cb => {
+            const label = cb.closest('label').querySelector('.checklist-item-label');
+            return label ? label.childNodes[0].textContent.trim() : '';
+        }).filter(Boolean);
+
+        const findingEls = Array.from(document.querySelectorAll('#summary-findings .finding-item'));
+        const findingTexts = findingEls.map(f => f.innerText.replace(/\n+/g, ' ').trim()).filter(Boolean);
+
+        const text = [
+            'My land — Six Kingdoms site assessment',
+            '',
+            'What I can see on my land:',
+            ...checkedLabels.map(l => '• ' + l),
+            '',
+            'What this suggests:',
+            ...findingTexts.map(f => '• ' + f)
+        ].join('\n');
+
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById('copy-brief-btn');
+            btn.textContent = '✓ Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = '📋 Copy land brief';
+                btn.classList.remove('copied');
+            }, 2500);
+        });
     });
 
     function analyseChecklist() {
@@ -1154,181 +1692,537 @@
             checked[cat].push(cb.dataset.id);
         });
 
+        const totalTicked = document.querySelectorAll('.check-input:checked').length;
+        if (totalTicked === 0) {
+            document.getElementById('summary-findings').innerHTML =
+                '<div class="finding-item neutral">Tick a few boxes above and we\'ll read what your land is telling you.</div>';
+            document.getElementById('checklist-summary').classList.add('visible');
+            document.getElementById('copy-brief-btn').style.display = 'none';
+            return;
+        }
+
         const findings = [];
-        const inv = checked.invasive || [];
-        const water = checked.water || [];
-        const soil = checked.soil || [];
-        const wild = checked.wildlife || [];
+        const inv  = checked.invasive  || [];
+        const water = checked.water    || [];
+        const soil  = checked.soil     || [];
+        const wild  = checked.wildlife || [];
+        const feat  = checked.features || [];
 
-        if (inv.length >= 3) {
-            findings.push({ type: 'warning', text: '<strong>Significant invasive pressure.</strong> With multiple invasive species present, clearing should be the first priority. An ecological assessment will help us map what\'s there and plan a realistic removal sequence.' });
+        // ── INVASIVES ──
+        if (inv.includes('kikuyu') && inv.length >= 2) {
+            findings.push({ type: 'warning', text: '<strong>Kikuyu plus other invasives — a persistent combination.</strong> Kikuyu regrows aggressively from any fragment of root, so mechanical clearing alone won\'t hold. Smothering with deep mulch and quick ground-cover planting after removal is the only reliable approach. <a class="finding-link" href="land-management.html">Read about our land management process →</a>' });
+        } else if (inv.includes('kikuyu')) {
+            findings.push({ type: 'warning', text: '<strong>Kikuyu grass is one of the most persistent invasives on the Garden Route.</strong> It responds quickly after cutting and survives drought by going dormant. Success comes from interrupting its light supply — deep mulch (150mm+) followed immediately by indigenous ground cover is the approach we use. <a class="finding-link" href="land-management.html">More on managing kikuyu →</a>' });
+        } else if (inv.length >= 3) {
+            findings.push({ type: 'warning', text: '<strong>Significant invasive pressure across multiple species.</strong> This level of infestation needs a sequenced clearing plan, not a single big clearance. We\'d want to map what\'s where, prioritise by spread risk, and work systematically over a season. Planting into freshly cleared ground is critical — bare soil is an invitation for reinvasion. <a class="finding-link" href="land-management.html">See how we approach this →</a>', urgency: 'urgent' });
         } else if (inv.length > 0) {
-            findings.push({ type: 'warning', text: '<strong>Some invasive plants present.</strong> Worth addressing — especially before planting anything new. We can help you identify the best approach for each species.' });
+            findings.push({ type: 'warning', text: '<strong>Some invasive plants present — address these before anything else.</strong> The good news is that early-stage infestations respond well to hand-clearing followed by quick indigenous planting. We can map and prioritise during your first consult.' });
         } else {
-            findings.push({ type: 'good', text: '<strong>No invasive plants noticed — a great starting point.</strong> Your land is ahead of most Garden Route properties. Keeping it that way is much easier than clearing.' });
+            findings.push({ type: 'good', text: '<strong>No invasive plants noticed — your land is ahead of most in the Garden Route.</strong> Holding that ground is far easier than clearing. Indigenous planting now creates a competitive barrier against future invasion.' });
         }
 
+        // ── COMBINED: invasives + wet soil = accelerated spread risk ──
+        if (inv.length >= 1 && water.includes('waterlog')) {
+            findings.push({ type: 'warning', text: '<strong>Invasives and waterlogged areas together create a difficult cycle.</strong> Invasive trees like wattles actively draw water, worsening drainage over time. Clearing them is often the fastest way to improve drainage — but the wet areas will need replanting with water-tolerant indigenous species to stay cleared.', urgency: 'urgent' });
+        }
+
+        // ── WATER FLOWS ──
         if (water.includes('erosion') && water.includes('dryslope')) {
-            findings.push({ type: 'warning', text: '<strong>Water is moving through too fast.</strong> Erosion and dry slopes together suggest the land has lost its ability to hold water. Earthworks — swales, check dams, mulching — can transform this relatively quickly.' });
+            findings.push({ type: 'warning', text: '<strong>Water is moving through too fast and not staying in the landscape.</strong> Erosion channels and summer-dry slopes together tell us the land has lost its sponge. Earthworks — swales along contour, check dams in gullies, and mulching — can dramatically reverse this. This is often the highest-leverage intervention we can make. <a class="finding-link" href="land-management.html">Read about water harvesting →</a>' });
         } else if (water.includes('erosion')) {
-            findings.push({ type: 'info', text: '<strong>Some erosion visible.</strong> Erosion channels are easy to address in early stages — ground cover planting, mulching, and sometimes simple earthworks.' });
-        } else if (water.includes('waterlog')) {
-            findings.push({ type: 'info', text: '<strong>Waterlogging after rain.</strong> This can actually be turned into an asset — a rain garden or constructed wetland can manage the water while adding biodiversity.' });
+            findings.push({ type: 'info', text: '<strong>Erosion channels are present.</strong> In early stages these are straightforward to address — check dams made from brush or stone slow the flow, and ground cover plants stabilise the banks. Left unaddressed they widen quickly.' });
+        } else if (water.includes('dryslope')) {
+            findings.push({ type: 'info', text: '<strong>Slopes drying out in summer.</strong> This usually means rainfall is running off rather than soaking in. Swales on contour or deep-rooted pioneer planting can help the water stay in the soil long enough to matter.' });
         }
-        if (water.includes('stream') || water.includes('spring')) {
-            findings.push({ type: 'good', text: '<strong>You have a reliable water source.</strong> Streams and springs are precious on the Garden Route. We\'d want to protect and work around these in any design.' });
+        if (water.includes('waterlog') && !inv.length) {
+            findings.push({ type: 'info', text: '<strong>Waterlogged patches can become an asset.</strong> A constructed wetland, rain garden, or bog planting in these areas will do two things at once: manage the excess water and create a rich biodiversity hotspot. <a class="finding-link" href="ecopools.html">See our EcoPool and water garden work →</a>' });
         }
-
-        if (soil.includes('compacted') || soil.includes('exposed')) {
-            findings.push({ type: 'info', text: '<strong>Soil needs some recovery time.</strong> Compacted or bare soil is common on disturbed sites. Mulching, ground cover planting, and avoiding digging are the first steps — soils can recover surprisingly quickly.' });
-        }
-        if (soil.includes('worms') || soil.includes('fungus')) {
-            findings.push({ type: 'good', text: '<strong>Your soil biology is alive.</strong> Earthworms and fungi are excellent signs — your soil is already doing some of the right things. We build from here.' });
+        if (water.includes('stream') && wild.includes('birds')) {
+            findings.push({ type: 'good', text: '<strong>A stream corridor with active birdlife is a rare asset.</strong> Riparian zones are among the most biodiverse habitats in the Western Cape. We\'d design around it carefully — protecting the banks, managing invasives along the margins, and using it as a spine for the whole ecological design.' });
+        } else if (water.includes('stream') || water.includes('spring')) {
+            findings.push({ type: 'good', text: '<strong>A reliable water feature on the property.</strong> Streams and springs are precious. In any design we\'d treat this as the most important element — everything else gravitates toward protecting and enhancing it.' });
         }
 
+        // ── SOIL ──
+        if (soil.includes('rocky')) {
+            findings.push({ type: 'good', text: '<strong>Rocky or stony soil is usually good news for fynbos.</strong> Many fynbos species evolved on nutrient-poor, rocky substrates and actively prefer them. Rocky slopes are often the best candidates for fynbos restoration, even when they look barren.' });
+        }
+        if (soil.includes('sandy') && water.includes('dryslope')) {
+            findings.push({ type: 'warning', text: '<strong>Sandy soil on a slope is a significant erosion risk.</strong> Sandy soils drain fast and have little binding structure. Combine that with a slope and rainfall runs straight through and takes soil with it. Ground cover, mulch, and sometimes jute matting on steep sections are the priority.' });
+        } else if (soil.includes('sandy')) {
+            findings.push({ type: 'info', text: '<strong>Sandy, free-draining soil.</strong> Water retention is low — mulching generously and choosing drought-adapted species will make the biggest difference. The good news is that sandy soils are excellent for fynbos and many indigenous ground covers.' });
+        }
+        if (soil.includes('compacted') && soil.includes('exposed')) {
+            findings.push({ type: 'warning', text: '<strong>Compacted bare soil is the most degraded condition.</strong> The soil structure has broken down and there\'s nothing protecting it from further erosion. The recovery sequence: mulch (never leave it bare), pioneer ground cover, then longer-lived plants as the biology rebuilds.' });
+        } else if (soil.includes('compacted')) {
+            findings.push({ type: 'info', text: '<strong>Compacted soil limits water infiltration and root growth.</strong> Avoid digging — it makes things worse. Deep-rooted pioneer species like Agapanthus and native restios break compaction biologically over a season or two.' });
+        } else if (soil.includes('exposed')) {
+            findings.push({ type: 'info', text: '<strong>Bare soil needs a cover layer quickly.</strong> Every rain event removes more structure. Mulching first, then fast-growing ground cover — this is a quick win that pays off immediately.' });
+        }
+        if (soil.includes('worms') && soil.includes('fungus')) {
+            findings.push({ type: 'good', text: '<strong>Excellent soil biology — both earthworms and fungi visible.</strong> Your soil is genuinely alive and working. This is the foundation everything else depends on. We build around it, not on top of it.' });
+        } else if (soil.includes('worms') || soil.includes('fungus')) {
+            findings.push({ type: 'good', text: '<strong>Healthy biological activity in the soil.</strong> ' + (soil.includes('worms') ? 'Earthworms indicate good organic matter and drainage balance.' : 'Fungal networks are a sign of living, connected soil biology — one of the hardest things to restore once lost.') });
+        }
+
+        // ── WILDLIFE ──
         if (wild.includes('nolife')) {
-            findings.push({ type: 'warning', text: '<strong>Low biodiversity right now.</strong> That\'s okay — it means the starting point is clear. Removing invasives and planting indigenous species can shift things dramatically within a season or two.' });
+            findings.push({ type: 'warning', text: '<strong>Very little visible life right now.</strong> That\'s okay — it\'s a clear starting point. Removing whatever is suppressing life (usually invasives or very poor soil condition) and planting indigenous species can shift things noticeably within one season. We\'ve seen near-bare plots transform within two years.' });
+        } else if (wild.includes('birds') && wild.includes('frogs') && wild.includes('lizards')) {
+            findings.push({ type: 'good', text: '<strong>Birds, frogs, and lizards together indicate a functioning food web.</strong> This is significantly better than average. The ecosystem is working — our job is to amplify, not restore from scratch.' });
         } else if (wild.includes('birds') || wild.includes('frogs') || wild.includes('lizards')) {
-            findings.push({ type: 'good', text: '<strong>Wildlife is already present — that\'s a real asset.</strong> The ecosystem is functioning. Good design will amplify what\'s already there rather than starting from scratch.' });
+            findings.push({ type: 'good', text: '<strong>Wildlife is already present — a real asset to work from.</strong> ' + (wild.includes('frogs') ? 'Frogs in particular indicate healthy water somewhere on or near the property.' : wild.includes('birds') ? 'Good bird variety usually means there\'s food diversity — either insects or fruiting plants.' : 'Lizards are base-of-food-web indicators and respond quickly to improved habitat.') });
         }
         if (wild.includes('indigenous')) {
-            findings.push({ type: 'good', text: '<strong>Indigenous plant remnants are worth preserving.</strong> Even a few fynbos survivors tell us what could grow here again. We\'d use these as a guide for replanting.' });
+            findings.push({ type: 'good', text: '<strong>Surviving indigenous plants are invaluable reference points.</strong> Even a few remnants tell us what this land could support again. We\'d map and protect every one, and use them as both seed sources and design anchors.' });
+        }
+
+        // ── EXISTING FEATURES ──
+        if (feat.includes('chlorinepool')) {
+            findings.push({ type: 'good', text: '<strong>Your existing pool is a conversion candidate.</strong> Converting a chlorinated pool to a natural swimming pool (EcoPool) is often more cost-effective than building new — the basin is already in place. You keep a beautiful, swimmable water feature while eliminating chemical costs entirely. <a class="finding-link" href="ecopools.html">See our EcoPool conversion work →</a>', urgency: 'opportunity' });
+        }
+        if (feat.includes('dam')) {
+            findings.push({ type: 'good', text: '<strong>A dam is a significant ecological opportunity.</strong> Even a small farm dam can be transformed into a natural swimming pool, a wildlife waterhole, or the centrepiece of a water garden. The earthworks are already done — the opportunity cost of leaving it as-is is high. <a class="finding-link" href="ecopools.html">See natural pool designs →</a>', urgency: 'opportunity' });
+        }
+        if (feat.includes('paving') && water.includes('waterlog')) {
+            findings.push({ type: 'info', text: '<strong>Large paved areas are likely contributing to the waterlogging.</strong> Impermeable surfaces concentrate runoff into wherever the water goes — usually low spots or building bases. Redirecting that flow constructively (into swales, a rain garden, or a planted basin) solves two problems at once.' });
+        } else if (feat.includes('paving')) {
+            findings.push({ type: 'info', text: '<strong>Extensive hard paving reduces the land\'s ability to absorb water.</strong> Over time, removing or replacing some paving with permeable alternatives, or directing runoff into planted areas, significantly improves the water cycle on the property.' });
+        }
+        if (feat.includes('garden')) {
+            findings.push({ type: 'good', text: '<strong>Established planting is a head start, not a constraint.</strong> Mature trees and productive garden areas are valuable — we design around and with them, not through them. Even exotic fruit trees can coexist with an ecological design.' });
+        }
+        if (feat.includes('retaining') && soil.includes('compacted')) {
+            findings.push({ type: 'info', text: '<strong>Retaining walls sometimes trap waterlogging and compaction.</strong> The flat terraced ground behind walls tends to collect water and compact faster than open slopes. Soil aeration and improved drainage behind the walls is often a first step.' });
         }
 
         if (findings.length === 0) {
-            findings.push({ type: 'neutral', text: 'Tick some boxes above and we\'ll read what we\'re seeing.' });
+            findings.push({ type: 'neutral', text: 'Keep ticking boxes and we\'ll read more of what your land is showing us.' });
         }
 
-        document.getElementById('summary-findings').innerHTML = findings.map(f =>
-            `<div class="finding-item ${f.type}">${f.text}</div>`).join('');
+        document.getElementById('summary-findings').innerHTML = findings.map(f => {
+            const urgencyMap = { urgent: 'urgent', good: 'opportunity', info: 'noting', warning: 'noting', neutral: 'noting' };
+            const urgencyLabel = { urgent: 'Act first', opportunity: 'Opportunity', noting: 'Worth knowing', neutral: '' };
+            const urgency = f.urgency || urgencyMap[f.type] || 'noting';
+            const pill = urgencyLabel[urgency] ? `<span class="finding-urgency ${urgency}">${urgencyLabel[urgency]}</span> ` : '';
+            return `<div class="finding-item ${f.type}">${pill}${f.text}</div>`;
+        }).join('');
+
         const summary = document.getElementById('checklist-summary');
         summary.classList.add('visible');
         summary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        document.getElementById('copy-brief-btn').style.display = '';
     }
 
     // ════════════════════════════════════════
     // TOOL 3 — Cost Calculator
     // ════════════════════════════════════════
     function formatZAR(n) {
-        return 'R' + Math.round(n).toLocaleString('en-ZA');
+        return 'R\u202f' + Math.round(n).toLocaleString('en-ZA');
+    }
+
+    function drawCostChart(years, chlorineAnnual, ecopoolAnnual, buildPremium) {
+        const svg = document.getElementById('cost-chart');
+        const W = 540, H = 220, padL = 58, padR = 18, padT = 14, padB = 32;
+        const chartW = W - padL - padR;
+        const chartH = H - padT - padB;
+
+        // Generate cumulative data points for each year 0..years
+        const chlorinePoints = [];
+        const ecopoolPoints  = [];
+        for (let y = 0; y <= years; y++) {
+            chlorinePoints.push(chlorineAnnual * y);
+            ecopoolPoints.push(buildPremium + ecopoolAnnual * y);
+        }
+
+        const maxVal = Math.max(...chlorinePoints, ...ecopoolPoints);
+
+        const xPos = y => padL + (y / years) * chartW;
+        const yPos = v => padT + chartH - (v / maxVal) * chartH;
+
+        // Build path strings
+        const toPath = pts => pts.map((v, i) => `${i === 0 ? 'M' : 'L'}${xPos(i).toFixed(1)},${yPos(v).toFixed(1)}`).join(' ');
+
+        // Find crossover year (where ecopool goes below chlorine running total)
+        let crossoverYear = null;
+        for (let y = 1; y <= years; y++) {
+            if (ecopoolPoints[y] <= chlorinePoints[y]) { crossoverYear = y; break; }
+        }
+
+        const gridLines = 4;
+        let svgHtml = '';
+
+        // Grid lines + y-axis labels
+        for (let i = 0; i <= gridLines; i++) {
+            const v = (maxVal / gridLines) * i;
+            const y = yPos(v);
+            svgHtml += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>`;
+            svgHtml += `<text x="${padL - 6}" y="${(y + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#999">${v >= 1000 ? 'R' + Math.round(v / 1000) + 'k' : 'R' + Math.round(v)}</text>`;
+        }
+
+        // X-axis labels
+        const labelStep = years <= 10 ? 1 : years <= 15 ? 2 : 5;
+        for (let y = 0; y <= years; y += labelStep) {
+            svgHtml += `<text x="${xPos(y).toFixed(1)}" y="${H - padB + 14}" text-anchor="middle" font-size="10" fill="#999">${y === 0 ? 'Now' : y + 'y'}</text>`;
+        }
+
+        // Area fills (semi-transparent)
+        const cAreaPath = toPath(chlorinePoints) + ` L${xPos(years).toFixed(1)},${padT + chartH} L${xPos(0).toFixed(1)},${padT + chartH} Z`;
+        const eAreaPath = toPath(ecopoolPoints) + ` L${xPos(years).toFixed(1)},${padT + chartH} L${xPos(0).toFixed(1)},${padT + chartH} Z`;
+        svgHtml += `<path d="${eAreaPath}" fill="rgba(30,132,73,0.08)"/>`;
+        svgHtml += `<path d="${cAreaPath}" fill="rgba(192,57,43,0.08)"/>`;
+
+        // Lines
+        svgHtml += `<path d="${toPath(ecopoolPoints)}" fill="none" stroke="#1e8449" stroke-width="2.5" stroke-linejoin="round"/>`;
+        svgHtml += `<path d="${toPath(chlorinePoints)}" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round"/>`;
+
+        // Crossover dot + label
+        if (crossoverYear !== null && crossoverYear > 0) {
+            const cx = xPos(crossoverYear), cy = yPos(ecopoolPoints[crossoverYear]);
+            svgHtml += `<line x1="${cx.toFixed(1)}" y1="${padT}" x2="${cx.toFixed(1)}" y2="${(padT + chartH).toFixed(1)}" stroke="rgba(54,102,158,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>`;
+            svgHtml += `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="5" fill="#36669e" stroke="white" stroke-width="2"/>`;
+            const labelX = cx > W * 0.7 ? cx - 8 : cx + 8;
+            const anchor = cx > W * 0.7 ? 'end' : 'start';
+            svgHtml += `<text x="${labelX.toFixed(1)}" y="${(cy - 10).toFixed(1)}" text-anchor="${anchor}" font-size="10" fill="#36669e" font-weight="bold">Breakeven yr ${crossoverYear}</text>`;
+        }
+
+        // End-point value labels
+        const lastC = chlorinePoints[years], lastE = ecopoolPoints[years];
+        const cLabelY = yPos(lastC) - 7;
+        const eLabelY = yPos(lastE) + (lastE > lastC ? 14 : -7);
+        svgHtml += `<text x="${(xPos(years) - 4).toFixed(1)}" y="${cLabelY.toFixed(1)}" text-anchor="end" font-size="10" fill="#c0392b" font-weight="bold">${formatZAR(lastC)}</text>`;
+        svgHtml += `<text x="${(xPos(years) - 4).toFixed(1)}" y="${eLabelY.toFixed(1)}" text-anchor="end" font-size="10" fill="#1e8449" font-weight="bold">${formatZAR(lastE)}</text>`;
+
+        svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        svg.innerHTML = svgHtml;
     }
 
     function updateCalc() {
-        const size  = parseInt(document.getElementById('pool-size-slider').value);
-        const years = parseInt(document.getElementById('years-slider').value);
+        const size    = parseInt(document.getElementById('pool-size-slider').value);
+        const years   = parseInt(document.getElementById('years-slider').value);
+        const premium = parseInt(document.getElementById('premium-slider').value) * 1000;
 
         document.getElementById('pool-size-val').textContent = size;
         document.getElementById('years-val').textContent = years;
+        document.getElementById('premium-val').textContent = parseInt(document.getElementById('premium-slider').value);
         document.getElementById('years-label').textContent = years;
 
-        // Running costs per month:
-        // Chlorine: R600 chemicals + R900 electricity + R250/month maintenance provision
-        // EcoPool:  R500 electricity + R67/month maintenance provision (R800/year)
-        // Scale slightly with pool size (base = 30m²)
+        // Monthly costs, scaled by pool size (base = 30m²)
         const scale = size / 30;
-        const chlorineMonthly = (600 + 900 + 250) * scale;  // ~R1750/month base
-        const ecopoolMonthly  = (500 + 67)        * scale;  // ~R567/month base
+        const cChemicals  = Math.round(600  * scale);
+        const cElec       = Math.round(900  * scale);
+        const cMaint      = Math.round(250  * scale);
+        const eElec       = Math.round(500  * scale);
+        const eMaint      = Math.round(67   * scale);
 
-        const chlorineTotal = chlorineMonthly * 12 * years;
-        const ecopoolTotal  = ecopoolMonthly  * 12 * years;
-        const saving        = chlorineTotal - ecopoolTotal;
+        const chlorineMonthly = cChemicals + cElec + cMaint;
+        const ecopoolMonthly  = eElec + eMaint;
+        const chlorineAnnual  = chlorineMonthly * 12;
+        const ecopoolAnnual   = ecopoolMonthly  * 12;
+        const annualSaving    = chlorineAnnual - ecopoolAnnual;
 
-        const maxVal = Math.max(chlorineTotal, ecopoolTotal);
-        document.getElementById('bar-chlorine').style.height = (chlorineTotal / maxVal * 100) + '%';
-        document.getElementById('bar-ecopool').style.height  = (ecopoolTotal  / maxVal * 100) + '%';
-        document.getElementById('total-chlorine').textContent = formatZAR(chlorineTotal);
-        document.getElementById('total-ecopool').textContent  = formatZAR(ecopoolTotal);
-        document.getElementById('saving-amount').textContent  = formatZAR(saving);
-        document.getElementById('saving-note').textContent    = 'over ' + years + ' year' + (years === 1 ? '' : 's') + ' (running costs only)';
+        // Breakeven
+        const beNumEl   = document.getElementById('be-number');
+        const beHeadEl  = document.getElementById('be-headline');
+        const beDetailEl = document.getElementById('be-detail');
+        const beTextEl  = document.getElementById('be-text');
+
+        if (annualSaving <= 0) {
+            beNumEl.textContent = '—';
+            beHeadEl.textContent = 'Running costs are similar';
+            beDetailEl.textContent = 'At this pool size, the annual savings don\'t offset the build premium. The ecological benefits and zero-chemical swimming still apply.';
+            beTextEl.className = 'be-text never';
+        } else {
+            const beYears = premium > 0 ? Math.ceil(premium / annualSaving) : 0;
+            if (premium === 0) {
+                beNumEl.textContent = 'Day 1';
+                beHeadEl.textContent = 'No build premium — you save from day one';
+                beDetailEl.textContent = formatZAR(annualSaving) + ' per year better off with an EcoPool.';
+                beTextEl.className = 'be-text';
+            } else {
+                beNumEl.textContent = beYears + (beYears === 1 ? ' yr' : ' yrs');
+                beHeadEl.textContent = 'Breakeven point';
+                beDetailEl.textContent = 'The ' + formatZAR(premium) + ' build premium is recovered after ' + beYears + (beYears === 1 ? ' year' : ' years') + ' of running savings (' + formatZAR(annualSaving) + '/year).';
+                beTextEl.className = 'be-text';
+            }
+        }
+
+        // Draw SVG chart
+        drawCostChart(years, chlorineAnnual, ecopoolAnnual, premium);
+
+        // Breakdown table
+        const tableRows = [
+            ['Chemicals / dosing',         formatZAR(cChemicals),  'R 0'],
+            ['Electricity (pump & filter)', formatZAR(cElec),       formatZAR(eElec)],
+            ['Maintenance provision',       formatZAR(cMaint),      formatZAR(eMaint)],
+        ];
+        const chlorineTotal = chlorineMonthly;
+        const ecopoolTotal  = ecopoolMonthly;
+        document.getElementById('cost-table-body').innerHTML =
+            tableRows.map(([label, c, e]) =>
+                `<tr><td>${label}</td><td class="col-chlorine">${c}/mo</td><td class="col-ecopool">${e}/mo</td></tr>`
+            ).join('') +
+            `<tr class="total-row"><td>Monthly total</td><td class="col-chlorine">${formatZAR(chlorineTotal)}/mo</td><td class="col-ecopool">${formatZAR(ecopoolTotal)}/mo</td></tr>`;
+
+        // Saving summary
+        const chlorineCumulative = chlorineAnnual * years;
+        const ecopoolCumulative  = premium + ecopoolAnnual * years;
+        const netSaving = chlorineCumulative - ecopoolCumulative;
+        const savingEl = document.getElementById('cost-saving-summary');
+        const savingAmt = document.getElementById('saving-amount');
+        const savingNote = document.getElementById('saving-note');
+
+        if (netSaving >= 0) {
+            savingEl.className = 'cost-saving';
+            savingAmt.textContent = formatZAR(netSaving) + ' net saving';
+            savingNote.textContent = 'EcoPool total (incl. ' + formatZAR(premium) + ' build premium) vs chlorine over ' + years + ' year' + (years === 1 ? '' : 's');
+        } else {
+            savingEl.className = 'cost-saving negative';
+            savingAmt.textContent = formatZAR(Math.abs(netSaving)) + ' net cost over chlorine';
+            savingNote.textContent = 'Over ' + years + ' year' + (years === 1 ? '' : 's') + ' — extend the period or reduce the build premium to see this flip.';
+        }
+
+        // Water comparison
+        const chlorineKL = Math.round((30000 * scale) / 1000);
+        const ecopoolKL  = Math.round((5000  * scale) / 1000);
+        document.getElementById('water-text').innerHTML =
+            `<strong>Water use:</strong> A chlorine pool of this size loses roughly <strong>${chlorineKL.toLocaleString('en-ZA')} kL/year</strong> to backwashing and evaporation topping-up. An EcoPool of the same size uses approximately <strong>${ecopoolKL.toLocaleString('en-ZA')} kL/year</strong> — around ${Math.round(chlorineKL / ecopoolKL)}× less.`;
     }
 
     document.getElementById('pool-size-slider').addEventListener('input', updateCalc);
     document.getElementById('years-slider').addEventListener('input', updateCalc);
+    document.getElementById('premium-slider').addEventListener('input', updateCalc);
     updateCalc();
 
     // ════════════════════════════════════════
     // TOOL 4 — Plant Finder
     // ════════════════════════════════════════
     const PLANTS = [
-        { name:'Leucadendron', latin:'Leucadendron salignum', icon:'🌼', sun:'fullsun', water:'dry', type:'shrub',
-          desc:'One of the most striking fynbos shrubs — vibrant yellow and red new growth, knee-height to 1.5m. Loves dry, well-drained slopes.', tags:['Fynbos','Dry tolerant'] },
-        { name:'Protea', latin:'Protea neriifolia', icon:'🌸', sun:'fullsun', water:'dry', type:'shrub',
-          desc:'Iconic fynbos. Large, dramatic flower heads, 1–3m. Superb for birds and bees. Needs good drainage and no fertiliser.', tags:['Fynbos','Wildlife magnet'] },
-        { name:'Restio', latin:'Restio tetraphyllus', icon:'🌾', sun:'fullsun', water:'dry', type:'groundcover',
-          desc:'Elegant reed-like groundcover with fine, feathery texture. Extremely drought-tolerant once established and beautifully low-maintenance.', tags:['Fynbos','Low water'] },
-        { name:'Sour fig', latin:'Carpobrotus edulis', icon:'🌿', sun:'fullsun', water:'dry', type:'groundcover',
-          desc:'Hardy coastal ground cover with bright flowers. Edible fruit makes excellent jam. Exceptional for erosion control on sandy slopes.', tags:['Edible','Coastal'] },
-        { name:'Sour fig', latin:'Carpobrotus edulis', icon:'🌿', sun:'fullsun', water:'dry', type:'edible',
-          desc:'Hardy coastal ground cover with bright flowers. The fruit is edible and makes excellent jam — a Garden Route staple.', tags:['Edible','Coastal'] },
-        { name:'Agapanthus', latin:'Agapanthus praecox', icon:'💙', sun:'fullsun', water:'moderate', type:'groundcover',
-          desc:'The Garden Route\'s most recognisable plant. Sweeps of blue or white in summer, almost no maintenance once established.', tags:['Summer flowering','Versatile'] },
-        { name:'Red Hot Poker', latin:'Kniphofia uvaria', icon:'🔥', sun:'fullsun', water:'moderate', type:'groundcover',
-          desc:'Spectacular orange and yellow torch-like flowers in late summer. Attracts sunbirds and is incredibly tough and drought-tolerant.', tags:['Wildlife','Striking'] },
-        { name:'Bugle lily', latin:'Watsonia borbonica', icon:'🌷', sun:'fullsun', water:'moderate', type:'groundcover',
-          desc:'Lovely pink-red spires in spring. Naturalises easily in grassland and fynbos margins, spreading reliably over time.', tags:['Fynbos','Spring'] },
-        { name:'Wild iris', latin:'Dietes grandiflora', icon:'🤍', sun:'partial', water:'moderate', type:'groundcover',
-          desc:'Large white iris-like flowers through summer. Thrives in partial shade — ideal under trees or along shaded paths.', tags:['Shade tolerant','Long-flowering'] },
-        { name:'Arum lily', latin:'Zantedeschia aethiopica', icon:'🌸', sun:'partial', water:'moist', type:'groundcover',
-          desc:'Classic white blooms in late winter and spring. Loves the edge of a stream, dam, or damp shaded corner — stunning en masse.', tags:['Moist sites','Winter/spring'] },
-        { name:'Bush lily', latin:'Clivia miniata', icon:'🟠', sun:'shade', water:'moderate', type:'groundcover',
-          desc:'One of the best plants for deep shade — orange flowers in late winter, glossy strap leaves year-round. A gem under dense trees.', tags:['Shade','Low maintenance'] },
-        { name:'Tree fern', latin:'Cyathea capensis', icon:'🌿', sun:'shade', water:'moist', type:'tree',
-          desc:'Ancient and dramatic — the Cape tree fern creates an instant forest atmosphere. Needs constant moisture and shade. Slow but spectacular.', tags:['Shade','Moisture-loving'] },
-        { name:'Wild olive', latin:'Olea europaea africana', icon:'🫒', sun:'fullsun', water:'dry', type:'tree',
-          desc:'One of the most useful indigenous trees — small edible fruit, dense canopy, and incredibly tough. Good structural tree for dry sites.', tags:['Edible','Drought-hardy'] },
-        { name:'Wild olive', latin:'Olea europaea africana', icon:'🫒', sun:'fullsun', water:'dry', type:'edible',
-          desc:'The indigenous wild olive produces small edible fruit. Hardy, long-lived, and an excellent structural tree for the Garden Route.', tags:['Edible','Tree'] },
-        { name:'Crossberry', latin:'Grewia occidentalis', icon:'🫐', sun:'partial', water:'moderate', type:'edible',
-          desc:'Small purple-pink star flowers and sweet little berries loved by birds and people alike. Good hedging shrub or informal garden tree.', tags:['Edible','Bird-friendly'] },
-        { name:'Waterberry', latin:'Syzygium cordatum', icon:'🌳', sun:'partial', water:'moist', type:'tree',
-          desc:'A beautiful water-loving tree with dark edible berries. Excellent near streams or dams — provides shade, stabilises banks, and feeds wildlife.', tags:['Waterside','Edible'] },
-        { name:'Water hawthorn', latin:'Aponogeton distachyos', icon:'🤍', sun:'fullsun', water:'moist', type:'waterplant',
-          desc:'Scented white flowers floating just above the surface — one of the most beautiful and useful EcoPool plants. Flowers twice a year.', tags:['EcoPool','Fragrant'] },
-        { name:'Blue water lily', latin:'Nymphaea nouchali', icon:'💜', sun:'fullsun', water:'moist', type:'waterplant',
-          desc:'The indigenous water lily — blue to lavender flowers. An EcoPool essential that provides surface cover, reduces algae, and looks stunning.', tags:['EcoPool','Iconic'] },
-        { name:'Palmiet', latin:'Prionium serratum', icon:'🌾', sun:'fullsun', water:'moist', type:'waterplant',
-          desc:'The king of South African stream plants — tough, reedlike, and one of the best natural filters available. Foundation plant for EcoPool margins.', tags:['EcoPool','Filter plant'] },
-        { name:'Bulrush', latin:'Typha capensis', icon:'🌾', sun:'fullsun', water:'moist', type:'waterplant',
-          desc:'The classic marginal reed. Tall, structural, and an excellent biological filter for EcoPools. Creates habitat and gives ponds a natural feel.', tags:['EcoPool','Marginal'] },
-        { name:'Kolkol', latin:'Berzelia lanuginosa', icon:'🤍', sun:'fullsun', water:'moist', type:'shrub',
-          desc:'Round white button-like flowers on arching stems. A beautiful fynbos shrub for moist, peaty soils near streams or drainage lines.', tags:['Fynbos','Moist sites'] },
-        { name:'Strelitzia', latin:'Strelitzia reginae', icon:'🌺', sun:'partial', water:'moderate', type:'shrub',
-          desc:'The bird of paradise — dramatic orange and blue flowers. Long-lived, architectural, and tough. A structural focal point in any garden.', tags:['Architectural','Long-flowering'] },
+        // ── Fynbos shrubs ──
+        { name:'Leucadendron', latin:'Leucadendron salignum', icon:'🌼', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'0.5–1.5m', care:'Easy', season:'Winter–Spring', tags:['Fynbos','Dry tolerant','Bird-friendly'],
+          desc:'One of the most striking fynbos shrubs — vibrant yellow and red new growth, growing to about 1m. Thrives on hot, dry slopes with no fertiliser.' },
+        { name:'Silvertree', latin:'Leucadendron argenteum', icon:'🌿', sun:'fullsun', water:'dry', type:['tree'],
+          height:'5–10m', care:'Easy', season:'Year-round foliage', tags:['Fynbos','Structural'],
+          desc:'The iconic silver-leafed tree endemic to the Cape. Leaves shimmer in the wind. Striking year-round and needs only good drainage and sun.' },
+        { name:'Protea', latin:'Protea neriifolia', icon:'🌸', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'1–3m', care:'Easy', season:'Autumn–Winter', tags:['Fynbos','Bird-friendly','Wildlife magnet'],
+          desc:'Iconic fynbos. Large, dramatic flower heads in pink, cream, and maroon. Superb for sunbirds and bees. Needs good drainage and zero fertiliser.' },
+        { name:'Sugarbush', latin:'Protea repens', icon:'🌸', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'1–3m', care:'Easy', season:'Autumn–Spring', tags:['Fynbos','Bird-friendly'],
+          desc:'The most widespread Protea in the Western Cape — beautiful pink-cream cups that sunbirds love. Long flowering season and very robust.' },
+        { name:'Pincushion protea', latin:'Leucospermum cordifolium', icon:'🟠', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'1–2m', care:'Moderate', season:'Winter–Spring', tags:['Fynbos','Bird-friendly','Striking'],
+          desc:'Spectacular orange pincushion flowers beloved by sunbirds. One of the showiest fynbos plants. Needs well-drained, slightly acidic soil.' },
+        { name:'Restio / Cape reed', latin:'Restio tetraphyllus', icon:'🌾', sun:'fullsun', water:'dry', type:['groundcover'],
+          height:'0.5–1m', care:'Easy', season:'Year-round texture', tags:['Fynbos','Dry tolerant'],
+          desc:'Elegant reed-like groundcover with fine feathery texture. Extremely drought-tolerant once established and beautifully low-maintenance.' },
+        { name:'Kolkol', latin:'Berzelia lanuginosa', icon:'🤍', sun:'fullsun', water:'moist', type:['shrub'],
+          height:'1–2m', care:'Easy', season:'Spring–Summer', tags:['Fynbos','EcoPool','Moist sites'],
+          desc:'Round white button-like flowers on arching stems — a beautiful fynbos shrub for moist, peaty soils near streams or EcoPool margins.' },
+        { name:'Waboom / Wagon tree', latin:'Protea nitida', icon:'🌳', sun:'fullsun', water:'dry', type:['tree'],
+          height:'3–8m', care:'Easy', season:'Winter–Spring', tags:['Fynbos','Structural','Drought-hardy'],
+          desc:'A tough fynbos tree with attractive grey bark and cream flowers. One of the few proteas that becomes a proper tree.' },
+        { name:'Helichrysum / Everlasting', latin:'Helichrysum petiolare', icon:'⚪', sun:'fullsun', water:'dry', type:['groundcover'],
+          height:'0.3–0.6m', care:'Easy', season:'Spring–Summer', tags:['Fynbos','Dry tolerant'],
+          desc:'Soft silver-grey groundcover with small white everlasting flowers. Excellent for dry rocky slopes and low-maintenance fynbos gardens.' },
+        { name:'Cape daisy bush', latin:'Osteospermum moniliferum', icon:'🌼', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'1–2m', care:'Easy', season:'Spring', tags:['Fynbos','Bird-friendly'],
+          desc:'Masses of yellow daisy flowers in spring. A tough, fast-growing shrub that establishes quickly and provides early habitats while slower plants grow.' },
+        { name:'Cliffortia', latin:'Cliffortia ruscifolia', icon:'🍃', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'0.5–1m', care:'Easy', season:'Spring', tags:['Fynbos','Dry tolerant'],
+          desc:'A prickly, dense fynbos shrub with tiny flowers. Excellent informal barrier and habitat plant — very drought tolerant once established.' },
+
+        // ── Flowering perennials & groundcovers ──
+        { name:'Agapanthus', latin:'Agapanthus praecox', icon:'💙', sun:'fullsun', water:'moderate', type:['groundcover'],
+          height:'0.5–0.9m', care:'Easy', season:'Summer', tags:['Summer flowering','Versatile','Bird-friendly'],
+          desc:'The Garden Route\'s most recognisable plant. Sweeps of blue or white in summer, almost no maintenance once established. Works in sun or light shade.' },
+        { name:'Red Hot Poker', latin:'Kniphofia rooperi', icon:'🔥', sun:'fullsun', water:'moderate', type:['groundcover'],
+          height:'0.8–1.2m', care:'Easy', season:'Autumn–Winter', tags:['Bird-friendly','Striking','Wildlife'],
+          desc:'Autumn-flowering torch lily with orange-red spikes. Unlike some kniphofias this species blooms when little else does — a vital sunbird food source.' },
+        { name:'Bugle lily / Watsonia', latin:'Watsonia borbonica', icon:'🌷', sun:'fullsun', water:'moderate', type:['groundcover'],
+          height:'0.8–1.5m', care:'Easy', season:'Spring', tags:['Fynbos','Spring','Bird-friendly'],
+          desc:'Lovely pink-red spires in spring. Naturalises into grassland and fynbos margins easily, spreading gradually over years.' },
+        { name:'Wild iris', latin:'Dietes grandiflora', icon:'🤍', sun:'partial', water:'moderate', type:['groundcover'],
+          height:'0.6–1m', care:'Easy', season:'Summer', tags:['Shade tolerant','Long-flowering'],
+          desc:'Large white iris-like flowers through summer. Thrives in partial shade under trees or along shaded paths. Almost indestructible.' },
+        { name:'Arum lily', latin:'Zantedeschia aethiopica', icon:'🌸', sun:'partial', water:'moist', type:['groundcover'],
+          height:'0.6–1m', care:'Easy', season:'Winter–Spring', tags:['Moist sites','EcoPool','Winter flowering'],
+          desc:'Classic white blooms from late winter through spring. Loves the edge of a stream, dam, or damp shaded corner. Stunning massed at water margins.' },
+        { name:'Bush lily / Clivia', latin:'Clivia miniata', icon:'🟠', sun:'shade', water:'moderate', type:['groundcover'],
+          height:'0.4–0.6m', care:'Easy', season:'Late winter', tags:['Shade','Low maintenance'],
+          desc:'One of the best plants for deep shade — orange flowers in late winter, glossy strap leaves year-round. A gem under dense tree canopy.' },
+        { name:'Moraea / Cape tulip (indigenous)', latin:'Moraea polystachya', icon:'💜', sun:'fullsun', water:'dry', type:['groundcover'],
+          height:'0.3–0.6m', care:'Easy', season:'Autumn', tags:['Fynbos','Dry tolerant','Spring'],
+          desc:'Delicate blue-purple iris-like flowers emerging from a corm. Naturalises in grassland and fynbos gardens with very little attention.' },
+        { name:'Aristea', latin:'Aristea ecklonii', icon:'💙', sun:'partial', water:'moderate', type:['groundcover'],
+          height:'0.3–0.5m', care:'Easy', season:'Spring–Summer', tags:['Spring','Shade tolerant'],
+          desc:'Bright blue flowers on fan-shaped foliage — lovely in dappled shade or at the edge of woodland. Seeds freely and naturalises well.' },
+        { name:'Chasmanthe', latin:'Chasmanthe floribunda', icon:'🟠', sun:'partial', water:'moderate', type:['groundcover'],
+          height:'0.6–1m', care:'Easy', season:'Winter–Spring', tags:['Winter flowering','Bird-friendly'],
+          desc:'Vibrant orange-red tubular flowers in winter on sword-like leaves. A reliable sunbird plant and excellent for naturalised planting in light shade.' },
+        { name:'Pelargonium', latin:'Pelargonium cucullatum', icon:'💗', sun:'fullsun', water:'dry', type:['shrub'],
+          height:'0.5–1.5m', care:'Easy', season:'Spring–Summer', tags:['Fynbos','Dry tolerant','Coastal'],
+          desc:'The ancestral geranium of the Cape — large pink flowers and aromatic foliage. Very tough in coastal and fynbos conditions.' },
+        { name:'Sour fig', latin:'Carpobrotus edulis', icon:'🌿', sun:'fullsun', water:'dry', type:['groundcover','edible'],
+          height:'0.1–0.2m (trailing)', care:'Easy', season:'Spring–Summer', tags:['Edible','Coastal','Dry tolerant'],
+          desc:'Hardy coastal ground cover with bright flowers. The juice treats sunburn and insect stings; the sweet fruit makes excellent jam. Exceptional for sandy slope erosion control.',
+          notes:'Invasive in some regions — plant responsibly away from wild fynbos' },
+        { name:'Wild garlic', latin:'Tulbaghia violacea', icon:'💜', sun:'fullsun', water:'moderate', type:['groundcover','edible'],
+          height:'0.3–0.5m', care:'Easy', season:'Summer', tags:['Edible','Versatile'],
+          desc:'Clusters of small purple flowers above grass-like leaves. All parts are edible with a mild garlic flavour. Very tough, drought-tolerant, and long-flowering.' },
+
+        // ── Trees ──
+        { name:'Wild olive', latin:'Olea europaea africana', icon:'🫒', sun:'fullsun', water:'dry', type:['tree','edible'],
+          height:'4–10m', care:'Easy', season:'Year-round', tags:['Edible','Drought-hardy','Bird-friendly'],
+          desc:'One of the most useful indigenous trees — small edible fruit, dense canopy, and incredibly tough. Good structural tree for dry sites. Very long-lived.' },
+        { name:'Virgilia / Keurboom', latin:'Virgilia oroboides', icon:'🌸', sun:'fullsun', water:'moderate', type:['tree'],
+          height:'6–15m', care:'Easy', season:'Spring–Summer', tags:['Fast growing','Bird-friendly','Nitrogen-fixer'],
+          desc:'The Garden Route\'s fastest-growing indigenous tree — covered in pink flowers in spring, and a nitrogen-fixer that improves poor soil. Ideal for quick shade and structure.',
+          notes:'Relatively short-lived (15–20 years) — plant alongside slower species' },
+        { name:'Cape beech / Sagewood', latin:'Buddleja saligna', icon:'🌿', sun:'fullsun', water:'dry', type:['tree'],
+          height:'4–8m', care:'Easy', season:'Summer', tags:['Drought-hardy','Bird-friendly'],
+          desc:'Tough, graceful tree with narrow willow-like leaves and honey-scented white flowers. Very drought-hardy once established — excellent structure in dry gardens.' },
+        { name:'Waterberry', latin:'Syzygium cordatum', icon:'🌳', sun:'partial', water:'moist', type:['tree','edible'],
+          height:'5–15m', care:'Moderate', season:'Summer', tags:['Waterside','Edible','Bird-friendly'],
+          desc:'A beautiful water-loving tree with dark edible berries. Excellent near streams or dams — provides shade, stabilises banks, and feeds fruit-eating birds.' },
+        { name:'Natal fig', latin:'Ficus natalensis', icon:'🌳', sun:'fullsun', water:'moderate', type:['tree'],
+          height:'10–25m', care:'Easy', season:'Year-round', tags:['Wildlife magnet','Structural','Shade'],
+          desc:'One of the most important wildlife trees in the region — the fruit supports dozens of bird and mammal species at any one time. Large and long-lived.' },
+        { name:'Tree fern', latin:'Cyathea capensis', icon:'🌿', sun:'shade', water:'moist', type:['tree'],
+          height:'2–5m', care:'Moderate', season:'Year-round texture', tags:['Shade','Moisture-loving'],
+          desc:'Ancient and dramatic — the Cape tree fern creates an instant forest atmosphere. Needs constant moisture and shade. Slow but spectacular.' },
+        { name:'Crossberry', latin:'Grewia occidentalis', icon:'🫐', sun:'partial', water:'moderate', type:['shrub','edible'],
+          height:'2–5m', care:'Easy', season:'Summer', tags:['Edible','Bird-friendly'],
+          desc:'Small purple-pink star flowers and sweet little berries loved by birds and people alike. Good hedging shrub or informal garden tree. Versatile.' },
+        { name:'Saffronwood', latin:'Cassine crocea', icon:'🌳', sun:'partial', water:'moderate', type:['tree'],
+          height:'5–12m', care:'Easy', season:'Year-round', tags:['Structural','Bird-friendly'],
+          desc:'A handsome evergreen forest tree with orange-red fruit beloved by birds. Good structural shade tree for larger gardens.' },
+        { name:'Greyia / Natal bottlebrush', latin:'Greyia sutherlandii', icon:'🔴', sun:'fullsun', water:'dry', type:['tree'],
+          height:'3–6m', care:'Easy', season:'Winter–Spring', tags:['Bird-friendly','Striking','Dry tolerant'],
+          desc:'Spectacular red bottlebrush flowers in winter on a deciduous small tree. One of the most bird-attracting trees available — a vital mid-winter nectar source.' },
+        { name:'Schotia / Weeping boer-bean', latin:'Schotia brachypetala', icon:'🔴', sun:'fullsun', water:'dry', type:['tree'],
+          height:'8–16m', care:'Easy', season:'Spring', tags:['Bird-friendly','Wildlife','Striking'],
+          desc:'Deep red flowers dripping nectar in spring — one of the great wildlife trees. Visited by hundreds of birds and sunbirds when in flower. Very drought-hardy.' },
+        { name:'Podocarpus / Outeniqua yellowwood', latin:'Podocarpus latifolius', icon:'🌲', sun:'partial', water:'moderate', type:['tree'],
+          height:'20–30m (slow)', care:'Easy', season:'Year-round', tags:['Structural','Wildlife','Long-lived'],
+          desc:'South Africa\'s national tree — the Outeniqua yellowwood is the finest long-term structural tree for the Garden Route. Slow growing but monumental. Plant for future generations.' },
+        { name:'Cunonia / Red alder', latin:'Cunonia capensis', icon:'🌿', sun:'partial', water:'moist', type:['tree'],
+          height:'5–20m', care:'Easy', season:'Autumn', tags:['Moist sites','Wildlife'],
+          desc:'An elegant waterside tree with pinkish-white bottle-brush flowers in autumn. Excellent near streams and dams, stabilising banks while feeding insects and birds.' },
+
+        // ── Water plants ──
+        { name:'Water hawthorn', latin:'Aponogeton distachyos', icon:'🤍', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'Surface floating', care:'Easy', season:'Autumn–Spring', tags:['EcoPool','Fragrant'],
+          desc:'Scented white flowers floating just above the surface — one of the most beautiful EcoPool plants. Flowers twice a year and provides excellent surface cover.' },
+        { name:'Blue water lily', latin:'Nymphaea nouchali', icon:'💜', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'Surface floating', care:'Easy', season:'Spring–Autumn', tags:['EcoPool','Iconic','Striking'],
+          desc:'The indigenous water lily — blue to lavender flowers. An EcoPool essential that provides surface cover, reduces algae, and looks stunning all summer.' },
+        { name:'Cape water lily', latin:'Nymphaea capensis', icon:'💙', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'Surface floating', care:'Easy', season:'Summer', tags:['EcoPool','Striking'],
+          desc:'Large blue water lily with a deeper blue than nouchali. Open during the day and excellent in larger EcoPools. Provides generous shade to control algae.' },
+        { name:'Palmiet', latin:'Prionium serratum', icon:'🌾', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'1–2m', care:'Easy', season:'Year-round', tags:['EcoPool','Filter plant'],
+          desc:'The king of South African stream plants — tough, reedlike, and one of the best natural filters available. Foundation plant for EcoPool margins and stream restoration.' },
+        { name:'Bulrush', latin:'Typha capensis', icon:'🌾', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'1.5–3m', care:'Easy', season:'Year-round', tags:['EcoPool','Marginal','Wildlife'],
+          desc:'The classic marginal reed. Tall, structural, and an excellent biological filter for EcoPools. Creates habitat and gives a natural wetland feel.' },
+        { name:'Cape sedge / Ficinia', latin:'Ficinia nodosa', icon:'🌾', sun:'fullsun', water:'moist', type:['waterplant'],
+          height:'0.5–1m', care:'Easy', season:'Year-round', tags:['EcoPool','Marginal'],
+          desc:'A compact round-headed sedge perfect for EcoPool margins. Grows in water or at the waterline, filters nutrients, and has a pleasantly architectural form.' },
+        { name:'Strelitzia / Bird of paradise', latin:'Strelitzia reginae', icon:'🌺', sun:'partial', water:'moderate', type:['shrub'],
+          height:'1–1.5m', care:'Easy', season:'Winter–Spring', tags:['Architectural','Long-flowering','Bird-friendly'],
+          desc:'Dramatic orange and blue flowers over many months. Long-lived, architectural, and tough. A structural focal point in any garden — also a good potted plant.' },
     ];
 
-    document.getElementById('plant-search-btn').addEventListener('click', searchPlants);
+    let currentQuickFilter = 'all';
 
-    function searchPlants() {
-        const sun   = document.getElementById('pf-sun').value;
-        const water = document.getElementById('pf-water').value;
-        const type  = document.getElementById('pf-type').value;
+    // Quick-filter data mapping
+    const QUICK_FILTERS = {
+        all:    p => true,
+        ecopool: p => p.tags.some(t => t.toLowerCase().includes('ecopool')),
+        edible:  p => p.type.includes('edible') || p.tags.some(t => t.toLowerCase().includes('edible')),
+        dry:     p => p.water === 'dry',
+        shade:   p => p.sun === 'shade' || p.sun === 'partial',
+        spring:  p => (p.season || '').toLowerCase().includes('spring') || p.tags.some(t => t.toLowerCase().includes('spring')),
+        birds:   p => p.tags.some(t => t.toLowerCase().includes('bird'))
+    };
+
+    function runSearch() {
+        const query  = (document.getElementById('pf-search').value || '').toLowerCase().trim();
+        const sun    = document.getElementById('pf-sun').value;
+        const water  = document.getElementById('pf-water').value;
+        const type   = document.getElementById('pf-type').value;
+        const quickFn = QUICK_FILTERS[currentQuickFilter] || QUICK_FILTERS.all;
 
         let results = PLANTS.filter(p => {
-            if (sun   && p.sun   !== sun)   return false;
-            if (water && p.water !== water) return false;
-            if (type  && p.type  !== type)  return false;
+            // Quick-filter pill
+            if (!quickFn(p)) return false;
+            // Dropdown filters
+            if (sun   && p.sun   !== sun)                           return false;
+            if (water && p.water !== water)                         return false;
+            if (type  && !p.type.includes(type))                   return false;
+            // Text search
+            if (query && !p.name.toLowerCase().includes(query) &&
+                         !p.latin.toLowerCase().includes(query) &&
+                         !(p.tags || []).join(' ').toLowerCase().includes(query)) return false;
             return true;
         });
 
-        // Deduplicate by name
+        // Deduplicate by latin name
         const seen = new Set();
-        results = results.filter(p => { if (seen.has(p.name + p.type)) return false; seen.add(p.name + p.type); return true; });
+        results = results.filter(p => { if (seen.has(p.latin)) return false; seen.add(p.latin); return true; });
 
-        const container = document.getElementById('plant-results');
+        const countLabel = document.getElementById('plant-count-label');
+        const header = document.getElementById('plant-results-header');
+        header.style.display = 'flex';
+        countLabel.innerHTML = `Showing <strong>${results.length}</strong> of ${PLANTS.filter((p,i,a)=>a.findIndex(q=>q.latin===p.latin)===i).length} plants`;
+
+        const waterLabels  = { dry:'Drought-tolerant', moderate:'Moderate water', moist:'Water-loving' };
+        const sunLabels    = { fullsun:'Full sun', partial:'Part shade', shade:'Full shade' };
+
+        const grid = document.getElementById('plant-grid');
         if (results.length === 0) {
-            container.innerHTML = '<div class="plant-no-results">No exact matches — try broadening your filters.</div>';
+            grid.innerHTML = '<div class="plant-no-results" style="grid-column:1/-1">No plants match those filters — try broadening your search.</div>';
             return;
         }
-        container.innerHTML = '<div class="plant-grid">' +
-            results.map(p => `
+        grid.innerHTML = results.map(p => {
+            const typeLabel = Array.isArray(p.type) ? p.type.map(t => t.charAt(0).toUpperCase()+t.slice(1)).join(' · ') : p.type;
+            return `
             <div class="plant-card">
                 <div class="plant-card-icon" aria-hidden="true">${p.icon}</div>
                 <h4>${p.name}</h4>
                 <p class="plant-card-latin">${p.latin}</p>
+                <div class="plant-card-chips">
+                    ${p.height ? `<span class="plant-chip height">↕ ${p.height}</span>` : ''}
+                    ${p.care   ? `<span class="plant-chip care">${p.care}</span>` : ''}
+                    ${p.water  ? `<span class="plant-chip water">${waterLabels[p.water] || p.water}</span>` : ''}
+                    ${p.season ? `<span class="plant-chip season">🗓 ${p.season}</span>` : ''}
+                </div>
                 <p>${p.desc}</p>
-                ${p.tags.map(t => `<span class="plant-tag">${t}</span>`).join('')}
-            </div>`).join('') + '</div>';
+                ${(p.tags||[]).map(t => `<span class="plant-tag">${t}</span>`).join('')}
+                ${p.notes ? `<p class="plant-card-notes">⚠ ${p.notes}</p>` : ''}
+            </div>`;
+        }).join('');
     }
+
+    // Quick-pill click handler
+    document.querySelectorAll('.quick-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+            document.querySelectorAll('.quick-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            currentQuickFilter = pill.dataset.quick;
+            runSearch();
+        });
+    });
+
+    // Live filter on dropdown or text changes
+    ['pf-search','pf-sun','pf-water','pf-type'].forEach(id => {
+        document.getElementById(id).addEventListener('input', runSearch);
+    });
+
+    // Show all plants on load
+    runSearch();
     </script>
 </body>
 </html>
