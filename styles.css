@@ -14,7 +14,7 @@
     --background: #faf9f5;
     --white: #ffffff;
     --text-dark: #1b1b1b;
-    --text-light: #5c5a56;
+    --text-light: #b0aea5;
     --border-light: #e8e6dc;
 }
 
@@ -181,27 +181,15 @@ h1, h2, h3, h4 {
 }
 
 .hero-bg-1 {
-    background-image: url('images/eco-pool-hero2.jpg');
+    background-image: url('images/eco-pool-hero1.jpg');
 }
 
 .hero-bg-2 {
-    background-image: url('images/edible-food-forest-workshop.jpg');
+    background-image: url('images/fynbos-restoration-and-rain-garden-design.jpg');
 }
 
 .hero-bg-3 {
-    background-image: url('images/salt-river-invasive-plant-clearing.jpg');
-}
-
-.hero-bg-4 {
-    background-image: url('images/eco-pool-hero3.jpg');
-}
-
-.hero-bg-5 {
-    background-image: url('images/clayton-and-lisas-permaculture-orchard.jpg');
-}
-
-.hero-bg-6 {
-    background-image: url('images/diepklowe-regenerative-farm.jpg');
+    background-image: url('images/garden2.jpg');
 }
 
 /* Waterfall Animation Effect */
@@ -713,8 +701,8 @@ section {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 3rem;
-    margin-bottom: 4rem;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
     position: relative;
     z-index: 1;
 }
@@ -1140,7 +1128,7 @@ section {
 }
 
 .blog-teaser-image {
-    height: 200px;
+    height: 155px;
     background-size: cover;
     background-position: center;
 }
@@ -1331,14 +1319,14 @@ section {
 
 /* ─── EcoPools Photo Gallery ─── */
 .pool-gallery-section {
-    padding: 0 0 3rem;
+    padding: 0 0 1rem;
 }
 
 .pool-gallery {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 340px 260px;
-    gap: 16px;
+    gap: 8px;
     border-radius: 16px;
     overflow: hidden;
     margin-top: 2.5rem;
