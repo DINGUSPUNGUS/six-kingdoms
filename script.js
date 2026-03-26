@@ -1,5 +1,22 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+
+    // ── Transparent nav over hero carousels ──────────────────────────────
+    const heroSection = document.querySelector('.hero');
+    const navbar = document.querySelector('.navbar');
+    if (heroSection && navbar) {
+        navbar.classList.add('hero-nav');
+        function handleNavScroll() {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        handleNavScroll(); // run once on load
+    }
+
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -201,3 +218,46 @@ if (filterButtons.length > 0) {
         });
     });
 }
+
+// ─── Window Gallery — scroll reveal + subtle parallax ───────────────────────
+(function () {
+    const windowPanes = document.querySelectorAll('.window-pane');
+    if (!windowPanes.length) return;
+
+    // Scroll-triggered reveal via IntersectionObserver
+    const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    windowPanes.forEach(function (pane) {
+        revealObserver.observe(pane);
+    });
+
+    // Subtle parallax: image shifts slightly as you scroll past each pane
+    // Only runs on devices that are not flagged for reduced motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+        function tickParallax() {
+            var viewH = window.innerHeight;
+            windowPanes.forEach(function (pane) {
+                var img = pane.querySelector('.wp-image img');
+                if (!img) return;
+                var rect = pane.getBoundingClientRect();
+                // progress: 0 when pane centre is at viewport centre; ±1 at ±viewH/2
+                var paneCentreY = rect.top + rect.height / 2;
+                var progress = (viewH / 2 - paneCentreY) / (viewH * 0.65);
+                var clamped = Math.max(-1, Math.min(1, progress));
+                // 7% max shift (image is 115% tall, so plenty of headroom)
+                img.style.transform = 'translateY(' + (clamped * 7) + '%)';
+            });
+        }
+
+        window.addEventListener('scroll', tickParallax, { passive: true });
+        tickParallax(); // initial call
+    }
+}());

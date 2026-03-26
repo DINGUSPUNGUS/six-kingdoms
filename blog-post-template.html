@@ -201,13 +201,24 @@ POST CATEGORY OPTIONS (copy exactly as written):
     </nav>
 
     <!-- â•â•â• POST HEADER â€” fill in the [SQUARE BRACKETS] â•â•â• -->
-    <header class="post-header" id="main-content">
-        <div class="container">
-            <span class="post-tag">[POST CATEGORY]</span>
-            <h1>[POST TITLE]</h1>
-            <p class="post-meta">[POST DATE] &mdash; [READ TIME] min read</p>
+    <!-- Hero -->
+    <section class="hero hero--project" id="main-content">
+        <div class="hero-background-slides">
+            <div class="hero-bg active" role="img" style="background-image:url('images/REPLACE-IMAGE-1.jpg')" aria-label="[Image description]"></div>
+            <div class="hero-bg" role="img" style="background-image:url('images/REPLACE-IMAGE-2.jpg')" aria-label="[Image description]"></div>
         </div>
-    </header>
+
+        <div class="hero-content">
+            <span class="hero-service-label">[POST CATEGORY]</span>
+            <h1>[POST TITLE]</h1>
+            <p>[POST DATE] &mdash; [READ TIME] min read</p>
+        </div>
+
+        <div class="hero-indicators" role="tablist" aria-label="Header slides">
+            <button class="hero-indicator active" aria-label="Slide 1" role="tab"></button>
+            <button class="hero-indicator" aria-label="Slide 2" role="tab"></button>
+        </div>
+    </section>
 
     <!--
     â•â•â• POST HERO IMAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•

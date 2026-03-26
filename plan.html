@@ -23,26 +23,6 @@
 
     <style>
         /* Plan page specific styles */
-        .plan-hero {
-            background: linear-gradient(135deg, #2d5a78 0%, #36669e 50%, #47a3a2 100%);
-            color: white;
-            padding: 4rem 0 3rem;
-            text-align: center;
-        }
-        .plan-hero h1 { 
-            font-size: clamp(1.8rem, 4vw, 2.8rem); 
-            color: white; 
-            margin-bottom: 0.8rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        .plan-hero p { 
-            font-size: 1.1rem; 
-            opacity: 0.92; 
-            max-width: 620px; 
-            margin: 0 auto 2rem;
-            font-family: 'Lora', serif;
-        }
-
         .tool-nav {
             display: flex;
             flex-wrap: wrap;
@@ -1487,11 +1467,17 @@
     </nav>
 
     <!-- Hero -->
-    <section class="plan-hero" id="main-content">
-        <div class="container">
-            <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.6rem;opacity:0.85;">Free interactive tools</p>
-            <h1>Plan Your Project</h1>
-            <p>Six tools to help you think through your space — pools, gardens, land, plants — before we talk.</p>
+    <section class="hero hero--service" id="main-content">
+        <div class="hero-background-slides">
+            <div class="hero-bg active" role="img" style="background-image:url('images/clayton-and-lisas-permaculture-orchard.jpg')" aria-label="Permaculture orchard and food forest"></div>
+            <div class="hero-bg" role="img" style="background-image:url('images/garden2.jpg')" aria-label="Ecological garden design"></div>
+            <div class="hero-bg" role="img" style="background-image:url('images/eco-pool-hero1.jpg')" aria-label="Natural EcoPool on the Garden Route"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-service-label">Free Interactive Tools</span>
+            <h1>Plan Your<br>Project.</h1>
+            <p>Six tools to help you think through your space &mdash; pools, gardens, land, plants &mdash; before we talk.</p>
             <nav class="tool-nav" aria-label="Jump to a tool">
                 <a href="#project-finder" class="tool-nav-btn">Find a Project Like Yours</a>
                 <a href="#garden-planner" class="tool-nav-btn">Garden Bed Planner</a>
@@ -1500,6 +1486,12 @@
                 <a href="#cost-calculator" class="tool-nav-btn">Cost Calculator</a>
                 <a href="#plant-finder" class="tool-nav-btn">Plant Finder</a>
             </nav>
+        </div>
+
+        <div class="hero-indicators" role="tablist" aria-label="Plan page slides">
+            <button class="hero-indicator active" aria-label="Orchard slide" role="tab"></button>
+            <button class="hero-indicator" aria-label="Garden slide" role="tab"></button>
+            <button class="hero-indicator" aria-label="EcoPool slide" role="tab"></button>
         </div>
     </section>
 
