@@ -1233,6 +1233,229 @@
                 max-height: 400px;
             }
         }
+
+        /* -----------------------------------------------
+           TOOL 6 — Find a Project Like Yours Quiz
+        ----------------------------------------------- */
+        #project-finder {
+            background: var(--color-sand);
+        }
+        .fpq-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .fpq-steps {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(54,102,158,0.1);
+            border: 1px solid rgba(54,102,158,0.12);
+            overflow: hidden;
+        }
+        .fpq-progress-bar {
+            height: 4px;
+            background: rgba(54,102,158,0.1);
+        }
+        .fpq-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+        .fpq-step {
+            display: none;
+            padding: 2.5rem 2.8rem 1.5rem;
+        }
+        .fpq-step.active { display: block; }
+        .fpq-step-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--secondary-blue);
+            margin-bottom: 0.6rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .fpq-step h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-dark);
+            margin-bottom: 1.8rem;
+            line-height: 1.3;
+            font-family: 'Poppins', sans-serif;
+        }
+        .fpq-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .fpq-option {
+            border: 2px solid rgba(54,102,158,0.18);
+            border-radius: 14px;
+            padding: 1rem 0.75rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            background: white;
+            user-select: none;
+        }
+        .fpq-option:hover {
+            border-color: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(54,102,158,0.12);
+        }
+        .fpq-option.selected {
+            border-color: var(--primary-blue);
+            background: rgba(54,102,158,0.06);
+        }
+        .fpq-option-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+            line-height: 1;
+        }
+        .fpq-option-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.3;
+        }
+        .fpq-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.4rem 2.8rem;
+            border-top: 1px solid rgba(54,102,158,0.08);
+            background: rgba(54,102,158,0.02);
+        }
+        .fpq-btn-next {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px rgba(54,102,158,0.3);
+        }
+        .fpq-btn-next:hover { background: #2d5a78; transform: translateY(-2px); }
+        .fpq-btn-back {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            padding: 0.5rem;
+        }
+        .fpq-btn-back:hover { color: var(--primary-blue); }
+        .fpq-step-count {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Results */
+        .fpq-results {
+            display: none;
+            padding: 2.5rem 2.8rem;
+        }
+        .fpq-results.active { display: block; }
+        .fpq-results-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.4rem;
+        }
+        .fpq-results-sub {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.8rem;
+        }
+        .fpq-result-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .fpq-result-card {
+            border: 1px solid rgba(54,102,158,0.14);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            transition: all 0.25s;
+            background: white;
+        }
+        .fpq-result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(54,102,158,0.14);
+            border-color: var(--secondary-blue);
+        }
+        .fpq-result-img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+            background: rgba(54,102,158,0.08);
+        }
+        .fpq-result-body {
+            padding: 0.9rem 1rem;
+        }
+        .fpq-result-cat {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--secondary-blue);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.25rem;
+        }
+        .fpq-result-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.35;
+            margin-bottom: 0.35rem;
+        }
+        .fpq-result-location {
+            font-size: 0.78rem;
+            color: var(--color-muted);
+            font-family: 'Lora', serif;
+        }
+        .fpq-no-results {
+            text-align: center;
+            color: var(--color-muted);
+            padding: 2rem 0;
+            font-style: italic;
+        }
+        .fpq-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .fpq-btn-restart {
+            background: transparent;
+            border: 2px solid rgba(54,102,158,0.3);
+            color: var(--color-muted);
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.2s;
+        }
+        .fpq-btn-restart:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+        @media (max-width: 600px) {
+            .fpq-step, .fpq-footer, .fpq-results { padding-left: 1.4rem; padding-right: 1.4rem; }
+            .fpq-options { grid-template-columns: 1fr 1fr; }
+            .fpq-result-cards { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1268,14 +1491,142 @@
         <div class="container">
             <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:0.6rem;opacity:0.85;">Free interactive tools</p>
             <h1>Plan Your Project</h1>
-            <p>Five tools to help you think through your space — pools, gardens, land, plants — before we talk.</p>
+            <p>Six tools to help you think through your space — pools, gardens, land, plants — before we talk.</p>
             <nav class="tool-nav" aria-label="Jump to a tool">
+                <a href="#project-finder" class="tool-nav-btn">Find a Project Like Yours</a>
                 <a href="#garden-planner" class="tool-nav-btn">Garden Bed Planner</a>
                 <a href="#project-planner" class="tool-nav-btn">Project Planner</a>
                 <a href="#land-checklist" class="tool-nav-btn">Land Checklist</a>
                 <a href="#cost-calculator" class="tool-nav-btn">Cost Calculator</a>
                 <a href="#plant-finder" class="tool-nav-btn">Plant Finder</a>
             </nav>
+        </div>
+    </section>
+
+    <!-- ----------------------------------------
+         TOOL 0 — Find a Project Like Yours
+    ---------------------------------------- -->
+    <section class="tool-section" id="project-finder">
+        <div class="container">
+            <div class="tool-header">
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                        <path d="M11 8v6M8 11h6"/>
+                    </svg>
+                </div>
+                <h2>Find a Project Like Yours</h2>
+                <p>Answer three quick questions and we'll match you to real projects from our work — so you can see what's been done on sites similar to yours.</p>
+            </div>
+
+            <div class="fpq-wrapper">
+                <div class="fpq-steps" id="fpq-steps">
+                    <div class="fpq-progress-bar">
+                        <div class="fpq-progress-fill" id="fpq-progress"></div>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="fpq-step active" id="fpq-step-1">
+                        <p class="fpq-step-label">Question 1 of 3</p>
+                        <h3>What kind of space are you working with?</h3>
+                        <div class="fpq-options" id="fpq-q1">
+                            <div class="fpq-option" data-value="garden" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌿</div>
+                                <div class="fpq-option-label">Residential garden</div>
+                            </div>
+                            <div class="fpq-option" data-value="pool" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">💧</div>
+                                <div class="fpq-option-label">Pool or water feature</div>
+                            </div>
+                            <div class="fpq-option" data-value="smallholding" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🏡</div>
+                                <div class="fpq-option-label">Smallholding</div>
+                            </div>
+                            <div class="fpq-option" data-value="farm" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌾</div>
+                                <div class="fpq-option-label">Farm or agricultural land</div>
+                            </div>
+                            <div class="fpq-option" data-value="coastal" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌊</div>
+                                <div class="fpq-option-label">Coastal or fynbos land</div>
+                            </div>
+                            <div class="fpq-option" data-value="community" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🤝</div>
+                                <div class="fpq-option-label">Community or institutional</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="fpq-step" id="fpq-step-2">
+                        <p class="fpq-step-label">Question 2 of 3</p>
+                        <h3>What's your main goal or challenge?</h3>
+                        <div class="fpq-options" id="fpq-q2">
+                            <div class="fpq-option" data-value="pool" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🏊</div>
+                                <div class="fpq-option-label">Add a natural pool</div>
+                            </div>
+                            <div class="fpq-option" data-value="invasives" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌱</div>
+                                <div class="fpq-option-label">Clear invasive plants</div>
+                            </div>
+                            <div class="fpq-option" data-value="restoration" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🔄</div>
+                                <div class="fpq-option-label">Restore degraded land</div>
+                            </div>
+                            <div class="fpq-option" data-value="biodiversity" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🦋</div>
+                                <div class="fpq-option-label">Increase biodiversity</div>
+                            </div>
+                            <div class="fpq-option" data-value="food" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🍎</div>
+                                <div class="fpq-option-label">Create food systems</div>
+                            </div>
+                            <div class="fpq-option" data-value="water" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌧️</div>
+                                <div class="fpq-option-label">Manage water &amp; drainage</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="fpq-step" id="fpq-step-3">
+                        <p class="fpq-step-label">Question 3 of 3</p>
+                        <h3>How big is the site you're working with?</h3>
+                        <div class="fpq-options" id="fpq-q3">
+                            <div class="fpq-option" data-value="small" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🏠</div>
+                                <div class="fpq-option-label">Small residential<br><span style="font-weight:400;opacity:.7">Under 500m²</span></div>
+                            </div>
+                            <div class="fpq-option" data-value="medium" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🌳</div>
+                                <div class="fpq-option-label">Medium property<br><span style="font-weight:400;opacity:.7">500m² – 2ha</span></div>
+                            </div>
+                            <div class="fpq-option" data-value="large" tabindex="0" role="button" aria-pressed="false">
+                                <div class="fpq-option-icon">🗺️</div>
+                                <div class="fpq-option-label">Large farm or smallholding<br><span style="font-weight:400;opacity:.7">Over 2ha</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results panel -->
+                    <div class="fpq-results" id="fpq-results">
+                        <h3 class="fpq-results-heading">Projects that match your site</h3>
+                        <p class="fpq-results-sub" id="fpq-results-sub"></p>
+                        <div class="fpq-result-cards" id="fpq-result-cards"></div>
+                        <div class="fpq-actions">
+                            <a href="contact.html" class="btn-primary" style="text-decoration:none;">Enquire about your project &rarr;</a>
+                            <button type="button" class="fpq-btn-restart" id="fpq-restart">Start again</button>
+                        </div>
+                    </div>
+
+                    <div class="fpq-footer" id="fpq-footer">
+                        <button type="button" class="fpq-btn-back" id="fpq-back" style="visibility:hidden;">← Back</button>
+                        <span class="fpq-step-count" id="fpq-step-count">Step 1 of 3</span>
+                        <button type="button" class="fpq-btn-next" id="fpq-next">Next →</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2416,6 +2767,264 @@
                 ${p.tags.map(t => `<span class="plant-tag">${t}</span>`).join('')}
             </div>`).join('') + '</div>';
     }
+
+    // ----------------------------------------
+    // TOOL 0 — Find a Project Like Yours Quiz
+    // ----------------------------------------
+    (function() {
+        // Project database: each entry has tags matched against quiz answers
+        const PROJECTS = [
+            {
+                title: "Sine's Back Yard Natural Pool",
+                cat: "EcoPool",
+                location: "Knysna",
+                img: "images/sines-back-yard-dipping-pool.jpg",
+                href: "project-sines-pool.html",
+                site: ["garden", "pool"],
+                goal: ["pool"],
+                size: ["small", "medium"]
+            },
+            {
+                title: "Plettenberg Bay Pool Conversion",
+                cat: "EcoPool",
+                location: "Plettenberg Bay",
+                img: "images/eco-pool-hero2.jpg",
+                href: "project-plett-bay-conversion.html",
+                site: ["garden", "pool", "coastal"],
+                goal: ["pool"],
+                size: ["small", "medium"]
+            },
+            {
+                title: "Knysna New-Build EcoPool",
+                cat: "EcoPool",
+                location: "Knysna",
+                img: "images/eco-pool-hero3.jpg",
+                href: "project-knysna-new-build.html",
+                site: ["garden", "pool", "coastal"],
+                goal: ["pool", "biodiversity"],
+                size: ["medium"]
+            },
+            {
+                title: "Fynbos Restoration & Rain Garden",
+                cat: "Ecological Design",
+                location: "Plettenberg Bay",
+                img: "images/fynbos-restoration-and-rain-garden-design.jpg",
+                href: "project-fynbos-restoration.html",
+                site: ["garden", "coastal", "smallholding"],
+                goal: ["restoration", "biodiversity", "water", "invasives"],
+                size: ["small", "medium"]
+            },
+            {
+                title: "Clayton & Lisa's Food Forest Orchard",
+                cat: "Ecological Design",
+                location: "Garden Route",
+                img: "images/clayton-and-lisas-permaculture-orchard.jpg",
+                href: "project-food-forest-orchard.html",
+                site: ["garden", "smallholding"],
+                goal: ["food", "biodiversity"],
+                size: ["small", "medium"]
+            },
+            {
+                title: "Wilderness Biodiversity Corridor",
+                cat: "Ecological Design",
+                location: "Wilderness",
+                img: "images/wilderness-biodiversity-corridor.jpg",
+                href: "project-wilderness-biodiversity-corridor.html",
+                site: ["coastal", "smallholding", "farm"],
+                goal: ["biodiversity", "restoration"],
+                size: ["medium", "large"]
+            },
+            {
+                title: "Practical Sustainability with Ecosunergy",
+                cat: "Ecological Design",
+                location: "Garden Route",
+                img: "images/a-practical-sustainability-workshop-with-ecosunergy.jpg",
+                href: "project-ecosunergy-workshop.html",
+                site: ["farm", "smallholding", "community"],
+                goal: ["restoration", "food", "biodiversity"],
+                size: ["medium", "large"]
+            },
+            {
+                title: "Edible Food Forest Workshop",
+                cat: "Ecological Design",
+                location: "Garden Route",
+                img: "images/edible-food-forest-workshop.jpg",
+                href: "project-edible-food-forest-workshop.html",
+                site: ["garden", "smallholding", "community"],
+                goal: ["food", "biodiversity"],
+                size: ["small", "medium"]
+            },
+            {
+                title: "Holistic Land Management Vision",
+                cat: "Land Management",
+                location: "Garden Route",
+                img: "images/creating-a-vision-for-holistic-land-management.jpg",
+                href: "project-holistic-land-management.html",
+                site: ["farm", "smallholding", "coastal"],
+                goal: ["restoration", "invasives", "biodiversity"],
+                size: ["medium", "large"]
+            },
+            {
+                title: "Salt River Invasive Plant Clearing",
+                cat: "Land Management",
+                location: "Cape Town",
+                img: "images/salt-river-invasive-plant-clearing.jpg",
+                href: "project-salt-river-clearing.html",
+                site: ["community", "coastal", "farm"],
+                goal: ["invasives", "restoration", "water"],
+                size: ["large"]
+            },
+            {
+                title: "Greenpop's Forests For Life",
+                cat: "Land Management",
+                location: "Sub-Saharan Africa",
+                img: "images/greenpops-forests-for-life-program.jpg",
+                href: "project-greenpop-forests-for-life.html",
+                site: ["farm", "community"],
+                goal: ["restoration", "biodiversity"],
+                size: ["large"]
+            },
+            {
+                title: "Diepklowe Regenerative Farm",
+                cat: "Land Management",
+                location: "Garden Route",
+                img: "images/diepklowe-regenerative-farm.jpg",
+                href: "project-diepklowe-regenerative-farm.html",
+                site: ["farm", "smallholding"],
+                goal: ["restoration", "food", "invasives"],
+                size: ["medium", "large"]
+            },
+            {
+                title: "Alien Invasive Plant Clearing",
+                cat: "Land Management",
+                location: "Garden Route",
+                img: "images/alien clearing.jpg",
+                href: "project-alien-clearing.html",
+                site: ["farm", "smallholding", "coastal"],
+                goal: ["invasives", "restoration", "biodiversity"],
+                size: ["medium", "large"]
+            }
+        ];
+
+        let fpqStep = 1;
+        const fpqAnswers = { q1: null, q2: null, q3: null };
+        const TOTAL_STEPS = 3;
+
+        const progressEl = document.getElementById('fpq-progress');
+        const stepCountEl = document.getElementById('fpq-step-count');
+        const backBtn = document.getElementById('fpq-back');
+        const nextBtn = document.getElementById('fpq-next');
+        const restartBtn = document.getElementById('fpq-restart');
+        const resultsEl = document.getElementById('fpq-results');
+        const footerEl = document.getElementById('fpq-footer');
+        const resultCardsEl = document.getElementById('fpq-result-cards');
+        const resultSubEl = document.getElementById('fpq-results-sub');
+
+        function fpqUpdateUI() {
+            progressEl.style.width = (fpqStep / TOTAL_STEPS * 100) + '%';
+            stepCountEl.textContent = 'Step ' + fpqStep + ' of ' + TOTAL_STEPS;
+            backBtn.style.visibility = fpqStep > 1 ? 'visible' : 'hidden';
+            nextBtn.textContent = fpqStep === TOTAL_STEPS ? 'Show matching projects →' : 'Next →';
+        }
+
+        function fpqShowStep(n) {
+            document.querySelectorAll('.fpq-step').forEach(s => s.classList.remove('active'));
+            const el = document.getElementById('fpq-step-' + n);
+            if (el) el.classList.add('active');
+            fpqStep = n;
+            fpqUpdateUI();
+        }
+
+        // Click to select option
+        document.querySelectorAll('.fpq-option').forEach(opt => {
+            opt.addEventListener('click', () => {
+                opt.closest('.fpq-options').querySelectorAll('.fpq-option').forEach(o => {
+                    o.classList.remove('selected');
+                    o.setAttribute('aria-pressed', 'false');
+                });
+                opt.classList.add('selected');
+                opt.setAttribute('aria-pressed', 'true');
+            });
+            opt.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); opt.click(); }
+            });
+        });
+
+        function fpqGetAnswer(stepN) {
+            const group = document.getElementById('fpq-q' + stepN);
+            if (!group) return null;
+            const sel = group.querySelector('.fpq-option.selected');
+            return sel ? sel.dataset.value : null;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const ans = fpqGetAnswer(fpqStep);
+            if (!ans) {
+                // Gently highlight group
+                const group = document.getElementById('fpq-q' + fpqStep);
+                if (group) { group.style.outline = '2px solid rgba(54,102,158,0.3)'; group.style.borderRadius = '12px'; setTimeout(() => { group.style.outline = ''; }, 1200); }
+                return;
+            }
+            fpqAnswers['q' + fpqStep] = ans;
+            if (fpqStep < TOTAL_STEPS) {
+                fpqShowStep(fpqStep + 1);
+            } else {
+                fpqShowResults();
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (fpqStep > 1) fpqShowStep(fpqStep - 1);
+        });
+
+        restartBtn.addEventListener('click', () => {
+            fpqAnswers.q1 = fpqAnswers.q2 = fpqAnswers.q3 = null;
+            document.querySelectorAll('.fpq-option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-pressed', 'false'); });
+            resultsEl.classList.remove('active');
+            footerEl.style.display = '';
+            fpqShowStep(1);
+            document.querySelectorAll('.fpq-step').forEach(s => s.style.display = '');
+        });
+
+        function fpqShowResults() {
+            const site = fpqAnswers.q1;
+            const goal = fpqAnswers.q2;
+            const size = fpqAnswers.q3;
+
+            // Score projects: exact matches score higher
+            const scored = PROJECTS.map(p => {
+                let score = 0;
+                if (p.site.includes(site)) score += 3;
+                if (p.goal.includes(goal)) score += 3;
+                if (p.size.includes(size)) score += 1;
+                return { ...p, score };
+            }).filter(p => p.score >= 3).sort((a, b) => b.score - a.score).slice(0, 4);
+
+            // Hide steps, show results
+            document.querySelectorAll('.fpq-step').forEach(s => s.style.display = 'none');
+            footerEl.style.display = 'none';
+            resultsEl.classList.add('active');
+
+            if (scored.length === 0) {
+                resultSubEl.textContent = 'No exact matches — but we\'d love to discuss your site.';
+                resultCardsEl.innerHTML = '<p class="fpq-no-results">We haven\'t yet published a project that matches that exact combination — but most of our work is exactly that kind of site. <a href="contact.html">Get in touch</a> and we\'ll tell you about work relevant to yours.</p>';
+                return;
+            }
+
+            resultSubEl.textContent = scored.length + ' project' + (scored.length === 1 ? '' : 's') + ' match' + (scored.length === 1 ? 'es' : '') + ' your space and goals.';
+            resultCardsEl.innerHTML = scored.map(p => `
+                <a class="fpq-result-card" href="${p.href}">
+                    <img class="fpq-result-img" src="${p.img}" alt="${p.title}" loading="lazy">
+                    <div class="fpq-result-body">
+                        <p class="fpq-result-cat">${p.cat}</p>
+                        <p class="fpq-result-title">${p.title}</p>
+                        <p class="fpq-result-location">📍 ${p.location}</p>
+                    </div>
+                </a>`).join('');
+        }
+
+        fpqUpdateUI();
+    })();
     </script>
 </body>
 </html>
