@@ -2,12 +2,29 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ── Transparent nav over hero / parallax entry sections ──────────────
+    // Nav stays transparent while scrolling through ALL parallax windows.
+    // Only switches to solid (scrolled) once the last parallax window has
+    // fully cleared the top of the viewport.
     const heroSection = document.querySelector('.hero, .parallax-window');
     const navbar = document.querySelector('.navbar');
     if (heroSection && navbar) {
         navbar.classList.add('hero-nav');
+
+        // Calculate the scroll position at which the last PW clears the nav
+        const allPWs = document.querySelectorAll('.parallax-window');
+        let pwBottom = 0;
+        function calcPWBottom() {
+            if (allPWs.length > 0) {
+                const last = allPWs[allPWs.length - 1];
+                pwBottom = last.offsetTop + last.offsetHeight;
+            }
+        }
+        calcPWBottom();
+        window.addEventListener('resize', calcPWBottom, { passive: true });
+
         function handleNavScroll() {
-            if (window.scrollY > 60) {
+            const navH = navbar.offsetHeight;
+            if (window.scrollY + navH >= pwBottom) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');

@@ -188,7 +188,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 
 /* ─── Nav hero-transparency (added by JS when .hero is on page) ─── */
 .navbar.hero-nav {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(8, 20, 14, 0.72) 0%, transparent 100%);
     box-shadow: none;
     border-bottom-color: rgba(255, 255, 255, 0.12);
     -webkit-backdrop-filter: none;
@@ -1229,58 +1229,103 @@ section {
 
 /* Blog Teaser Section */
 .blog-teaser {
-    background: linear-gradient(135deg, #f8f6f1 0%, #ffffff 100%);
+    background: #0b120d;
+    padding: var(--section-padding) 20px;
+}
+
+.blog-teaser-header {
+    margin-bottom: 3.5rem;
+}
+
+.blog-teaser-header .label {
+    color: rgba(59, 139, 117, 0.9);
+    letter-spacing: 0.14em;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.blog-teaser-header h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #f0ede6;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+}
+
+.blog-teaser-intro {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 520px;
+    line-height: 1.75;
+    margin: 0;
 }
 
 .blog-teaser-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 0;
 }
 
 .blog-teaser-card {
     text-decoration: none;
-    border-radius: 16px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(54, 102, 158, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: block;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .blog-teaser-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(54, 102, 158, 0.15);
+    transform: translateY(-4px);
+    border-color: rgba(59, 139, 117, 0.45);
+    box-shadow: none;
 }
 
 .blog-teaser-image {
-    height: 155px;
+    height: 220px;
     background-size: cover;
     background-position: center;
 }
 
 .blog-teaser-body {
-    padding: 1.4rem 1.6rem 1.6rem;
+    padding: 1.6rem 1.8rem 2rem;
 }
 
 .blog-teaser-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--secondary-blue);
-    margin-bottom: 0.5rem;
+    color: rgba(59, 139, 117, 0.9);
+    margin-bottom: 0.65rem;
 }
 
 .blog-teaser-body h3 {
-    font-size: 1rem;
-    color: var(--text-dark);
-    line-height: 1.45;
+    font-size: 1.05rem;
+    color: #f0ede6;
+    line-height: 1.4;
     font-family: 'Poppins', Arial, sans-serif;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 0.75rem;
+}
+
+.blog-teaser-blurb {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.48);
+    line-height: 1.7;
+    margin: 0 0 1.1rem;
+}
+
+.blog-teaser-link {
+    font-size: 0.75rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(59, 139, 117, 0.9);
 }
 
 /* FAQ Section */
@@ -2589,43 +2634,66 @@ textarea:focus-visible {
     }
 }
 
-/* ─── Stats Strip — compact 4-number row between parallax and projects ─── */
+/* ─── Stats Strip — editorial dark row ─── */
 .stats-strip {
-    background: var(--earth-blue, #1e3d6b);
-    padding: 52px 20px;
+    background: #0b120d;
+    padding: 72px 20px;
+    border-top: 1px solid rgba(59, 139, 117, 0.35);
+    border-bottom: 1px solid rgba(59, 139, 117, 0.35);
 }
 
 .stats-strip .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 0;
     text-align: center;
 }
 
 .stats-strip .stat-item {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: transparent;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 2.5rem;
     box-shadow: none;
+    transition: none;
+}
+
+.stats-strip .stat-item:last-child {
+    border-right: none;
 }
 
 .stats-strip .stat-item:hover {
-    background: rgba(255, 255, 255, 0.14);
-    transform: translateY(-4px);
+    background: transparent;
+    transform: none;
     box-shadow: none;
 }
 
 .stats-strip .stat-number {
-    color: var(--accent-yellow, #f2d922);
-    font-size: clamp(2rem, 4vw, 3rem);
+    display: block;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 200;
+    color: #f0ede6;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
 }
 
 .stats-strip .stat-label {
-    color: rgba(255, 255, 255, 0.75);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.38);
 }
 
 @media (max-width: 600px) {
     .stats-strip .container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 0;
+    }
+    .stats-strip .stat-item {
+        border-right: none;
     }
 }
 
@@ -2816,9 +2884,49 @@ textarea:focus-visible {
     overflow: hidden;
 }
 
-/* Top-of-page parallax IS the hero — full viewport height */
+/* Edge-fade gradients — bleed top and bottom of each section into
+   the dark seam so adjacent parallax windows dissolve rather than cut */
+.parallax-window::before,
+.parallax-window::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 15%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Top fade: dark → transparent (previous section bleeds in) */
+.parallax-window::before {
+    top: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(8, 20, 14, 0.52) 0%,
+        transparent 100%
+    );
+}
+
+/* Bottom fade: transparent → dark (fades out to next section) */
+.parallax-window::after {
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(8, 20, 14, 0.52) 0%,
+        transparent 100%
+    );
+}
+
+/* Hero is first — no top blackout, nothing above it */
+#main-content.parallax-window::before {
+    display: none;
+}
+
+/* Top-of-page parallax IS the hero — extends behind the fixed nav
+   so the parallax image fills the full viewport including the nav area */
 #main-content.parallax-window {
     min-height: 100vh;
+    margin-top: -72px;
 }
 
 /* Secondary brand paragraph inside the first parallax — softer, smaller */
