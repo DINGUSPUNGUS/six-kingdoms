@@ -1427,7 +1427,7 @@ section {
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
-    background-image: url('images/eco-pool-hero1.jpg');
+    background-image: url('images/eco-pool-hero1.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1535,19 +1535,19 @@ section {
 
 /* ─── Blog card image backgrounds ─── */
 .blog-card-image.ecopools-img {
-    background-image: url('images/eco-pool-hero1.jpg');
+    background-image: url('images/eco-pool-hero1.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.fynbos-img {
-    background-image: url('images/fynbos-restoration-and-rain-garden-design.jpg');
+    background-image: url('images/fynbos-restoration-and-rain-garden-design.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/creating-a-vision-for-holistic-land-management.jpg');
+    background-image: url('images/creating-a-vision-for-holistic-land-management.webp');
     background-size: cover;
     background-position: center;
 }
@@ -3081,3 +3081,73 @@ textarea:focus-visible {
 }
 
 
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PREMIUM LOOK ENHANCEMENTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Tighten letter-spacing on all-caps labels */
+.label,
+.stat-label {
+    letter-spacing: 0.1em;
+}
+
+/* Button active micro-interaction */
+.btn-primary:active,
+.btn-secondary:active,
+.pw-btn:active {
+    transform: scale(0.97) translateY(0) !important;
+}
+
+/* Stronger card hover */
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Stats number tabular for cleaner count-up animation */
+.stat-number,
+.stats-strip .stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Project image fills its container properly when using <picture> */
+.project-image {
+    overflow: hidden;
+}
+
+.project-image img,
+.project-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-image picture {
+    display: block;
+}
+
+.project-image picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery images responsive */
+.gallery-grid picture,
+.gallery-grid picture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ensure <picture> doesn't break flex/grid layouts outside project cards */
+picture {
+    display: contents;
+}
+
+/* Override display:contents for specific containers that need block behaviour */
+.project-image picture,
+.gallery-grid picture {
+    display: block;
+}

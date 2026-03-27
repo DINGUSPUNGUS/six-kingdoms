@@ -187,6 +187,51 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     }
 });
 
+// Stats count-up animation
+(function() {
+    const statsNumbers = document.querySelectorAll('.stat-number[data-target]');
+    if (!statsNumbers.length) return;
+
+    const countUp = (el) => {
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const start = performance.now();
+        const isDecimal = String(target).includes('.');
+
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            const current = target * eased;
+            el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(step);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countUp(entry.target);
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statsNumbers.forEach(el => io.observe(el));
+})();
+
+// Contact form pre-fill from URL parameters
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    if (type) {
+        const subjectField = document.querySelector('select[name="subject"], input[name="subject"]');
+        if (subjectField) subjectField.value = type;
+    }
+})();
+
 // Project filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 if (filterButtons.length > 0) {
