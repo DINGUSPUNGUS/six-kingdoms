@@ -341,21 +341,7 @@ body {
     z-index: 1;
 }
 
-.hero-bg-1 {
-    background-image: url('images/eco pool photos/overview.jpg');
-}
-
-.hero-bg-2 {
-    background-image: url('images/eco pool photos/EcoPool and pool house.JPG');
-}
-
-.hero-bg-3 {
-    background-image: url('images/eco pool photos/20260323164217.JPG');
-}
-
-.hero-bg-4 {
-    background-image: url('images/eco pool photos/20260323164304.JPG');
-}
+/* hero-bg-1..4 removed — index.html now uses inline background-image on .hero-bg */
 
 /* ─── Hero height variants ─── */
 /* Service pages: slightly shorter than full viewport */
@@ -559,39 +545,7 @@ body {
     margin: 0 auto;
 }
 
-/* Hero Text Slides */
-.hero-text-slides {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    min-height: 360px;
-}
-
-.hero-slide-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    padding: 0 20px;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-    pointer-events: none;
-}
-
-.hero-slide-content.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Label in dark hero context — override to white */
-.hero-slide-content .label {
-    color: rgba(255, 255, 255, 0.80);
-    margin-bottom: 1.2rem;
-}
+/* Hero Text Slides removed — static heroes use .hero-content directly */
 
 .hero-service-label {
     display: inline-block;
@@ -607,32 +561,7 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Hero Indicators (dots) */
-.hero-indicators {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.75rem;
-    z-index: 20;
-}
-
-.hero-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.6);
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.hero-indicator.active {
-    background: white;
-    border-color: white;
-}
+/* Hero indicators removed — static heroes have no dots */
 
 .hero-logo {
     margin-bottom: 2rem;
@@ -2660,6 +2589,46 @@ textarea:focus-visible {
     }
 }
 
+/* ─── Stats Strip — compact 4-number row between parallax and projects ─── */
+.stats-strip {
+    background: var(--earth-blue, #1e3d6b);
+    padding: 52px 20px;
+}
+
+.stats-strip .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.stats-strip .stat-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+}
+
+.stats-strip .stat-item:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-4px);
+    box-shadow: none;
+}
+
+.stats-strip .stat-number {
+    color: var(--accent-yellow, #f2d922);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.stats-strip .stat-label {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 600px) {
+    .stats-strip .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* ─── Project Filters ─── */
 .project-filters {
     display: flex;
@@ -2830,261 +2799,176 @@ textarea:focus-visible {
 }
 
 /* ===================================================================
-   LAYERED WINDOW GALLERY — Six Kingdoms
-   Three framed image "windows" introduce the three service areas.
-   Organic border-radius creates the curated-window-frame feeling.
+   PARALLAX WINDOW SECTIONS — Six Kingdoms
+   Full-bleed background image per section. Image scrolls slower
+   than the page, creating the "window looking onto a photo" effect.
    =================================================================== */
 
-.window-gallery {
-    background: var(--color-sand);
-    padding: 112px 20px 128px;
-    overflow: hidden;
+.parallax-window {
     position: relative;
+    min-height: 88vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Subtle ambient tint in background */
-.window-gallery::before {
-    content: '';
+/* Top-of-page parallax IS the hero — full viewport height */
+#main-content.parallax-window {
+    min-height: 100vh;
+}
+
+/* Secondary brand paragraph inside the first parallax — softer, smaller */
+.pw-about {
+    font-size: 0.95rem !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 1.2rem;
+}
+
+/* Dark directional overlay — left heavy for left-aligned content */
+.pw-overlay {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse 55% 60% at 18% 50%, rgba(59, 139, 117, 0.055) 0%, transparent 65%),
-        radial-gradient(ellipse 45% 55% at 82% 55%, rgba(54, 102, 158, 0.04) 0%, transparent 65%);
+    background: linear-gradient(
+        105deg,
+        rgba(8, 20, 14, 0.78) 0%,
+        rgba(8, 20, 14, 0.48) 45%,
+        rgba(8, 20, 14, 0.12) 100%
+    );
     pointer-events: none;
 }
 
-/* Section header */
-.window-gallery-header {
-    text-align: center;
+/* Right-heavy overlay for right-aligned section */
+.pw-overlay--right {
+    background: linear-gradient(
+        255deg,
+        rgba(8, 20, 14, 0.78) 0%,
+        rgba(8, 20, 14, 0.48) 45%,
+        rgba(8, 20, 14, 0.12) 100%
+    );
+}
+
+/* The three background images */
+.pw--ecopools {
+    background-image: url('images/eco pool photos/EcoPool and pool house.JPG');
+}
+
+.pw--design {
+    background-image: url('images/garden%203.jpg');
+}
+
+.pw--land {
+    background-image: url('images/alien%20clearing%204.jpg');
+}
+
+/* Content block — left-aligned by default */
+.pw-content {
+    position: relative;
+    z-index: 1;
     max-width: 560px;
-    margin: 0 auto 5rem;
-    position: relative;
-    z-index: 1;
+    margin-left: 9vw;
+    padding: 100px 0;
+    color: #fff;
 }
 
-.window-gallery-header .label {
-    color: var(--color-teal);
-    margin-bottom: 0.85rem;
-    display: block;
+/* Right-aligned for the middle section */
+.pw-content--right {
+    margin-left: auto;
+    margin-right: 9vw;
+    text-align: right;
 }
 
-.window-gallery-header h2 {
-    color: var(--color-dark);
+.pw-content .label {
+    color: rgba(255, 255, 255, 0.6);
     margin-bottom: 1rem;
-    font-size: clamp(1.75rem, 3.2vw, 2.4rem);
-}
-
-.window-gallery-header > p {
-    color: var(--color-muted);
-    font-size: 1.05rem;
-    line-height: 1.75;
-    margin: 0;
-}
-
-/* Three-column grid for the window frames */
-.window-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.75rem;
-    max-width: 1180px;
-    margin: 0 auto;
-    align-items: start;
-    position: relative;
-    z-index: 1;
-}
-
-/* ── Individual window pane ── */
-.window-pane {
     display: block;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    /* Organic asymmetric frame — key to the "curated window" feel */
-    border-radius: 4px 60px 4px 60px;
-    /* Lifted depth shadow */
-    box-shadow:
-        0 6px 24px rgba(0, 0, 0, 0.13),
-        0 24px 60px rgba(0, 0, 0, 0.07);
-    /* Scroll-reveal: start hidden and shifted down */
-    opacity: 0;
-    transform: translateY(52px);
-    transition:
-        opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.78s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.5s ease;
+    letter-spacing: 0.14em;
 }
 
-/* Stagger entrance per pane */
-.window-pane:nth-child(1) { transition-delay: 0s; }
-.window-pane:nth-child(2) { transition-delay: 0.14s; }
-.window-pane:nth-child(3) { transition-delay: 0.28s; }
-
-/* Middle pane: flipped corners + vertical drop for depth layering */
-.window-pane.wp--middle {
-    border-radius: 60px 4px 60px 4px;
-    margin-top: 52px;
-}
-
-/* Revealed state (toggled by IntersectionObserver) */
-.window-pane.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.window-pane:hover {
-    box-shadow:
-        0 10px 32px rgba(0, 0, 0, 0.17),
-        0 32px 70px rgba(0, 0, 0, 0.10);
-}
-
-/* ── Image inside the frame ── */
-.wp-image {
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    position: relative;
-}
-
-.wp-image img {
-    width: 100%;
-    height: 115%; /* extra height for subtle parallax headroom */
-    object-fit: cover;
-    object-position: center 25%;
-    display: block;
-    /* JS writes translateY here for parallax; hover scale is separate */
-    transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
-}
-
-.window-pane:hover .wp-image img {
-    transform: scale(1.055) translateY(-1.5%);
-}
-
-/* ── Dark gradient overlay ── */
-.wp-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(12, 26, 20, 0.88) 0%,
-        rgba(12, 26, 20, 0.32) 50%,
-        transparent 72%
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2.5rem 2rem;
-    transition: background 0.5s ease;
-}
-
-.window-pane:hover .wp-overlay {
-    background: linear-gradient(
-        to top,
-        rgba(12, 26, 20, 0.92) 0%,
-        rgba(12, 26, 20, 0.42) 58%,
-        transparent 76%
-    );
-}
-
-/* ── Caption inside each window ── */
-.wp-caption .label {
-    color: rgba(255, 255, 255, 0.62);
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.wp-caption h3 {
-    color: #ffffff;
-    font-size: clamp(1.05rem, 1.7vw, 1.4rem);
-    line-height: 1.25;
-    margin: 0 0 0.75rem;
-}
-
-/* Description: hidden by default, softly revealed on hover */
-.wp-caption p {
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 0.88rem;
-    line-height: 1.65;
-    margin: 0 0 1rem;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.45s ease, opacity 0.45s ease;
-}
-
-.window-pane:hover .wp-caption p {
-    max-height: 90px;
-    opacity: 1;
-}
-
-/* ── Link label ── */
-.wp-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    color: rgba(255, 255, 255, 0.88);
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 0.78rem;
+.pw-content h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
     font-weight: 700;
-    letter-spacing: 0.09em;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1.3rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.pw-content p {
+    font-size: 1.1rem;
+    line-height: 1.78;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.2rem;
+    max-width: 440px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pw-content--right p {
+    margin-left: auto;
+}
+
+/* Outlined button — premium feel, doesn't fight the image */
+.pw-btn {
+    display: inline-block;
+    padding: 0.9rem 2.4rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.32);
-    padding-bottom: 2px;
-    transition: border-color 0.3s ease, gap 0.3s ease, color 0.3s ease;
+    border-radius: 3px;
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.25s ease;
 }
 
-.window-pane:hover .wp-link {
-    border-color: rgba(255, 255, 255, 0.85);
-    color: #ffffff;
-    gap: 0.72rem;
+.pw-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #ffffff;
+    transform: translateY(-2px);
 }
 
-/* ── Responsive ── */
-@media (max-width: 920px) {
-    .window-gallery {
-        padding: 88px 20px 100px;
-    }
-    .window-grid {
-        grid-template-columns: 1fr 1fr;
-        max-width: 680px;
-    }
-    /* Hide third pane on tablets — keep two for clean layout */
-    .window-pane.wp--right {
-        display: none;
-    }
-    .window-pane.wp--middle {
-        margin-top: 32px;
+/* Mobile: iOS doesn't support background-attachment: fixed,
+   fall back to scroll (still looks great, no blank screen) */
+@media (max-width: 900px) {
+    .parallax-window {
+        background-attachment: scroll;
+        min-height: 75vh;
     }
 }
 
-@media (max-width: 560px) {
-    .window-gallery {
-        padding: 70px 16px 80px;
+@media (max-width: 768px) {
+    .parallax-window {
+        min-height: 65vh;
     }
-    .window-gallery-header {
-        margin-bottom: 3.5rem;
+    .pw-content {
+        margin-left: 24px;
+        margin-right: 24px;
+        padding: 72px 0;
+        max-width: 100%;
     }
-    .window-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+    .pw-content--right {
+        margin-left: 24px;
+        margin-right: 24px;
+        text-align: left;
     }
-    /* Show all three on mobile — stacked */
-    .window-pane.wp--right {
-        display: block;
+    .pw-content--right p {
+        margin-left: 0;
     }
-    .window-pane.wp--middle {
-        margin-top: 0;
-        /* Revert to same corner pattern as left/right on mobile */
-        border-radius: 4px 60px 4px 60px;
-    }
-    /* Always show description on mobile (no hover state) */
-    .wp-caption p {
-        max-height: 90px;
-        opacity: 1;
-    }
-    /* Tighten the image height a little on narrow screens */
-    .wp-image {
-        aspect-ratio: 4 / 3;
+    .pw-overlay--right {
+        background: linear-gradient(
+            105deg,
+            rgba(8, 20, 14, 0.78) 0%,
+            rgba(8, 20, 14, 0.48) 45%,
+            rgba(8, 20, 14, 0.12) 100%
+        );
     }
 }
 

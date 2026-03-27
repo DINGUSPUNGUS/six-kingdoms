@@ -13,10 +13,7 @@ $HtmlFiles = @(
     "index.html",
     "ecopools.html",
     "land-management.html",
-    "contact.html",
-    "living-water-future-of-swimming.html",
-    "fynbos-restoration-reading-landscape.html",
-    "knowing-your-land-stewardship.html"
+    "contact.html"
 )
 
 # HTML entity decoder (so plain markdown text matches HTML anchor content)

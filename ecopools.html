@@ -10,6 +10,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sixkingdoms.org/ecopools.html">
+    <link rel="preload" as="image" href="images/eco%20pool%20photos/EcoPool%20and%20pool%20house.JPG" fetchpriority="high">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -161,26 +162,14 @@
         </div>
     </nav>
 
-    <section class="hero hero--service" id="main-content">
-        <div class="hero-background-slides">
-            <div class="hero-bg active" role="img" style="background-image:url('images/eco pool photos/Guests enjoying the ecopool.JPG')" aria-label="Guests swimming in a natural EcoPool, Garden Route"></div>
-            <div class="hero-bg" role="img" style="background-image:url('images/eco-pool-hero1.jpg')" aria-label="Natural EcoPool — chemical-free pool by Six Kingdoms"></div>
-            <div class="hero-bg" role="img" style="background-image:url('images/eco-pool-hero2.jpg')" aria-label="EcoPool conversion — Plettenberg Bay natural swimming pool"></div>
-            <div class="hero-bg" role="img" style="background-image:url('images/eco-pool-hero3.jpg')" aria-label="EcoPool new build — Knysna fynbos slope natural pool"></div>
-        </div>
-
-        <div class="hero-content">
-            <span class="hero-service-label">EcoPools &middot; Natural Swimming</span>
-            <h1>Natural.<br>Chemical-Free. Alive.</h1>
-            <p>Living water filtered by biology &mdash; for the Garden Route and beyond.</p>
-            <a href="contact.html" class="btn-primary">Get a Quote</a>
-        </div>
-
-        <div class="hero-indicators" role="tablist" aria-label="EcoPool photos">
-            <button class="hero-indicator active" aria-label="Pool slide 1" role="tab"></button>
-            <button class="hero-indicator" aria-label="Pool slide 2" role="tab"></button>
-            <button class="hero-indicator" aria-label="Pool slide 3" role="tab"></button>
-            <button class="hero-indicator" aria-label="Pool slide 4" role="tab"></button>
+    <!-- Hero parallax — full viewport entry hero -->
+    <section class="parallax-window pw--ecopools" id="main-content">
+        <div class="pw-overlay"></div>
+        <div class="pw-content">
+            <span class="label">EcoPools &middot; Natural Swimming</span>
+            <h2>Natural.<br>Chemical-Free. Alive.</h2>
+            <p>Natural swimming pools filtered by plants and beneficial micro-organisms &mdash; no chemicals, ever. Living water for the Garden Route and beyond.</p>
+            <a href="#enquire" class="pw-btn">Get a Quote &rarr;</a>
         </div>
     </section>
 
@@ -233,6 +222,18 @@
                     </div>
                 </div>
             </div>
+
+
+    <!-- Parallax window — full-bleed pool image mid-page -->
+    <section class="parallax-window pw--ecopools">
+        <div class="pw-overlay"></div>
+        <div class="pw-content">
+            <span class="label">EcoPools &middot; Natural Swimming</span>
+            <h2>The Water Stays<br>Clean Because It&rsquo;s Alive.</h2>
+            <p>No chemicals, no chlorine, no maintenance battles &mdash; just a living aquatic ecosystem filtering your pool the way nature intended.</p>
+            <a href="#enquire" class="pw-btn">Enquire About an EcoPool &rarr;</a>
+        </div>
+    </section>
 
             <div class="benefits-section">
                 <h2>Why Choose a Natural Pool?</h2>
@@ -295,7 +296,7 @@
                 <div class="partnership-visual">
                     <div class="partnership-cert-badge">
                         <div class="partnership-cert-icon" aria-hidden="true">
-                            <img src="images/eco pools logo.png" alt="EcoPools Africa logo" style="width:100%;height:100%;object-fit:contain;">
+                            <img src="images/eco pools logo.png" alt="EcoPools Africa logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;">
                         </div>
                         <div class="partnership-cert-details">
                             <span class="partnership-cert-label">Certified Technology Partner</span>
