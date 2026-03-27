@@ -2855,15 +2855,15 @@ textarea:focus-visible {
 
 /* The three background images */
 .pw--ecopools {
-    background-image: url('images/eco pool photos/EcoPool and pool house.JPG');
+    background-image: url('images/eco pool photos/EcoPool and pool house.webp');
 }
 
 .pw--design {
-    background-image: url('images/garden%203.jpg');
+    background-image: url('images/garden%203.webp');
 }
 
 .pw--land {
-    background-image: url('images/alien%20clearing%204.jpg');
+    background-image: url('images/alien%20clearing%204.webp');
 }
 
 /* Content block — left-aligned by default */
