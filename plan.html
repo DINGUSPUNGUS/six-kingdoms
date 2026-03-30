@@ -770,7 +770,8 @@
             border-bottom: 1px solid rgba(54,102,158,0.1);
         }
         .result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .result-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .result-icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 0.1rem; }
+        .result-icon svg { width: 100%; height: 100%; stroke: var(--primary-blue); fill: none; }
         .result-item-text strong { display: block; color: var(--primary-blue); margin-bottom: 0.2rem; font-size: 0.95rem; }
         .result-item-text p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin: 0; }
         .result-cta {
@@ -1288,9 +1289,17 @@
             background: rgba(54,102,158,0.06);
         }
         .fpq-option-icon {
-            font-size: 1.6rem;
-            margin-bottom: 0.4rem;
-            line-height: 1;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fpq-option-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary-blue);
         }
         .fpq-option-label {
             font-size: 0.82rem;
@@ -1513,27 +1522,27 @@
                         <h3>What kind of space are you working with?</h3>
                         <div class="fpq-options" id="fpq-q1">
                             <div class="fpq-option" data-value="garden" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌿</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
                                 <div class="fpq-option-label">Residential garden</div>
                             </div>
                             <div class="fpq-option" data-value="pool" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">💧</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/></svg></div>
                                 <div class="fpq-option-label">Pool or water feature</div>
                             </div>
                             <div class="fpq-option" data-value="smallholding" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🏡</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
                                 <div class="fpq-option-label">Smallholding</div>
                             </div>
                             <div class="fpq-option" data-value="farm" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌾</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
                                 <div class="fpq-option-label">Farm or agricultural land</div>
                             </div>
                             <div class="fpq-option" data-value="coastal" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌊</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
                                 <div class="fpq-option-label">Coastal or fynbos land</div>
                             </div>
                             <div class="fpq-option" data-value="community" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🤝</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                                 <div class="fpq-option-label">Community or institutional</div>
                             </div>
                         </div>
@@ -1545,27 +1554,27 @@
                         <h3>What's your main goal or challenge?</h3>
                         <div class="fpq-options" id="fpq-q2">
                             <div class="fpq-option" data-value="pool" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🏊</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/></svg></div>
                                 <div class="fpq-option-label">Add a natural pool</div>
                             </div>
                             <div class="fpq-option" data-value="invasives" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌱</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></div>
                                 <div class="fpq-option-label">Clear invasive plants</div>
                             </div>
                             <div class="fpq-option" data-value="restoration" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🔄</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
                                 <div class="fpq-option-label">Restore degraded land</div>
                             </div>
                             <div class="fpq-option" data-value="biodiversity" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🦋</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
                                 <div class="fpq-option-label">Increase biodiversity</div>
                             </div>
                             <div class="fpq-option" data-value="food" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🍎</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
                                 <div class="fpq-option-label">Create food systems</div>
                             </div>
                             <div class="fpq-option" data-value="water" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌧️</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6c.6.5 1.2 1 2.5 1C8 7 8 5 10.5 5s2.5 2 5 2 2.5-2 5-2 1.9.5 2.5 1"/><path d="M3 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 1.9.5 2.5 1"/><path d="M3 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 1.9.5 2.5 1"/></svg></div>
                                 <div class="fpq-option-label">Manage water &amp; drainage</div>
                             </div>
                         </div>
@@ -1577,15 +1586,15 @@
                         <h3>How big is the site you're working with?</h3>
                         <div class="fpq-options" id="fpq-q3">
                             <div class="fpq-option" data-value="small" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🏠</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
                                 <div class="fpq-option-label">Small residential<br><span style="font-weight:400;opacity:.7">Under 500m²</span></div>
                             </div>
                             <div class="fpq-option" data-value="medium" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🌳</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                                 <div class="fpq-option-label">Medium property<br><span style="font-weight:400;opacity:.7">500m² – 2ha</span></div>
                             </div>
                             <div class="fpq-option" data-value="large" tabindex="0" role="button" aria-pressed="false">
-                                <div class="fpq-option-icon">🗺️</div>
+                                <div class="fpq-option-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9 8 13 14 16 10 21 17"/><line x1="3" y1="17" x2="21" y2="17"/></svg></div>
                                 <div class="fpq-option-label">Large farm or smallholding<br><span style="font-weight:400;opacity:.7">Over 2ha</span></div>
                             </div>
                         </div>
@@ -1660,7 +1669,7 @@
                         <div class="main-top">
                             <div>
                                 <div class="page-title">My Garden <span style="font-size:0.85rem;color:var(--text-light);font-weight:400;">— bed layout planner</span></div>
-                                <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.3rem;">Select a vegetable ? click or drag onto a bed cell. Click a filled cell to remove.</p>
+                                <p style="font-size:0.75rem;color:var(--text-light);margin-top:0.3rem;">Select a vegetable &mdash; click or drag onto a bed cell. Click a filled cell to remove.</p>
                             </div>
                             <div class="top-btns">
                                 <button class="btn-add" onclick="openModal()">+ Add bed</button>
@@ -1770,9 +1779,9 @@
 
                 </div>
                 <div class="wizard-footer">
-                    <button type="button" class="wizard-btn wizard-btn-back" id="wizard-back" style="visibility:hidden">? Back</button>
+                    <button type="button" class="wizard-btn wizard-btn-back" id="wizard-back" style="visibility:hidden">&larr; Back</button>
                     <span class="wizard-step-count" id="wizard-step-count">Step 1 of 6</span>
-                    <button type="button" class="wizard-btn wizard-btn-next" id="wizard-next">Next ?</button>
+                    <button type="button" class="wizard-btn wizard-btn-next" id="wizard-next">Next &rarr;</button>
                 </div>
             </div>
 
@@ -1792,7 +1801,7 @@
                     <div class="result-cta">
                         <p>Ready to take the next step?</p>
                         <button type="button" class="btn-restart" id="wizard-restart">Start again</button>
-                        <a href="contact.html" class="btn-primary">Get in touch ?</a>
+                        <a href="contact.html" class="btn-primary">Get in touch &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -1973,7 +1982,7 @@
                 <div class="summary-findings" id="summary-findings"></div>
                 <div class="result-cta" style="margin-top:1.8rem; padding-top:1.5rem; border-top:1px solid rgba(54,102,158,0.1); text-align:center">
                     <p style="font-size:0.92rem; color:var(--text-light); margin-bottom:1rem">Bring this to your first conversation with us — it gives us a real head start.</p>
-                    <a href="contact.html" class="btn-primary">Talk to us about your land ?</a>
+                    <a href="contact.html" class="btn-primary">Talk to us about your land &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1985,7 +1994,13 @@
     <section class="tool-section" id="cost-calculator">
         <div class="container">
             <div class="tool-header">
-                <span class="tool-emoji" aria-hidden="true">??</span>
+                <div class="tool-icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                </div>
                 <h2>EcoPool vs Chlorine: Running Cost Calculator</h2>
                 <p>See how running costs stack up over time. EcoPools cost more to build — but the gap closes fast once you stop buying chemicals.</p>
             </div>
@@ -2126,7 +2141,7 @@
                     </div>
                 </div>
                 <div style="text-align:center">
-                    <button type="button" class="btn-analyse" id="plant-search-btn">Find plants ?</button>
+                    <button type="button" class="btn-analyse" id="plant-search-btn">Find plants &rarr;</button>
                 </div>
             </div>
 
@@ -2226,7 +2241,7 @@
         document.getElementById('wizard-progress').style.width = (n / STEPS * 100) + '%';
         document.getElementById('wizard-step-count').textContent = 'Step ' + n + ' of ' + STEPS;
         document.getElementById('wizard-back').style.visibility = n > 1 ? 'visible' : 'hidden';
-        document.getElementById('wizard-next').textContent = n === STEPS ? 'See my results ?' : 'Next ?';
+        document.getElementById('wizard-next').textContent = n === STEPS ? 'See my results →' : 'Next →';
         // clear hint
         const hint = document.getElementById('hint-' + n);
         if (hint) hint.textContent = '';
@@ -2267,25 +2282,25 @@
 
         // Primary recommendation
         if (goals.includes('pool') || goals.includes('all')) {
-            items.push({ icon: '??', title: 'An EcoPool could work here',
+            items.push({ icon: iconSVG('<path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>'), title: 'An EcoPool could work here',
                 text: size === 'small'
                     ? 'A compact dipping pool works well on smaller plots.'
                     : 'Good space for a full natural swimming pool with a planted zone.' });
         }
         if (goals.includes('garden') || goals.includes('all')) {
-            items.push({ icon: '??', title: 'Ecological garden design',
+            items.push({ icon: iconSVG('<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>'), title: 'Ecological garden design',
                 text: sun === 'shade'
                     ? 'Shade suits tree ferns, clivia, and wild iris — great to work with.'
                     : 'Full-sun fynbos gardens are low-water, biodiverse, and spectacular.' });
         }
         if (goals.includes('food') || goals.includes('all')) {
-            items.push({ icon: '??', title: 'Food forest or productive garden',
+            items.push({ icon: iconSVG('<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'), title: 'Food forest or productive garden',
                 text: size === 'farm' || size === 'large'
                     ? 'Large plots suit a multi-layer food forest — trees, shrubs, ground layer.'
                     : 'Small spaces support a productive edible garden when well designed.' });
         }
         if (goals.includes('restoration') || goals.includes('all')) {
-            items.push({ icon: '??', title: 'Land restoration',
+            items.push({ icon: iconSVG('<polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>'), title: 'Land restoration',
                 text: exist.includes('invasives')
                     ? 'Clearing invasives is the first step — fynbos recovers well once the pressure is off.'
                     : 'Good candidate for gentle restoration — encouraging what belongs here.' });
@@ -2293,21 +2308,21 @@
 
         // Site-specific notes
         if (exist.includes('slope')) {
-            items.push({ icon: '??', title: 'Sloped land — water management matters',
+            items.push({ icon: iconSVG('<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>'), title: 'Sloped land — water management matters',
                 text: 'Slopes need water slowed and spread. Great for swales, terracing, or a hillside food forest.' });
         }
         if (exist.includes('invasives')) {
-            items.push({ icon: '??', title: 'Invasives first',
+            items.push({ icon: iconSVG('<circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/>'), title: 'Invasives first',
                 text: 'A plant survey comes first — clearing invasives is the foundation of any design.' });
         }
         if (exist.includes('water')) {
-            items.push({ icon: '??', title: 'Water feature — a real asset',
+            items.push({ icon: iconSVG('<path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>'), title: 'Water feature — a real asset',
                 text: 'Streams and wetlands are rare and valuable — worth designing around and protecting.' });
         }
 
         // Fallback
         if (items.length === 0) {
-            items.push({ icon: '??', title: 'Every piece of land has potential',
+            items.push({ icon: iconSVG('<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>'), title: 'Every piece of land has potential',
                 text: 'A walk around your site together is often the best starting point.' });
         }
 
@@ -2335,7 +2350,7 @@
             exploring: 'No pressure. Come and have a conversation — it costs nothing.'
         };
         document.getElementById('result-cta-text').textContent = ctaMessages[timeline] || 'Ready to take the next step?';
-        document.getElementById('result-cta-link').textContent = `Tell us about your ${projectType} ?`;
+        document.getElementById('result-cta-link').textContent = `Tell us about your ${projectType} →`;
         document.getElementById('result-cta-link').href = `contact.html?type=${projectSlug}`;
 
         document.getElementById('wizard-card').style.display = 'none';
@@ -2380,10 +2395,10 @@
 
         navigator.clipboard.writeText(text).then(() => {
             const btn = document.getElementById('copy-brief-btn');
-            btn.textContent = '? Copied!';
+            btn.textContent = 'Copied!';
             btn.classList.add('copied');
             setTimeout(() => {
-                btn.textContent = '?? Copy land brief';
+                btn.textContent = 'Copy land brief';
                 btn.classList.remove('copied');
             }, 2500);
         });
@@ -2415,11 +2430,11 @@
 
         // -- INVASIVES --
         if (inv.includes('kikuyu') && inv.length >= 2) {
-            findings.push({ type: 'warning', text: '<strong>Kikuyu plus other invasives — a persistent combination.</strong> Kikuyu regrows aggressively from any fragment of root, so mechanical clearing alone won\'t hold. Smothering with deep mulch and quick ground-cover planting after removal is the only reliable approach. <a class="finding-link" href="land-management.html">Read about our land management process ?</a>' });
+            findings.push({ type: 'warning', text: '<strong>Kikuyu plus other invasives — a persistent combination.</strong> Kikuyu regrows aggressively from any fragment of root, so mechanical clearing alone won\'t hold. Smothering with deep mulch and quick ground-cover planting after removal is the only reliable approach. <a class="finding-link" href="land-management.html">Read about our land management process &rarr;</a>' });
         } else if (inv.includes('kikuyu')) {
-            findings.push({ type: 'warning', text: '<strong>Kikuyu grass is one of the most persistent invasives on the Garden Route.</strong> It responds quickly after cutting and survives drought by going dormant. Success comes from interrupting its light supply — deep mulch (150mm+) followed immediately by indigenous ground cover is the approach we use. <a class="finding-link" href="land-management.html">More on managing kikuyu ?</a>' });
+            findings.push({ type: 'warning', text: '<strong>Kikuyu grass is one of the most persistent invasives on the Garden Route.</strong> It responds quickly after cutting and survives drought by going dormant. Success comes from interrupting its light supply — deep mulch (150mm+) followed immediately by indigenous ground cover is the approach we use. <a class="finding-link" href="land-management.html">More on managing kikuyu &rarr;</a>' });
         } else if (inv.length >= 3) {
-            findings.push({ type: 'warning', text: '<strong>Significant invasive pressure across multiple species.</strong> This level of infestation needs a sequenced clearing plan, not a single big clearance. We\'d want to map what\'s where, prioritise by spread risk, and work systematically over a season. Planting into freshly cleared ground is critical — bare soil is an invitation for reinvasion. <a class="finding-link" href="land-management.html">See how we approach this ?</a>', urgency: 'urgent' });
+            findings.push({ type: 'warning', text: '<strong>Significant invasive pressure across multiple species.</strong> This level of infestation needs a sequenced clearing plan, not a single big clearance. We\'d want to map what\'s where, prioritise by spread risk, and work systematically over a season. Planting into freshly cleared ground is critical — bare soil is an invitation for reinvasion. <a class="finding-link" href="land-management.html">See how we approach this &rarr;</a>', urgency: 'urgent' });
         } else if (inv.length > 0) {
             findings.push({ type: 'warning', text: '<strong>Some invasive plants present — address these before anything else.</strong> The good news is that early-stage infestations respond well to hand-clearing followed by quick indigenous planting. We can map and prioritise during your first consult.' });
         } else {
@@ -2433,14 +2448,14 @@
 
         // -- WATER FLOWS --
         if (water.includes('erosion') && water.includes('dryslope')) {
-            findings.push({ type: 'warning', text: '<strong>Water is moving through too fast and not staying in the landscape.</strong> Erosion channels and summer-dry slopes together tell us the land has lost its sponge. Earthworks — swales along contour, check dams in gullies, and mulching — can dramatically reverse this. This is often the highest-leverage intervention we can make. <a class="finding-link" href="land-management.html">Read about water harvesting ?</a>' });
+            findings.push({ type: 'warning', text: '<strong>Water is moving through too fast and not staying in the landscape.</strong> Erosion channels and summer-dry slopes together tell us the land has lost its sponge. Earthworks — swales along contour, check dams in gullies, and mulching — can dramatically reverse this. This is often the highest-leverage intervention we can make. <a class="finding-link" href="land-management.html">Read about water harvesting &rarr;</a>' });
         } else if (water.includes('erosion')) {
             findings.push({ type: 'info', text: '<strong>Erosion channels are present.</strong> In early stages these are straightforward to address — check dams made from brush or stone slow the flow, and ground cover plants stabilise the banks. Left unaddressed they widen quickly.' });
         } else if (water.includes('dryslope')) {
             findings.push({ type: 'info', text: '<strong>Slopes drying out in summer.</strong> This usually means rainfall is running off rather than soaking in. Swales on contour or deep-rooted pioneer planting can help the water stay in the soil long enough to matter.' });
         }
         if (water.includes('waterlog') && !inv.length) {
-            findings.push({ type: 'info', text: '<strong>Waterlogged patches can become an asset.</strong> A constructed wetland, rain garden, or bog planting in these areas will do two things at once: manage the excess water and create a rich biodiversity hotspot. <a class="finding-link" href="ecopools.html">See our EcoPool and water garden work ?</a>' });
+            findings.push({ type: 'info', text: '<strong>Waterlogged patches can become an asset.</strong> A constructed wetland, rain garden, or bog planting in these areas will do two things at once: manage the excess water and create a rich biodiversity hotspot. <a class="finding-link" href="ecopools.html">See our EcoPool and water garden work &rarr;</a>' });
         }
         if (water.includes('stream') && wild.includes('birds')) {
             findings.push({ type: 'good', text: '<strong>A stream corridor with active birdlife is a rare asset.</strong> Riparian zones are among the most biodiverse habitats in the Western Cape. We\'d design around it carefully — protecting the banks, managing invasives along the margins, and using it as a spine for the whole ecological design.' });
@@ -2484,10 +2499,10 @@
 
         // -- EXISTING FEATURES --
         if (feat.includes('chlorinepool')) {
-            findings.push({ type: 'good', text: '<strong>Your existing pool is a conversion candidate.</strong> Converting a chlorinated pool to a natural swimming pool (EcoPool) is often more cost-effective than building new — the basin is already in place. You keep a beautiful, swimmable water feature while eliminating chemical costs entirely. <a class="finding-link" href="ecopools.html">See our EcoPool conversion work ?</a>', urgency: 'opportunity' });
+            findings.push({ type: 'good', text: '<strong>Your existing pool is a conversion candidate.</strong> Converting a chlorinated pool to a natural swimming pool (EcoPool) is often more cost-effective than building new — the basin is already in place. You keep a beautiful, swimmable water feature while eliminating chemical costs entirely. <a class="finding-link" href="ecopools.html">See our EcoPool conversion work &rarr;</a>', urgency: 'opportunity' });
         }
         if (feat.includes('dam')) {
-            findings.push({ type: 'good', text: '<strong>A dam is a significant ecological opportunity.</strong> Even a small farm dam can be transformed into a natural swimming pool, a wildlife waterhole, or the centrepiece of a water garden. The earthworks are already done — the opportunity cost of leaving it as-is is high. <a class="finding-link" href="ecopools.html">See natural pool designs ?</a>', urgency: 'opportunity' });
+            findings.push({ type: 'good', text: '<strong>A dam is a significant ecological opportunity.</strong> Even a small farm dam can be transformed into a natural swimming pool, a wildlife waterhole, or the centrepiece of a water garden. The earthworks are already done — the opportunity cost of leaving it as-is is high. <a class="finding-link" href="ecopools.html">See natural pool designs &rarr;</a>', urgency: 'opportunity' });
         }
         if (feat.includes('paving') && water.includes('waterlog')) {
             findings.push({ type: 'info', text: '<strong>Large paved areas are likely contributing to the waterlogging.</strong> Impermeable surfaces concentrate runoff into wherever the water goes — usually low spots or building bases. Redirecting that flow constructively (into swales, a rain garden, or a planted basin) solves two problems at once.' });

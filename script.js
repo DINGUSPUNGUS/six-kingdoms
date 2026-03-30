@@ -205,3 +205,47 @@ if (filterButtons.length > 0) {
         });
     });
 }
+
+// ── Project Modal ──────────────────────────────────────────
+(function () {
+    const modal      = document.getElementById('project-modal');
+    if (!modal) return;
+
+    const imgEl      = modal.querySelector('#modal-image');
+    const tagEl      = modal.querySelector('#modal-tag');
+    const titleEl    = modal.querySelector('#modal-title');
+    const descEl     = modal.querySelector('#modal-description');
+    const closeBtn   = modal.querySelector('.modal-close');
+    let lastFocused  = null;
+
+    function openModal(trigger) {
+        lastFocused = document.activeElement;
+        imgEl.src           = trigger.dataset.image || '';
+        imgEl.alt           = trigger.dataset.alt   || '';
+        tagEl.textContent   = trigger.dataset.tag   || '';
+        titleEl.textContent = trigger.dataset.title || '';
+        descEl.textContent  = trigger.dataset.description || '';
+        modal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    function closeModal() {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('.modal-trigger').forEach(function (trigger) {
+        trigger.addEventListener('click', function () { openModal(trigger); });
+        trigger.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(trigger); }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+    });
+}());

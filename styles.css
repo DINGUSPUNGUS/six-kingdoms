@@ -39,7 +39,7 @@ body {
     font-size: 1.05rem;
     color: #c8c5be;
     line-height: 1.78;
-    background-color: #0b120d;
+    background-color: #252922;
     padding-top: 72px;
     background-image: none;
 }
@@ -184,7 +184,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     color: var(--white) !important;
 }
 
-/* ─── Nav hero-transparency (added by JS when .hero is on page) ─── */
+/* --- Nav hero-transparency (added by JS when .hero is on page) --- */
 .navbar.hero-nav {
     background: linear-gradient(to bottom, rgba(8, 20, 14, 0.72) 0%, transparent 100%);
     box-shadow: none;
@@ -240,28 +240,28 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 }
 
 .navbar.hero-nav.scrolled {
-    background: rgba(250, 248, 243, 0.97);
-    box-shadow: 0 2px 28px rgba(28, 31, 26, 0.09);
-    border-bottom-color: rgba(59, 139, 117, 0.15);
+    background: rgba(28, 35, 22, 0.92);
+    box-shadow: 0 2px 28px rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(59, 139, 117, 0.2);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
 
 .navbar.hero-nav.scrolled .nav-menu a {
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.88);
 }
 
 .navbar.hero-nav.scrolled .nav-menu a::after {
-    background: var(--secondary-blue);
+    background: var(--accent-yellow);
 }
 
 .navbar.hero-nav.scrolled .nav-menu a:hover,
 .navbar.hero-nav.scrolled .nav-menu a.active {
-    color: var(--secondary-blue) !important;
+    color: var(--accent-yellow) !important;
 }
 
 .navbar.hero-nav.scrolled .nav-brand img {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .navbar.hero-nav.scrolled .nav-cta {
@@ -278,7 +278,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
 }
 
-/* ─── Improved nav proportions ─── */
+/* --- Improved nav proportions --- */
 .navbar .container {
     height: 72px;
 }
@@ -339,9 +339,9 @@ body {
     z-index: 1;
 }
 
-/* hero-bg-1..4 removed — index.html now uses inline background-image on .hero-bg */
+/* hero-bg-1..4 removed � index.html now uses inline background-image on .hero-bg */
 
-/* ─── Hero height variants ─── */
+/* --- Hero height variants --- */
 /* Service pages: slightly shorter than full viewport */
 .hero--service {
     min-height: 88vh;
@@ -543,7 +543,7 @@ body {
     margin: 0 auto;
 }
 
-/* Hero Text Slides removed — static heroes use .hero-content directly */
+/* Hero Text Slides removed � static heroes use .hero-content directly */
 
 .hero-service-label {
     display: inline-block;
@@ -559,7 +559,7 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* Hero indicators removed — static heroes have no dots */
+/* Hero indicators removed � static heroes have no dots */
 
 .hero-logo {
     margin-bottom: 2rem;
@@ -672,7 +672,7 @@ section {
 
 /* Services Grid */
 .services {
-    background: #0b120d;
+    background: #252922;
     position: relative;
 }
 
@@ -793,7 +793,7 @@ section {
 /* Projects Grid */
 .projects {
     position: relative;
-    background: #0b120d;
+    background: #252922;
 }
 
 .projects::before {
@@ -889,7 +889,7 @@ section {
 
 /* About Section */
 .about {
-    background: #0b120d;
+    background: #252922;
     position: relative;
 }
 
@@ -934,7 +934,7 @@ section {
     background: 
         radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 50px 50px;
-    /* animation removed — animations restricted to hero banner only */
+    /* animation removed � animations restricted to hero banner only */
 }
 
 .contact .section-title,
@@ -1136,7 +1136,7 @@ section {
     font-size: 0.9rem;
 }
 
-/* ===== Projects page — tier headings ===== */
+/* ===== Projects page � tier headings ===== */
 .projects-tier {
     margin-bottom: 4rem;
 }
@@ -1221,7 +1221,7 @@ section {
 
 /* Blog Teaser Section */
 .blog-teaser {
-    background: #0b120d;
+    background: #252922;
     padding: var(--section-padding) 20px;
 }
 
@@ -1322,7 +1322,7 @@ section {
 
 /* FAQ Section */
 .faq {
-    background: #0b120d;
+    background: #252922;
     position: relative;
 }
 
@@ -1416,7 +1416,7 @@ section {
     border-bottom: 1px solid rgba(59, 139, 117, 0.2);
 }
 
-/* ─── EcoPools Photo Hero ─── */
+/* --- EcoPools Photo Hero --- */
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
@@ -1482,7 +1482,7 @@ section {
     50% { transform: translateX(-50%) translateY(8px); }
 }
 
-/* ─── EcoPools Photo Gallery ─── */
+/* --- EcoPools Photo Gallery --- */
 .pool-gallery-section {
     padding: 0 0 1rem;
 }
@@ -1526,7 +1526,7 @@ section {
     pointer-events: none;
 }
 
-/* ─── Blog card image backgrounds ─── */
+/* --- Blog card image backgrounds --- */
 .blog-card-image.ecopools-img {
     background-image: url('images/eco-pool-hero1.jpg');
     background-size: cover;
@@ -1556,7 +1556,7 @@ section {
     position: relative;
 }
 
-/* ─── Blog card read link ─── */
+/* --- Blog card read link --- */
 .blog-card-link {
     display: inline-flex;
     align-items: center;
@@ -1594,12 +1594,12 @@ section {
 
 /* Projects Archive */
 .projects-archive {
-    background: #0b120d;
+    background: #252922;
 }
 
 /* Projects intro synopsis block */
 .projects-intro-block {
-    background: #0b120d;
+    background: #252922;
     padding: 3.5rem 0 2.5rem;
     border-bottom: 1px solid rgba(59, 139, 117, 0.12);
 }
@@ -1621,7 +1621,7 @@ section {
 
 /* Projects page bottom CTA */
 .projects-cta {
-    background: #0b120d;
+    background: #252922;
     color: #f0ede6;
     padding: 4rem 0;
     text-align: center;
@@ -1652,7 +1652,7 @@ section {
 
 /* Content Section */
 .content-section {
-    background: #0b120d;
+    background: #252922;
 }
 
 .content-grid {
@@ -1737,7 +1737,7 @@ section {
 }
 
 .sidebar-card li::before {
-    content: "✓ ";
+    content: "? ";
     color: rgba(59, 139, 117, 0.9);
     font-weight: bold;
     margin-right: 0.8rem;
@@ -1851,7 +1851,7 @@ section {
 
 /* Privacy Policy Page */
 .privacy-policy {
-    background: #0b120d;
+    background: #252922;
 }
 
 .privacy-content {
@@ -1945,9 +1945,9 @@ section {
     padding: 0 20px;
 }
 
-/* CTA Strip — standardised across all pages */
+/* CTA Strip � standardised across all pages */
 .cta-strip {
-    background: #0b120d;
+    background: #252922;
     padding: 80px 24px;
     text-align: center;
     border-top: 1px solid rgba(59, 139, 117, 0.25);
@@ -1971,7 +1971,7 @@ section {
     line-height: 1.8;
 }
 
-/* Vertical stack entries — for blog, projects, land management */
+/* Vertical stack entries � for blog, projects, land management */
 .vertical-stack {
     max-width: var(--content-width);
     margin: 0 auto;
@@ -2180,9 +2180,132 @@ section {
     border: 2px solid rgba(231, 76, 60, 0.5);
 }
 
-/* Testimonials Section */
+/* Google Reviews Section */
+.reviews-section {
+    background: #252922;
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+.reviews-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 139, 117, 0.3), transparent);
+}
+.reviews-section .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* About Section */
+.about-section {
+    background: #252922;
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 139, 117, 0.3), transparent);
+}
+.about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+.about-text .label {
+    margin-bottom: 1rem;
+}
+.about-text h2 {
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+}
+.about-text p {
+    color: #a8a5a0;
+    margin-bottom: 1.25rem;
+    min-height: 3em; /* visible placeholder until copy is added */
+}
+.about-text p:empty::before {
+    content: '[\u2014 copy to be added \u2014]';
+    color: rgba(255,255,255,0.15);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.about-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.about-socials-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+}
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+.social-link:hover {
+    color: var(--accent-yellow);
+}
+
+/* Footer Social Links */
+.footer-social-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.footer-social-link svg {
+    width: 16px;
+    height: 16px;
+}
+.footer-social-link:hover {
+    color: var(--accent-yellow);
+    border-color: rgba(242,217,34,0.4);
+}
+
+@media (max-width: 768px) {
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+/* Testimonials Section (kept for other pages) */
 .testimonials {
-    background: #0b120d;
+    background: #252922;
     position: relative;
 }
 
@@ -2286,7 +2409,7 @@ textarea:focus-visible {
     }
 }
 
-/* ===== EcoPools Page — Partnership Badge ===== */
+/* ===== EcoPools Page � Partnership Badge ===== */
 .partnership-visual {
     margin: 2.5rem 0;
 }
@@ -2370,7 +2493,7 @@ textarea:focus-visible {
     line-height: 1.75;
 }
 
-/* ===== EcoPools Page — Testimonial ===== */
+/* ===== EcoPools Page � Testimonial ===== */
 .ecopool-testimonial {
     max-width: 700px;
     margin: 4rem auto 0;
@@ -2381,7 +2504,7 @@ textarea:focus-visible {
     opacity: 0.8;
 }
 
-/* ===== EcoPools Page — Inline Enquiry Form ===== */
+/* ===== EcoPools Page � Inline Enquiry Form ===== */
 .ecopool-enquiry-section {
     background: rgba(59, 139, 117, 0.08);
     border: 1px solid rgba(59, 139, 117, 0.3);
@@ -2425,7 +2548,7 @@ textarea:focus-visible {
     flex-shrink: 0;
 }
 
-/* Project image — support <img> tag inside */
+/* Project image � support <img> tag inside */
 .project-image img {
     width: 100%;
     height: 100%;
@@ -2572,7 +2695,7 @@ textarea:focus-visible {
     }
 }
 
-/* ─── About Section with Stats ─── */
+/* --- About Section with Stats --- */
 .about-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2636,9 +2759,9 @@ textarea:focus-visible {
     }
 }
 
-/* ─── Stats Strip — editorial dark row ─── */
+/* --- Stats Strip � editorial dark row --- */
 .stats-strip {
-    background: #0b120d;
+    background: #252922;
     padding: 72px 20px;
     border-top: 1px solid rgba(59, 139, 117, 0.35);
     border-bottom: 1px solid rgba(59, 139, 117, 0.35);
@@ -2699,7 +2822,7 @@ textarea:focus-visible {
     }
 }
 
-/* ─── Project Filters ─── */
+/* --- Project Filters --- */
 .project-filters {
     display: flex;
     gap: 0.8rem;
@@ -2736,7 +2859,7 @@ textarea:focus-visible {
     display: none;
 }
 
-/* ─── Blog Email Capture ─── */
+/* --- Blog Email Capture --- */
 .blog-email-capture {
     background: rgba(59, 139, 117, 0.08);
     border: 1px solid rgba(59, 139, 117, 0.3);
@@ -2811,13 +2934,13 @@ textarea:focus-visible {
     }
 }
 
-/* ─── Password Gate (blog-admin) ─── */
+/* --- Password Gate (blog-admin) --- */
 .admin-gate {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0b120d;
+    background: #252922;
     padding: 2rem;
 }
 
@@ -2873,7 +2996,7 @@ textarea:focus-visible {
 }
 
 /* ===================================================================
-   PARALLAX WINDOW SECTIONS — Six Kingdoms
+   PARALLAX WINDOW SECTIONS � Six Kingdoms
    Full-bleed background image per section. Image scrolls slower
    than the page, creating the "window looking onto a photo" effect.
    =================================================================== */
@@ -2890,7 +3013,7 @@ textarea:focus-visible {
     overflow: hidden;
 }
 
-/* Edge-fade gradients — bleed top and bottom of each section into
+/* Edge-fade gradients � bleed top and bottom of each section into
    the dark seam so adjacent parallax windows dissolve rather than cut */
 .parallax-window::before,
 .parallax-window::after {
@@ -2903,7 +3026,7 @@ textarea:focus-visible {
     z-index: 0;
 }
 
-/* Top fade: dark → transparent (previous section bleeds in) */
+/* Top fade: dark ? transparent (previous section bleeds in) */
 .parallax-window::before {
     top: 0;
     background: linear-gradient(
@@ -2913,7 +3036,7 @@ textarea:focus-visible {
     );
 }
 
-/* Bottom fade: transparent → dark (fades out to next section) */
+/* Bottom fade: transparent ? dark (fades out to next section) */
 .parallax-window::after {
     bottom: 0;
     background: linear-gradient(
@@ -2923,19 +3046,19 @@ textarea:focus-visible {
     );
 }
 
-/* Hero is first — no top blackout, nothing above it */
+/* Hero is first � no top blackout, nothing above it */
 #main-content.parallax-window::before {
     display: none;
 }
 
-/* Top-of-page parallax IS the hero — extends behind the fixed nav
+/* Top-of-page parallax IS the hero � extends behind the fixed nav
    so the parallax image fills the full viewport including the nav area */
 #main-content.parallax-window {
     min-height: 100vh;
     margin-top: -72px;
 }
 
-/* Secondary brand paragraph inside the first parallax — softer, smaller */
+/* Secondary brand paragraph inside the first parallax � softer, smaller */
 .pw-about {
     font-size: 0.95rem !important;
     color: rgba(255, 255, 255, 0.65) !important;
@@ -2944,7 +3067,7 @@ textarea:focus-visible {
     padding-top: 1.2rem;
 }
 
-/* Dark directional overlay — left heavy for left-aligned content */
+/* Dark directional overlay � left heavy for left-aligned content */
 .pw-overlay {
     position: absolute;
     inset: 0;
@@ -2980,7 +3103,7 @@ textarea:focus-visible {
     background-image: url('images/alien%20clearing%204.webp');
 }
 
-/* Content block — left-aligned by default */
+/* Content block � left-aligned by default */
 .pw-content {
     position: relative;
     z-index: 1;
@@ -3026,7 +3149,7 @@ textarea:focus-visible {
     margin-left: auto;
 }
 
-/* Outlined button — premium feel, doesn't fight the image */
+/* Outlined button � premium feel, doesn't fight the image */
 .pw-btn {
     display: inline-block;
     padding: 0.9rem 2.4rem;
@@ -3087,3 +3210,107 @@ textarea:focus-visible {
 }
 
 
+
+
+/* ─── Project Modal ─────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 8, 0.85);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    animation: modalFadeIn 0.22s ease;
+}
+.modal-overlay[hidden] { display: none; }
+.modal-window {
+    background: #1e2219;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 6px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideUp 0.26s ease;
+}
+.modal-close {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 4px;
+    color: rgba(255,255,255,0.55);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.18s, color 0.18s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.modal-close svg { width: 16px; height: 16px; }
+.modal-image-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+.modal-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.modal-body { padding: 1.75rem 2rem 2.25rem; }
+.modal-body .project-tag { margin-bottom: 0.6rem; display: inline-block; }
+.modal-body h3 { color: var(--color-white); margin-bottom: 0.875rem; }
+.modal-body p { color: #a8a5a0; line-height: 1.78; margin-bottom: 1.75rem; }
+.modal-cta { display: inline-flex; align-items: center; }
+.modal-trigger { cursor: pointer; }
+.modal-trigger .project-link { pointer-events: none; }
+@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalSlideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@media (max-width: 600px) {
+    .modal-window { max-height: 100dvh; border-radius: 0; }
+    .modal-body { padding: 1.25rem 1.25rem 1.75rem; }
+}
+
+/* ── Ecological Design Service Areas ─────────────────────────────────────── */
+.ed-services {
+    padding: 4rem 0 3rem;
+    background: rgba(255,255,255,0.03);
+}
+.ed-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.ed-service-item {
+    padding: 1.5rem 1.75rem;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    transition: border-color 0.2s;
+}
+.ed-service-item:hover { border-color: rgba(255,255,255,0.2); }
+.ed-service-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #f0ede8);
+}
+.ed-service-item p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.65;
+    margin: 0;
+}
