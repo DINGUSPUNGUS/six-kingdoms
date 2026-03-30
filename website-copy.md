@@ -21,7 +21,7 @@ Six Kingdoms | EcoPools & Ecological Design | Garden Route
 Six Kingdoms builds natural swimming pools and designs ecological landscapes on South Africa's Garden Route. Chemical-free EcoPools, indigenous gardens, and invasive plant management — Knysna, Plettenberg Bay, George.
 
 ## HOME > HERO HEADLINE
-Living Water.<br>Thriving Landscapes.
+Dive into<br>Nature.
 
 ## HOME > HERO SUBTEXT
 EcoPools · Ecological Design · Land Stewardship
