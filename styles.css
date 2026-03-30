@@ -1420,7 +1420,7 @@ section {
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
-    background-image: url('images/eco-pool-hero1.jpg');
+    background-image: url('images/eco-pool-hero1.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1528,19 +1528,19 @@ section {
 
 /* --- Blog card image backgrounds --- */
 .blog-card-image.ecopools-img {
-    background-image: url('images/eco-pool-hero1.jpg');
+    background-image: url('images/eco-pool-hero1.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.fynbos-img {
-    background-image: url('images/fynbos-restoration-and-rain-garden-design.jpg');
+    background-image: url('images/fynbos-restoration-and-rain-garden-design.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/creating-a-vision-for-holistic-land-management.jpg');
+    background-image: url('images/creating-a-vision-for-holistic-land-management.webp');
     background-size: cover;
     background-position: center;
 }
