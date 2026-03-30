@@ -1491,6 +1491,7 @@ section {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 340px 260px;
+    grid-auto-rows: 260px;
     gap: 8px;
     border-radius: 16px;
     overflow: hidden;
@@ -1524,6 +1525,42 @@ section {
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.2) 0%, transparent 50%);
     pointer-events: none;
+}
+
+/* Gallery project hover overlay — visible on hover/focus */
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10,14,8,0.82));
+    padding: 2rem 1rem 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.gallery-item-overlay span {
+    color: #f5f3ee;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.pool-gallery-item.modal-trigger {
+    cursor: pointer;
+}
+
+.pool-gallery-item.modal-trigger:hover .gallery-item-overlay,
+.pool-gallery-item.modal-trigger:focus-visible .gallery-item-overlay {
+    opacity: 1;
+}
+
+.pool-gallery-item.modal-trigger:focus-visible {
+    outline: 2px solid rgba(144,198,128,0.7);
+    outline-offset: -2px;
 }
 
 /* --- Blog card image backgrounds --- */
