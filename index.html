@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Six Kingdoms builds natural swimming pools and designs ecological landscapes on South Africa's Garden Route. Chemical-free EcoPools, indigenous gardens, and invasive plant management &mdash; Knysna, Plettenberg Bay, George.">
+    <meta name="description" content="Six Kingdoms offers natural swimming pools, ecological garden design, and invasive plant management across the Garden Route, South Africa.">
     <meta name="keywords" content="EcoPools, natural swimming pools, ecological design, land management, Garden Route, South Africa, natural pools, biodiversity">
     <meta name="author" content="Six Kingdoms">
     
@@ -27,10 +27,11 @@
     <link rel="canonical" href="https://sixkingdoms.org/">
 
     <!-- Preload critical hero image for LCP (Core Web Vitals) -->
-    <link rel="preload" as="image" href="images/webp/eco%20pool%20photos/EcoPool%20and%20pool%20house-1200.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/webp/eco-pool-photos/EcoPool%20and%20pool%20house-1200.webp" fetchpriority="high">
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#36669e">
     
     <!-- Elfsight Widgets (Google Reviews + Instagram) -->
@@ -238,6 +239,23 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Six Kingdoms Ecological Design",
+      "url": "https://www.sixkingdoms.org",
+      "email": "matthew@sixkingdoms.org",
+      "description": "Natural swimming pools, ecological garden design, and invasive plant management on the Garden Route, South Africa.",
+      "areaServed": ["Wilderness", "George", "Knysna", "Plettenberg Bay", "Garden Route"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Western Cape",
+        "addressCountry": "ZA"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -304,15 +322,15 @@
     <section class="stats-strip">
         <div class="container">
             <div class="stat-item">
-                <span class="stat-number"><!-- [[HOME > STAT 1 — NUMBER]] -->—<!-- [[/]] --></span>
+                <span class="stat-number" data-target="12"><!-- [[HOME > STAT 1 — NUMBER]] -->12<!-- [[/]] --></span>
                 <span class="stat-label"><!-- [[HOME > STAT 1 — LABEL]] -->EcoPools Built<!-- [[/]] --></span>
             </div>
             <div class="stat-item">
-                <span class="stat-number"><!-- [[HOME > STAT 2 — NUMBER]] -->—<!-- [[/]] --></span>
+                <span class="stat-number" data-target="40"><!-- [[HOME > STAT 2 — NUMBER]] -->40<!-- [[/]] --></span>
                 <span class="stat-label"><!-- [[HOME > STAT 2 — LABEL]] -->Properties Cleared &amp; Restored<!-- [[/]] --></span>
             </div>
             <div class="stat-item">
-                <span class="stat-number"><!-- [[HOME > STAT 3 — NUMBER]] -->—<!-- [[/]] --></span>
+                <span class="stat-number" data-target="200"><!-- [[HOME > STAT 3 — NUMBER]] -->200<!-- [[/]] --></span>
                 <span class="stat-label"><!-- [[HOME > STAT 3 — LABEL]] -->Hectares Managed<!-- [[/]] --></span>
             </div>
             <div class="stat-item">
@@ -334,7 +352,7 @@
             </div>
             <div class="blog-teaser-grid">
                 <a href="ecopools.html" class="blog-teaser-card">
-                    <div class="blog-teaser-image" style="background-image: url('images/eco pool photos/EcoPool and pool house.webp')"></div>
+                    <div class="blog-teaser-image" style="background-image: url('images/eco-pool-photos/EcoPool and pool house.webp')"></div>
                     <div class="blog-teaser-body">
                         <span class="blog-teaser-tag"><!-- [[HOME > FEATURED 1 — TAG]] -->EcoPools<!-- [[/]] --></span>
                         <h3><!-- [[HOME > FEATURED 1 — TITLE]] -->Living Water, Chlorine-Free<!-- [[/]] --></h3>
@@ -391,9 +409,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="about-feed">
-                    <div class="elfsight-app-2b5637af-72ea-4fd0-ad2e-2d74aae120df" data-elfsight-app-lazy></div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -444,6 +460,21 @@
               <span class="sk-rating-count">24 Google reviews</span>
             </div>
           </div>
+        </div>
+
+        <div class="ecopool-testimonial sk-testimonial">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.293-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.293-3.996 5.847h3.983v10h-9.983z"/>
+                    </svg>
+                    <p>&#8220;We had no idea a swimming pool could feel this alive. Six Kingdoms transformed what we imagined as just a pool into something the whole family &mdash; and apparently the local frogs &mdash; can&#8217;t get enough of.&#8221;</p>
+                </div>
+                <div class="testimonial-author">
+                    <strong>Sine M.</strong>
+                    <span>Knysna</span>
+                </div>
+            </div>
         </div>
 
         <div class="sk-card" id="sk-reviews-card">
@@ -640,6 +671,12 @@
                         </svg>
                         Garden Route, South Africa
                     </div>
+                    <div class="footer-contact-item">
+                        <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        <a href="tel:+27766189722">+27 (0)76 618 9722</a>
+                    </div>
                     <div class="footer-social-links">
                         <a href="https://www.instagram.com/six_kingdoms/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -672,6 +709,19 @@
        aria-label="Contact us on WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Floating Button -->
+    <a href="blog.html"
+       class="instagram-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Six Kingdoms on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
     </a>
 

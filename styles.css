@@ -1181,6 +1181,33 @@ section {
     height: 32px;
 }
 
+/* ── Instagram floating button ── */
+.instagram-float {
+    position: fixed;
+    bottom: 30px;
+    right: 102px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(188,24,136,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999;
+    color: white;
+    text-decoration: none;
+}
+.instagram-float:hover {
+    transform: scale(1.15) rotate(-5deg);
+    box-shadow: 0 6px 30px rgba(188,24,136,0.5);
+}
+.instagram-float svg {
+    width: 28px;
+    height: 28px;
+}
+
 /* Scroll-to-top button */
 .scroll-top {
     position: fixed;
@@ -1655,6 +1682,31 @@ section {
 .pool-gallery-item.modal-trigger:focus-visible {
     outline: 2px solid rgba(144,198,128,0.7);
     outline-offset: -2px;
+}
+
+/* ── Gallery extras: hidden until load-more clicked ── */
+.gallery-extra { display: none; }
+.gallery-extra.visible { display: block; }
+
+.gallery-load-more {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.75rem 2rem;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+.gallery-load-more:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.5);
+    color: #fff;
 }
 
 /* --- Blog card image backgrounds --- */
@@ -2348,7 +2400,9 @@ section {
 }
 .about-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    max-width: 780px;
+    margin: 0 auto;
     gap: 4rem;
     align-items: start;
 }
@@ -2892,10 +2946,10 @@ textarea:focus-visible {
 
 /* --- Stats Strip � editorial dark row --- */
 .stats-strip {
-    background: #252922;
+    background: #f2f4f2;
     padding: 72px 20px;
-    border-top: 1px solid rgba(59, 139, 117, 0.35);
-    border-bottom: 1px solid rgba(59, 139, 117, 0.35);
+    border-top: 1px solid rgba(59, 139, 117, 0.18);
+    border-bottom: 1px solid rgba(59, 139, 117, 0.18);
 }
 
 .stats-strip .container {
@@ -2907,7 +2961,7 @@ textarea:focus-visible {
 
 .stats-strip .stat-item {
     background: transparent;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
     padding: 0 2.5rem;
     box-shadow: none;
     transition: none;
@@ -2928,7 +2982,7 @@ textarea:focus-visible {
     font-family: 'Poppins', Arial, sans-serif;
     font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 200;
-    color: #f0ede6;
+    color: #1c1f1a;
     line-height: 1;
     margin-bottom: 0.8rem;
     letter-spacing: -0.02em;
@@ -2940,7 +2994,7 @@ textarea:focus-visible {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: rgba(255, 255, 255, 0.38);
+    color: rgba(28, 31, 26, 0.55);
 }
 
 @media (max-width: 600px) {
@@ -3223,11 +3277,15 @@ textarea:focus-visible {
 
 /* The three background images */
 .pw--ecopools {
-    background-image: url('images/webp/eco%20pool%20photos/20180923_102106-1920.webp');
+    background-image: url('images/webp/eco-pool-photos/20260323164304-1920.webp');
 }
 
 .pw--ecopools2 {
-    background-image: url('images/webp/eco%20pool%20photos/dezalze-IMG_0105-scaled-1920.webp');
+    background-image: url('images/webp/eco-pool-photos/dezalze-IMG_0105-scaled-1920.webp');
+}
+
+.pw--ecopools3 {
+    background-image: url('images/webp/eco-pool-photos/Guests enjoying the ecopool-1200.webp');
 }
 
 .pw--design {
@@ -3406,6 +3464,29 @@ textarea:focus-visible {
 }
 .modal-close:hover { background: rgba(8,12,6,0.9); color: #fff; }
 .modal-close svg { width: 16px; height: 16px; }
+.modal-prev,
+.modal-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s, color 0.2s;
+}
+.modal-prev { left: 0; }
+.modal-next { right: 0; }
+.modal-prev:hover,
+.modal-next:hover { background: rgba(0,0,0,0.35); color: #fff; }
+.modal-prev svg,
+.modal-next svg { width: 28px; height: 28px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7)); }
+
 .modal-image-wrap {
     width: 100%;
     aspect-ratio: 3 / 2;
@@ -3505,4 +3586,107 @@ textarea:focus-visible {
     color: rgba(255,255,255,0.6);
     line-height: 1.65;
     margin: 0;
+}
+
+/* ── WhatsApp styled button (contact page) ── */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-top: 1.5rem;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+}
+.btn-whatsapp:hover {
+    background: #1da854;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+}
+.btn-whatsapp svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* ── Land Management services cards ── */
+.services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+.service-card-lm {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s ease;
+}
+.service-card-lm:hover { border-color: rgba(71,163,162,0.35); }
+.service-card-lm h4 {
+    color: #47a3a2;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+.service-card-lm p {
+    font-size: 0.88rem;
+    color: #a8a5a0;
+    line-height: 1.65;
+    margin: 0;
+}
+@media (max-width: 640px) {
+    .services-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ── pw-btn teal variant ── */
+.pw-btn--teal {
+    background: rgba(71,163,162,0.85);
+    border-color: rgba(71,163,162,0.9);
+    margin-top: 0.75rem;
+    display: inline-block;
+}
+.pw-btn--teal:hover {
+    background: rgba(71,163,162,1);
+    border-color: rgba(71,163,162,1);
+}
+
+/* ── Blog coming-soon notice ── */
+.coming-soon-notice {
+    padding: 48px 20px;
+    background: rgba(255,255,255,0.025);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    text-align: center;
+}
+.coming-soon-notice .label {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+.coming-soon-notice p {
+    color: #a8a5a0;
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ── Reviews section inline testimonial ── */
+.sk-testimonial {
+    max-width: 640px;
+    margin: 0 0 2.5rem;
+}
+
+@media (max-width: 600px) {
+    .instagram-float { right: 102px; width: 52px; height: 52px; }
+    .instagram-float svg { width: 24px; height: 24px; }
 }

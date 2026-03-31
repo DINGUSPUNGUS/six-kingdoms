@@ -119,8 +119,9 @@ if (contactForm) {
             });
 
             if (response.ok) {
-                formStatus.textContent = 'Thank you for your message! We will get back to you soon.';
+                formStatus.textContent = "Thanks \u2014 we'll be in touch within one working day.";
                 formStatus.className = 'form-status success';
+                this.querySelectorAll('.form-group, button[type="submit"]').forEach(function(el) { el.style.display = 'none'; });
                 this.reset();
             } else {
                 const data = await response.json();
@@ -261,18 +262,33 @@ if (filterButtons.length > 0) {
     const titleEl    = modal.querySelector('#modal-title');
     const descEl     = modal.querySelector('#modal-description');
     const closeBtn   = modal.querySelector('.modal-close');
+    const prevBtn    = modal.querySelector('.modal-prev');
+    const nextBtn    = modal.querySelector('.modal-next');
     let lastFocused  = null;
+    let triggers     = [];
+    let currentIdx   = 0;
 
-    function openModal(trigger) {
-        lastFocused = document.activeElement;
+    function populateModal(trigger) {
         imgEl.src           = trigger.dataset.image || '';
         imgEl.alt           = trigger.dataset.alt   || '';
         tagEl.textContent   = trigger.dataset.tag   || '';
         titleEl.textContent = trigger.dataset.title || '';
         descEl.textContent  = trigger.dataset.description || '';
+    }
+
+    function openModal(trigger) {
+        lastFocused = document.activeElement;
+        triggers    = Array.from(document.querySelectorAll('.modal-trigger'));
+        currentIdx  = triggers.indexOf(trigger);
+        populateModal(trigger);
         modal.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
         closeBtn.focus();
+    }
+
+    function navigate(dir) {
+        currentIdx = (currentIdx + dir + triggers.length) % triggers.length;
+        populateModal(triggers[currentIdx]);
     }
 
     function closeModal() {
@@ -289,8 +305,27 @@ if (filterButtons.length > 0) {
     });
 
     closeBtn.addEventListener('click', closeModal);
+    if (prevBtn) prevBtn.addEventListener('click', function () { navigate(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { navigate(1); });
+    // Click image itself to advance
+    imgEl.addEventListener('click', function () { navigate(1); });
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+        if (modal.hasAttribute('hidden')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft')  navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+    });
+}());
+
+// ── Gallery load-more ──────────────────────────────────────────
+(function () {
+    var btn = document.querySelector('.gallery-load-more');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+        document.querySelectorAll('.gallery-extra').forEach(function (el) {
+            el.classList.add('visible');
+        });
+        btn.remove();
     });
 }());
