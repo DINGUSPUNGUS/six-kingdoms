@@ -40,9 +40,147 @@
     <link rel="dns-prefetch" href="//formspree.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></noscript>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+    .sk-reviews-section {
+      padding: 80px 24px;
+      background: linear-gradient(160deg, #eef4fb 0%, #f7f9f4 60%);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .sk-reviews-section .sk-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .sk-reviews-section .sk-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+    .sk-reviews-section .sk-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #36669e;
+      margin-bottom: 12px;
+    }
+    .sk-reviews-section .sk-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: #5a9e6e;
+      border-radius: 2px;
+    }
+    .sk-reviews-section .sk-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 600;
+      color: #1e2a1e;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .sk-reviews-section .sk-subtitle {
+      font-size: 15px;
+      color: #5c6b5c;
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .sk-reviews-section .sk-review-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border: 1.5px solid rgba(54,102,158,0.22);
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #244d7a;
+      text-decoration: none;
+      background: #ffffff;
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 2px 10px rgba(54,102,158,0.08);
+    }
+    .sk-reviews-section .sk-review-btn:hover {
+      background: #e8f0f9;
+      border-color: #36669e;
+      transform: translateY(-2px);
+    }
+    .sk-reviews-section .sk-review-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .sk-reviews-section .sk-rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #ffffff;
+      border: 1px solid rgba(54,102,158,0.10);
+      border-radius: 14px;
+      padding: 18px 26px;
+      box-shadow: 0 4px 32px rgba(54,102,158,0.10);
+    }
+    .sk-reviews-section .sk-rating-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      font-weight: 600;
+      color: #36669e;
+      line-height: 1;
+    }
+    .sk-reviews-section .sk-rating-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .sk-reviews-section .sk-stars {
+      display: flex;
+      gap: 3px;
+    }
+    .sk-reviews-section .sk-stars svg {
+      width: 17px;
+      height: 17px;
+      fill: #f4b942;
+    }
+    .sk-reviews-section .sk-rating-count {
+      font-size: 12px;
+      color: #5c6b5c;
+      letter-spacing: 0.04em;
+    }
+    .sk-reviews-section .sk-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(54,102,158,0.10);
+      padding: 36px 32px;
+      border: 1px solid rgba(54,102,158,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .sk-reviews-section .sk-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    }
+    @media (max-width: 640px) {
+      .sk-reviews-section { padding: 56px 16px; }
+      .sk-reviews-section .sk-card { padding: 20px 14px; }
+      .sk-reviews-section .sk-header { flex-direction: column; align-items: flex-start; }
+      .sk-reviews-section .sk-rating-badge { width: 100%; }
+    }
+    </style>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -271,11 +409,48 @@
     </section>
 
     <!-- Google Reviews Section -->
-    <section class="reviews-section">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="elfsight-app-437e8d13-c176-4a78-8b48-aed568fbb71d" data-elfsight-app-lazy></div>
+    <section class="sk-reviews-section">
+      <div class="sk-inner">
+
+        <div class="sk-header">
+          <div>
+            <p class="sk-label">Client Reviews</p>
+            <h2 class="sk-title">What Our Clients Say</h2>
+            <p class="sk-subtitle">
+              We take pride in every project we undertake. Here&rsquo;s what the people
+              we&rsquo;ve worked with have to say about Six Kingdoms.
+            </p>
+            <a class="sk-review-btn" href="https://g.page/r/CXkADRtJtkLNEBM/review" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              Leave us a Google review
+            </a>
+          </div>
+
+          <div class="sk-rating-badge">
+            <span class="sk-rating-number" id="sk-rating-num">5.0</span>
+            <div class="sk-rating-info">
+              <div class="sk-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <span class="sk-rating-count">24 Google reviews</span>
+            </div>
+          </div>
         </div>
+
+        <div class="sk-card" id="sk-reviews-card">
+          <div class="elfsight-app-437e8d13-c176-4a78-8b48-aed568fbb71d" data-elfsight-app-lazy></div>
+        </div>
+
+      </div>
     </section>
 
     <!-- FAQ Section -->
@@ -508,6 +683,44 @@
     </button>
 
     <script src="script.js"></script>
+
+    <!-- Reviews widget: fade-in on scroll + rating count-up -->
+    <script>
+    (function () {
+      var card = document.getElementById('sk-reviews-card');
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+              obs.unobserve(card);
+            }
+          });
+        }, { threshold: 0.1 }).observe(card);
+      }
+      var ratingEl = document.getElementById('sk-rating-num');
+      if (ratingEl) {
+        new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var start = performance.now();
+              requestAnimationFrame(function tick(now) {
+                var progress = Math.min((now - start) / 1200, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                ratingEl.textContent = (5.0 * eased).toFixed(1);
+                if (progress < 1) requestAnimationFrame(tick);
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 }).observe(ratingEl);
+      }
+    })();
+    </script>
 
     <!-- Google Analytics 4 - replace G-XXXXXXXXXX with your Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
