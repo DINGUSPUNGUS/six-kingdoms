@@ -22,10 +22,10 @@
 Dive into<br>nature
 
 ## HOME > HERO PARAGRAPH 1
-woop da scoop da poop
+Ecopools bring living water into your home, naturally free of harsh chemicals and supporting life
 
 ## HOME > HERO PARAGRAPH 2
-radakjnfbfhfjfjsdnfnffjfjfj
+Our partnership with Ecopools South Africa brings leading natural pool technology to the Garden Route
 
 ## HOME > HERO BUTTON
 Discover EcoPools →
