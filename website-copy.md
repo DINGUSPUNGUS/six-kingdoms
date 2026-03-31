@@ -19,7 +19,11 @@
 # ============================================================
 
 ## HOME > HERO HEADLINE
+<<<<<<< HEAD
+Dive into<br>nature
+=======
 brains are made out of cheese.<br>fartyy poo poo
+>>>>>>> 902771dd8cceec0f98f6767d114d28e45a585846
 
 ## HOME > HERO PARAGRAPH 1
 woop da scoop da poop
