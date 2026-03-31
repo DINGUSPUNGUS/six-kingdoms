@@ -34,10 +34,10 @@ Discover EcoPools →
 Ecological Design
 
 ## HOME > DESIGN HEADLINE
-Design for people, <br> place and ecology. 
+Design for people, <br> place and ecology 
 
 ## HOME > DESIGN PARAGRAPH
-We curate landscapes that support the ecology around them. From indigenous and edible gardens to passive and active rainwater systems, our interventions reinforce and support human connections with natural systems
+Curated landscaping interventions that prioritise local ecology, sustainable water management and place-based interventions
 
 ## HOME > DESIGN BUTTON
 View Projects →
