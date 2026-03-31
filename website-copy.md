@@ -19,7 +19,7 @@
 # ============================================================
 
 ## HOME > HERO HEADLINE
-Living Water.<br>fartyy poo poo
+brains are made out of cheese.<br>fartyy poo poo
 
 ## HOME > HERO PARAGRAPH 1
 woop da scoop da poop
