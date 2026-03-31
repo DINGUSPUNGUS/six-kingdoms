@@ -18,6 +18,111 @@
 # PAGE: HOME (index.html)
 # ============================================================
 
+## HOME > HERO HEADLINE
+Living Water.<br>fartyy poo poo
+
+## HOME > HERO PARAGRAPH 1
+woop da scoop da poop
+
+## HOME > HERO PARAGRAPH 2
+radakjnfbfhfjfjsdnfnffjfjfj
+
+## HOME > HERO BUTTON
+Discover EcoPools →
+
+## HOME > DESIGN LABEL
+Ecological Design
+
+## HOME > DESIGN HEADLINE
+Landscapes That<br>Look After Themselves.
+
+## HOME > DESIGN PARAGRAPH
+We work with what’s already on a site and help it become more of itself — fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention.
+
+## HOME > DESIGN BUTTON
+View Projects →
+
+## HOME > LAND MANAGEMENT LABEL
+Land Management
+
+## HOME > LAND MANAGEMENT HEADLINE
+Bring Back<br>What Belongs.
+
+## HOME > LAND MANAGEMENT PARAGRAPH
+Wattles, rooikrans, pampas grass — we know what’s taking over and how to bring back what should be there. Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
+
+## HOME > LAND MANAGEMENT BUTTON
+Learn More →
+
+## HOME > STAT 1 — NUMBER
+—
+
+## HOME > STAT 1 — LABEL
+EcoPools Built
+
+## HOME > STAT 2 — NUMBER
+—
+
+## HOME > STAT 2 — LABEL
+Properties Cleared & Restored
+
+## HOME > STAT 3 — NUMBER
+—
+
+## HOME > STAT 3 — LABEL
+Hectares Managed
+
+## HOME > STAT 4 — NUMBER
+5+
+
+## HOME > STAT 4 — LABEL
+Years on the Garden Route
+
+## HOME > FROM FIELD — LABEL
+From the Field
+
+## HOME > FROM FIELD — HEADING
+Work We’re Proud Of
+
+## HOME > FROM FIELD — PARAGRAPH
+EcoPools, ecological design, land restoration — every project starts with a specific piece of land and the people who live on it.
+
+## HOME > FEATURED 1 — TAG
+EcoPools
+
+## HOME > FEATURED 1 — TITLE
+Living Water, Chlorine-Free
+
+## HOME > FEATURED 1 — BODY
+Natural swimming pools filtered entirely by biology — designed around your site, your soil, and how you live.
+
+## HOME > FEATURED 1 — LINK
+Discover EcoPools →
+
+## HOME > FEATURED 2 — TAG
+Ecological Design
+
+## HOME > FEATURED 2 — TITLE
+Landscapes That Look After Themselves
+
+## HOME > FEATURED 2 — BODY
+Fynbos gardens, food forests, rain gardens — designed to thrive without constant intervention.
+
+## HOME > FEATURED 2 — LINK
+View Projects →
+
+## HOME > FEATURED 3 — TAG
+Land Management
+
+## HOME > FEATURED 3 — TITLE
+Bring Back What Belongs
+
+## HOME > FEATURED 3 — BODY
+Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
+
+## HOME > FEATURED 3 — LINK
+Learn More →
+
 ## HOME > ABOUT — HEADLINE
 We've Been Working With This Land a Long Time
 
