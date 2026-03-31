@@ -34,10 +34,10 @@ Discover EcoPools →
 Ecological Design
 
 ## HOME > DESIGN HEADLINE
-Designed for people, <br> place and ecology. 
+Design for people, <br> place and ecology. 
 
 ## HOME > DESIGN PARAGRAPH
-We curate beautiful, productive landscapes that support the ecology around them. From indigenous and edible gardens to passive and active rainwater systems, our interventions reinforce and support human connections with natural systems
+We curate landscapes that support the ecology around them. From indigenous and edible gardens to passive and active rainwater systems, our interventions reinforce and support human connections with natural systems
 
 ## HOME > DESIGN BUTTON
 View Projects →
@@ -46,10 +46,10 @@ View Projects →
 Land Management
 
 ## HOME > LAND MANAGEMENT HEADLINE
-Bring Back<br>What Belongs.
+Supporting land stewards
 
 ## HOME > LAND MANAGEMENT PARAGRAPH
-Wattles, rooikrans, pampas grass — we know what’s taking over and how to bring back what should be there. Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
+Ensuring increased resilience, ecological integrity and compliance through practical planning and interventions
 
 ## HOME > LAND MANAGEMENT BUTTON
 Learn More →
