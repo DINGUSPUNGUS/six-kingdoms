@@ -34,7 +34,7 @@ Discover EcoPools →
 Ecological Design
 
 ## HOME > DESIGN HEADLINE
-Landscapes designed <br> to work with nature
+Designed for people, <br> place and ecology. 
 
 ## HOME > DESIGN PARAGRAPH
 We curate beautiful, productive landscapes that support the ecology around them. From indigenous and edible gardens to passive and active rainwater systems, our interventions reinforce and support human connections with natural systems
