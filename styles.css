@@ -3129,7 +3129,11 @@ textarea:focus-visible {
 
 /* The three background images */
 .pw--ecopools {
-    background-image: url('images/eco pool photos/EcoPool and pool house.webp');
+    background-image: url('images/webp/eco%20pool%20photos/20180923_102106-1920.webp');
+}
+
+.pw--ecopools2 {
+    background-image: url('images/webp/eco%20pool%20photos/dezalze-IMG_0105-scaled-1920.webp');
 }
 
 .pw--design {

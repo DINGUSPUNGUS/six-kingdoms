@@ -1,1 +1,8 @@
 .vercel
+
+# Original source images — WebP versions are used in HTML
+images/*.jpg
+images/*.JPG
+images/eco\ pool\ photos/*.jpg
+images/eco\ pool\ photos/*.JPG
+images/eco\ pool\ photos/*.webp
