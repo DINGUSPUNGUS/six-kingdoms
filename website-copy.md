@@ -49,31 +49,31 @@ Land Management
 Supporting land stewards
 
 ## HOME > LAND MANAGEMENT PARAGRAPH
-Ensuring increased resilience, ecological integrity and compliance through practical planning and interventions
+Ensuring increased resilience, ecological integrity and compliance through practical planning and implementation
 
 ## HOME > LAND MANAGEMENT BUTTON
 Learn More →
 
 ## HOME > STAT 1 — NUMBER
-—
+10+
 
 ## HOME > STAT 1 — LABEL
 EcoPools Built
 
 ## HOME > STAT 2 — NUMBER
-—
+5000m2+
 
 ## HOME > STAT 2 — LABEL
-Properties Cleared & Restored
+Indigenous gardens planted
 
 ## HOME > STAT 3 — NUMBER
-—
+30+ 
 
 ## HOME > STAT 3 — LABEL
-Hectares Managed
+Hectares restored
 
 ## HOME > STAT 4 — NUMBER
-5+
+10
 
 ## HOME > STAT 4 — LABEL
 Years on the Garden Route
