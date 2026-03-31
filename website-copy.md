@@ -22,7 +22,7 @@
 Dive into<br>nature
 
 ## HOME > HERO PARAGRAPH 1
-Ecopools bring living water into your home, naturally free of harsh chemicals and supporting life
+Ecopools bring living water into your home, naturally free of harsh chemicals for healthy swimming
 
 ## HOME > HERO PARAGRAPH 2
 Our partnership with Ecopools South Africa brings leading natural pool technology to the Garden Route
@@ -34,10 +34,10 @@ Discover EcoPools →
 Ecological Design
 
 ## HOME > DESIGN HEADLINE
-Landscapes That<br>Look After Themselves.
+Landscapes designed <br> to work with nature
 
 ## HOME > DESIGN PARAGRAPH
-We work with what’s already on a site and help it become more of itself — fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention.
+We curate beautiful, productive landscapes that support the ecology around them. From indigenous and edible gardens to passive and active rainwater systems, our interventions reinforce and support human connections with natural systems
 
 ## HOME > DESIGN BUTTON
 View Projects →
