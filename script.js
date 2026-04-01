@@ -50,13 +50,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Nav stays transparent while scrolling through ALL parallax windows.
     // Only switches to solid (scrolled) once the last parallax window has
     // fully cleared the top of the viewport.
-    const heroSection = document.querySelector('.hero, .parallax-window');
+    const heroSection = document.querySelector('.hero, .parallax-window, .instagram-grid-section');
     const navbar = document.querySelector('.navbar');
     if (heroSection && navbar) {
         navbar.classList.add('hero-nav');
 
         // Calculate the scroll position at which the last PW clears the nav
-        const allPWs = document.querySelectorAll('.parallax-window');
+        const allPWs = document.querySelectorAll('.parallax-window, .instagram-grid-section');
         let pwBottom = 0;
         function calcPWBottom() {
             if (allPWs.length > 0) {
@@ -367,6 +367,27 @@ if (filterButtons.length > 0) {
         if (e.key === 'ArrowLeft')  navigate(-1);
         if (e.key === 'ArrowRight') navigate(1);
     });
+
+    // Swipe gesture support for mobile
+    // Attach to .modal-window so swipes on the image area navigate,
+    // while vertical swipes on .modal-body still scroll normally.
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var modalWin = modal.querySelector('.modal-window');
+    if (modalWin) {
+        modalWin.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].clientX;
+            touchStartY = e.changedTouches[0].clientY;
+        }, { passive: true });
+        modalWin.addEventListener('touchend', function (e) {
+            var dx = touchStartX - e.changedTouches[0].clientX;
+            var dy = Math.abs(touchStartY - e.changedTouches[0].clientY);
+            // Only fire when it's clearly a horizontal swipe (not a vertical scroll)
+            if (Math.abs(dx) > 48 && Math.abs(dx) > dy) {
+                navigate(dx > 0 ? 1 : -1);
+            }
+        }, { passive: true });
+    }
 }());
 
 // ── Gallery load-more ──────────────────────────────────────────
@@ -379,4 +400,54 @@ if (filterButtons.length > 0) {
         });
         btn.remove();
     });
+}());
+
+// ── Mobile Parallax Workaround ─────────────────────────────────
+// background-attachment: fixed is broken on iOS WebKit (image
+// doesn't scroll at all) and causes full-page repaints on Android.
+// On mobile (≤900px) we inject a .pw-bg-layer child div and drive
+// it with translateY via rAF, giving true parallax depth on all
+// mobile browsers including iOS Safari.
+(function initMobileParallax() {
+    if (!window.matchMedia('(max-width: 900px)').matches) return;
+
+    var pws = Array.from(document.querySelectorAll('.parallax-window'));
+    if (!pws.length) return;
+
+    pws.forEach(function (pw) {
+        var bgImg = window.getComputedStyle(pw).backgroundImage;
+        if (!bgImg || bgImg === 'none') return;
+        var layer = document.createElement('div');
+        layer.className = 'pw-bg-layer';
+        layer.style.backgroundImage = bgImg;
+        pw.style.backgroundImage = 'none';
+        pw.insertBefore(layer, pw.firstChild);
+    });
+
+    var ticking = false;
+
+    function updateLayers() {
+        var vh = window.innerHeight;
+        pws.forEach(function (pw) {
+            var layer = pw.querySelector('.pw-bg-layer');
+            if (!layer) return;
+            var rect = pw.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > vh) return;
+            // progress 0 = PW bottom at viewport top, 1 = PW top at viewport bottom
+            var progress = (vh - rect.top) / (vh + rect.height);
+            // Translate ±15% of the PW height — matches the 30% top/bottom oversize
+            var offset = (progress - 0.5) * pw.offsetHeight * 0.3;
+            layer.style.transform = 'translateY(' + offset.toFixed(2) + 'px)';
+        });
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            requestAnimationFrame(updateLayers);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    updateLayers(); // set initial position without waiting for scroll
 }());

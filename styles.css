@@ -799,7 +799,7 @@ section {
 }
 
 .service-card h3 {
-    color: var(--text-primary);
+    color: var(--accent-teal);
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
 }
@@ -1062,6 +1062,8 @@ section {
 
 /* Footer */
 .footer {
+    position: relative;
+    z-index: 3;
     background: var(--accent-yellow);
     color: var(--text-dark);
     padding: 3.5rem 20px 1.5rem;
@@ -1793,6 +1795,57 @@ section {
     }
 }
 
+/* ── Mobile gallery: horizontal swipe carousel ── */
+@media (max-width: 600px) {
+    .pool-gallery {
+        display: flex;
+        flex-direction: row;
+        /* Reset grid properties */
+        grid-template-columns: unset;
+        grid-template-rows: unset;
+        grid-auto-rows: unset;
+        /* Swipe carousel */
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        height: 270px;
+        gap: 10px;
+        border-radius: 0;
+        /* Bleed to full screen width for an edge-to-edge feel */
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0 20px;
+        padding-right: 32px; /* peek-through gap at the right */
+        margin-top: 1.5rem;
+    }
+    .pool-gallery::-webkit-scrollbar { display: none; }
+
+    .pool-gallery-item {
+        flex: 0 0 72vw;
+        height: 100%;
+        border-radius: 10px;
+        scroll-snap-align: start;
+        /* Reset grid placement */
+        grid-column: unset;
+        grid-row: unset;
+    }
+    .pool-gallery-item.gallery-main {
+        flex: 0 0 85vw;
+        grid-column: unset;
+        grid-row: unset;
+    }
+    /* Always show the project name label — no hover on touch */
+    .pool-gallery-item .gallery-item-overlay { opacity: 1; }
+
+    /* Show all extra images in the swipe strip — no load-more needed */
+    .pool-gallery .gallery-extra { display: block; }
+
+    /* Hide the load-more button on mobile */
+    .gallery-load-more { display: none; }
+}
+
 .page-header h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
@@ -2005,7 +2058,7 @@ section {
 }
 
 .benefit-card h3 {
-    color: var(--accent-green);
+    color: var(--accent-teal);
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
 }
@@ -2023,14 +2076,14 @@ section {
 
 .partnership-section h2,
 .cta-section h2 {
-    color: #f0ede6;
+    color: var(--text-primary);
     margin-bottom: 2.5rem;
     font-size: 2.2rem;
 }
 
 .partnership-section p,
 .cta-section p {
-    color: rgba(255, 255, 255, 0.50);
+    color: var(--text-secondary);
     margin-bottom: 1.8rem;
     line-height: 1.9;
 }
@@ -2153,6 +2206,8 @@ section {
 
 /* CTA Strip � standardised across all pages */
 .cta-strip {
+    position: relative;
+    z-index: 3;
     background: var(--bg-primary);
     padding: 80px 24px;
     text-align: center;
@@ -2764,43 +2819,52 @@ textarea:focus-visible {
 }
 
 /* Responsive Design */
+/* No hamburger — full horizontal nav at all viewport sizes */
 @media (max-width: 1024px) {
     .mobile-menu-toggle {
-        display: flex;
+        display: none;
     }
-    
+
     .nav-menu {
-        position: fixed;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: var(--bg-secondary);
-        -webkit-backdrop-filter: blur(14px);
-        backdrop-filter: blur(14px);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(28, 31, 26, 0.10);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        gap: 1.5rem;
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-        z-index: 1001;
+        gap: 1rem;
+        flex-wrap: nowrap;
     }
-    
-    .nav-menu.active {
-        display: flex;
-        transform: translateX(0);
+
+    .nav-menu a {
+        font-size: 12px;
     }
-    
-    .nav-menu li {
-        text-align: center;
-        border-bottom: 1px solid var(--card-border);
-        padding-bottom: 1rem;
+
+    .nav-cta {
+        padding: 7px 12px;
     }
-    
-    .nav-menu li:last-child {
-        border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    .nav-brand img {
+        height: 34px;
+    }
+
+    .nav-menu {
+        flex: 1;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-left: 0.5rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.6rem;
+    }
+
+    .nav-menu::-webkit-scrollbar { display: none; }
+
+    .nav-menu a {
+        font-size: 10.5px;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+    }
+
+    .nav-cta {
+        padding: 5px 10px;
+        font-size: 10px !important;
     }
 }
 
@@ -3236,6 +3300,7 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     overflow: hidden;
+    z-index: 0;
 }
 
 /* Edge-fade gradients � bleed top and bottom of each section into
@@ -3420,6 +3485,23 @@ textarea:focus-visible {
     }
 }
 
+/* JS-injected parallax background layer (mobile workaround).
+   Sized 30% taller than the container on each side to give
+   room for translateY travel without exposing empty space. */
+.pw-bg-layer {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    right: 0;
+    bottom: -30%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    pointer-events: none;
+    z-index: -1;
+}
+
 @media (max-width: 768px) {
     .parallax-window {
         min-height: 65vh;
@@ -3499,7 +3581,7 @@ textarea:focus-visible {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
     transition: background 0.2s, color 0.2s;
 }
 .modal-close:hover { background: rgba(8,12,6,0.9); color: #fff; }
@@ -3589,10 +3671,78 @@ textarea:focus-visible {
     from { transform: translateY(28px); opacity: 0; }
     to   { transform: translateY(0);    opacity: 1; }
 }
+
+/* Mobile modal: larger tap targets for arrows and close button */
 @media (max-width: 600px) {
-    .modal-window { max-height: 100dvh; border-radius: 0; border: none; }
-    .modal-image-wrap { aspect-ratio: 4/3; }
-    .modal-body { padding: 1.25rem 1.25rem 1.75rem; }
+    .modal-window {
+        border-radius: 6px;
+    }
+    .modal-close {
+        width: 48px;
+        height: 48px;
+    }
+    .modal-prev,
+    .modal-next {
+        width: 52px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+@media (max-width: 600px) {
+    /* Full-screen flex-column layout so only .modal-body scrolls,
+       keeping close button and nav arrows fully anchored and tappable */
+    .modal-overlay { padding: 0; align-items: stretch; }
+    .modal-window {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+        border: none;
+        /* The window itself never scrolls — only .modal-body does */
+        overflow: hidden;
+    }
+    /* Fixed-height image zone at the top — always visible, never scrolls away */
+    .modal-image-wrap {
+        flex: 0 0 auto;
+        aspect-ratio: unset;
+        height: 55vw;       /* landscape pool photos fill nicely on portrait phones */
+        max-height: 52vh;   /* cap so text area is always usable */
+        min-height: 200px;
+    }
+    /* Scrollable text content — flex: 1 fills whatever height remains */
+    .modal-body {
+        flex: 1;
+        min-height: 0;          /* flex-child collapse fix */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1.25rem 1.25rem 5.5rem; /* extra bottom padding clears the nav bar */
+    }
+    /* Close button — position: absolute inside .modal-window (overflow: hidden, not auto),
+       so it stays pinned at top-right regardless of .modal-body scroll */
+    .modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 44px;
+        height: 44px;
+        z-index: 3;
+    }
+    /* Navigation arrows move to a proper bottom bar with large tap targets */
+    .modal-prev,
+    .modal-next {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        width: 50%;
+        height: 60px;
+        background: rgba(8, 12, 6, 0.88);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .modal-prev { left: 0; border-right: 0.5px solid rgba(255, 255, 255, 0.08); }
+    .modal-next { right: 0; }   /* right: 0 + width: 50% puts it centre→right */
+    .modal-prev svg,
+    .modal-next svg { width: 32px; height: 32px; }
 }
 
 /* ── Ecological Design Service Areas ─────────────────────────────────────── */
@@ -3619,7 +3769,7 @@ textarea:focus-visible {
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--accent-teal);
 }
 .ed-service-item p {
     font-size: 0.875rem;
@@ -3814,9 +3964,9 @@ textarea:focus-visible {
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(8, 20, 14, 0.88) 0%,
-        rgba(28, 35, 22, 0.80) 50%,
-        rgba(8, 20, 14, 0.88) 100%
+        rgba(8, 20, 14, 0.82) 0%,
+        rgba(28, 35, 22, 0.70) 50%,
+        rgba(8, 20, 14, 0.82) 100%
     );
     z-index: 1;
 }
@@ -3957,4 +4107,22 @@ textarea:focus-visible {
     .scroll-top svg { width: 18px; height: 18px; }
     .theme-toggle { width: 44px; height: 44px; bottom: 128px; right: 20px; }
     .theme-toggle svg { width: 18px; height: 18px; }
+}
+
+/* Dark mode: EcoPools Africa partnership badge switches to dark bg + white logo */
+[data-theme="dark"] .partnership-cert-badge {
+    background: rgba(28, 31, 26, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+[data-theme="dark"] .partnership-cert-name {
+    color: #f0ede6;
+}
+[data-theme="dark"] .partnership-cert-label {
+    color: rgba(71, 163, 162, 0.85);
+}
+[data-theme="dark"] .partnership-cert-desc {
+    color: rgba(240, 237, 230, 0.55);
+}
+[data-theme="dark"] .partnership-cert-icon img {
+    filter: invert(1);
 }
