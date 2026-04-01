@@ -37,7 +37,7 @@
 /* Theme-specific colors - Light mode (default) */
 [data-theme="light"],
 :root:not([data-theme]) {
-    --bg-primary: #cdcdcd;
+    --bg-primary: #f5f3ef;
     --bg-secondary: #faf9f5;
     --text-primary: #1A1A18;
     --text-secondary: #4d4d4a;
@@ -98,7 +98,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 /* Theme Toggle Button */
 .theme-toggle {
     position: fixed;
-    bottom: 95px;
+    bottom: 144px;
     right: 24px;
     width: 50px;
     height: 50px;
@@ -140,7 +140,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 
 /* Navigation */
 .navbar {
-    background: transparent;
+    background: var(--bg-secondary);
     box-shadow: 0 2px 28px rgba(28, 31, 26, 0.09);
     position: fixed;
     top: 0;
@@ -149,6 +149,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     z-index: 1000;
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(59, 139, 117, 0.15);
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .navbar .container {
@@ -182,7 +183,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 
 .nav-menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--text-primary);
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 13px;
     font-weight: 500;
@@ -1124,11 +1125,13 @@ section {
 
 .footer-contact-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.65rem;
     margin-bottom: 0.6rem;
     color: rgba(0, 0, 0, 0.7);
     font-size: 0.95rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .footer-contact-item a {
@@ -1202,8 +1205,8 @@ section {
 /* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 90px;
+    bottom: 24px;
+    right: 24px;
     width: 60px;
     height: 60px;
     background: #25D366;
@@ -1231,8 +1234,8 @@ section {
 /* Scroll-to-top button */
 .scroll-top {
     position: fixed;
-    bottom: 100px;
-    right: 30px;
+    bottom: 84px;
+    right: 24px;
     width: 48px;
     height: 48px;
     background: rgba(59, 139, 117, 0.8);
@@ -2288,7 +2291,7 @@ section {
 .hamburger {
     width: 25px;
     height: 3px;
-    background-color: #f0ede6;
+    background-color: var(--text-primary);
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 3px;
@@ -2771,7 +2774,7 @@ textarea:focus-visible {
         top: 64px;
         left: 0;
         right: 0;
-        background: rgba(250, 248, 243, 0.98);
+        background: var(--bg-secondary);
         -webkit-backdrop-filter: blur(14px);
         backdrop-filter: blur(14px);
         flex-direction: column;
@@ -2782,6 +2785,7 @@ textarea:focus-visible {
         gap: 1.5rem;
         max-height: calc(100vh - 64px);
         overflow-y: auto;
+        z-index: 1001;
     }
     
     .nav-menu.active {
@@ -2791,7 +2795,7 @@ textarea:focus-visible {
     
     .nav-menu li {
         text-align: center;
-        border-bottom: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--card-border);
         padding-bottom: 1rem;
     }
     
@@ -2801,11 +2805,16 @@ textarea:focus-visible {
 }
 
 @media (max-width: 768px) {
-        font-size: 2.2rem;
+    .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
     }
     
     .hero p {
         font-size: 1.1rem;
+    }
+    
+    section {
+        padding: 72px 20px;
     }
     
     .section-title {
@@ -2838,13 +2847,13 @@ textarea:focus-visible {
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
-        width: 55px;
-        height: 55px;
+        width: 52px;
+        height: 52px;
     }
     
     .whatsapp-float svg {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
     }
     
     .faq-question {
@@ -2896,6 +2905,18 @@ textarea:focus-visible {
 
     .social-links {
         justify-content: center;
+    }
+
+    /* Contact form inputs: reduce padding on small screens */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.9rem 1rem;
+    }
+
+    /* Blog featured card: cap image height */
+    .blog-teaser-card:first-child .blog-teaser-image {
+        min-height: 200px;
+        height: 200px;
     }
 }
 
@@ -3921,7 +3942,19 @@ textarea:focus-visible {
     }
 }
 
-@media (max-width: 600px) {
-    .whatsapp-float { right: 90px; width: 52px; height: 52px; bottom: 24px; }
-    .whatsapp-float svg { width: 28px; height: 28px; }
+/* Dark mode: invert gradient logo on non-hero navbars so it shows on dark bg */
+[data-theme="dark"] .navbar:not(.hero-nav) .nav-brand img {
+    filter: brightness(0) invert(0.9);
+}
+
+/* On hero-nav in dark mode the existing hero-nav rules handle the logo */
+
+@media (max-width: 480px) {
+    /* Compact floating action buttons on very small screens */
+    .whatsapp-float { width: 44px; height: 44px; bottom: 20px; right: 20px; }
+    .whatsapp-float svg { width: 22px; height: 22px; }
+    .scroll-top { width: 44px; height: 44px; bottom: 74px; right: 20px; }
+    .scroll-top svg { width: 18px; height: 18px; }
+    .theme-toggle { width: 44px; height: 44px; bottom: 128px; right: 20px; }
+    .theme-toggle svg { width: 18px; height: 18px; }
 }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Theme: set before CSS renders to prevent flash of wrong theme -->
+    <script>!function(){var t=localStorage.getItem('sk-theme');document.documentElement.setAttribute('data-theme',t?t:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}();</script>
     <meta name="description" content="Plan your EcoPool or ecological garden on the Garden Route. Use our free interactive tools — project planner, cost calculator, land checklist, and indigenous plant finder.">
     <meta name="keywords" content="EcoPool planner, garden planner, indigenous plants Garden Route, natural pool cost calculator, land management checklist, Six Kingdoms">
     <meta name="author" content="Six Kingdoms">
@@ -3040,6 +3042,15 @@
 
         fpqUpdateUI();
     })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DB3MN6PW0Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DB3MN6PW0Q');
     </script>
 </body>
 </html>
