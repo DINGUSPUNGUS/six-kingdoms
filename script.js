@@ -1,6 +1,51 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ── Theme Toggle System ──────────────────────────────────────────────
+    // Manual toggle with localStorage + OS preference detection
+    (function initTheme() {
+        const html = document.documentElement;
+        const storedTheme = localStorage.getItem('sk-theme');
+        
+        // Set initial theme: stored preference > OS preference > light (default)
+        if (storedTheme) {
+            html.setAttribute('data-theme', storedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.setAttribute('data-theme', 'dark');
+        } else {
+            html.setAttribute('data-theme', 'light');
+        }
+        
+        // Update toggle button icon
+        function updateToggleIcon() {
+            const currentTheme = html.getAttribute('data-theme');
+            const sunIcon = document.querySelector('.theme-toggle .sun-icon');
+            const moonIcon = document.querySelector('.theme-toggle .moon-icon');
+            if (sunIcon && moonIcon) {
+                if (currentTheme === 'dark') {
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                } else {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                }
+            }
+        }
+        
+        // Handle toggle button click
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('sk-theme', newTheme);
+                updateToggleIcon();
+            });
+            updateToggleIcon();
+        }
+    })();
+
     // ── Transparent nav over hero / parallax entry sections ──────────────
     // Nav stays transparent while scrolling through ALL parallax windows.
     // Only switches to solid (scrolled) once the last parallax window has
@@ -265,7 +310,8 @@ if (filterButtons.length > 0) {
     const prevBtn    = modal.querySelector('.modal-prev');
     const nextBtn    = modal.querySelector('.modal-next');
     let lastFocused  = null;
-    let triggers     = [];
+    let allTriggers  = [];
+    let currentGroup = [];
     let currentIdx   = 0;
 
     function populateModal(trigger) {
@@ -277,9 +323,14 @@ if (filterButtons.length > 0) {
     }
 
     function openModal(trigger) {
-        lastFocused = document.activeElement;
-        triggers    = Array.from(document.querySelectorAll('.modal-trigger'));
-        currentIdx  = triggers.indexOf(trigger);
+        lastFocused   = document.activeElement;
+        allTriggers   = Array.from(document.querySelectorAll('.modal-trigger'));
+        
+        // Group images by matching data-title
+        const triggerTitle = trigger.dataset.title || '';
+        currentGroup = allTriggers.filter(t => t.dataset.title === triggerTitle);
+        
+        currentIdx = currentGroup.indexOf(trigger);
         populateModal(trigger);
         modal.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
@@ -287,8 +338,8 @@ if (filterButtons.length > 0) {
     }
 
     function navigate(dir) {
-        currentIdx = (currentIdx + dir + triggers.length) % triggers.length;
-        populateModal(triggers[currentIdx]);
+        currentIdx = (currentIdx + dir + currentGroup.length) % currentGroup.length;
+        populateModal(currentGroup[currentIdx]);
     }
 
     function closeModal() {

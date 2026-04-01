@@ -40,105 +40,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 
-    <style>
-    .sk-instagram-section {
-      padding: 80px 24px;
-      background: #f7f9f4;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .sk-instagram-section .sk-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .sk-instagram-section .sk-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    .sk-instagram-section .sk-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #36669e;
-      margin-bottom: 12px;
-    }
-    .sk-instagram-section .sk-label::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 2px;
-      background: #5a9e6e;
-      border-radius: 2px;
-    }
-    .sk-instagram-section .sk-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 600;
-      color: #1e2a1e;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-    .sk-instagram-section .sk-subtitle {
-      font-size: 15px;
-      color: #5c6b5c;
-      font-weight: 300;
-      max-width: 480px;
-      line-height: 1.7;
-    }
-    .sk-instagram-section .sk-follow-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 13px 28px;
-      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(131,58,180,0.28);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      white-space: nowrap;
-    }
-    .sk-instagram-section .sk-follow-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(131,58,180,0.38);
-    }
-    .sk-instagram-section .sk-follow-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: #fff;
-    }
-    .sk-instagram-section .sk-card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(54,102,158,0.10);
-      padding: 36px 32px;
-      border: 1px solid rgba(54,102,158,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-    .sk-instagram-section .sk-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
-    }
-    @media (max-width: 640px) {
-      .sk-instagram-section { padding: 56px 16px; }
-      .sk-instagram-section .sk-card { padding: 20px 14px; }
-      .sk-instagram-section .sk-header { flex-direction: column; align-items: flex-start; }
-    }
-    </style>
-
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -162,51 +63,35 @@
                 <li><a href="projects.html">Ecological Design</a></li>
                 <li><a href="land-management.html">Land Management</a></li>
                 <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
-                <li><a href="plan.html" class="nav-plan-cta">Plan Your Project</a></li>
                 <li><a href="contact.html" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero hero--service" id="main-content">
-        <div class="hero-bg active" role="img" style="background-image:url('images/alien%20clearing.webp')" aria-label="Six Kingdoms field work on the Garden Route"></div>
-        <div class="hero-content">
-            <span class="hero-service-label">Six Kingdoms &middot; @six_kingdoms</span>
-            <h1>From<br>the Field.</h1>
-            <p>What we&rsquo;re building, restoring, and discovering across the Garden Route</p>
-        </div>
-    </section>
-
     <!-- Instagram Feed -->
-    <section class="coming-soon-notice">
-        <span class="label">Blog &middot; Coming Soon</span>
-        <p>We&rsquo;re working on articles, project write-ups, and field notes. In the meantime, follow our work on Instagram below.</p>
-    </section>
-
-    <section class="sk-instagram-section">
-      <div class="sk-inner">
-
-        <div class="sk-header">
-          <div>
-            <p class="sk-label">Follow Along</p>
-            <h2 class="sk-title">Life in the Field</h2>
-            <p class="sk-subtitle">
-              Behind-the-scenes moments, completed projects, and the wild beauty
-              of the Garden Route &mdash; straight from our Instagram.
-            </p>
+    <section class="instagram-grid-section" id="main-content">
+      <div class="instagram-parallax-bg"></div>
+      <div class="instagram-overlay"></div>
+      
+      <div class="container instagram-container">
+        <div class="instagram-grid-header">
+          <div class="instagram-header-content">
+            <p class="label">Follow Along</p>
+            <h2>Life in the Field</h2>
+            <p>Behind-the-scenes moments, completed projects, and the wild beauty of the Garden Route &mdash; straight from our Instagram.</p>
           </div>
 
-          <a class="sk-follow-btn" href="https://www.instagram.com/six_kingdoms/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <a class="instagram-cta-button" href="https://www.instagram.com/six_kingdoms/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
             Follow on Instagram
           </a>
         </div>
 
-        <div class="sk-card">
+        <div class="instagram-embed-wrapper">
           <div class="elfsight-app-2b5637af-72ea-4fd0-ad2e-2d74aae120df" data-elfsight-app-lazy></div>
         </div>
-
       </div>
     </section>
 
@@ -307,6 +192,24 @@
     <button class="scroll-top" aria-label="Back to top">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
     </button>
 
