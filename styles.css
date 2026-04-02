@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 :root {
     --primary-blue: #36669e;
     --secondary-blue: #47a3a2;
@@ -343,6 +347,7 @@ body {
     position: relative;
     overflow: hidden;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2937,6 +2942,14 @@ textarea:focus-visible {
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 1rem 2rem;
+    }
     
     .contact-content {
         grid-template-columns: 1fr;
@@ -3028,6 +3041,30 @@ textarea:focus-visible {
     .blog-teaser-card:first-child .blog-teaser-image {
         min-height: 200px;
         height: 200px;
+    }
+
+    /* Parallax sections: tighter on small phones */
+    .parallax-window {
+        min-height: 55vh;
+    }
+
+    #main-content.parallax-window {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .pw-content {
+        padding: 48px 0;
+        padding-left: 1.5rem;
+    }
+
+    .pw-content h2 {
+        font-size: clamp(1.5rem, 5.5vw, 1.9rem);
+    }
+
+    /* Service cards: less vertical padding on small phones */
+    .service-card {
+        padding: 1.8rem 1.4rem;
     }
 }
 
@@ -3392,6 +3429,7 @@ textarea:focus-visible {
    so the parallax image fills the full viewport including the nav area */
 #main-content.parallax-window {
     min-height: 100vh;
+    min-height: 100dvh;
     margin-top: -72px;
 }
 
@@ -4112,19 +4150,6 @@ textarea:focus-visible {
     }
     
     .instagram-grid-header {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .instagram-cta-button {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .instagram-embed-wrapper {
-        padding: 1.25rem;
-    }
-}
         flex-direction: column;
         gap: 2rem;
     }
