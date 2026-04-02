@@ -55,13 +55,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroSection && navbar) {
         navbar.classList.add('hero-nav');
 
-        // Calculate the scroll position at which the last PW clears the nav
+        // Desktop: track the LAST parallax window — nav stays transparent/dark-gradient
+        // across all mid-page parallax sections (original desktop behaviour).
+        // Mobile (≤900px): track only the FIRST parallax window — nav becomes solid
+        // once the user scrolls out of the entry hero, preventing it covering content.
         const allPWs = document.querySelectorAll('.parallax-window, .instagram-grid-section');
         let pwBottom = 0;
         function calcPWBottom() {
             if (allPWs.length > 0) {
-                const last = allPWs[allPWs.length - 1];
-                pwBottom = last.offsetTop + last.offsetHeight;
+                const isMobile = window.innerWidth <= 900;
+                const target = isMobile ? allPWs[0] : allPWs[allPWs.length - 1];
+                pwBottom = target.offsetTop + target.offsetHeight;
             }
         }
         calcPWBottom();
@@ -310,7 +314,6 @@ if (filterButtons.length > 0) {
     const prevBtn    = modal.querySelector('.modal-prev');
     const nextBtn    = modal.querySelector('.modal-next');
     let lastFocused  = null;
-    let allTriggers  = [];
     let currentGroup = [];
     let currentIdx   = 0;
 
@@ -324,12 +327,19 @@ if (filterButtons.length > 0) {
 
     function openModal(trigger) {
         lastFocused   = document.activeElement;
-        allTriggers   = Array.from(document.querySelectorAll('.modal-trigger'));
-        
-        // Group images by matching data-title
-        const triggerTitle = trigger.dataset.title || '';
-        currentGroup = allTriggers.filter(t => t.dataset.title === triggerTitle);
-        
+
+        // Build navigation group from items that are currently visible in the gallery.
+        // Respects the active category filter and the load-more state on mobile.
+        currentGroup = Array.from(document.querySelectorAll('.modal-trigger')).filter(function(t) {
+            if (t.classList.contains('gallery-filter-hidden')) return false;
+            if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                // On desktop the CSS shows all gallery-extra items regardless of the class,
+                // so check computed visibility rather than the class alone.
+                return t.offsetParent !== null;
+            }
+            return true;
+        });
+
         currentIdx = currentGroup.indexOf(trigger);
         populateModal(trigger);
         modal.removeAttribute('hidden');
@@ -399,6 +409,29 @@ if (filterButtons.length > 0) {
             el.classList.add('visible');
         });
         btn.remove();
+    });
+}());
+
+// ── Gallery project filter tabs (desktop) ──────────────────────
+(function () {
+    var filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var filter = this.dataset.galleryFilter;
+
+            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+            this.classList.add('active');
+
+            document.querySelectorAll('.pool-gallery-item').forEach(function (item) {
+                if (filter === 'all' || item.dataset.title === filter) {
+                    item.classList.remove('gallery-filter-hidden');
+                } else {
+                    item.classList.add('gallery-filter-hidden');
+                }
+            });
+        });
     });
 }());
 
