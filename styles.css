@@ -9,26 +9,17 @@ html {
 }
 
 :root {
+    /* Brand colours */
     --primary-blue: #36669e;
-    --secondary-blue: #47a3a2;
+    --secondary-blue: #47a3a2; /* same value as --accent-teal (theme vars) */
     --light-blue: #7ab8d4;
     --accent-yellow: #f2d922;
-    --bright-yellow: #f2d922;
     --earth-blue: #1e3d6b;
-    --background: #faf9f5;
     --white: #ffffff;
     --text-dark: #1b1b1b;
     --text-light: #545250;
     --border-light: #e8e6dc;
-    /* Design system */
     --color-forest: #2D5A27;
-    --color-teal: #3B8B75;
-    --color-sand: #F7F5F0;
-    --color-sage: #EEF0EB;
-    --color-dark: #1C1F1A;
-    --color-text: #1A1A18;
-    --color-muted: #4d4d4a;
-    --color-white: #FEFEFE;
     --section-padding: 96px;
     --section-padding-mobile: 56px;
     --content-width: 1100px;
@@ -76,6 +67,8 @@ body {
     padding-top: 72px;
     background-image: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 h1, h2, h3, h4 {
@@ -765,7 +758,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent-yellow), var(--bright-yellow));
+    background: linear-gradient(90deg, var(--accent-yellow), var(--accent-yellow));
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -3287,7 +3280,7 @@ textarea:focus-visible {
 }
 
 .email-capture-form button:hover {
-    background: var(--bright-yellow);
+    background: var(--accent-yellow);
     transform: translateY(-1px);
 }
 
@@ -4117,13 +4110,59 @@ textarea:focus-visible {
     flex-shrink: 0;
 }
 
-.instagram-embed-wrapper {
-    background: rgba(255, 255, 255, 0.92);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+/* Static Instagram photo grid */
+.insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.insta-tile {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: block;
+    background: rgba(0,0,0,0.2);
+}
+
+.insta-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.insta-tile:hover img {
+    transform: scale(1.08);
+}
+
+.insta-tile-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.insta-tile-overlay svg {
+    width: 36px;
+    height: 36px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.insta-tile:hover .insta-tile-overlay {
+    background: rgba(0,0,0,0.45);
+}
+
+.insta-tile:hover .insta-tile-overlay svg {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -4159,8 +4198,9 @@ textarea:focus-visible {
         justify-content: center;
     }
     
-    .instagram-embed-wrapper {
-        padding: 1.25rem;
+    .insta-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
     }
 }
 
@@ -4197,4 +4237,35 @@ textarea:focus-visible {
 }
 [data-theme="dark"] .partnership-cert-icon img {
     filter: invert(1);
+}
+
+/* ── Mobile: touch targets, tap feedback ── */
+@media (max-width: 768px) {
+    /* Ensure all interactive elements meet 44px minimum touch target */
+    .btn-primary,
+    .btn-secondary,
+    .nav-cta,
+    .pw-btn,
+    .sk-review-btn,
+    .instagram-cta-button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .faq-question {
+        min-height: 48px;
+    }
+
+    /* Reviews grid stacks to 1 column on small screens */
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Instagram grid goes 2-column on very small screens */
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

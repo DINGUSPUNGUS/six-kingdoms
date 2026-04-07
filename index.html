@@ -36,153 +36,12 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#36669e">
     
-    <!-- Elfsight Widgets (Google Reviews + Instagram) -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-
     <link rel="stylesheet" href="styles.css">
     <link rel="dns-prefetch" href="//formspree.io">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-
-    <style>
-    .sk-reviews-section {
-      padding: 64px 24px;
-      background: linear-gradient(160deg, #eef4fb 0%, #f7f9f4 60%);
-      font-family: 'DM Sans', sans-serif;
-    }
-    .sk-reviews-section .sk-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .sk-reviews-section .sk-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-    .sk-reviews-section .sk-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #36669e;
-      margin-bottom: 12px;
-    }
-    .sk-reviews-section .sk-label::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 2px;
-      background: #5a9e6e;
-      border-radius: 2px;
-    }
-    .sk-reviews-section .sk-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 600;
-      color: #1e2a1e;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-    .sk-reviews-section .sk-subtitle {
-      font-size: 15px;
-      color: #5c6b5c;
-      font-weight: 300;
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .sk-reviews-section .sk-review-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 22px;
-      border: 1.5px solid rgba(54,102,158,0.22);
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #244d7a;
-      text-decoration: none;
-      background: #ffffff;
-      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 2px 10px rgba(54,102,158,0.08);
-    }
-    .sk-reviews-section .sk-review-btn:hover {
-      background: #e8f0f9;
-      border-color: #36669e;
-      transform: translateY(-2px);
-    }
-    .sk-reviews-section .sk-review-btn svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-    .sk-reviews-section .sk-rating-badge {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      background: #ffffff;
-      border: 1px solid rgba(54,102,158,0.10);
-      border-radius: 14px;
-      padding: 18px 26px;
-      box-shadow: 0 4px 32px rgba(54,102,158,0.10);
-    }
-    .sk-reviews-section .sk-rating-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 44px;
-      font-weight: 600;
-      color: #36669e;
-      line-height: 1;
-    }
-    .sk-reviews-section .sk-rating-info {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .sk-reviews-section .sk-stars {
-      display: flex;
-      gap: 3px;
-    }
-    .sk-reviews-section .sk-stars svg {
-      width: 17px;
-      height: 17px;
-      fill: #f4b942;
-    }
-    .sk-reviews-section .sk-rating-count {
-      font-size: 12px;
-      color: #5c6b5c;
-      letter-spacing: 0.04em;
-    }
-    .sk-reviews-section .sk-card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(54,102,158,0.10);
-      padding: 36px 32px;
-      border: 1px solid rgba(54,102,158,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-    .sk-reviews-section .sk-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
-    }
-    @media (max-width: 640px) {
-      .sk-reviews-section { padding: 56px 16px; }
-      .sk-reviews-section .sk-card { padding: 20px 14px; }
-      .sk-reviews-section .sk-header { flex-direction: column; align-items: flex-start; }
-      .sk-reviews-section .sk-rating-badge { width: 100%; }
-    }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -445,7 +304,42 @@
               </div>
           </div>
 
-          <div class="elfsight-app-437e8d13-c176-4a78-8b48-aed568fbb71d" data-elfsight-app-lazy></div>
+          <div class="reviews-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem;">
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.293-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.293-3.996 5.847h3.983v10h-9.983z"/></svg>
+                <p>&#8220;Matthew and the Six Kingdoms team transformed a neglected corner of our property into a thriving fynbos garden. The attention to detail and knowledge of local ecology is remarkable.&#8221;</p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Claire &amp; Tom H.</strong>
+                <span>Plettenberg Bay</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.293-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.293-3.996 5.847h3.983v10h-9.983z"/></svg>
+                <p>&#8220;The invasive clearing team was professional, efficient, and left the land better than we imagined possible. Already seeing indigenous plants returning just months later.&#8221;</p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Johan V.</strong>
+                <span>Wilderness</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.293-3.995 5.847h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.293-3.996 5.847h3.983v10h-9.983z"/></svg>
+                <p>&#8220;Our EcoPool has been one of the best decisions we&#8217;ve made for the property. Crystal clear water, no chemicals, and the birds and frogs have moved straight in.&#8221;</p>
+              </div>
+              <div class="testimonial-author">
+                <strong>Sarah K.</strong>
+                <span>George</span>
+              </div>
+            </div>
+
+          </div>
 
           <a class="sk-review-btn" href="https://g.page/r/CXkADRtJtkLNEBM/review" target="_blank" rel="noopener" style="margin-top: 2rem; display: inline-flex;">
             <svg viewBox="0 0 24 24">

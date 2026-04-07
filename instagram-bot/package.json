@@ -1,0 +1,17 @@
+{
+  "name": "six-kingdoms-instagram-bot",
+  "version": "1.0.0",
+  "description": "Webhook server that sends a welcome DM to new @six_kingdoms Instagram followers via Meta Graph API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
