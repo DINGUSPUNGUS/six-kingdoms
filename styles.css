@@ -1564,7 +1564,7 @@ section {
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
-    background-image: url('images/ecopools/eco-pool-hero1.webp');
+    background-image: url('images/webp/eco-pool-photos/knysna/20260323164304-1200.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1781,19 +1781,19 @@ section {
 
 /* --- Blog card image backgrounds --- */
 .blog-card-image.ecopools-img {
-    background-image: url('images/ecopools/eco-pool-hero1.webp');
+    background-image: url('images/webp/eco-pool-photos/knysna/20260323164304-1200.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.fynbos-img {
-    background-image: url('images/ecological-design/fynbos-restoration-and-rain-garden-design.webp');
+    background-image: url('images/webp/ecological-design/fynbos-restoration-and-rain-garden-design-1200.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/land-management/creating-a-vision-for-holistic-land-management.webp');
+    background-image: url('images/webp/land-management/salt-river-invasive-plant-clearing-1200.webp');
     background-size: cover;
     background-position: center;
 }
@@ -3472,11 +3472,11 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/ecological-design/garden%203.webp');
+    background-image: url('images/webp/ecological-design/fynbos-restoration-and-rain-garden-design-1200.webp');
 }
 
 .pw--land {
-    background-image: url('images/land-management/alien%20clearing%204.webp');
+    background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
 }
 
 /* Content block — left-aligned by default */
@@ -3967,7 +3967,7 @@ textarea:focus-visible {
 .reviews-parallax-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/eco-pool-photos/plettenberg-bay/Guests enjoying the ecopool.webp');
+    background-image: url('images/webp/eco-pool-photos/plettenberg-bay/Guests enjoying the ecopool-1200.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4027,7 +4027,7 @@ textarea:focus-visible {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('images/land-management/alien%20clearing.webp');
+    background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
