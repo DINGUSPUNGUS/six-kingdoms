@@ -37,7 +37,7 @@ Ecological Design
 Design for people, <br> place and ecology 
 
 ## HOME > DESIGN PARAGRAPH
-Curated landscapes that prioritise local ecology, sustainable water management and place-based interventions
+Curated landscaping interventions that prioritise local ecology, sustainable water management and place-based interventions
 
 ## HOME > DESIGN BUTTON
 View Projects ΓåÆ
@@ -61,12 +61,13 @@ Learn More ΓåÆ
 EcoPools Built
 
 ## HOME > STAT 2 ΓÇö NUMBER
-10000+
+500 Hectares
 
 ## HOME > STAT 2 ΓÇö LABEL
-Indigenous plants planted
+Indigenous gardens planted
+
 ## HOME > STAT 3 ΓÇö NUMBER
-30+ 
+30+
 
 ## HOME > STAT 3 ΓÇö LABEL
 Hectares restored
@@ -81,10 +82,10 @@ Years on the Garden Route
 From the Field
 
 ## HOME > FROM FIELD ΓÇö HEADING
-Reconnecting people to nature
+Work WeΓÇÖre Proud Of
 
 ## HOME > FROM FIELD ΓÇö PARAGRAPH
-Our work brings natural and human systems together through ecologically inspired thinking and processes. 
+EcoPools, ecological design, land restoration ΓÇö every project starts with a specific piece of land and the people who live on it.
 
 ## HOME > FEATURED 1 ΓÇö TAG
 EcoPools

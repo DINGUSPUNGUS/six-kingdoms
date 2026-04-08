@@ -314,9 +314,54 @@ if (filterButtons.length > 0) {
     const prevBtn    = modal.querySelector('.modal-prev');
     const nextBtn    = modal.querySelector('.modal-next');
     const counterEl  = document.getElementById('modal-counter');
+    const prevProjectBtn = modal.querySelector('.modal-prev-project');
+    const nextProjectBtn = modal.querySelector('.modal-next-project');
+    const projectCountEl = modal.querySelector('.modal-project-count');
     let lastFocused  = null;
     let currentGroup = [];
     let currentIdx   = 0;
+    let projectGroups      = [];
+    let currentProjectIdx  = 0;
+
+    function buildProjectGroups(allTriggers) {
+        projectGroups = [];
+        if (!allTriggers.length) return;
+        if (allTriggers[0].classList.contains('pool-gallery-item')) {
+            var tagOrder = [];
+            var tagMap   = {};
+            allTriggers.forEach(function (t) {
+                var tag = t.dataset.tag || '';
+                if (!tagMap[tag]) { tagMap[tag] = []; tagOrder.push(tag); }
+                tagMap[tag].push(t);
+            });
+            tagOrder.forEach(function (tag) { projectGroups.push(tagMap[tag]); });
+        } else {
+            allTriggers.forEach(function (t) { projectGroups.push([t]); });
+        }
+    }
+
+    function updateProjectCount() {
+        if (projectGroups.length > 1) {
+            if (projectCountEl) {
+                projectCountEl.textContent = 'Project ' + (currentProjectIdx + 1) + ' of ' + projectGroups.length;
+                projectCountEl.style.display = '';
+            }
+            if (prevProjectBtn) prevProjectBtn.style.visibility = '';
+            if (nextProjectBtn) nextProjectBtn.style.visibility = '';
+        } else {
+            if (projectCountEl) projectCountEl.style.display = 'none';
+            if (prevProjectBtn) prevProjectBtn.style.visibility = 'hidden';
+            if (nextProjectBtn) nextProjectBtn.style.visibility = 'hidden';
+        }
+    }
+
+    function navigateProject(dir) {
+        currentProjectIdx = (currentProjectIdx + dir + projectGroups.length) % projectGroups.length;
+        currentGroup = projectGroups[currentProjectIdx];
+        currentIdx   = 0;
+        populateModal(currentGroup[0]);
+        updateProjectCount();
+    }
 
     function populateModal(trigger) {
         imgEl.src           = trigger.dataset.image || '';
@@ -340,30 +385,39 @@ if (filterButtons.length > 0) {
 
     function openModal(trigger) {
         lastFocused = document.activeElement;
+        var allVisible;
 
         // If this is a pool gallery item, group by project tag for in-project navigation.
         if (trigger.classList.contains('pool-gallery-item')) {
             var tag = trigger.dataset.tag || '';
-            currentGroup = Array.from(document.querySelectorAll('.pool-gallery-item.modal-trigger')).filter(function (t) {
-                if (t.classList.contains('gallery-filter-hidden')) return false;
-                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
-                    return t.offsetParent !== null;
-                }
-                return t.dataset.tag === tag;
-            });
-        } else {
-            // Default: build navigation group from all visible modal-triggers.
-            currentGroup = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
+            allVisible = Array.from(document.querySelectorAll('.pool-gallery-item.modal-trigger')).filter(function (t) {
                 if (t.classList.contains('gallery-filter-hidden')) return false;
                 if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
                     return t.offsetParent !== null;
                 }
                 return true;
             });
+            currentGroup = allVisible.filter(function (t) { return t.dataset.tag === tag; });
+            buildProjectGroups(allVisible);
+            currentProjectIdx = projectGroups.findIndex(function (g) { return g[0].dataset.tag === tag; });
+        } else {
+            // Default: build navigation group from all visible modal-triggers.
+            allVisible = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
+                if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                    return t.offsetParent !== null;
+                }
+                return true;
+            });
+            currentGroup = allVisible;
+            buildProjectGroups(allVisible);
+            currentProjectIdx = projectGroups.findIndex(function (g) { return g[0] === trigger; });
         }
 
+        if (currentProjectIdx < 0) currentProjectIdx = 0;
         currentIdx = currentGroup.indexOf(trigger);
         populateModal(trigger);
+        updateProjectCount();
         modal.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
         closeBtn.focus();
@@ -390,6 +444,8 @@ if (filterButtons.length > 0) {
     closeBtn.addEventListener('click', closeModal);
     if (prevBtn) prevBtn.addEventListener('click', function () { navigate(-1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { navigate(1); });
+    if (prevProjectBtn) prevProjectBtn.addEventListener('click', function () { navigateProject(-1); });
+    if (nextProjectBtn) nextProjectBtn.addEventListener('click', function () { navigateProject(1); });
     // Click image itself to advance
     imgEl.addEventListener('click', function () { navigate(1); });
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });

@@ -2107,7 +2107,7 @@ section {
 }
 
 .benefit-card h3 {
-    color: var(--accent-teal);
+    color: var(--text-primary);
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
 }
@@ -3905,7 +3905,7 @@ textarea:focus-visible {
 }
 .service-card-lm:hover { border-color: rgba(71,163,162,0.35); }
 .service-card-lm h4 {
-    color: var(--accent-teal);
+    color: var(--text-primary);
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
@@ -4317,23 +4317,25 @@ textarea:focus-visible {
 .reviews-prev,
 .reviews-next {
     flex-shrink: 0;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.22);
+    border: 1.5px solid rgba(255,255,255,0.7);
     color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.25s ease, transform 0.2s ease;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
 .reviews-prev:hover,
 .reviews-next:hover {
-    background: rgba(255,255,255,0.28);
-    transform: scale(1.1);
+    background: rgba(255,255,255,0.42);
+    transform: scale(1.12);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 
 .reviews-dots {
@@ -4417,4 +4419,42 @@ textarea:focus-visible {
     padding: 3px 9px;
     border-radius: 20px;
     pointer-events: none;
+}
+
+/* ── Modal project navigation ── */
+.modal-project-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    margin: 0.75rem 0;
+    border-top: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.1));
+}
+.modal-prev-project,
+.modal-next-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+}
+.modal-prev-project:hover,
+.modal-next-project:hover {
+    color: var(--color-forest, #2D5A27);
+    background: rgba(45, 90, 39, 0.07);
+}
+.modal-project-count {
+    font-size: 0.75rem;
+    color: var(--text-muted, var(--text-secondary));
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.03em;
 }
