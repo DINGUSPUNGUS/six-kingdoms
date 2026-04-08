@@ -61,11 +61,10 @@ Learn More ΓåÆ
 EcoPools Built
 
 ## HOME > STAT 2 ΓÇö NUMBER
-5000m2+
+10000+
 
 ## HOME > STAT 2 ΓÇö LABEL
-Indigenous gardens planted
-
+Indigenous plants planted
 ## HOME > STAT 3 ΓÇö NUMBER
 30+ 
 
