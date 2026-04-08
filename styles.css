@@ -88,7 +88,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--color-forest);
     font-family: 'Poppins', Arial, sans-serif;
 }
 
@@ -253,7 +253,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 }
 
 .navbar.hero-nav .nav-brand img {
-    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    filter: none;
 }
 
 .navbar.hero-nav .nav-cta {
@@ -305,8 +305,12 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     color: var(--accent-yellow) !important;
 }
 
+/* Content area (scrolled past parallax) — light mode: darken to near-black */
 .navbar.hero-nav.scrolled .nav-brand img {
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    filter: brightness(0) saturate(100%);
+}
+[data-theme="dark"] .navbar.hero-nav.scrolled .nav-brand img {
+    filter: brightness(0) invert(0.9);
 }
 
 .navbar.hero-nav.scrolled .nav-cta {
@@ -3472,7 +3476,7 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/webp/ecological-design/fynbos-restoration-and-rain-garden-design-1200.webp');
+    background-image: url('images/ecological-design/garden2.webp');
 }
 
 .pw--land {
@@ -3957,11 +3961,10 @@ textarea:focus-visible {
 /* ── Reviews Parallax Section ── */
 .reviews-parallax-section {
     position: relative;
-    min-height: 85vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 120px 0;
+    padding: 72px 0;
 }
 
 .reviews-parallax-bg {
@@ -4204,7 +4207,11 @@ textarea:focus-visible {
     }
 }
 
-/* Dark mode: invert gradient logo on non-hero navbars so it shows on dark bg */
+/* Non-parallax pages: light mode — darken logo to near-black for content backgrounds */
+.navbar:not(.hero-nav) .nav-brand img {
+    filter: brightness(0) saturate(100%);
+}
+/* Non-parallax pages: dark mode — invert to white */
 [data-theme="dark"] .navbar:not(.hero-nav) .nav-brand img {
     filter: brightness(0) invert(0.9);
 }
@@ -4268,4 +4275,146 @@ textarea:focus-visible {
     .insta-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* ==========================================================================
+   Reviews Carousel (one review at a time)
+   ========================================================================== */
+
+.reviews-widget-card {
+    text-align: center;
+}
+
+.reviews-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto 1.5rem;
+    max-width: 780px;
+}
+
+.reviews-carousel-track {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-carousel-track .testimonial-card {
+    display: none;
+    animation: reviewFadeIn 0.4s ease;
+}
+
+.reviews-carousel-track .testimonial-card.active {
+    display: block;
+}
+
+@keyframes reviewFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.reviews-prev,
+.reviews-next {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.reviews-prev:hover,
+.reviews-next:hover {
+    background: rgba(255,255,255,0.28);
+    transform: scale(1.1);
+}
+
+.reviews-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1.75rem;
+}
+
+.reviews-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.reviews-dot.active {
+    background: var(--accent-yellow);
+    transform: scale(1.3);
+}
+
+/* ==========================================================================
+   Project Cards — Horizontal Scroll Carousel (projects.html)
+   ========================================================================== */
+
+.projects-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-blue) transparent;
+    padding-bottom: 1rem;
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.projects-scroll-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.projects-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.projects-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--secondary-blue);
+    border-radius: 3px;
+}
+
+.projects-scroll-container .projects-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.75rem;
+    width: max-content;
+    margin-bottom: 0;
+}
+
+.projects-scroll-container .project-card {
+    flex: 0 0 320px;
+    width: 320px;
+}
+
+/* ==========================================================================
+   Modal Image Counter (EcoPools in-project navigation)
+   ========================================================================== */
+
+.modal-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    pointer-events: none;
 }

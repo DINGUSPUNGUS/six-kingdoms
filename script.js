@@ -313,6 +313,7 @@ if (filterButtons.length > 0) {
     const closeBtn   = modal.querySelector('.modal-close');
     const prevBtn    = modal.querySelector('.modal-prev');
     const nextBtn    = modal.querySelector('.modal-next');
+    const counterEl  = document.getElementById('modal-counter');
     let lastFocused  = null;
     let currentGroup = [];
     let currentIdx   = 0;
@@ -323,22 +324,43 @@ if (filterButtons.length > 0) {
         tagEl.textContent   = trigger.dataset.tag   || '';
         titleEl.textContent = trigger.dataset.title || '';
         descEl.textContent  = trigger.dataset.description || '';
+        // Update counter if present
+        if (counterEl) {
+            if (currentGroup.length > 1) {
+                counterEl.textContent = (currentIdx + 1) + ' / ' + currentGroup.length;
+                counterEl.style.display = '';
+            } else {
+                counterEl.style.display = 'none';
+            }
+        }
+        // Show/hide prev-next based on group size
+        if (prevBtn) prevBtn.style.visibility = currentGroup.length > 1 ? '' : 'hidden';
+        if (nextBtn) nextBtn.style.visibility = currentGroup.length > 1 ? '' : 'hidden';
     }
 
     function openModal(trigger) {
-        lastFocused   = document.activeElement;
+        lastFocused = document.activeElement;
 
-        // Build navigation group from items that are currently visible in the gallery.
-        // Respects the active category filter and the load-more state on mobile.
-        currentGroup = Array.from(document.querySelectorAll('.modal-trigger')).filter(function(t) {
-            if (t.classList.contains('gallery-filter-hidden')) return false;
-            if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
-                // On desktop the CSS shows all gallery-extra items regardless of the class,
-                // so check computed visibility rather than the class alone.
-                return t.offsetParent !== null;
-            }
-            return true;
-        });
+        // If this is a pool gallery item, group by project tag for in-project navigation.
+        if (trigger.classList.contains('pool-gallery-item')) {
+            var tag = trigger.dataset.tag || '';
+            currentGroup = Array.from(document.querySelectorAll('.pool-gallery-item.modal-trigger')).filter(function (t) {
+                if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                    return t.offsetParent !== null;
+                }
+                return t.dataset.tag === tag;
+            });
+        } else {
+            // Default: build navigation group from all visible modal-triggers.
+            currentGroup = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
+                if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                    return t.offsetParent !== null;
+                }
+                return true;
+            });
+        }
 
         currentIdx = currentGroup.indexOf(trigger);
         populateModal(trigger);
@@ -433,6 +455,70 @@ if (filterButtons.length > 0) {
             });
         });
     });
+}());
+
+// ── Reviews Carousel ───────────────────────────────────────────
+// Shows one testimonial at a time with prev/next arrows and dot navigation.
+(function () {
+    var track = document.querySelector('.reviews-carousel-track');
+    if (!track) return;
+
+    var cards   = Array.from(track.querySelectorAll('.testimonial-card'));
+    var dots    = Array.from(document.querySelectorAll('.reviews-dot'));
+    var prevBtn = document.querySelector('.reviews-prev');
+    var nextBtn = document.querySelector('.reviews-next');
+    if (!cards.length) return;
+
+    var current = 0;
+
+    function showReview(idx) {
+        cards.forEach(function (c, i) {
+            c.classList.toggle('active', i === idx);
+        });
+        dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === idx);
+            d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        });
+        current = idx;
+    }
+
+    // Wire dots
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { showReview(i); });
+    });
+
+    // Wire arrows
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            showReview((current - 1 + cards.length) % cards.length);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            showReview((current + 1) % cards.length);
+        });
+    }
+
+    // Keyboard navigation when focus is inside the carousel
+    track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); showReview((current - 1 + cards.length) % cards.length); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); showReview((current + 1) % cards.length); }
+    });
+
+    // Auto-advance every 6 seconds
+    var autoTimer = setInterval(function () {
+        showReview((current + 1) % cards.length);
+    }, 6000);
+
+    // Pause on hover / focus
+    var carousel = document.querySelector('.reviews-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+        carousel.addEventListener('focusin',    function () { clearInterval(autoTimer); });
+    }
+
+    // Initialise first card as active
+    showReview(0);
 }());
 
 // ── Mobile Parallax Workaround ─────────────────────────────────
