@@ -37,7 +37,7 @@ Ecological Design
 Design for people, <br> place and ecology 
 
 ## HOME > DESIGN PARAGRAPH
-Curated landscaping interventions that prioritise local ecology, sustainable water management and place-based interventions
+Curated landscapes that prioritise local ecology, sustainable water management and place-based interventions
 
 ## HOME > DESIGN BUTTON
 View Projects ΓåÆ
