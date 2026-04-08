@@ -81,10 +81,10 @@ Years on the Garden Route
 From the Field
 
 ## HOME > FROM FIELD ΓÇö HEADING
-Work WeΓÇÖre Proud Of
+Reconnecting people to nature
 
 ## HOME > FROM FIELD ΓÇö PARAGRAPH
-EcoPools, ecological design, land restoration ΓÇö every project starts with a specific piece of land and the people who live on it.
+Our work brings natural and human systems together through ecologically inspired thinking and processes. 
 
 ## HOME > FEATURED 1 ΓÇö TAG
 EcoPools
