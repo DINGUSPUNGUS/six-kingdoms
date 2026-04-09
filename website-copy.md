@@ -91,10 +91,10 @@ Our work centers on reconnecting people and natural systems through hands on, pr
 EcoPools
 
 ## HOME > FEATURED 1 ΓÇö TITLE
-Living Water, Chlorine-Free
+Living Water, chemical-Free
 
 ## HOME > FEATURED 1 ΓÇö BODY
-Natural swimming pools filtered entirely by biology ΓÇö designed around your site, your soil, and how you live.
+Natural swimming pools filtered entirely by biology ΓÇö designed with people and ecology in mind. Our ecological filtration systems are custom fit to your context and vision.S
 
 ## HOME > FEATURED 1 ΓÇö LINK
 Discover EcoPools ΓåÆ
