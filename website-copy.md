@@ -76,16 +76,16 @@ Hectares restored
 10
 
 ## HOME > STAT 4 ΓÇö LABEL
-Years on the Garden Route
+Years in the Garden Route
 
 ## HOME > FROM FIELD ΓÇö LABEL
 From the Field
 
 ## HOME > FROM FIELD ΓÇö HEADING
-Work WeΓÇÖre Proud Of
+What we do
 
 ## HOME > FROM FIELD ΓÇö PARAGRAPH
-EcoPools, ecological design, land restoration ΓÇö every project starts with a specific piece of land and the people who live on it.
+Our work centers on reconnecting people and natural systems through hands on, practical interventions. With 10+ years experience in the Garden Route, we pride ourselves in providing locally attuned, well designed landscape solutions.
 
 ## HOME > FEATURED 1 ΓÇö TAG
 EcoPools
