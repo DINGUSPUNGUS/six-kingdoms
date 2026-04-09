@@ -124,7 +124,7 @@ Invasive clearing, ecological restoration, and long-term stewardship across the 
 Learn More ΓåÆ
 
 ## HOME > ABOUT ΓÇö HEADLINE
-We've Been Working With This Land a Long Time
+Reconnecting people to nature 
 
 ## HOME > ABOUT ΓÇö PARAGRAPH 1
 
