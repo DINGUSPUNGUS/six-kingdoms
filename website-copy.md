@@ -67,7 +67,7 @@ EcoPools Built
 Indigenous gardens planted
 
 ## HOME > STAT 3 ΓÇö NUMBER
-30+
+50+
 
 ## HOME > STAT 3 ΓÇö LABEL
 Hectares restored
