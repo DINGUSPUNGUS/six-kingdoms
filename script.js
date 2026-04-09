@@ -272,35 +272,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     statsNumbers.forEach(el => io.observe(el));
 })();
 
-// Contact form pre-fill from URL parameters
-(function() {
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get('type');
-    if (type) {
-        const subjectField = document.querySelector('select[name="subject"], input[name="subject"]');
-        if (subjectField) subjectField.value = type;
-    }
-})();
-
-// Project filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-if (filterButtons.length > 0) {
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.dataset.filter;
-            document.querySelectorAll('.projects-grid .project-card').forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    });
-}
-
 // ── Project Modal ──────────────────────────────────────────
 (function () {
     const modal      = document.getElementById('project-modal');
