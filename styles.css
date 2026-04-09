@@ -3476,11 +3476,19 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/ecological-design/garden2.webp');
+    background-image: url('images/webp/ecological-design/edible-food-forest-workshop-1200.webp');
+}
+
+.pw--design2 {
+    background-image: url('images/webp/ecological-design/wilderness-biodiversity-corridor-1200.webp');
 }
 
 .pw--land {
     background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
+}
+
+.pw--land2 {
+    background-image: url('images/webp/land-management/diepklowe-regenerative-farm-1200.webp');
 }
 
 /* Content block — left-aligned by default */
