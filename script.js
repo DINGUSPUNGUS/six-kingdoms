@@ -484,6 +484,40 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 }());
 
+// ── Project Carousel (land-management.html, projects.html) ──────
+(function () {
+    document.querySelectorAll('.projects-carousel').forEach(function (carousel) {
+        var track   = carousel.querySelector('.carousel-track');
+        var cards   = Array.from(track.querySelectorAll('.project-card'));
+        var prevBtn = carousel.querySelector('.carousel-prev');
+        var nextBtn = carousel.querySelector('.carousel-next');
+        var counter = carousel.querySelector('.carousel-count');
+        if (!cards.length || !prevBtn || !nextBtn) return;
+
+        var idx = 0;
+
+        function perView()  { return window.innerWidth >= 768 ? 3 : 1; }
+        function maxIdx()   { return Math.max(0, cards.length - perView()); }
+
+        function update() {
+            var pv    = perView();
+            var cardW = cards[0].offsetWidth;
+            var gap   = parseFloat(window.getComputedStyle(track).gap) || 28;
+            track.style.transform = 'translateX(-' + (idx * (cardW + gap)) + 'px)';
+            counter.textContent = pv === 1
+                ? (idx + 1) + ' / ' + cards.length
+                : (idx + 1) + '\u2013' + Math.min(idx + pv, cards.length) + ' / ' + cards.length;
+            prevBtn.disabled = idx === 0;
+            nextBtn.disabled = idx >= maxIdx();
+        }
+
+        prevBtn.addEventListener('click', function () { if (idx > 0)          { idx--; update(); } });
+        nextBtn.addEventListener('click', function () { if (idx < maxIdx())   { idx++; update(); } });
+        window.addEventListener('resize', function () { idx = Math.min(idx, maxIdx()); update(); });
+        update();
+    });
+}());
+
 // ── Reviews Carousel ───────────────────────────────────────────
 // Shows one testimonial at a time with prev/next arrows and dot navigation.
 (function () {

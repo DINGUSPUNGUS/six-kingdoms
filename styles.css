@@ -1632,7 +1632,7 @@ section {
 
 /* --- EcoPools Photo Gallery --- */
 .pool-gallery-section {
-    padding: 0 0 1rem;
+    padding: 1rem 0 1rem;
 }
 
 .pool-gallery {
@@ -2076,7 +2076,7 @@ section {
 }
 
 .benefits-section {
-    margin: 4.5rem 0;
+    margin: 4.5rem 0 2rem;
 }
 
 .benefits-section h2 {
@@ -4370,44 +4370,81 @@ textarea:focus-visible {
 }
 
 /* ==========================================================================
-   Project Cards — Horizontal Scroll Carousel (projects.html)
+   Project Cards — Prev/Next Carousel (land-management.html, projects.html)
    ========================================================================== */
 
-.projects-scroll-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-blue) transparent;
-    padding-bottom: 1rem;
-    margin: 0 -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.projects-carousel {
+    position: relative;
+    overflow: hidden;
 }
 
-.projects-scroll-container::-webkit-scrollbar {
-    height: 5px;
-}
-
-.projects-scroll-container::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.projects-scroll-container::-webkit-scrollbar-thumb {
-    background: var(--secondary-blue);
-    border-radius: 3px;
-}
-
-.projects-scroll-container .projects-grid {
+.projects-carousel .carousel-track {
     display: flex;
     flex-wrap: nowrap;
     gap: 1.75rem;
-    width: max-content;
+    width: auto;
     margin-bottom: 0;
+    transition: transform 0.35s ease;
 }
 
-.projects-scroll-container .project-card {
-    flex: 0 0 320px;
-    width: 320px;
+/* Mobile: 1 card full-width */
+.projects-carousel .project-card {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Desktop: 3 cards side-by-side */
+@media (min-width: 768px) {
+    .projects-carousel .project-card {
+        flex: 0 0 calc((100% - 2 * 1.75rem) / 3);
+        width: calc((100% - 2 * 1.75rem) / 3);
+    }
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1.5px solid var(--card-border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    border-color: var(--card-hover-border);
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.carousel-prev:disabled,
+.carousel-next:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.carousel-count {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    min-width: 3.5rem;
+    text-align: center;
+    letter-spacing: 0.03em;
 }
 
 /* ==========================================================================
