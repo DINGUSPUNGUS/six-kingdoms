@@ -4014,12 +4014,13 @@ textarea:focus-visible {
 }
 
 .reviews-widget-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(8, 22, 15, 0.88);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
+    border: 1px solid rgba(59, 139, 117, 0.25);
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 /* ── Instagram Grid Section (Blog) ── */
@@ -4315,6 +4316,27 @@ textarea:focus-visible {
 
 .reviews-carousel-track .testimonial-card.active {
     display: block;
+}
+
+.reviews-carousel-track .testimonial-quote p {
+    color: rgba(220, 215, 205, 0.92);
+}
+
+.reviews-carousel-track .testimonial-author strong {
+    color: #ffffff;
+}
+
+.reviews-carousel-track .testimonial-author span {
+    color: rgba(180, 210, 195, 0.8);
+}
+
+.reviews-carousel-track .testimonial-author {
+    border-top-color: rgba(59, 139, 117, 0.35);
+}
+
+.reviews-carousel-track .quote-icon {
+    color: rgba(59, 139, 117, 0.85);
+    opacity: 1;
 }
 
 @keyframes reviewFadeIn {
