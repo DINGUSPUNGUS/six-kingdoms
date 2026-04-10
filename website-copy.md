@@ -85,7 +85,7 @@ From the Field
 What we do
 
 ## HOME > FROM FIELD — PARAGRAPH
-Our work centers on reconnecting people and natural systems through hands on, practical interventions. With 10+ years experience in the Garden Route, we pride ourselves in providing locally attuned, well designed landscape solutions.
+Our work centers on reconnecting people and natural systems through hands on, practical interventions. With 10+ years experience in the Garden Route, we pride ourselves in providing locally attuned, well designed, landscape solutions.
 
 ## HOME > FEATURED 1 — TAG
 EcoPools
@@ -94,7 +94,7 @@ EcoPools
 Living Water, chemical-Free
 
 ## HOME > FEATURED 1 — BODY
-Natural swimming pools filtered entirely by biology — designed with people and ecology in mind. Our ecological filtration systems are custom fit to your context and vision.S
+Natural swimming pools and water features filtered entirely by biology — designed with people and ecology in mind. Our ecological filtration systems are custom fit to your context and vision.
 
 ## HOME > FEATURED 1 — LINK
 Discover EcoPools →
@@ -103,10 +103,10 @@ Discover EcoPools →
 Ecological Design
 
 ## HOME > FEATURED 2 — TITLE
-Landscapes That Look After Themselves
+Ecologically attuned landscape design
 
 ## HOME > FEATURED 2 — BODY
-Fynbos gardens, food forests, rain gardens — designed to thrive without constant intervention.
+Indigenous gardens, food forests, sustainable water management — designed to thrive like balanced ecosystems.
 
 ## HOME > FEATURED 2 — LINK
 View Projects →
@@ -115,7 +115,7 @@ View Projects →
 Land Management
 
 ## HOME > FEATURED 3 — TITLE
-Bring Back What Belongs
+Sustainable land planning interventions
 
 ## HOME > FEATURED 3 — BODY
 Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
