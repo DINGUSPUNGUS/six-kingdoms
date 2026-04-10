@@ -19,7 +19,7 @@
 # ============================================================
 
 ## HOME > HERO HEADLINE
-Dive into<br>Nature Test 4
+Dive into<br>Nature
 
 ## HOME > HERO PARAGRAPH 1
 Ecopools bring living water into your home, naturally free of harsh chemicals for healthy swimming
@@ -61,10 +61,10 @@ Learn More →
 EcoPools Built
 
 ## HOME > STAT 2 — NUMBER
-500 Hectares
+10000+ 
 
 ## HOME > STAT 2 — LABEL
-Indigenous gardens planted
+Indigenous plants planted
 
 ## HOME > STAT 3 — NUMBER
 50+
