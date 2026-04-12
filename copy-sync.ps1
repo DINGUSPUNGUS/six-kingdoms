@@ -18,15 +18,15 @@ $HtmlFiles = @(
 
 # HTML entity decoder (so plain markdown text matches HTML anchor content)
 function Decode-Html($str) {
-    $str = $str -replace '&mdash;',  '--'
-    $str = $str -replace '&ndash;',  '-'
+    $str = $str -replace '&mdash;',  [char]0x2014    # em-dash
+    $str = $str -replace '&ndash;',  [char]0x2013    # en-dash
     $str = $str -replace '&middot;', [char]0x00B7
-    $str = $str -replace '&rarr;',   [char]0x2192
-    $str = $str -replace '&larr;',   [char]0x2190
+    $str = $str -replace '&rarr;',   [char]0x2192    # right arrow
+    $str = $str -replace '&larr;',   [char]0x2190    # left arrow
     $str = $str -replace '&amp;',    "&"
     $str = $str -replace '&lt;',     "<"
     $str = $str -replace '&gt;',     ">"
-    $str = $str -replace '&quot;',   '"'
+    $str = $str -replace '&quot;',   [char]34        # quote
     $str = $str -replace '&rsquo;',  [char]0x2019
     $str = $str -replace '&lsquo;',  [char]0x2018
     $str = $str -replace '&rdquo;',  [char]0x201D

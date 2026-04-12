@@ -88,7 +88,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--color-forest);
     font-family: 'Poppins', Arial, sans-serif;
 }
 
@@ -253,7 +253,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
 }
 
 .navbar.hero-nav .nav-brand img {
-    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    filter: none;
 }
 
 .navbar.hero-nav .nav-cta {
@@ -305,8 +305,12 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.375rem); font-weight: 600; line-height: 1.
     color: var(--accent-yellow) !important;
 }
 
+/* Content area (scrolled past parallax) — light mode: darken to near-black */
 .navbar.hero-nav.scrolled .nav-brand img {
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    filter: brightness(0) saturate(100%);
+}
+[data-theme="dark"] .navbar.hero-nav.scrolled .nav-brand img {
+    filter: brightness(0) invert(0.9);
 }
 
 .navbar.hero-nav.scrolled .nav-cta {
@@ -1564,7 +1568,7 @@ section {
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
-    background-image: url('images/ecopools/eco-pool-hero1.webp');
+    background-image: url('images/webp/eco-pool-photos/knysna/20260323164304-1200.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1628,7 +1632,7 @@ section {
 
 /* --- EcoPools Photo Gallery --- */
 .pool-gallery-section {
-    padding: 0 0 1rem;
+    padding: 1rem 0 1rem;
 }
 
 .pool-gallery {
@@ -1781,19 +1785,19 @@ section {
 
 /* --- Blog card image backgrounds --- */
 .blog-card-image.ecopools-img {
-    background-image: url('images/ecopools/eco-pool-hero1.webp');
+    background-image: url('images/webp/eco-pool-photos/knysna/20260323164304-1200.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.fynbos-img {
-    background-image: url('images/ecological-design/fynbos-restoration-and-rain-garden-design.webp');
+    background-image: url('images/webp/ecological-design/fynbos-restoration-and-rain-garden-design-1200.webp');
     background-size: cover;
     background-position: center;
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/land-management/creating-a-vision-for-holistic-land-management.webp');
+    background-image: url('images/webp/land-management/salt-river-invasive-plant-clearing-1200.webp');
     background-size: cover;
     background-position: center;
 }
@@ -2072,7 +2076,7 @@ section {
 }
 
 .benefits-section {
-    margin: 4.5rem 0;
+    margin: 4.5rem 0 2rem;
 }
 
 .benefits-section h2 {
@@ -2103,7 +2107,7 @@ section {
 }
 
 .benefit-card h3 {
-    color: var(--accent-teal);
+    color: var(--text-primary);
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
 }
@@ -3472,11 +3476,19 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/ecological-design/garden%203.webp');
+    background-image: url('images/webp/ecological-design/edible-food-forest-workshop-1200.webp');
+}
+
+.pw--design2 {
+    background-image: url('images/webp/ecological-design/wilderness-biodiversity-corridor-1200.webp');
 }
 
 .pw--land {
-    background-image: url('images/land-management/alien%20clearing%204.webp');
+    background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
+}
+
+.pw--land2 {
+    background-image: url('images/webp/land-management/diepklowe-regenerative-farm-1200.webp');
 }
 
 /* Content block — left-aligned by default */
@@ -3901,7 +3913,7 @@ textarea:focus-visible {
 }
 .service-card-lm:hover { border-color: rgba(71,163,162,0.35); }
 .service-card-lm h4 {
-    color: var(--accent-teal);
+    color: var(--text-primary);
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
@@ -3957,17 +3969,16 @@ textarea:focus-visible {
 /* ── Reviews Parallax Section ── */
 .reviews-parallax-section {
     position: relative;
-    min-height: 85vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 120px 0;
+    padding: 72px 0;
 }
 
 .reviews-parallax-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/eco-pool-photos/plettenberg-bay/Guests enjoying the ecopool.webp');
+    background-image: url('images/webp/eco-pool-photos/plettenberg-bay/Guests enjoying the ecopool-1200.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4003,12 +4014,13 @@ textarea:focus-visible {
 }
 
 .reviews-widget-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(8, 22, 15, 0.88);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
+    border: 1px solid rgba(59, 139, 117, 0.25);
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -4026,7 +4038,11 @@ textarea:focus-visible {
     }
 }
 
-/* Dark mode: invert gradient logo on non-hero navbars so it shows on dark bg */
+/* Non-parallax pages: light mode — darken logo to near-black for content backgrounds */
+.navbar:not(.hero-nav) .nav-brand img {
+    filter: brightness(0) saturate(100%);
+}
+/* Non-parallax pages: dark mode — invert to white */
 [data-theme="dark"] .navbar:not(.hero-nav) .nav-brand img {
     filter: brightness(0) invert(0.9);
 }
@@ -4090,4 +4106,244 @@ textarea:focus-visible {
     .insta-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* ==========================================================================
+   Reviews Carousel (one review at a time)
+   ========================================================================== */
+
+.reviews-widget-card {
+    text-align: center;
+}
+
+.reviews-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto 1.5rem;
+    max-width: 780px;
+}
+
+.reviews-carousel-track {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-carousel-track .testimonial-card {
+    display: none;
+    animation: reviewFadeIn 0.4s ease;
+}
+
+.reviews-carousel-track .testimonial-card.active {
+    display: block;
+}
+
+.reviews-carousel-track .testimonial-quote p {
+    color: rgba(220, 215, 205, 0.92);
+}
+
+.reviews-carousel-track .testimonial-author strong {
+    color: #ffffff;
+}
+
+.reviews-carousel-track .testimonial-author span {
+    color: rgba(180, 210, 195, 0.8);
+}
+
+.reviews-carousel-track .testimonial-author {
+    border-top-color: rgba(59, 139, 117, 0.35);
+}
+
+.reviews-carousel-track .quote-icon {
+    color: rgba(59, 139, 117, 0.85);
+    opacity: 1;
+}
+
+@keyframes reviewFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.reviews-prev,
+.reviews-next {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.22);
+    border: 1.5px solid rgba(255,255,255,0.7);
+    color: #fff;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.reviews-prev:hover,
+.reviews-next:hover {
+    background: rgba(255,255,255,0.42);
+    transform: scale(1.12);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+
+.reviews-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1.75rem;
+}
+
+.reviews-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.reviews-dot.active {
+    background: var(--accent-yellow);
+    transform: scale(1.3);
+}
+
+/* ==========================================================================
+   Project Cards — Prev/Next Carousel (land-management.html, projects.html)
+   ========================================================================== */
+
+.projects-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-carousel .carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.75rem;
+    width: auto;
+    margin-bottom: 0;
+    transition: transform 0.35s ease;
+}
+
+/* Mobile: 1 card full-width */
+.projects-carousel .project-card {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Desktop: 3 cards side-by-side */
+@media (min-width: 768px) {
+    .projects-carousel .project-card {
+        flex: 0 0 calc((100% - 2 * 1.75rem) / 3);
+        width: calc((100% - 2 * 1.75rem) / 3);
+    }
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1.5px solid var(--card-border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    border-color: var(--card-hover-border);
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.carousel-prev:disabled,
+.carousel-next:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.carousel-count {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    min-width: 3.5rem;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   Modal Image Counter (EcoPools in-project navigation)
+   ========================================================================== */
+
+.modal-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+/* ── Modal project navigation ── */
+.modal-project-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    margin: 0.75rem 0;
+    border-top: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    border-bottom: 1px solid var(--border-color, rgba(0,0,0,0.1));
+}
+.modal-prev-project,
+.modal-next-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+}
+.modal-prev-project:hover,
+.modal-next-project:hover {
+    color: var(--color-forest, #2D5A27);
+    background: rgba(45, 90, 39, 0.07);
+}
+.modal-project-count {
+    font-size: 0.75rem;
+    color: var(--text-muted, var(--text-secondary));
+    font-family: 'Poppins', Arial, sans-serif;
+    letter-spacing: 0.03em;
 }

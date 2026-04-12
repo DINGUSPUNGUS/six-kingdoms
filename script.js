@@ -272,35 +272,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     statsNumbers.forEach(el => io.observe(el));
 })();
 
-// Contact form pre-fill from URL parameters
-(function() {
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get('type');
-    if (type) {
-        const subjectField = document.querySelector('select[name="subject"], input[name="subject"]');
-        if (subjectField) subjectField.value = type;
-    }
-})();
-
-// Project filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-if (filterButtons.length > 0) {
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.dataset.filter;
-            document.querySelectorAll('.projects-grid .project-card').forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    });
-}
-
 // ── Project Modal ──────────────────────────────────────────
 (function () {
     const modal      = document.getElementById('project-modal');
@@ -313,9 +284,55 @@ if (filterButtons.length > 0) {
     const closeBtn   = modal.querySelector('.modal-close');
     const prevBtn    = modal.querySelector('.modal-prev');
     const nextBtn    = modal.querySelector('.modal-next');
+    const counterEl  = document.getElementById('modal-counter');
+    const prevProjectBtn = modal.querySelector('.modal-prev-project');
+    const nextProjectBtn = modal.querySelector('.modal-next-project');
+    const projectCountEl = modal.querySelector('.modal-project-count');
     let lastFocused  = null;
     let currentGroup = [];
     let currentIdx   = 0;
+    let projectGroups      = [];
+    let currentProjectIdx  = 0;
+
+    function buildProjectGroups(allTriggers) {
+        projectGroups = [];
+        if (!allTriggers.length) return;
+        if (allTriggers[0].classList.contains('pool-gallery-item')) {
+            var tagOrder = [];
+            var tagMap   = {};
+            allTriggers.forEach(function (t) {
+                var tag = t.dataset.tag || '';
+                if (!tagMap[tag]) { tagMap[tag] = []; tagOrder.push(tag); }
+                tagMap[tag].push(t);
+            });
+            tagOrder.forEach(function (tag) { projectGroups.push(tagMap[tag]); });
+        } else {
+            allTriggers.forEach(function (t) { projectGroups.push([t]); });
+        }
+    }
+
+    function updateProjectCount() {
+        if (projectGroups.length > 1) {
+            if (projectCountEl) {
+                projectCountEl.textContent = 'Project ' + (currentProjectIdx + 1) + ' of ' + projectGroups.length;
+                projectCountEl.style.display = '';
+            }
+            if (prevProjectBtn) prevProjectBtn.style.visibility = '';
+            if (nextProjectBtn) nextProjectBtn.style.visibility = '';
+        } else {
+            if (projectCountEl) projectCountEl.style.display = 'none';
+            if (prevProjectBtn) prevProjectBtn.style.visibility = 'hidden';
+            if (nextProjectBtn) nextProjectBtn.style.visibility = 'hidden';
+        }
+    }
+
+    function navigateProject(dir) {
+        currentProjectIdx = (currentProjectIdx + dir + projectGroups.length) % projectGroups.length;
+        currentGroup = projectGroups[currentProjectIdx];
+        currentIdx   = 0;
+        populateModal(currentGroup[0]);
+        updateProjectCount();
+    }
 
     function populateModal(trigger) {
         imgEl.src           = trigger.dataset.image || '';
@@ -323,25 +340,55 @@ if (filterButtons.length > 0) {
         tagEl.textContent   = trigger.dataset.tag   || '';
         titleEl.textContent = trigger.dataset.title || '';
         descEl.textContent  = trigger.dataset.description || '';
+        // Update counter if present
+        if (counterEl) {
+            if (currentGroup.length > 1) {
+                counterEl.textContent = (currentIdx + 1) + ' / ' + currentGroup.length;
+                counterEl.style.display = '';
+            } else {
+                counterEl.style.display = 'none';
+            }
+        }
+        // Show/hide prev-next based on group size
+        if (prevBtn) prevBtn.style.visibility = currentGroup.length > 1 ? '' : 'hidden';
+        if (nextBtn) nextBtn.style.visibility = currentGroup.length > 1 ? '' : 'hidden';
     }
 
     function openModal(trigger) {
-        lastFocused   = document.activeElement;
+        lastFocused = document.activeElement;
+        var allVisible;
 
-        // Build navigation group from items that are currently visible in the gallery.
-        // Respects the active category filter and the load-more state on mobile.
-        currentGroup = Array.from(document.querySelectorAll('.modal-trigger')).filter(function(t) {
-            if (t.classList.contains('gallery-filter-hidden')) return false;
-            if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
-                // On desktop the CSS shows all gallery-extra items regardless of the class,
-                // so check computed visibility rather than the class alone.
-                return t.offsetParent !== null;
-            }
-            return true;
-        });
+        // If this is a pool gallery item, group by project tag for in-project navigation.
+        if (trigger.classList.contains('pool-gallery-item')) {
+            var tag = trigger.dataset.tag || '';
+            allVisible = Array.from(document.querySelectorAll('.pool-gallery-item.modal-trigger')).filter(function (t) {
+                if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                    return t.offsetParent !== null;
+                }
+                return true;
+            });
+            currentGroup = allVisible.filter(function (t) { return t.dataset.tag === tag; });
+            buildProjectGroups(allVisible);
+            currentProjectIdx = projectGroups.findIndex(function (g) { return g[0].dataset.tag === tag; });
+        } else {
+            // Default: build navigation group from all visible modal-triggers.
+            allVisible = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
+                if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
+                    return t.offsetParent !== null;
+                }
+                return true;
+            });
+            currentGroup = allVisible;
+            buildProjectGroups(allVisible);
+            currentProjectIdx = projectGroups.findIndex(function (g) { return g[0] === trigger; });
+        }
 
+        if (currentProjectIdx < 0) currentProjectIdx = 0;
         currentIdx = currentGroup.indexOf(trigger);
         populateModal(trigger);
+        updateProjectCount();
         modal.removeAttribute('hidden');
         document.body.style.overflow = 'hidden';
         closeBtn.focus();
@@ -368,6 +415,8 @@ if (filterButtons.length > 0) {
     closeBtn.addEventListener('click', closeModal);
     if (prevBtn) prevBtn.addEventListener('click', function () { navigate(-1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { navigate(1); });
+    if (prevProjectBtn) prevProjectBtn.addEventListener('click', function () { navigateProject(-1); });
+    if (nextProjectBtn) nextProjectBtn.addEventListener('click', function () { navigateProject(1); });
     // Click image itself to advance
     imgEl.addEventListener('click', function () { navigate(1); });
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
@@ -433,6 +482,104 @@ if (filterButtons.length > 0) {
             });
         });
     });
+}());
+
+// ── Project Carousel (land-management.html, projects.html) ──────
+(function () {
+    document.querySelectorAll('.projects-carousel').forEach(function (carousel) {
+        var track   = carousel.querySelector('.carousel-track');
+        var cards   = Array.from(track.querySelectorAll('.project-card'));
+        var prevBtn = carousel.querySelector('.carousel-prev');
+        var nextBtn = carousel.querySelector('.carousel-next');
+        var counter = carousel.querySelector('.carousel-count');
+        if (!cards.length || !prevBtn || !nextBtn) return;
+
+        var idx = 0;
+
+        function perView()  { return window.innerWidth >= 768 ? 3 : 1; }
+        function maxIdx()   { return Math.max(0, cards.length - perView()); }
+
+        function update() {
+            var pv    = perView();
+            var cardW = cards[0].offsetWidth;
+            var gap   = parseFloat(window.getComputedStyle(track).gap) || 28;
+            track.style.transform = 'translateX(-' + (idx * (cardW + gap)) + 'px)';
+            counter.textContent = pv === 1
+                ? (idx + 1) + ' / ' + cards.length
+                : (idx + 1) + '\u2013' + Math.min(idx + pv, cards.length) + ' / ' + cards.length;
+            prevBtn.disabled = idx === 0;
+            nextBtn.disabled = idx >= maxIdx();
+        }
+
+        prevBtn.addEventListener('click', function () { if (idx > 0)          { idx--; update(); } });
+        nextBtn.addEventListener('click', function () { if (idx < maxIdx())   { idx++; update(); } });
+        window.addEventListener('resize', function () { idx = Math.min(idx, maxIdx()); update(); });
+        update();
+    });
+}());
+
+// ── Reviews Carousel ───────────────────────────────────────────
+// Shows one testimonial at a time with prev/next arrows and dot navigation.
+(function () {
+    var track = document.querySelector('.reviews-carousel-track');
+    if (!track) return;
+
+    var cards   = Array.from(track.querySelectorAll('.testimonial-card'));
+    var dots    = Array.from(document.querySelectorAll('.reviews-dot'));
+    var prevBtn = document.querySelector('.reviews-prev');
+    var nextBtn = document.querySelector('.reviews-next');
+    if (!cards.length) return;
+
+    var current = 0;
+
+    function showReview(idx) {
+        cards.forEach(function (c, i) {
+            c.classList.toggle('active', i === idx);
+        });
+        dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === idx);
+            d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        });
+        current = idx;
+    }
+
+    // Wire dots
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { showReview(i); });
+    });
+
+    // Wire arrows
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            showReview((current - 1 + cards.length) % cards.length);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            showReview((current + 1) % cards.length);
+        });
+    }
+
+    // Keyboard navigation when focus is inside the carousel
+    track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); showReview((current - 1 + cards.length) % cards.length); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); showReview((current + 1) % cards.length); }
+    });
+
+    // Auto-advance every 6 seconds
+    var autoTimer = setInterval(function () {
+        showReview((current + 1) % cards.length);
+    }, 6000);
+
+    // Pause on hover / focus
+    var carousel = document.querySelector('.reviews-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+        carousel.addEventListener('focusin',    function () { clearInterval(autoTimer); });
+    }
+
+    // Initialise first card as active
+    showReview(0);
 }());
 
 // ── Mobile Parallax Workaround ─────────────────────────────────

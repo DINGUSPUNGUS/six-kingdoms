@@ -7,29 +7,29 @@
     <script>!function(){var t=localStorage.getItem('sk-theme');document.documentElement.setAttribute('data-theme',t?t:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}();</script>
     <meta name="description" content="Invasive alien plant clearing, indigenous restoration, and long-term land stewardship across Knysna, Plettenberg Bay, George, and the Garden Route.">
     <meta name="keywords" content="land management, ecological restoration, invasive species, biodiversity enhancement, water management, soil regeneration, Garden Route">
+    <meta name="author" content="Six Kingdoms">
     <title>Invasive Plant Control &amp; Land Restoration | Garden Route | Six Kingdoms</title>
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sixkingdoms.org/land-management.html">
-    <link rel="preload" as="image" href="images/land-management/alien%20clearing%204.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/webp/land-management/alien%20clearing-1200.webp" fetchpriority="high">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sixkingdoms.org/land-management.html">
     <meta property="og:title" content="Holistic Land Management | Six Kingdoms">
     <meta property="og:description" content="Ecological assessment, restoration planning, invasive species management, and soil regeneration for sustainable landscapes on the Garden Route.">
-    <meta property="og:image" content="https://sixkingdoms.org/images/land-management/creating-a-vision-for-holistic-land-management.webp">
+    <meta property="og:image" content="https://sixkingdoms.org/images/webp/land-management/alien%20clearing-1200.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sixkingdoms.org/land-management.html">
     <meta property="twitter:title" content="Holistic Land Management | Six Kingdoms">
     <meta property="twitter:description" content="Ecological restoration, invasive clearing, and holistic land stewardship &mdash; Garden Route, South Africa.">
-    <meta property="twitter:image" content="https://sixkingdoms.org/images/land-management/creating-a-vision-for-holistic-land-management.webp">
+    <meta property="twitter:image" content="https://sixkingdoms.org/images/webp/land-management/alien%20clearing-1200.webp">
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#36669e">
     
     <link rel="stylesheet" href="styles.css">
@@ -147,9 +147,6 @@
                 <h3>Long-term Stewardship</h3>
                 <p>Your land will keep changing, and what made sense in year one won't necessarily be the right approach in year three. We stay involved at whatever level works for you &mdash; some clients want quarterly check-ins, others want to take the wheel early. Either way, we're not trying to make ourselves indispensable.</p>
 
-                <p class="scope-note">We work on everything from single-day site assessments to ongoing multi-season stewardship programs &mdash; get in touch to discuss what makes sense for your land and your timeline.</p>
-
-                <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Start a Conversation</a>
             </div>
         </div>
     </section>
@@ -157,7 +154,7 @@
     <!-- Land Management Projects -->
 
     <!-- Parallax window — before project examples -->
-    <section class="parallax-window pw--land">
+    <section class="parallax-window pw--land2">
         <div class="pw-overlay"></div>
         <div class="pw-content">
             <span class="label">Land Management</span>
@@ -171,7 +168,8 @@
         <div class="container">
             <h2 class="section-title">Land Management Projects</h2>
             <p class="section-subtitle">Invasive clearing, ecological restoration, and regenerative agriculture</p>
-            <div class="projects-grid">
+            <div class="projects-carousel">
+            <div class="carousel-track projects-grid">
                 <div class="project-card modal-trigger"
                      data-image="images/land-management/salt-river-invasive-plant-clearing.webp"
                      data-alt="Salt River invasive alien plant clearing, Cape Town"
@@ -236,6 +234,16 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-controls">
+                <button type="button" class="carousel-prev" aria-label="Previous project">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <span class="carousel-count"></span>
+                <button type="button" class="carousel-next" aria-label="Next project">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 6 15 12 9 18"/></svg>
+                </button>
+            </div>
+            </div><!-- /.projects-carousel -->
         </div>
     </section>
 
@@ -351,6 +359,17 @@
                 <span id="modal-tag" class="project-tag"></span>
                 <h3 id="modal-title"></h3>
                 <p id="modal-description"></p>
+                <div class="modal-project-nav">
+                    <button class="modal-prev-project" aria-label="Previous project">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="15 18 9 12 15 6"/></svg>
+                        Prev project
+                    </button>
+                    <span class="modal-project-count" aria-live="polite"></span>
+                    <button class="modal-next-project" aria-label="Next project">
+                        Next project
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 6 15 12 9 18"/></svg>
+                    </button>
+                </div>
                 <a href="contact.html" class="btn-primary modal-cta">Talk to us about a similar project &rarr;</a>
             </div>
         </div>

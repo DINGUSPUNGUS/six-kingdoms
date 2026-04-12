@@ -1,4 +1,4 @@
-﻿# Six Kingdoms ΓÇö Website Copy
+﻿# Six Kingdoms — Website Copy
 # ===========================
 # HOW TO USE THIS FILE
 # --------------------
@@ -9,8 +9,8 @@
 # RULES:
 #  - Only edit text BELOW a "## Section Name" heading.
 #  - Do NOT change the section headings (lines starting with ##).
-#  - You can use ΓÇö for em-dashes, ΓåÆ for arrows, and basic HTML like <br> for line breaks.
-#  - Sections marked [reference only ΓÇö not editable via this file] are hardcoded in the HTML.
+#  - You can use — for em-dashes, → for arrows, and basic HTML like <br> for line breaks.
+#  - Sections marked [reference only — not editable via this file] are hardcoded in the HTML.
 #  - Leave a section blank to keep the existing website text unchanged.
 
 
@@ -19,7 +19,7 @@
 # ============================================================
 
 ## HOME > HERO HEADLINE
-Dive into<br>nature
+Dive into<br>Nature
 
 ## HOME > HERO PARAGRAPH 1
 Ecopools bring living water into your home, naturally free of harsh chemicals for healthy swimming
@@ -28,7 +28,7 @@ Ecopools bring living water into your home, naturally free of harsh chemicals fo
 Our partnership with Ecopools South Africa brings leading natural pool technology to the Garden Route
 
 ## HOME > HERO BUTTON
-Discover EcoPools ΓåÆ
+Discover EcoPools →
 
 ## HOME > DESIGN LABEL
 Ecological Design
@@ -37,10 +37,10 @@ Ecological Design
 Design for people, <br> place and ecology 
 
 ## HOME > DESIGN PARAGRAPH
-Curated landscaping interventions that prioritise local ecology, sustainable water management and place-based interventions
+Curated landscapes that prioritise local ecology, sustainable water management and place-based interventions
 
 ## HOME > DESIGN BUTTON
-View Projects ΓåÆ
+View Projects →
 
 ## HOME > LAND MANAGEMENT LABEL
 Land Management
@@ -52,120 +52,120 @@ Supporting land stewards
 Ensuring increased resilience, ecological integrity and compliance through practical planning and implementation
 
 ## HOME > LAND MANAGEMENT BUTTON
-Learn More ΓåÆ
+Learn More →
 
-## HOME > STAT 1 ΓÇö NUMBER
+## HOME > STAT 1 — NUMBER
 10+
 
-## HOME > STAT 1 ΓÇö LABEL
+## HOME > STAT 1 — LABEL
 EcoPools Built
 
-## HOME > STAT 2 ΓÇö NUMBER
-5000m2+
+## HOME > STAT 2 — NUMBER
+10000+ 
 
-## HOME > STAT 2 ΓÇö LABEL
-Indigenous gardens planted
+## HOME > STAT 2 — LABEL
+Indigenous plants planted
 
-## HOME > STAT 3 ΓÇö NUMBER
-30+ 
+## HOME > STAT 3 — NUMBER
+50+
 
-## HOME > STAT 3 ΓÇö LABEL
+## HOME > STAT 3 — LABEL
 Hectares restored
 
-## HOME > STAT 4 ΓÇö NUMBER
+## HOME > STAT 4 — NUMBER
 10
 
-## HOME > STAT 4 ΓÇö LABEL
-Years on the Garden Route
+## HOME > STAT 4 — LABEL
+Years in the Garden Route
 
-## HOME > FROM FIELD ΓÇö LABEL
+## HOME > FROM FIELD — LABEL
 From the Field
 
-## HOME > FROM FIELD ΓÇö HEADING
-Work WeΓÇÖre Proud Of
+## HOME > FROM FIELD — HEADING
+What we do
 
-## HOME > FROM FIELD ΓÇö PARAGRAPH
-EcoPools, ecological design, land restoration ΓÇö every project starts with a specific piece of land and the people who live on it.
+## HOME > FROM FIELD — PARAGRAPH
+Our work centers on reconnecting people and natural systems through hands on, practical interventions. With 10+ years experience in the Garden Route, we pride ourselves in providing locally attuned, well designed, landscape solutions.
 
-## HOME > FEATURED 1 ΓÇö TAG
+## HOME > FEATURED 1 — TAG
 EcoPools
 
-## HOME > FEATURED 1 ΓÇö TITLE
-Living Water, Chlorine-Free
+## HOME > FEATURED 1 — TITLE
+Living Water, chemical-Free
 
-## HOME > FEATURED 1 ΓÇö BODY
-Natural swimming pools filtered entirely by biology ΓÇö designed around your site, your soil, and how you live.
+## HOME > FEATURED 1 — BODY
+Natural swimming pools and water features filtered entirely by biology — designed with people and ecology in mind. Our ecological filtration systems are custom fit to your context and vision.
 
-## HOME > FEATURED 1 ΓÇö LINK
-Discover EcoPools ΓåÆ
+## HOME > FEATURED 1 — LINK
+Discover EcoPools →
 
-## HOME > FEATURED 2 ΓÇö TAG
+## HOME > FEATURED 2 — TAG
 Ecological Design
 
-## HOME > FEATURED 2 ΓÇö TITLE
-Landscapes That Look After Themselves
+## HOME > FEATURED 2 — TITLE
+Ecologically attuned landscape design
 
-## HOME > FEATURED 2 ΓÇö BODY
-Fynbos gardens, food forests, rain gardens ΓÇö designed to thrive without constant intervention.
+## HOME > FEATURED 2 — BODY
+Indigenous gardens, food forests, sustainable water management — designed to thrive like balanced ecosystems.
 
-## HOME > FEATURED 2 ΓÇö LINK
-View Projects ΓåÆ
+## HOME > FEATURED 2 — LINK
+View Projects →
 
-## HOME > FEATURED 3 ΓÇö TAG
+## HOME > FEATURED 3 — TAG
 Land Management
 
-## HOME > FEATURED 3 ΓÇö TITLE
-Bring Back What Belongs
+## HOME > FEATURED 3 — TITLE
+Sustainable land planning interventions
 
-## HOME > FEATURED 3 ΓÇö BODY
+## HOME > FEATURED 3 — BODY
 Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
 
-## HOME > FEATURED 3 ΓÇö LINK
-Learn More ΓåÆ
+## HOME > FEATURED 3 — LINK
+Learn More →
 
-## HOME > ABOUT ΓÇö HEADLINE
-We've Been Working With This Land a Long Time
+## HOME > ABOUT — HEADLINE
+Reconnecting people to nature 
 
-## HOME > ABOUT ΓÇö PARAGRAPH 1
+## HOME > ABOUT — PARAGRAPH 1
 
 
-## HOME > ABOUT ΓÇö PARAGRAPH 2
+## HOME > ABOUT — PARAGRAPH 2
 
 
 ---
 
-## HOME > FAQ 1 ΓÇö ANSWER
-A swimming pool without chemicals. Instead of chlorine, an EcoPool has a planted regeneration zone ΓÇö aquatic plants and beneficial micro-organisms do the filtering work. The water is clean, soft on skin, and stays remarkably clear. Things also actually live in it, which is half the appeal.
+## HOME > FAQ 1 — ANSWER
+A swimming pool without chemicals. Instead of chlorine, an EcoPool has a planted regeneration zone — aquatic plants and beneficial micro-organisms do the filtering work. The water is clean, soft on skin, and stays remarkably clear. Things also actually live in it, which is half the appeal.
 
-## HOME > FAQ 2 ΓÇö QUESTION
+## HOME > FAQ 2 — QUESTION
 How are natural swimming pools different from conventional pools?
 
-## HOME > FAQ 2 ΓÇö ANSWER
-No chlorine, no algaecide top-ups, no chemical management schedule. An EcoPool uses biology instead ΓÇö a planted regeneration zone that keeps the water clean the way a healthy stream keeps itself clean. Once established, it's largely self-regulating. They also just look better ΓÇö a natural pool sits in the garden rather than sitting on top of it.
+## HOME > FAQ 2 — ANSWER
+No chlorine, no algaecide top-ups, no chemical management schedule. An EcoPool uses biology instead — a planted regeneration zone that keeps the water clean the way a healthy stream keeps itself clean. Once established, it's largely self-regulating. They also just look better — a natural pool sits in the garden rather than sitting on top of it.
 
-## HOME > FAQ 3 ΓÇö QUESTION
+## HOME > FAQ 3 — QUESTION
 What areas do you service?
 
-## HOME > FAQ 3 ΓÇö ANSWER
-Mostly the Garden Route ΓÇö Plettenberg Bay, Knysna, George, Wilderness, and the surrounding areas. For the right project we'll travel further, but the Garden Route is home base.
+## HOME > FAQ 3 — ANSWER
+Mostly the Garden Route — Plettenberg Bay, Knysna, George, Wilderness, and the surrounding areas. For the right project we'll travel further, but the Garden Route is home base.
 
-## HOME > FAQ 4 ΓÇö QUESTION
+## HOME > FAQ 4 — QUESTION
 What does ecological design involve?
 
-## HOME > FAQ 4 ΓÇö ANSWER
+## HOME > FAQ 4 — ANSWER
 Mostly, it means slowing down and reading a site before you do anything to it. Where does the water go when it rains? What's already growing? What should be growing? Then you design with those patterns rather than against them. The result is a space that needs less from you over time, because it's working with the place instead of fighting it.
 
-## HOME > FAQ 5 ΓÇö QUESTION
+## HOME > FAQ 5 — QUESTION
 Do you offer ongoing maintenance services?
 
-## HOME > FAQ 5 ΓÇö ANSWER
-Yes ΓÇö and it's honestly some of our favourite work. We'd rather help you understand your land than just maintain it for you indefinitely. So the ongoing support is usually a mix of hands-on visits and helping you learn what to look for yourself.
+## HOME > FAQ 5 — ANSWER
+Yes — and it's honestly some of our favourite work. We'd rather help you understand your land than just maintain it for you indefinitely. So the ongoing support is usually a mix of hands-on visits and helping you learn what to look for yourself.
 
-## HOME > FAQ 6 ΓÇö QUESTION
+## HOME > FAQ 6 — QUESTION
 How do I get started?
 
-## HOME > FAQ 6 ΓÇö ANSWER
-Just drop us a message. We'll arrange a time to talk through what you're dealing with ΓÇö your site, what you're hoping for, your timeline. From there we'll tell you what makes sense. No obligation.
+## HOME > FAQ 6 — ANSWER
+Just drop us a message. We'll arrange a time to talk through what you're dealing with — your site, what you're hoping for, your timeline. From there we'll tell you what makes sense. No obligation.
 
 
 # ============================================================
@@ -173,44 +173,44 @@ Just drop us a message. We'll arrange a time to talk through what you're dealing
 # ============================================================
 
 ## ECOPOOLS > INTRO LEAD
-Chlorine-free, living water that keeps itself clean ΓÇö filtered by an ecosystem of aquatic plants and beneficial micro-organisms, the way water works in any healthy waterway.
+Chlorine-free, living water that keeps itself clean — filtered by an ecosystem of aquatic plants and beneficial micro-organisms, the way water works in any healthy waterway.
 
 ## ECOPOOLS > INTRO PARAGRAPH 1
-A planted regeneration zone does the filtering work ΓÇö aquatic plants, beneficial micro-organisms, and biology you'd find in any healthy waterway. The difference from a conventional pool is that you're not fighting the water; you're letting it find its own equilibrium. On the Garden Route, that makes sense. The fynbos ecology, the local rainfall, the indigenous flora ΓÇö everything here wants to be part of a living system. An EcoPool works with that, not against it.
+A planted regeneration zone does the filtering work — aquatic plants, beneficial micro-organisms, and biology you'd find in any healthy waterway. The difference from a conventional pool is that you're not fighting the water; you're letting it find its own equilibrium. On the Garden Route, that makes sense. The fynbos ecology, the local rainfall, the indigenous flora — everything here wants to be part of a living system. An EcoPool works with that, not against it.
 
 ## ECOPOOLS > INTRO PARAGRAPH 2
-Every pool we build is designed for its specific site ΓÇö the slope, the soil, the aspect, what's already growing there. We don't copy-paste designs. Whether you're in Knysna, Plettenberg Bay, George, or the valleys in between, the pool starts with your land.
+Every pool we build is designed for its specific site — the slope, the soil, the aspect, what's already growing there. We don't copy-paste designs. Whether you're in Knysna, Plettenberg Bay, George, or the valleys in between, the pool starts with your land.
 
 ---
 
-## ECOPOOLS > BENEFIT 1 ΓÇö TITLE
+## ECOPOOLS > BENEFIT 1 — TITLE
 Healthier Swimming
 
-## ECOPOOLS > BENEFIT 1 ΓÇö BODY
+## ECOPOOLS > BENEFIT 1 — BODY
 No chlorine burn, no red eyes, no chemical residue on your skin. Just water that's genuinely soft to swim in.
 
-## ECOPOOLS > BENEFIT 2 ΓÇö TITLE
+## ECOPOOLS > BENEFIT 2 — TITLE
 Chlorine-Free
 
-## ECOPOOLS > BENEFIT 2 ΓÇö BODY
+## ECOPOOLS > BENEFIT 2 — BODY
 No chlorine, no algaecides, no hidden costs of chemical management. Biology does the work instead.
 
-## ECOPOOLS > BENEFIT 3 ΓÇö TITLE
+## ECOPOOLS > BENEFIT 3 — TITLE
 Biodiversity
 
-## ECOPOOLS > BENEFIT 3 ΓÇö BODY
-Dragonflies, kingfishers, tree frogs ΓÇö within a season, the pool becomes an actual habitat. That's not a side effect, it's part of the design.
+## ECOPOOLS > BENEFIT 3 — BODY
+Dragonflies, kingfishers, tree frogs — within a season, the pool becomes an actual habitat. That's not a side effect, it's part of the design.
 
 ---
 
 ## ECOPOOLS > PARTNER PARAGRAPH 1
-We build EcoPools in partnership with EcoPools Africa ΓÇö the only internationally certified natural pool technology provider in Sub-Saharan Africa, with over 30 years of water engineering behind them. That certification matters. It's the difference between a pool that looks like a natural pool and one that's actually engineered to function as one, decade after decade.
+We build EcoPools in partnership with EcoPools Africa — the only internationally certified natural pool technology provider in Sub-Saharan Africa, with over 30 years of water engineering behind them. That certification matters. It's the difference between a pool that looks like a natural pool and one that's actually engineered to function as one, decade after decade.
 
 ## ECOPOOLS > PARTNER PARAGRAPH 2
-Six Kingdoms brings the site knowledge: the Garden Route fynbos, the local aquatic species, how the Western Cape seasons behave, and how to design a pool in Knysna versus Plettenberg Bay versus George. Put that together and you get something that doesn't just work ΓÇö it belongs.
+Six Kingdoms brings the site knowledge: the Garden Route fynbos, the local aquatic species, how the Western Cape seasons behave, and how to design a pool in Knysna versus Plettenberg Bay versus George. Put that together and you get something that doesn't just work — it belongs.
 
 ---
 
 ## ECOPOOLS > PRICING NOTE
-Natural pools are a meaningful investment ΓÇö Garden Route installations typically start from R200,000 for a modest build, rising depending on size, complexity, and site conditions. We're happy to discuss budget early so there are no surprises.
+Natural pools are a meaningful investment — Garden Route installations typically start from R200,000 for a modest build, rising depending on size, complexity, and site conditions. We're happy to discuss budget early so there are no surprises.
 
