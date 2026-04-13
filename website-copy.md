@@ -176,10 +176,12 @@ Just drop us a message and we can arrange a time to talk through what you're thi
 Chlorine-free, living water that keeps itself clean — filtered by an ecosystem of aquatic plants and beneficial micro-organisms, the way water works in any healthy waterway.
 
 ## ECOPOOLS > INTRO PARAGRAPH 1
-A planted regeneration zone does the filtering work — aquatic plants, beneficial micro-organisms, and biology you'd find in any healthy waterway. The difference from a conventional pool is that you're not fighting the water; you're letting it find its own equilibrium. On the Garden Route, that makes sense. The fynbos ecology, the local rainfall, the indigenous flora — everything here wants to be part of a living system. An EcoPool works with that, not against it.
+Natural swimming pools work with nature's genius to create clean, clear, living water. Our custom, site specific, designs ensure the highest quality, naturally filtered water for you and your family. 
+
+ Our partnership with EcoPools Africa ensures industry leading approaches to designing, installing and maintaining innovative natural pool solutions. From water features and naturalistic ponds, to crystal clear modern pools with a natural twist, our techniques and methods can ensure healthly, living water for you and your loved ones. 
 
 ## ECOPOOLS > INTRO PARAGRAPH 2
-Every pool we build is designed for its specific site — the slope, the soil, the aspect, what's already growing there. We don't copy-paste designs. Whether you're in Knysna, Plettenberg Bay, George, or the valleys in between, the pool starts with your land.
+Bring living water into your home with our tried and tested systems. Nature is the ultimate luxury.
 
 ---
 
