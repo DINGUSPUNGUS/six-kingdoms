@@ -186,30 +186,26 @@ Bring living water into your home with our tried and tested systems. Nature is t
 ---
 
 ## ECOPOOLS > BENEFIT 1 — TITLE
-Healthier Swimming
+Healthy Swimming
 
 ## ECOPOOLS > BENEFIT 1 — BODY
-No chlorine burn, no red eyes, no chemical residue on your skin. Just water that's genuinely soft to swim in.
+No chlorine burn, no red eyes, no itchy. Just water that's soft and refreshing
 
 ## ECOPOOLS > BENEFIT 2 — TITLE
-Chlorine-Free
-
+Year round beauty
 ## ECOPOOLS > BENEFIT 2 — BODY
-No chlorine, no algaecides, no hidden costs of chemical management. Biology does the work instead.
+Ecopools create perennial interest in the garden, always changing and evolving with the seasons.
 
 ## ECOPOOLS > BENEFIT 3 — TITLE
 Biodiversity
 
 ## ECOPOOLS > BENEFIT 3 — BODY
-Dragonflies, kingfishers, tree frogs — within a season, the pool becomes an actual habitat. That's not a side effect, it's part of the design.
+Dragonflies, kingfishers, indigenous frogs and a selection of beautiful plants- Our pools bring life into your home that terrestrial gardens just can't mimic.
 
 ---
 
 ## ECOPOOLS > PARTNER PARAGRAPH 1
-We build EcoPools in partnership with EcoPools Africa — the only internationally certified natural pool technology provider in Sub-Saharan Africa, with over 30 years of water engineering behind them. That certification matters. It's the difference between a pool that looks like a natural pool and one that's actually engineered to function as one, decade after decade.
-
-## ECOPOOLS > PARTNER PARAGRAPH 2
-Six Kingdoms brings the site knowledge: the Garden Route fynbos, the local aquatic species, how the Western Cape seasons behave, and how to design a pool in Knysna versus Plettenberg Bay versus George. Put that together and you get something that doesn't just work — it belongs.
+We build EcoPools in partnership with EcoPools Africa — the only internationally certified natural pool technology provider in Sub-Saharan Africa, with over 30 years of water engineering behind them. This relationship brings expertise and techniques to ensure that our pools meet international water quality standards. Natural swimming pools require significant capital investment. By partnering with EcoPools, we guarantee our clients the best in the business. 
 
 ---
 
