@@ -135,37 +135,37 @@ Reconnecting people to nature
 ---
 
 ## HOME > FAQ 1 — ANSWER
-A swimming pool without chemicals. Instead of chlorine, an EcoPool has a planted regeneration zone — aquatic plants and beneficial micro-organisms do the filtering work. The water is clean, soft on skin, and stays remarkably clear. Things also actually live in it, which is half the appeal.
+An Ecopool, or natural swimming pool, uses plants and beneficial micro-organism to filter and purify the water. The water is clean, soft on the skin, and stays remarkably clear. Natural pools create points of interest in the garden year round, providing habitat for a diversity of plant and animal life.
 
 ## HOME > FAQ 2 — QUESTION
 How are natural swimming pools different from conventional pools?
 
 ## HOME > FAQ 2 — ANSWER
-No chlorine, no algaecide top-ups, no chemical management schedule. An EcoPool uses biology instead — a planted regeneration zone that keeps the water clean the way a healthy stream keeps itself clean. Once established, it's largely self-regulating. They also just look better — a natural pool sits in the garden rather than sitting on top of it.
+Natural pools are chemical free- providing a safe and natural swimming experience for you and your family. Once established, it's largely self-regulating. Natural pools work with ecological processes to create living water rather than trying to maintain sterile, dead water with chemical regimes.
 
 ## HOME > FAQ 3 — QUESTION
 What areas do you service?
 
 ## HOME > FAQ 3 — ANSWER
-Mostly the Garden Route — Plettenberg Bay, Knysna, George, Wilderness, and the surrounding areas. For the right project we'll travel further, but the Garden Route is home base.
+Mostly the Garden Route — Plettenberg Bay, Knysna, George, Wilderness, and the surrounding areas. For the right project we'll travel further, but the Garden Route is our home base.
 
 ## HOME > FAQ 4 — QUESTION
 What does ecological design involve?
 
 ## HOME > FAQ 4 — ANSWER
-Mostly, it means slowing down and reading a site before you do anything to it. Where does the water go when it rains? What's already growing? What should be growing? Then you design with those patterns rather than against them. The result is a space that needs less from you over time, because it's working with the place instead of fighting it.
+Ecological design is an approach to landscaping and landscape management that integrates ecological systems thinking into the design process. By working with natural processes and locally relevant species, ecological design supports biodiversity, strengthens local water cycles and creates aesthetically beautiful landscape solutions. 
 
 ## HOME > FAQ 5 — QUESTION
-Do you offer ongoing maintenance services?
+What does land management involve? 
 
 ## HOME > FAQ 5 — ANSWER
-Yes — and it's honestly some of our favourite work. We'd rather help you understand your land than just maintain it for you indefinitely. So the ongoing support is usually a mix of hands-on visits and helping you learn what to look for yourself.
+Every piece of land has a different character, history and context. Good land management planning integrates the nature of the land with the vision and goals of the land owners to achieve desired landscape outcomes. In the Garden Route, the largest land management topics typically revolve around invasive plant control, water management and fire-risk reduction. Other components could include planning for food production, ecological restoration or development planning. 
 
 ## HOME > FAQ 6 — QUESTION
 How do I get started?
 
 ## HOME > FAQ 6 — ANSWER
-Just drop us a message. We'll arrange a time to talk through what you're dealing with — your site, what you're hoping for, your timeline. From there we'll tell you what makes sense. No obligation.
+Just drop us a message and we can arrange a time to talk through what you're thinking of. 
 
 
 # ============================================================
