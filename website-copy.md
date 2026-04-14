@@ -127,7 +127,7 @@ Learn More →
 Reconnecting people to nature 
 
 ## HOME > ABOUT — PARAGRAPH 1
-
+Six Kingdoms is an ecological design practice based on South Africa’s Garden Route. We build natural swimming pools, restore indigenous vegetation, clear invasive species, and help landowners understand and work with their land — rather than against it.
 
 ## HOME > ABOUT — PARAGRAPH 2
 
@@ -172,6 +172,21 @@ Just drop us a message and we can arrange a time to talk through what you're thi
 # PAGE: ECOPOOLS (ecopools.html)
 # ============================================================
 
+## ECOPOOLS > HERO LABEL
+EcoPools · Natural Swimming
+
+## ECOPOOLS > HERO HEADLINE
+Natural.<br>Chlorine-Free. Alive.
+
+## ECOPOOLS > HERO BODY
+Natural swimming pools filtered by plants and beneficial micro-organisms — no chlorine, no algaecides. Living water for the Garden Route and beyond.
+
+## ECOPOOLS > HERO BUTTON
+Get a Quote →
+
+## ECOPOOLS > INTRO HEADING
+What is an EcoPool?
+
 ## ECOPOOLS > INTRO LEAD
 Chlorine-free, living water that keeps itself clean — filtered by an ecosystem of aquatic plants and beneficial micro-organisms, the way water works in any healthy waterway.
 
@@ -211,4 +226,215 @@ We build EcoPools in partnership with EcoPools Africa — the only international
 
 ## ECOPOOLS > PRICING NOTE
 Natural pools are a meaningful investment — Garden Route installations typically start from R200,000 for a modest build, rising depending on size, complexity, and site conditions. We're happy to discuss budget early so there are no surprises.
+
+## ECOPOOLS > MID PARALLAX LABEL
+EcoPools · Natural Swimming
+
+## ECOPOOLS > MID PARALLAX HEADLINE
+The Water Stays<br>Clean Because It’s Alive.
+
+## ECOPOOLS > MID PARALLAX BODY
+Chlorine-free water, no maintenance battles — just a living aquatic ecosystem filtering your pool the way nature intended.
+
+## ECOPOOLS > MID PARALLAX BUTTON
+Get in Touch →
+
+## ECOPOOLS > ABOUT LABEL
+About Six Kingdoms
+
+## ECOPOOLS > ABOUT HEADLINE
+We Build Pools That Belong Here
+
+## ECOPOOLS > ABOUT PARAGRAPH 1
+Six Kingdoms is an ecological design and natural pool practice based on South Africa’s Garden Route. For over a decade, we’ve been designing EcoPools, restoring fynbos, and helping landowners understand and work with their land — rather than against it.
+
+## ECOPOOLS > ABOUT PARAGRAPH 2
+Every pool we build starts with your site. The slope, the soil, the local aquatic species, how the seasons move through your land — all of that shapes the design before we put a spade in the ground.
+
+## ECOPOOLS > GALLERY HEADING
+EcoPool Projects
+
+## ECOPOOLS > GALLERY INTRO
+Some pools we’ve built across the Garden Route. Click any image to learn more.
+
+## ECOPOOLS > PARTNER HEADING
+Our EcoPools Partner
+
+## ECOPOOLS > CTA LABEL
+EcoPools · Natural Swimming
+
+## ECOPOOLS > CTA HEADLINE
+Ready to Build<br>Your Natural Pool?
+
+## ECOPOOLS > CTA BODY
+We’ll start with your site, vision, and budget — and create something beautiful.
+
+## ECOPOOLS > CTA BUTTON
+Start the Conversation →
+
+
+# ============================================================
+# PAGE: ECOLOGICAL DESIGN (projects.html)
+# ============================================================
+
+## ECOLOGICAL DESIGN > HERO LABEL
+Ecological Design
+
+## ECOLOGICAL DESIGN > HERO HEADLINE
+Landscapes That<br>Look After Themselves.
+
+## ECOLOGICAL DESIGN > HERO BODY
+We work with what’s already on a site and help it become more of itself — fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention.
+
+## ECOLOGICAL DESIGN > HERO BUTTON
+Contact Us →
+
+## ECOLOGICAL DESIGN > INTRO PARAGRAPH 1
+Ecological design means working with what’s already on a site rather than against it — the soils, the water flows, the plants already trying to grow there. Create something and it keeps improving. Neglect it and it looks after itself anyway.
+
+## ECOLOGICAL DESIGN > INTRO PARAGRAPH 2
+We work across the Garden Route building fynbos gardens, food forests, rain gardens, and indigenous landscapes — everything designed around the specific conditions of your land, not a generic template.
+
+## ECOLOGICAL DESIGN > SERVICE 1 TITLE
+Fynbos Gardens & Restoration
+
+## ECOLOGICAL DESIGN > SERVICE 1 BODY
+Indigenous plantings that reduce maintenance, support pollinators, and build habitat that keeps improving over time.
+
+## ECOLOGICAL DESIGN > SERVICE 2 TITLE
+Food Forests & Edibles
+
+## ECOLOGICAL DESIGN > SERVICE 2 BODY
+Multi-layered productive landscapes — trees, shrubs, herbs, and ground covers working together with minimal upkeep.
+
+## ECOLOGICAL DESIGN > SERVICE 3 TITLE
+Rain Gardens & Water Management
+
+## ECOLOGICAL DESIGN > SERVICE 3 BODY
+Slow the water, sink the water, spread the water — naturally managing runoff and recharging soils rather than draining them.
+
+## ECOLOGICAL DESIGN > MID PARALLAX LABEL
+Ecological Design
+
+## ECOLOGICAL DESIGN > MID PARALLAX HEADLINE
+Spaces That Work<br>With the Land.
+
+## ECOLOGICAL DESIGN > MID PARALLAX BODY
+From fynbos restoration to food forests and rain gardens — every project is designed around what the land is already doing.
+
+## ECOLOGICAL DESIGN > MID PARALLAX BUTTON
+Contact Us →
+
+## ECOLOGICAL DESIGN > GALLERY INTRO
+A few examples of ecological design in practice — fynbos gardens, food forests, biodiversity work, and hands-on workshops across the Garden Route.
+
+## ECOLOGICAL DESIGN > CTA HEADLINE
+Interested in something similar?
+
+## ECOLOGICAL DESIGN > CTA BODY
+Tell us about your site and what you’re hoping for.
+
+## ECOLOGICAL DESIGN > CTA BUTTON
+Get in Touch
+
+
+# ============================================================
+# PAGE: LAND MANAGEMENT (land-management.html)
+# ============================================================
+
+## LAND MANAGEMENT > HERO LABEL
+Land Management
+
+## LAND MANAGEMENT > HERO HEADLINE
+Bring Back<br>What Belongs.
+
+## LAND MANAGEMENT > HERO BODY
+Wattles, rooikrans, pampas grass — we know what’s taking over and how to bring back what should be there. Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
+
+## LAND MANAGEMENT > HERO BUTTON
+Start a Conversation →
+
+## LAND MANAGEMENT > INTRO HEADING
+Our Approach to Land Management
+
+## LAND MANAGEMENT > INTRO PARAGRAPH
+Most land management problems on the Garden Route follow the same pattern: invasive species moving in, soils getting compacted, water running off instead of soaking in, biodiversity quietly disappearing. We work with landowners across Knysna, Plettenberg Bay, George, Wilderness, and the surrounding Western Cape to turn that around — practically, not theoretically.
+
+## LAND MANAGEMENT > SERVICES HEADING
+Services We Offer
+
+## LAND MANAGEMENT > SERVICE 1 TITLE
+Ecological Assessment
+
+## LAND MANAGEMENT > SERVICE 1 BODY
+We spend time on your land before recommending anything — understanding what’s there, what’s missing, and where the pressure points are
+
+## LAND MANAGEMENT > SERVICE 2 TITLE
+Restoration Planning
+
+## LAND MANAGEMENT > SERVICE 2 BODY
+A clear plan for what happens when, in what order, and why
+
+## LAND MANAGEMENT > SERVICE 3 TITLE
+Invasive Species Management
+
+## LAND MANAGEMENT > SERVICE 3 BODY
+We know the problem species on the Garden Route well — and how to clear them without creating worse problems downstream
+
+## LAND MANAGEMENT > SERVICE 4 TITLE
+Biodiversity Enhancement
+
+## LAND MANAGEMENT > SERVICE 4 BODY
+Planting the right things in the right places, and letting the right things come back on their own
+
+## LAND MANAGEMENT > SERVICE 5 TITLE
+Water Management
+
+## LAND MANAGEMENT > SERVICE 5 BODY
+Slowing water down, spreading it out, helping it soak in — simple interventions that make a real difference over time
+
+## LAND MANAGEMENT > SERVICE 6 TITLE
+Soil Regeneration
+
+## LAND MANAGEMENT > SERVICE 6 BODY
+Compacted, depleted soils can recover. It takes patience, but we know what works
+
+## LAND MANAGEMENT > KNOW YOUR LAND HEADING
+Getting to Know Your Land
+
+## LAND MANAGEMENT > KNOW YOUR LAND BODY
+The people who get the best results from land restoration are usually the ones who become genuinely interested in their own land — who start noticing things, asking questions, and wanting to understand what's happening. Part of what we do is help that happen. Whether you have a fynbos smallholding near Knysna, a coastal property outside Plettenberg Bay, or a larger farm on the Garden Route, we work out a realistic plan together rather than handing you a document.
+
+## LAND MANAGEMENT > STEWARDSHIP HEADING
+Long-term Stewardship
+
+## LAND MANAGEMENT > STEWARDSHIP BODY
+Your land will keep changing, and what made sense in year one won't necessarily be the right approach in year three. We stay involved at whatever level works for you — some clients want quarterly check-ins, others want to take the wheel early. Either way, we're not trying to make ourselves indispensable.
+
+## LAND MANAGEMENT > MID PARALLAX LABEL
+Land Management
+
+## LAND MANAGEMENT > MID PARALLAX HEADLINE
+The Land Wants<br>to Recover.
+
+## LAND MANAGEMENT > MID PARALLAX BODY
+Invasive species don’t have to win. With systematic clearing and follow-through, indigenous fynbos and forest come back faster than most people expect.
+
+## LAND MANAGEMENT > MID PARALLAX BUTTON
+Talk to Us About Your Land →
+
+## LAND MANAGEMENT > PROJECTS HEADING
+Land Management Projects
+
+## LAND MANAGEMENT > PROJECTS SUBTITLE
+Invasive clearing, ecological restoration, and regenerative agriculture
+
+## LAND MANAGEMENT > CTA HEADLINE
+Ready to start?
+
+## LAND MANAGEMENT > CTA BODY
+Tell us about your land and what you’re hoping for. We’ll take it from there.
+
+## LAND MANAGEMENT > CTA BUTTON
+Get In Touch
 

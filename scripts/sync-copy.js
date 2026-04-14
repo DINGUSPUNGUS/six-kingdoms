@@ -16,6 +16,7 @@ const COPY_FILE = path.join(ROOT, 'website-copy.md');
 const HTML_FILES = [
     'index.html',
     'ecopools.html',
+    'projects.html',
     'land-management.html',
     'contact.html',
 ];
