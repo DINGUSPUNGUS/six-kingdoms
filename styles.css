@@ -1568,7 +1568,7 @@ section {
 .ecopool-photo-hero {
     position: relative;
     min-height: 75vh;
-    background-image: url('images/webp/eco-pool-photos/Krags/20260323164304-1200.webp');
+    background-image: url('images/webp/eco-pool-photos/Krags/house Jamieson (4).webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1785,7 +1785,7 @@ section {
 
 /* --- Blog card image backgrounds --- */
 .blog-card-image.ecopools-img {
-    background-image: url('images/webp/eco-pool-photos/Krags/20260323164304-1200.webp');
+    background-image: url('images/webp/eco-pool-photos/Krags/house Jamieson (4).webp');
     background-size: cover;
     background-position: center;
 }
@@ -3464,7 +3464,7 @@ textarea:focus-visible {
 
 /* The three background images */
 .pw--ecopools {
-    background-image: url('images/webp/eco-pool-photos/Krags/20260323164304-1200.webp');
+    background-image: url('images/webp/eco-pool-photos/Krags/house Jamieson (4).webp');
 }
 
 .pw--ecopools2 {

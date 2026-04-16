@@ -307,7 +307,14 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
             });
             tagOrder.forEach(function (tag) { projectGroups.push(tagMap[tag]); });
         } else {
-            allTriggers.forEach(function (t) { projectGroups.push([t]); });
+            var tagOrder = [];
+            var tagMap   = {};
+            allTriggers.forEach(function (t) {
+                var tag = t.dataset.tag || '';
+                if (!tagMap[tag]) { tagMap[tag] = []; tagOrder.push(tag); }
+                tagMap[tag].push(t);
+            });
+            tagOrder.forEach(function (tag) { projectGroups.push(tagMap[tag]); });
         }
     }
 
@@ -380,9 +387,9 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
                 }
                 return true;
             });
-            currentGroup = allVisible;
             buildProjectGroups(allVisible);
-            currentProjectIdx = projectGroups.findIndex(function (g) { return g[0] === trigger; });
+            currentProjectIdx = projectGroups.findIndex(function (g) { return g.indexOf(trigger) !== -1; });
+            currentGroup = projectGroups[currentProjectIdx] || allVisible;
         }
 
         if (currentProjectIdx < 0) currentProjectIdx = 0;
