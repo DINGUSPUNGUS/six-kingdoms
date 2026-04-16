@@ -382,6 +382,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
             // Default: build navigation group from all visible modal-triggers.
             allVisible = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
                 if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.style.display === 'none') return false;
                 if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
                     return t.offsetParent !== null;
                 }
