@@ -1,6 +1,23 @@
 User-agent: *
 Allow: /
+Disallow: /blog.html
 Disallow: /blog-admin.html
 Disallow: /blog-post-template.html
+
+# AI crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://sixkingdoms.org/sitemap.xml
