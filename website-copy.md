@@ -302,13 +302,13 @@ Indigenous plantings that reduce maintenance, support pollinators, and build hab
 Edible food systems
 
 ## ECOLOGICAL DESIGN > SERVICE 2 BODY
-Food systems designed to efficiently produce food crops while supporting ecology and increasing resilience
+Food systems designed to efficiently produce food crops while supporting ecology and increasing resilience.
 
 ## ECOLOGICAL DESIGN > SERVICE 3 TITLE
 Rain Gardens & Water Management
 
 ## ECOLOGICAL DESIGN > SERVICE 3 BODY
-Sustainable water management strategies from active and passive rainwater harvesting systems, to bioswales, raingardens and water features
+Sustainable active and passive water management strategies for your home or business.
 
 ## ECOLOGICAL DESIGN > MID PARALLAX LABEL
 Ecological Design
@@ -323,7 +323,7 @@ Our work emphasises our local and ecology and environment. We treasure the Garde
 Contact Us →
 
 ## ECOLOGICAL DESIGN > GALLERY INTRO
-A few examples of ecological design in practice — fynbos gardens, food forests, biodiversity work, and hands-on workshops across the Garden Route.
+A few examples of ecological design in practice — fynbos gardens, food forests, and indigenous plantings across the Garden Route.
 
 ## ECOLOGICAL DESIGN > CTA HEADLINE
 Interested in something similar?
@@ -346,7 +346,7 @@ Land Management
 Bring Back<br>What Belongs.
 
 ## LAND MANAGEMENT > HERO BODY
-Wattles, rooikrans, pampas grass — we know what’s taking over and how to bring back what should be there. Invasive clearing, ecological restoration, and long-term stewardship across the Garden Route.
+Our approach to invasive plant control and land management reduces disaster and legislative risk while supporting indigenous ecology and building capacity for sustainable conservation outcomes.
 
 ## LAND MANAGEMENT > HERO BUTTON
 Start a Conversation →
@@ -355,40 +355,40 @@ Start a Conversation →
 Our Approach to Land Management
 
 ## LAND MANAGEMENT > INTRO PARAGRAPH
-Most land management problems on the Garden Route follow the same pattern: invasive species moving in, soils getting compacted, water running off instead of soaking in, biodiversity quietly disappearing. We work with landowners across Knysna, Plettenberg Bay, George, Wilderness, and the surrounding Western Cape to turn that around — practically, not theoretically.
+We work with landowners and landstewards across the Garden Route to address critical landscape level threats including invasive plants, erosion and fire risk. We take an integrated, whole systems approach and aim for beneficial ecological and legislative outcomes for our clients. Our work is methodical, neat and respectful to our local ecology while being efficient and aligned with local and national law.
 
 ## LAND MANAGEMENT > SERVICES HEADING
 Services We Offer
 
 ## LAND MANAGEMENT > SERVICE 1 TITLE
-Ecological Assessment
+Ecological Assessments and Restoration planning
 
 ## LAND MANAGEMENT > SERVICE 1 BODY
-We spend time on your land before recommending anything — understanding what’s there, what’s missing, and where the pressure points are
+Our ecological assessments aim to capacitate land owners in making decisions that align with the local environment and the legislative framework of the region. 
 
 ## LAND MANAGEMENT > SERVICE 2 TITLE
 Restoration Planning
 
 ## LAND MANAGEMENT > SERVICE 2 BODY
-A clear plan for what happens when, in what order, and why
+We create strategies and plans to allow you to restore and improve your local environment. 
 
 ## LAND MANAGEMENT > SERVICE 3 TITLE
-Invasive Species Management
+Invasive Species Management 
 
 ## LAND MANAGEMENT > SERVICE 3 BODY
-We know the problem species on the Garden Route well — and how to clear them without creating worse problems downstream
+Our team excels at productive, neat and effective invasive plant control interventions.  
 
 ## LAND MANAGEMENT > SERVICE 4 TITLE
-Biodiversity Enhancement
+Compliance planning
 
 ## LAND MANAGEMENT > SERVICE 4 BODY
-Planting the right things in the right places, and letting the right things come back on their own
+Invasive species control plans to align with national  legal frameworks and provide a clear roadmap towards tackling invasive species
 
 ## LAND MANAGEMENT > SERVICE 5 TITLE
 Water Management
 
 ## LAND MANAGEMENT > SERVICE 5 BODY
-Slowing water down, spreading it out, helping it soak in — simple interventions that make a real difference over time
+Planning and implementing erosion control measures, active and passive rainwater harvesting and riverine restoration works
 
 ## LAND MANAGEMENT > SERVICE 6 TITLE
 Soil Regeneration
