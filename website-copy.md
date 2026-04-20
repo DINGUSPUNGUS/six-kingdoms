@@ -281,16 +281,16 @@ Ecological Design
 Landscape design<br>Ecologically routed.
 
 ## ECOLOGICAL DESIGN > HERO BODY
-We work with what’s already on a site and help it become more of itself — fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention.
+Ecological design is an approach to landscape design, installation and management that takes ecological processes and the relationships between people and nature into account.
 
 ## ECOLOGICAL DESIGN > HERO BUTTON
 Contact Us →
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 1
-Ecological design means working with what’s already on a site rather than against it — the soils, the water flows, the plants already trying to grow there. Create something and it keeps improving. Neglect it and it looks after itself anyway.
+Ecological design means working with nature. We draw on methods and techniques inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and the planet. 
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 2
-We work across the Garden Route building fynbos gardens, food forests, rain gardens, and indigenous landscapes — everything designed around the specific conditions of your land, not a generic template.
+Our work spans the Garden Route- building indigenous gardens, food forests and sustainable water management systems. 
 
 ## ECOLOGICAL DESIGN > SERVICE 1 TITLE
 Fynbos Gardens & Restoration
