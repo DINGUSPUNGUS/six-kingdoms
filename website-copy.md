@@ -106,7 +106,7 @@ Ecological Design
 Ecologically attuned landscape design
 
 ## HOME > FEATURED 2 — BODY
-Indigenous gardens, food forests, sustainable water management — designed to thrive like balanced ecosystems.
+Indigenous gardens, food systems and sustainable water management for naturally thriving systems.
 
 ## HOME > FEATURED 2 — LINK
 View Projects →
@@ -127,7 +127,7 @@ Learn More →
 Reconnecting people to nature 
 
 ## HOME > ABOUT — PARAGRAPH 1
-Six Kingdoms is an ecological design practice based on South Africa’s Garden Route. We build natural swimming pools, restore indigenous vegetation, clear invasive species, and help landowners understand and work with their land — rather than against it.
+Six Kingdoms is an ecological design practice based on South Africa’s Garden Route. We build natural swimming pools, restore indigenous vegetation, clear invasive species, and help landowners understand and work with their land.
 
 ## HOME > ABOUT — PARAGRAPH 2
 
@@ -179,7 +179,7 @@ EcoPools · Natural Swimming
 Natural.<br>Chlorine-Free. Alive.
 
 ## ECOPOOLS > HERO BODY
-Natural swimming pools filtered by plants and beneficial micro-organisms — no chlorine, no algaecides. Living water for the Garden Route and beyond.
+Natural swimming pools are filtered by plants and beneficial micro-organisms — no chlorine, no algaecides. Living water for your home or business.
 
 ## ECOPOOLS > HERO BUTTON
 Get a Quote →
@@ -188,12 +188,9 @@ Get a Quote →
 What is an EcoPool?
 
 ## ECOPOOLS > INTRO LEAD
-Chlorine-free, living water that keeps itself clean — filtered by an ecosystem of aquatic plants and beneficial micro-organisms, the way water works in any healthy waterway.
-
+Natural Swimming Pools use biomimicry principles and ecology to keep water clean, healthy and living. Our natural pools harness nature's genius by working with plants and micro-biology to filter your pool water to international natural pool standards. 
 ## ECOPOOLS > INTRO PARAGRAPH 1
-Natural swimming pools work with nature's genius to create clean, clear, living water. Our custom, site specific, designs ensure the highest quality, naturally filtered water for you and your family. 
-
- Our partnership with EcoPools Africa ensures industry leading approaches to designing, installing and maintaining innovative natural pool solutions. From water features and naturalistic ponds, to crystal clear modern pools with a natural twist, our techniques and methods can ensure healthly, living water for you and your loved ones. 
+Our partnership with EcoPools Africa ensures industry leading approaches to designing, installing and maintaining innovative natural pool solutions. From water features and naturalistic ponds, to crystal clear modern pools with a natural twist, our techniques and methods can ensure healthly, living water for you and your loved ones. 
 
 ## ECOPOOLS > INTRO PARAGRAPH 2
 Bring living water into your home with our tried and tested systems. Nature is the ultimate luxury.
@@ -204,7 +201,7 @@ Bring living water into your home with our tried and tested systems. Nature is t
 Healthy Swimming
 
 ## ECOPOOLS > BENEFIT 1 — BODY
-No chlorine burn, no red eyes, no itchy. Just water that's soft and refreshing
+No chlorine burn, no red eyes, no itchy skin. Just water that's soft and refreshing
 
 ## ECOPOOLS > BENEFIT 2 — TITLE
 Year round beauty
@@ -281,7 +278,7 @@ Start the Conversation →
 Ecological Design
 
 ## ECOLOGICAL DESIGN > HERO HEADLINE
-Landscapes That<br>Look After Themselves.
+Landscape design<br>Ecologically routed.
 
 ## ECOLOGICAL DESIGN > HERO BODY
 We work with what’s already on a site and help it become more of itself — fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention.
