@@ -290,7 +290,7 @@ Contact Us →
 Ecological design means working with nature. We draw on methods and techniques inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and the planet. 
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 2
-Our work spans the Garden Route- building indigenous gardens, food forests and sustainable water management systems. 
+Our work spans the Garden Route- building indigenous gardens, food forests and sustainable water management systems- everything designed with the specific conditions of your land in mind.
 
 ## ECOLOGICAL DESIGN > SERVICE 1 TITLE
 Fynbos Gardens & Restoration
@@ -299,25 +299,25 @@ Fynbos Gardens & Restoration
 Indigenous plantings that reduce maintenance, support pollinators, and build habitat that keeps improving over time.
 
 ## ECOLOGICAL DESIGN > SERVICE 2 TITLE
-Food Forests & Edibles
+Edible food systems
 
 ## ECOLOGICAL DESIGN > SERVICE 2 BODY
-Multi-layered productive landscapes — trees, shrubs, herbs, and ground covers working together with minimal upkeep.
+Food systems designed to efficiently produce food crops while supporting ecology and increasing resilience
 
 ## ECOLOGICAL DESIGN > SERVICE 3 TITLE
 Rain Gardens & Water Management
 
 ## ECOLOGICAL DESIGN > SERVICE 3 BODY
-Slow the water, sink the water, spread the water — naturally managing runoff and recharging soils rather than draining them.
+Sustainable water management strategies from active and passive rainwater harvesting systems, to bioswales, raingardens and water features
 
 ## ECOLOGICAL DESIGN > MID PARALLAX LABEL
 Ecological Design
 
 ## ECOLOGICAL DESIGN > MID PARALLAX HEADLINE
-Spaces That Work<br>With the Land.
+A sense <br> of place.
 
 ## ECOLOGICAL DESIGN > MID PARALLAX BODY
-From fynbos restoration to food forests and rain gardens — every project is designed around what the land is already doing.
+Our work emphasises our local and ecology and environment. We treasure the Garden Route and take pride in connecting people to our landscape.
 
 ## ECOLOGICAL DESIGN > MID PARALLAX BUTTON
 Contact Us →
