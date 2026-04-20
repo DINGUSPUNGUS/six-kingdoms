@@ -370,6 +370,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
             var tag = trigger.dataset.tag || '';
             allVisible = Array.from(document.querySelectorAll('.pool-gallery-item.modal-trigger')).filter(function (t) {
                 if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-load-hidden')) return false;
                 if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
                     return t.offsetParent !== null;
                 }
@@ -382,6 +383,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
             // Default: build navigation group from all visible modal-triggers.
             allVisible = Array.from(document.querySelectorAll('.modal-trigger')).filter(function (t) {
                 if (t.classList.contains('gallery-filter-hidden')) return false;
+                if (t.classList.contains('gallery-load-hidden')) return false;
                 if (t.style.display === 'none') return false;
                 if (t.classList.contains('gallery-extra') && !t.classList.contains('visible')) {
                     return t.offsetParent !== null;
@@ -457,39 +459,81 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     }
 }());
 
-// ── Gallery load-more ──────────────────────────────────────────
+// ── Gallery controls (filter + load-more) ──────────────────────
 (function () {
     var btn = document.querySelector('.gallery-load-more');
-    if (!btn) return;
+    var items = Array.from(document.querySelectorAll('.pool-gallery-item'));
+    if (!btn || !items.length) return;
+
+    var filterBtns = Array.from(document.querySelectorAll('.gallery-filter-btn'));
+    var INITIAL_VISIBLE = 12;
+    var BATCH_SIZE = 12;
+    var revealedCount = INITIAL_VISIBLE;
+
+    function getActiveFilter() {
+        var activeBtn = document.querySelector('.gallery-filter-btn.active');
+        return activeBtn ? activeBtn.dataset.galleryFilter : 'all';
+    }
+
+    function getMatchedItems(filter) {
+        return items.filter(function (item) {
+            return filter === 'all' || item.dataset.title === filter;
+        });
+    }
+
+    function updateLoadMoreButton(totalMatched) {
+        if (revealedCount >= totalMatched || totalMatched === 0) {
+            btn.style.display = 'none';
+            btn.disabled = true;
+            return;
+        }
+
+        btn.style.display = 'block';
+        btn.disabled = false;
+    }
+
+    function renderGallery(resetReveal) {
+        var filter = getActiveFilter();
+        var matchedItems = getMatchedItems(filter);
+
+        if (resetReveal) {
+            revealedCount = Math.min(INITIAL_VISIBLE, matchedItems.length);
+        } else {
+            revealedCount = Math.min(revealedCount, matchedItems.length);
+        }
+
+        items.forEach(function (item) {
+            item.classList.add('gallery-filter-hidden');
+            item.classList.add('gallery-load-hidden');
+            item.classList.remove('visible');
+        });
+
+        matchedItems.forEach(function (item, index) {
+            item.classList.remove('gallery-filter-hidden');
+            if (index < revealedCount) {
+                item.classList.remove('gallery-load-hidden');
+                item.classList.add('visible');
+            }
+        });
+
+        updateLoadMoreButton(matchedItems.length);
+    }
+
     btn.addEventListener('click', function () {
-        document.querySelectorAll('.gallery-extra').forEach(function (el) {
-            el.classList.add('visible');
-        });
-        btn.remove();
+        var totalMatched = getMatchedItems(getActiveFilter()).length;
+        revealedCount = Math.min(revealedCount + BATCH_SIZE, totalMatched);
+        renderGallery(false);
     });
-}());
 
-// ── Gallery project filter tabs (desktop) ──────────────────────
-(function () {
-    var filterBtns = document.querySelectorAll('.gallery-filter-btn');
-    if (!filterBtns.length) return;
-
-    filterBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var filter = this.dataset.galleryFilter;
-
-            filterBtns.forEach(function (b) { b.classList.remove('active'); });
-            this.classList.add('active');
-
-            document.querySelectorAll('.pool-gallery-item').forEach(function (item) {
-                if (filter === 'all' || item.dataset.title === filter) {
-                    item.classList.remove('gallery-filter-hidden');
-                } else {
-                    item.classList.add('gallery-filter-hidden');
-                }
-            });
+    filterBtns.forEach(function (filterBtn) {
+        filterBtn.addEventListener('click', function () {
+            filterBtns.forEach(function (btnEl) { btnEl.classList.remove('active'); });
+            filterBtn.classList.add('active');
+            renderGallery(true);
         });
     });
+
+    renderGallery(true);
 }());
 
 // ── Project Carousel (land-management.html, projects.html) ──────
