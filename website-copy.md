@@ -278,16 +278,16 @@ Start the Conversation →
 Ecological Design
 
 ## ECOLOGICAL DESIGN > HERO HEADLINE
-    Landscape design<br>Ecologically routed.
+Landscape design<br>Ecologically routed.
 
-    ## ECOLOGICAL DESIGN > HERO BODY
-    Ecological design is an approach to landscape design, installation and management that takes ecological processes and the relationships between people and nature into account.
+## ECOLOGICAL DESIGN > HERO BODY
+Ecological design is an approach to landscape design, installation and management that takes ecological processes and the relationships between people and nature into account.
 
-    ## ECOLOGICAL DESIGN > HERO BUTTON
+## ECOLOGICAL DESIGN > HERO BUTTON
 Contact Us →
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 1
-Ecological design means working with nature. We draw on methods and techniques inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and the planet. 
+Ecological design means working with nature. Our methods and techniques are inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and our planet. 
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 2
 Our work spans the Garden Route- building indigenous gardens, food forests and sustainable water management systems- everything designed with the specific conditions of your land in mind.
