@@ -38,7 +38,46 @@ function decodeHtml(str) {
         .replace(/&rdquo;/g,  '\u201D')
         .replace(/&ldquo;/g,  '\u201C')
         .replace(/&nbsp;/g,   ' ')
+        .replace(/&copy;/g,   '\u00A9')
+        .replace(/&reg;/g,    '\u00AE')
+        .replace(/&deg;/g,    '\u00B0')
+        .replace(/&times;/g,  '\u00D7')
+        .replace(/&divide;/g, '\u00F7')
+        .replace(/&euro;/g,   '\u20AC')
+        .replace(/&sect;/g,   '\u00A7')
+        .replace(/&curren;/g, '\u00A4')
         .trim();
+}
+
+function validateAnchors(copyMap) {
+    const anchorPattern = /<!-- \[\[([^\]]+)\]\] -->/g;
+
+    for (const file of HTML_FILES) {
+        const fp = path.join(ROOT, file);
+        if (!fs.existsSync(fp)) {
+            console.warn(`WARN: Missing target file: ${file}`);
+            continue;
+        }
+
+        const html = fs.readFileSync(fp, 'utf8');
+        const missing = [];
+        const seen = new Set();
+        let m;
+
+        while ((m = anchorPattern.exec(html)) !== null) {
+            const label = m[1].trim();
+            if (label === '/' || seen.has(label)) continue;
+            seen.add(label);
+            if (!(label in copyMap)) {
+                missing.push(label);
+            }
+        }
+
+        if (missing.length) {
+            console.warn(`WARN: ${file} has anchor labels missing in website-copy.md:`);
+            missing.forEach((label) => console.warn(`  - ${label}`));
+        }
+    }
 }
 
 // Parse website-copy.md into { label: value } map
@@ -75,6 +114,8 @@ function run() {
     const copy    = parseCopy(fs.readFileSync(COPY_FILE, 'utf8'));
     const pattern = /<!-- \[\[([^\]]+)\]\] -->([\s\S]*?)<!-- \[\[\/\]\] -->/g;
     let   total   = 0;
+
+    validateAnchors(copy);
 
     for (const file of HTML_FILES) {
         const fp = path.join(ROOT, file);

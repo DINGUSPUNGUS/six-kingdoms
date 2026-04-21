@@ -1713,6 +1713,7 @@ section {
 /* ── Gallery extras: hidden until load-more clicked ── */
 .gallery-extra { display: none; }
 .gallery-extra.visible { display: block; }
+.pool-gallery-item.gallery-load-hidden { display: none !important; }
 
 .gallery-load-more {
     display: block;
@@ -1735,12 +1736,12 @@ section {
     color: var(--text-primary);
 }
 
-/* ── Desktop gallery: show all items, filter tabs active ── */
-@media (min-width: 769px) {
-    .pool-gallery .gallery-extra { display: block; }
-    .gallery-load-more { display: none; }
-    .pool-gallery-item.gallery-filter-hidden { display: none; }
+.gallery-load-more:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
 }
+
+.pool-gallery-item.gallery-filter-hidden { display: none !important; }
 
 /* Gallery filter bar — desktop only */
 .gallery-filter-bar {

@@ -12,6 +12,7 @@ $CopyFile = Join-Path $Root "website-copy.md"
 $HtmlFiles = @(
     "index.html",
     "ecopools.html",
+    "projects.html",
     "land-management.html",
     "contact.html"
 )
@@ -32,7 +33,49 @@ function Decode-Html($str) {
     $str = $str -replace '&rdquo;',  [char]0x201D
     $str = $str -replace '&ldquo;',  [char]0x201C
     $str = $str -replace '&nbsp;',   ' '
+    $str = $str -replace '&copy;',   [char]0x00A9
+    $str = $str -replace '&reg;',    [char]0x00AE
+    $str = $str -replace '&deg;',    [char]0x00B0
+    $str = $str -replace '&times;',  [char]0x00D7
+    $str = $str -replace '&divide;', [char]0x00F7
+    $str = $str -replace '&euro;',   [char]0x20AC
+    $str = $str -replace '&sect;',   [char]0x00A7
+    $str = $str -replace '&curren;', [char]0x00A4
     return $str.Trim()
+}
+
+# Validate labels between markdown map and HTML anchors.
+function Validate-CopyAnchors($copyMap) {
+    $pattern = [regex]'<!-- \[\[([^\]]+)\]\] -->'
+    foreach ($file in $HtmlFiles) {
+        $fp = Join-Path $Root $file
+        if (-not (Test-Path $fp)) {
+            Write-Host "  [WARN] Missing target file: $file" -ForegroundColor Red
+            continue
+        }
+
+        $html = [System.IO.File]::ReadAllText($fp, [System.Text.Encoding]::UTF8)
+        $anchors = [System.Collections.Generic.HashSet[string]]::new()
+        foreach ($m in $pattern.Matches($html)) {
+            $label = $m.Groups[1].Value.Trim()
+            if ($label -eq '/') { continue }
+            [void]$anchors.Add($label)
+        }
+
+        $missing = @()
+        foreach ($anchor in $anchors) {
+            if (-not $copyMap.ContainsKey($anchor)) {
+                $missing += $anchor
+            }
+        }
+
+        if ($missing.Count -gt 0) {
+            Write-Host "  [WARN] $file has anchor labels missing in website-copy.md:" -ForegroundColor Yellow
+            foreach ($label in $missing) {
+                Write-Host "    - $label" -ForegroundColor Yellow
+            }
+        }
+    }
 }
 
 # Parse website-copy.md -> hashtable {label -> value}
@@ -67,11 +110,16 @@ function Sync-Copy {
     $time    = Get-Date -Format "HH:mm:ss"
     $changed = 0
 
+    Validate-CopyAnchors $copy
+
     $pattern = [regex]'<!-- \[\[([^\]]+)\]\] -->([\s\S]*?)<!-- \[\[/\]\] -->'
 
     foreach ($file in $HtmlFiles) {
         $fp = Join-Path $Root $file
-        if (-not (Test-Path $fp)) { continue }
+        if (-not (Test-Path $fp)) {
+            Write-Host "  [WARN] File not found: $file" -ForegroundColor Red
+            continue
+        }
 
         $html     = [System.IO.File]::ReadAllText($fp, [System.Text.Encoding]::UTF8)
         $original = $html
@@ -99,19 +147,7 @@ function Sync-Copy {
     }
 
     if ($script:changed -gt 0) {
-        Write-Host "[$time] $($script:changed) section(s) updated -- pushing to GitHub..." -ForegroundColor Yellow
-
-        Push-Location $Root
-        git add -A 2>&1 | Out-Null
-        git commit -m "Copy update from website-copy.md" 2>&1 | Out-Null
-        $pushResult = git push origin master 2>&1
-        Pop-Location
-
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host "[$time] Live on website.`n" -ForegroundColor Green
-        } else {
-            Write-Host "[$time] Push failed: $pushResult`n" -ForegroundColor Red
-        }
+        Write-Host "[$time] $($script:changed) section(s) updated locally. Commit/push manually when ready.`n" -ForegroundColor Green
     } else {
         Write-Host "[$time] No changes detected.`n"
     }

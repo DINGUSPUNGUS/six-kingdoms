@@ -22,6 +22,6 @@ jobs:
         run: |
           git config user.name "copy-sync[bot]"
           git config user.email "noreply@github.com"
-          git add index.html ecopools.html land-management.html contact.html
+          git add index.html ecopools.html projects.html land-management.html contact.html
           git diff --cached --quiet || git commit -m "Sync copy from website-copy.md [skip ci]"
           git push
