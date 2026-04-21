@@ -278,7 +278,7 @@ Start the Conversation →
 Ecological Design
 
 ## ECOLOGICAL DESIGN > HERO HEADLINE
-Landscape design<br>Ecologically routed.
+Landscape design,<br>Ecologically routed.
 
 ## ECOLOGICAL DESIGN > HERO BODY
 Ecological design is an approach to landscape design, installation and management that takes ecological processes and the relationships between people and nature into account.
@@ -355,9 +355,9 @@ Start a Conversation →
 Our Approach to Land Management
 
 ## LAND MANAGEMENT > INTRO PARAGRAPH
-We work with landowners and landstewards across the Garden Route to address critical landscape level threats including invasive plants, erosion and fire risk. We take an integrated, whole systems approach and aim for beneficial ecological and legislative outcomes for our clients. Our work is methodical, neat and respectful to our local ecology while being efficient and aligned with local and national law.
+We work with landowners and land stewards across the Garden Route to address critical landscape level threats including invasive alienS plants, erosion and fire risk. We take an integrated, whole systems approach and aim for beneficial ecological and legislative outcomes for our clients. Our work is methodical, neat and respectful to our local ecology while being efficient and aligned with local and national law.
 
-## LAND MANAGEMENT > SERVICES HEADING
+## LAND MANAGEMENT > SERVICES HEADINGS
 Services We Offer
 
 ## LAND MANAGEMENT > SERVICE 1 TITLE
@@ -397,10 +397,16 @@ Soil Regeneration
 Compacted, depleted soils can recover. It takes patience, but we know what works
 
 ## LAND MANAGEMENT > KNOW YOUR LAND HEADING
-Getting to Know Your Land
+Benefits of active land management
 
 ## LAND MANAGEMENT > KNOW YOUR LAND BODY
-The people who get the best results from land restoration are usually the ones who become genuinely interested in their own land — who start noticing things, asking questions, and wanting to understand what's happening. Part of what we do is help that happen. Whether you have a fynbos smallholding near Knysna, a coastal property outside Plettenberg Bay, or a larger farm on the Garden Route, we work out a realistic plan together rather than handing you a document.
+The Garden Route is home to globally unique ecosystems, vegetation types and landscapes. Our region is under the impact of invasive species, increasing development pressures, and water scarcity. In addition, local and national laws provide clear mandates on the the control of alien plants, water usage requirements and development planning. 
+
+Landowners are required by law to manage invasive species according to an Invasive Species Management Plan, and any development work needs to fall within legislative frameworks. 
+
+We support land owners in actively planning for and managing their properties in an effort to keep interventions cost effective, efficient and impactful. 
+
+The benefits of active land management are far ranging- from reduced fire and flood risk, to increased biodiversity and property values.
 
 ## LAND MANAGEMENT > STEWARDSHIP HEADING
 Long-term Stewardship
