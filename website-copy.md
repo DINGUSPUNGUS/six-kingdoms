@@ -287,7 +287,7 @@ Ecological design is an approach to landscape design, installation and managemen
 Contact Us →
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 1
-Ecological design means working with nature. We draw on methods and techniques inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and the planet. 
+Ecological design means working with nature. Our methods and techniques are inspired by ecological landscaping principles, permaculture design, whole systems thinking and pragmatism to create functional landscapes for people and our planet. 
 
 ## ECOLOGICAL DESIGN > INTRO PARAGRAPH 2
 Our work spans the Garden Route- building indigenous gardens, food forests and sustainable water management systems- everything designed with the specific conditions of your land in mind.
