@@ -2254,6 +2254,10 @@ section {
     padding: 0 20px;
 }
 
+.content-wrap--narrow h3 {
+    margin-top: 2rem;
+}
+
 /* CTA Strip � standardised across all pages */
 .cta-strip {
     position: relative;

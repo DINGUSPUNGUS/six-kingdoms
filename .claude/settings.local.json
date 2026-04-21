@@ -8,7 +8,14 @@
       "Bash(do)",
       "Read(//c/Users/juden/.vscode/six-kingdoms/**)",
       "Bash(sed -i 's|<li><a href=\"\"contact.html\"\" class=\"\"nav-cta\"\">|<li><a href=\"\"plan.html\"\">Plan Your Project</a></li>\\\\n                <li><a href=\"\"contact.html\"\" class=\"\"nav-cta\"\">|g' \"$f\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(where cwebp *)",
+      "Bash(where magick *)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(python -c \"from PIL import Image; print\\('Pillow ok'\\)\")",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow ok'\\)\")",
+      "Bash(where ffmpeg *)",
+      "Bash(python)"
     ]
   }
 }
