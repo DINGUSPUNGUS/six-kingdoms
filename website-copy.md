@@ -271,7 +271,7 @@ Start the Conversation →
 
 
 # ============================================================
-# PAGE: ECOLOGICAL DESIGN (projects.html)
+# PAGE: ECOLOGICAL DESIGN (ecological-design.html)
 # ============================================================
 
 ## ECOLOGICAL DESIGN > HERO LABEL
