@@ -188,7 +188,8 @@ Get a Quote →
 What is an EcoPool?
 
 ## ECOPOOLS > INTRO LEAD
-Natural Swimming Pools use biomimicry principles and ecology to keep water clean, healthy and living. Our natural pools harness nature's genius by working with plants and micro-biology to filter your pool water to international natural pool standards. 
+Natural pools harness nature's genius by working with plants and micro-biology to filter your pool water to international natural pool standards. EcoPools typically consist of a swimzone and an ecozone that houses plants and specialised media and plumbing to foster beneficial microbe populations. Water moves through the ecozone and is filtered by biological processes before returning to the pool. Ecozones may be integrated within the swimzone or housed seperately. Our advanced systems can even run without plants under a deck or cover. 
+
 ## ECOPOOLS > INTRO PARAGRAPH 1
 Our partnership with EcoPools Africa ensures industry leading approaches to designing, installing and maintaining innovative natural pool solutions. From water features and naturalistic ponds, to crystal clear modern pools with a natural twist, our techniques and methods can ensure healthly, living water for you and your loved ones. 
 
@@ -401,12 +402,11 @@ Benefits of active land management
 
 ## LAND MANAGEMENT > KNOW YOUR LAND BODY
 The Garden Route is home to globally unique ecosystems, vegetation types and landscapes. Our region is under the impact of invasive species, increasing development pressures, and water scarcity. In addition, local and national laws provide clear mandates on the the control of alien plants, water usage requirements and development planning. 
-
+<br>
 Landowners are required by law to manage invasive species according to an Invasive Species Management Plan, and any development work needs to fall within legislative frameworks. 
-
+<br>
 We support land owners in actively planning for and managing their properties in an effort to keep interventions cost effective, efficient and impactful. 
 
-The benefits of active land management are far ranging- from reduced fire and flood risk, to increased biodiversity and property values.
 
 ## LAND MANAGEMENT > STEWARDSHIP HEADING
 Long-term Stewardship
@@ -421,7 +421,7 @@ Land Management
 The Land Wants<br>to Recover.
 
 ## LAND MANAGEMENT > MID PARALLAX BODY
-Invasive species don’t have to win. With systematic clearing and follow-through, indigenous fynbos and forest come back faster than most people expect.
+The benefits of active land management are far ranging- from reduced fire and flood risk, to increased biodiversity and property values.
 
 ## LAND MANAGEMENT > MID PARALLAX BUTTON
 Talk to Us About Your Land →
@@ -430,7 +430,7 @@ Talk to Us About Your Land →
 Land Management Projects
 
 ## LAND MANAGEMENT > PROJECTS SUBTITLE
-Invasive clearing, ecological restoration, and regenerative agriculture
+Invasive clearing, ecological restoration, and water management
 
 ## LAND MANAGEMENT > CTA HEADLINE
 Ready to start?
