@@ -1798,7 +1798,7 @@ section {
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/webp/land-management/salt-river-invasive-plant-clearing-1200.webp');
+    background-image: url('images/webp/land-management/salt-river/salt-river-invasive-plant-clearing-1200.webp');
     background-size: cover;
     background-position: center;
 }
@@ -3481,19 +3481,19 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/webp/ecological-design/garden-design-1-1200.webp');
+    background-image: url('images/webp/ecological-design/garden-design/garden-design-1-1200.webp');
 }
 
 .pw--design2 {
-    background-image: url('images/webp/ecological-design/wilderness-biodiversity-corridor-1200.webp');
+    background-image: url('images/webp/ecological-design/terra-verta-habitats/terra-verta-habitats-4-1200.webp');
 }
 
 .pw--land {
-    background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
+    background-image: url('images/webp/land-management/alien-clearing/alien%20clearing-1200.webp');
 }
 
 .pw--land2 {
-    background-image: url('images/webp/land-management/diepklowe-regenerative-farm-1200.webp');
+    background-image: url('images/webp/land-management/diepklowe-farm/diepklowe-regenerative-farm-1200.webp');
 }
 
 /* Content block — left-aligned by default */
