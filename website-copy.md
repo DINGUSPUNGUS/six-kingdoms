@@ -347,7 +347,7 @@ Land Management
 Bring Back<br>What Belongs.
 
 ## LAND MANAGEMENT > HERO BODY
-Our approach to invasive plant control and land management reduces disaster and legislative risk while supporting indigenous ecology and building capacity for sustainable conservation outcomes.
+Invasive plant control and good land management reduces disaster and legislative risk while supporting indigenous ecology and building capacity for sustainable conservation outcomes.
 
 ## LAND MANAGEMENT > HERO BUTTON
 Start a Conversation →
