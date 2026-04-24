@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('images/webp/eco-pool-photos/Krags/house jamieson 4-1200.webp'\\); print\\(img.size\\)\")",
+      "Bash(py -c ' *)"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-# copy-sync.ps1 -- Six Kingdoms website copy watcher
+﻿# copy-sync.ps1 -- Six Kingdoms website copy watcher
 #
 # Usage: Right-click -> "Run with PowerShell"
 #        Or from VS Code terminal: .\copy-sync.ps1
@@ -12,7 +12,7 @@ $CopyFile = Join-Path $Root "website-copy.md"
 $HtmlFiles = @(
     "index.html",
     "ecopools.html",
-    "projects.html",
+    "ecological-design.html",
     "land-management.html",
     "contact.html"
 )

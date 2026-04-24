@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 // sync-copy.js — Six Kingdoms website copy sync
 //
 // Reads website-copy.md and updates HTML files in-place.
@@ -16,7 +16,7 @@ const COPY_FILE = path.join(ROOT, 'website-copy.md');
 const HTML_FILES = [
     'index.html',
     'ecopools.html',
-    'projects.html',
+    'ecological-design.html',
     'land-management.html',
     'contact.html',
 ];

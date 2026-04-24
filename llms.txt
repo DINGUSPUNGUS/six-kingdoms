@@ -29,7 +29,7 @@ Fynbos gardens, food forests, rain gardens, and indigenous landscapes designed t
 - Rain gardens and water management
 - Biodiversity corridors connecting habitat patches
 - Workshops and education for landowners
-- Page: https://sixkingdoms.org/projects.html
+- Page: https://sixkingdoms.org/ecological-design.html
 
 ### Land Management & Invasive Plant Control
 Invasive alien plant clearing, indigenous vegetation restoration, and long-term land stewardship. We help landowners achieve ecological compliance, improve biodiversity, and build resilient landscapes.
@@ -81,7 +81,7 @@ Contact matthew@sixkingdoms.org or use the contact form at https://sixkingdoms.o
 
 - [Home](https://sixkingdoms.org/) — Overview of all services, client testimonials, about the practice
 - [EcoPools](https://sixkingdoms.org/ecopools.html) — Natural swimming pools: process, benefits, gallery, FAQ
-- [Ecological Design](https://sixkingdoms.org/projects.html) — Project portfolio: fynbos, food forests, rain gardens, workshops
+- [Ecological Design](https://sixkingdoms.org/ecological-design.html) — Project portfolio: fynbos, food forests, rain gardens, workshops
 - [Land Management](https://sixkingdoms.org/land-management.html) — Invasive clearing, restoration, stewardship services
 - [Plan Your Project](https://sixkingdoms.org/plan.html) — Interactive planning tools and cost calculator
 - [Contact](https://sixkingdoms.org/contact.html) — Get in touch

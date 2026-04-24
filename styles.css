@@ -1798,7 +1798,7 @@ section {
 }
 
 .blog-card-image.land-img {
-    background-image: url('images/webp/land-management/salt-river-invasive-plant-clearing-1200.webp');
+    background-image: url('images/webp/land-management/salt-river/salt-river-invasive-plant-clearing-1200.webp');
     background-size: cover;
     background-position: center;
 }
@@ -2254,6 +2254,10 @@ section {
     padding: 0 20px;
 }
 
+.content-wrap--narrow h3 {
+    margin-top: 2rem;
+}
+
 /* CTA Strip � standardised across all pages */
 .cta-strip {
     position: relative;
@@ -2585,15 +2589,15 @@ section {
 /* Footer Social Links */
 .footer-social-links {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
     margin-top: 1rem;
 }
 .footer-social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 52px;
+    height: 52px;
     border: 1px solid var(--card-border);
     border-radius: 4px;
     color: var(--text-secondary);
@@ -2601,8 +2605,8 @@ section {
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 .footer-social-link svg {
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 28px;
 }
 .footer-social-link:hover {
     color: var(--accent-yellow);
@@ -3465,7 +3469,7 @@ textarea:focus-visible {
 
 /* The three background images */
 .pw--ecopools {
-    background-image: url('images/webp/eco-pool-photos/Krags/house Jamieson (4).webp');
+    background-image: url('images/webp/eco-pool-photos/Krags/house-jamieson-main-1200.webp');
 }
 
 .pw--ecopools2 {
@@ -3477,19 +3481,19 @@ textarea:focus-visible {
 }
 
 .pw--design {
-    background-image: url('images/webp/ecological-design/garden-design-1-1200.webp');
+    background-image: url('images/webp/ecological-design/garden-design/garden-design-1-1200.webp');
 }
 
 .pw--design2 {
-    background-image: url('images/webp/ecological-design/wilderness-biodiversity-corridor-1200.webp');
+    background-image: url('images/webp/ecological-design/terra-verta-habitats/terra-verta-habitats-4-1200.webp');
 }
 
 .pw--land {
-    background-image: url('images/webp/land-management/alien%20clearing-1200.webp');
+    background-image: url('images/webp/land-management/tvh-5-1200.webp');
 }
 
 .pw--land2 {
-    background-image: url('images/webp/land-management/diepklowe-regenerative-farm-1200.webp');
+    background-image: url('images/webp/land-management/diepklowe-farm/diepklowe-regenerative-farm-1200.webp');
 }
 
 /* Content block — left-aligned by default */
@@ -3914,7 +3918,7 @@ textarea:focus-visible {
 }
 .service-card-lm:hover { border-color: rgba(71,163,162,0.35); }
 .service-card-lm h4 {
-    color: var(--text-primary);
+    color: var(--accent-teal);
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
@@ -3979,7 +3983,7 @@ textarea:focus-visible {
 .reviews-parallax-bg {
     position: absolute;
     inset: 0;
-    background-image: url('images/eco-pool-photos/plettenberg-bay/Guests enjoying the ecopool.webp');
+    background-image: url('images/webp/eco-pool-photos/Eco Pools capetown/Guests enjoying the ecopool-1200.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4215,7 +4219,7 @@ textarea:focus-visible {
 }
 
 /* ==========================================================================
-   Project Cards — Prev/Next Carousel (land-management.html, projects.html)
+    Project Cards — Prev/Next Carousel (land-management.html, ecological-design.html)
    ========================================================================== */
 
 .projects-carousel {
