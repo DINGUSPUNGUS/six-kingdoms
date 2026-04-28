@@ -24,7 +24,9 @@
       "Bash(node scripts/fix-encoding.js)",
       "Bash(node scripts/fix-encoding-v2.js)",
       "Bash(node scripts/convert-house-dyer-all.js)",
-      "Bash(node scripts/fix-encoding-proper.js)"
+      "Bash(node scripts/fix-encoding-proper.js)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
