@@ -3526,6 +3526,7 @@ textarea:focus-visible {
     letter-spacing: 0.14em;
 }
 
+.pw-content h1,
 .pw-content h2 {
     font-size: clamp(2.2rem, 4.5vw, 3.6rem);
     font-weight: 700;
@@ -3712,20 +3713,13 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0a0f08;
-}
-.modal-image-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 55%, rgba(8,12,6,0.3) 100%);
-    pointer-events: none;
+    background: transparent;
 }
 .modal-image-wrap img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
     max-height: 72vh;
-    object-fit: contain;
     display: block;
 }
 .modal-body { padding: 2rem 2.25rem 2.5rem; }
