@@ -20,4 +20,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://sixkingdoms.org/sitemap.xml
+Sitemap: https://sixkingdoms.co.za/sitemap.xml
