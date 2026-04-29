@@ -1,13 +1,5 @@
 {
   "outputDirectory": ".",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.sixkingdoms.co.za" }],
-      "destination": "https://sixkingdoms.co.za/:path*",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
