@@ -232,7 +232,8 @@ if (scrollTopBtn) {
 // Add active state to current page in navigation
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-menu a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (href === '/' && currentPage === 'index.html')) {
         link.classList.add('active');
     }
 });

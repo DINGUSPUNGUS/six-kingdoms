@@ -6,3 +6,13 @@ images/*.JPG
 images/eco\ pool\ photos/*.jpg
 images/eco\ pool\ photos/*.JPG
 images/eco\ pool\ photos/*.webp
+
+# Unprocessed source photos (webp versions are served)
+images/webp/**/*.JPG
+images/webp/**/*.jpg
+
+# Editor and AI tooling
+.vscode/
+.claude/
+.github/copilot-instructions.md
+*.vexp-bak
