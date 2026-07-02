@@ -1,0 +1,25 @@
+{
+  "file_hashes": {
+    "instagram-bot/SETUP.md": "a0be0b53f56ca4ff4dbcf7b9efb8ad5823cbf5ab2228d8713232adb5f415067b",
+    "instagram-bot/server.js": "7c99342f6dfcb056bb0edf10ae0cf2952e49268a91e9527dee5eef100fad96e2",
+    "script.js": "13d11d91b8b16db80151859c12bf221b79d352559483cfacc1f7c7d8cc59c497",
+    "scripts/convert-house-dyer-all.js": "4cdb3eb3a17dd93c7ad507a305d171d1bbb8923be206733bd7c39c36884e7e1f",
+    "scripts/convert-house-dyer.js": "70cefb07dd1c3e08f726245e117e61dea208c6ef841ba717b0aca61d3fd297eb",
+    "scripts/fix-encoding-proper.js": "74e0c499ab25fd2450993e4eeebdfdb0d34f959741866a5b78e6e8c5effda5ad",
+    "scripts/fix-encoding-v2.js": "a7e9a656646bb07d19f998757bf027702731cb4e2ec1a496030dd16db3b2e6c8",
+    "scripts/fix-encoding.js": "57e3d454eb6a7acc7a3bbccc0d5827f23b1a18824a183b156572e0dc02b136a1",
+    "scripts/organise-images.js": "84e60034bdc187854553bf88194e995734b28a9fd8487892cf4b25e24736dd98",
+    "scripts/sync-copy.js": "b7d3a5bfba7e90e9b62ae0368033bde900c6d4507eddb500fb2007dcae36e3b1",
+    "scripts/update-image-refs.js": "e802543cb363d75dd6f726356c33ad0f3294c2294c0728be477457fe2c914aba",
+    "website-copy.md": "79b7eb531529188345fd5b689f70281f1b34d7efcf2ecc122ff6b1759c78c583"
+  },
+  "indexed_at_commit": "97efd3c9ffb914199f9e7ac077e5ac379d7a4ec2",
+  "indexed_at_timestamp": "2026-07-02T09:27:45.250525200+00:00",
+  "schema_version": 3,
+  "stats": {
+    "total_edges": 190,
+    "total_files": 12,
+    "total_nodes": 205
+  },
+  "vexp_version": "2.1.0"
+}
