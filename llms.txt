@@ -9,7 +9,7 @@ Six Kingdoms has been working on the Garden Route for over 10 years. Founded by 
 **Location:** Garden Route, Western Cape, South Africa
 **Service areas:** Knysna, Plettenberg Bay, George, Wilderness, Sedgefield, Mossel Bay
 **Contact:** matthew@sixkingdoms.org | +27 (0)76 618 9722
-**Website:** https://sixkingdoms.org
+**Website:** https://sixkingdoms.co.za
 **Instagram:** https://www.instagram.com/six_kingdoms/
 
 ## Services
@@ -20,7 +20,7 @@ Chemical-free swimming pools filtered entirely by biology — aquatic plants and
 - Lower long-term running costs than conventional pools
 - Supports frogs, dragonflies, and beneficial invertebrates
 - Designed for the specific conditions of the Garden Route climate
-- Page: https://sixkingdoms.org/ecopools.html
+- Page: https://sixkingdoms.co.za/ecopools.html
 
 ### Ecological Design
 Fynbos gardens, food forests, rain gardens, and indigenous landscapes designed to thrive without constant intervention. We work with what is already on a site and help it become more of itself.
@@ -29,7 +29,7 @@ Fynbos gardens, food forests, rain gardens, and indigenous landscapes designed t
 - Rain gardens and water management
 - Biodiversity corridors connecting habitat patches
 - Workshops and education for landowners
-- Page: https://sixkingdoms.org/ecological-design.html
+- Page: https://sixkingdoms.co.za/ecological-design.html
 
 ### Land Management & Invasive Plant Control
 Invasive alien plant clearing, indigenous vegetation restoration, and long-term land stewardship. We help landowners achieve ecological compliance, improve biodiversity, and build resilient landscapes.
@@ -38,7 +38,7 @@ Invasive alien plant clearing, indigenous vegetation restoration, and long-term 
 - Holistic land management planning
 - Working for Water programme compliance support
 - Long-term stewardship and monitoring
-- Page: https://sixkingdoms.org/land-management.html
+- Page: https://sixkingdoms.co.za/land-management.html
 
 ## Key Facts
 
@@ -52,7 +52,7 @@ Invasive alien plant clearing, indigenous vegetation restoration, and long-term 
 ## Project Planning Tool
 
 An interactive web tool for planning EcoPools, ecological gardens, and land management projects on the Garden Route. Includes a cost calculator, indigenous plant finder, land checklist, and vegetable bed planner.
-- Page: https://sixkingdoms.org/plan.html
+- Page: https://sixkingdoms.co.za/plan.html
 
 ## Frequently Asked Questions
 
@@ -75,13 +75,13 @@ Invasive alien plants (IAPs) are non-native species that spread aggressively and
 Yes. Six Kingdoms provides ongoing land management and stewardship services, with regular consultations, on-site support, and training to help landowners care for their land independently.
 
 **How do I get started?**
-Contact matthew@sixkingdoms.org or use the contact form at https://sixkingdoms.org/contact.html. We arrange an initial conversation to understand your site and goals, then outline the best path forward.
+Contact matthew@sixkingdoms.org or use the contact form at https://sixkingdoms.co.za/contact.html. We arrange an initial conversation to understand your site and goals, then outline the best path forward.
 
 ## Pages
 
-- [Home](https://sixkingdoms.org/) — Overview of all services, client testimonials, about the practice
-- [EcoPools](https://sixkingdoms.org/ecopools.html) — Natural swimming pools: process, benefits, gallery, FAQ
-- [Ecological Design](https://sixkingdoms.org/ecological-design.html) — Project portfolio: fynbos, food forests, rain gardens, workshops
-- [Land Management](https://sixkingdoms.org/land-management.html) — Invasive clearing, restoration, stewardship services
-- [Plan Your Project](https://sixkingdoms.org/plan.html) — Interactive planning tools and cost calculator
-- [Contact](https://sixkingdoms.org/contact.html) — Get in touch
+- [Home](https://sixkingdoms.co.za/) — Overview of all services, client testimonials, about the practice
+- [EcoPools](https://sixkingdoms.co.za/ecopools.html) — Natural swimming pools: process, benefits, gallery, FAQ
+- [Ecological Design](https://sixkingdoms.co.za/ecological-design.html) — Project portfolio: fynbos, food forests, rain gardens, workshops
+- [Land Management](https://sixkingdoms.co.za/land-management.html) — Invasive clearing, restoration, stewardship services
+- [Plan Your Project](https://sixkingdoms.co.za/plan.html) — Interactive planning tools and cost calculator
+- [Contact](https://sixkingdoms.co.za/contact.html) — Get in touch
