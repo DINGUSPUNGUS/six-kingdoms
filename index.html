@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Theme: set before CSS renders to prevent flash of wrong theme -->
     <script>!function(){var t=localStorage.getItem('sk-theme');document.documentElement.setAttribute('data-theme',t?t:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}();</script>
-    <meta name="description" content="Six Kingdoms offers natural swimming pools, ecological garden design, and invasive plant management across the Garden Route, South Africa.">
+    <meta name="description" content="Six Kingdoms designs natural swimming pools (EcoPools), indigenous gardens, and manages invasive plants across the Garden Route — Knysna, Plettenberg Bay, George, Wilderness. South Africa.">
     <meta name="keywords" content="EcoPools, natural swimming pools, ecological design, land management, Garden Route, South Africa, natural pools, biodiversity">
     <meta name="author" content="Six Kingdoms">
 
@@ -26,7 +26,7 @@
     <meta property="twitter:description" content="EcoPools, ecological design, and land stewardship &mdash; Garden Route, South Africa.">
     <meta property="twitter:image" content="https://sixkingdoms.co.za/images/branding/six-kingdoms-logo.webp">
     
-    <title>Six Kingdoms | EcoPools & Ecological Design | Garden Route</title>
+    <title>Six Kingdoms | Natural Swimming Pools & Ecological Landscaping | Garden Route, South Africa</title>
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sixkingdoms.co.za/">
@@ -35,7 +35,11 @@
     <link rel="preload" as="image" href="images/webp/eco-pool-photos/Krags/house-jamieson-main-1200.webp" imagesrcset="images/webp/eco-pool-photos/Krags/house-jamieson-main-480.webp 480w, images/webp/eco-pool-photos/Krags/house-jamieson-main-800.webp 800w, images/webp/eco-pool-photos/Krags/house-jamieson-main-1200.webp 1200w" imagesizes="100vw" fetchpriority="high">
 
     <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <meta name="theme-color" content="#36669e">
     
     <link rel="stylesheet" href="styles.css">
@@ -63,11 +67,16 @@
             "addressRegion": "Western Cape",
             "addressCountry": "ZA"
         },
+        "priceRange": "RRR",
         "areaServed": [
             {"@type": "City", "name": "Knysna"},
             {"@type": "City", "name": "Plettenberg Bay"},
             {"@type": "City", "name": "George"},
             {"@type": "City", "name": "Wilderness"},
+            {"@type": "City", "name": "Sedgefield"},
+            {"@type": "City", "name": "Hartenbos"},
+            {"@type": "City", "name": "Mossel Bay"},
+            {"@type": "Place", "name": "Oubaai"},
             {"@type": "AdministrativeArea", "name": "Garden Route"},
             {"@type": "Country", "name": "South Africa"}
         ],
@@ -111,11 +120,25 @@
       "url": "https://sixkingdoms.co.za",
       "email": "matthew@sixkingdoms.org",
       "description": "Natural swimming pools, ecological garden design, and invasive plant management on the Garden Route, South Africa.",
-      "areaServed": ["Wilderness", "George", "Knysna", "Plettenberg Bay", "Garden Route"],
+      "areaServed": ["Wilderness", "George", "Knysna", "Plettenberg Bay", "Sedgefield", "Hartenbos", "Mossel Bay", "Oubaai", "Garden Route"],
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "Western Cape",
         "addressCountry": "ZA"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Six Kingdoms",
+      "url": "https://sixkingdoms.co.za",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {"@type": "EntryPoint", "urlTemplate": "https://sixkingdoms.co.za/?s={search_term_string}"},
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
