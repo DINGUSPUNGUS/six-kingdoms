@@ -31,18 +31,6 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sixkingdoms.co.za/plan.html</loc>
-        <lastmod>2026-07-16</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://sixkingdoms.co.za/privacy.html</loc>
-        <lastmod>2026-07-16</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
         <loc>https://sixkingdoms.co.za/landscaping-knysna.html</loc>
         <lastmod>2026-07-16</lastmod>
         <changefreq>monthly</changefreq>
