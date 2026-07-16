@@ -3,6 +3,7 @@ Allow: /
 Disallow: /blog.html
 Disallow: /blog-admin.html
 Disallow: /blog-post-template.html
+Disallow: /*?s=
 
 # AI crawlers — explicitly allowed
 User-agent: GPTBot
